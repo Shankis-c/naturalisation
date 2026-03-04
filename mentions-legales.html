@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mentions légales — Citoyenneté Française</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d2b5e;--navy-mid:#1a3f7a;--navy-xlight:#f0f4fc;--navy-light:#e8edf7;
+  --red:#c1121f;--bg:#f0f2f7;--white:#fff;--border:#d1d9e8;
+  --text:#0d1b2e;--text-2:#374151;--text-3:#6b7280;
+  --r:8px;--r2:14px;
+  --shadow:0 1px 4px rgba(13,43,94,.08),0 4px 16px rgba(13,43,94,.06);
+}
+body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:100vh;font-size:15px;line-height:1.7}
+
+/* HEADER */
+.topbar{background:var(--navy);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.tb-flag{display:flex;height:4px;width:40px;border-radius:2px;overflow:hidden;margin-right:.8rem;flex-shrink:0}
+.f-b{background:#002395}.f-w{background:#fff}.f-r{background:#ED2939}
+.tb-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:#fff;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:.8rem}
+.tb-back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:var(--r);padding:.4rem .9rem;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.7);text-decoration:none;transition:all .2s;letter-spacing:.04em}
+.tb-back:hover{background:rgba(255,255,255,.2);color:#fff}
+
+/* HERO */
+.hero{background:var(--navy);padding:3rem 2rem 2.5rem;text-align:center;border-bottom:3px solid var(--red)}
+.hero-eyebrow{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.7rem}
+.hero-title{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.4rem}
+.hero-title span{color:rgba(255,255,255,.35)}
+.hero-date{font-family:'Syne',sans-serif;font-size:.75rem;color:rgba(255,255,255,.3);margin-top:.5rem}
+
+/* LAYOUT */
+.wrap{max-width:780px;margin:0 auto;padding:3rem 1.5rem 4rem}
+
+/* SECTIONS */
+.section{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.8rem 2rem;margin-bottom:1.2rem;box-shadow:var(--shadow)}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;flex-shrink:0;margin-right:.7rem}
+.section-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--navy);display:flex;align-items:center;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+.section p{font-size:.88rem;color:var(--text-2);line-height:1.85;margin-bottom:.8rem}
+.section p:last-child{margin-bottom:0}
+.section a{color:var(--navy);font-weight:600}
+.section a:hover{color:var(--red)}
+
+/* INFO BLOC */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.8rem}
+.info-row{background:var(--navy-xlight);border:1px solid var(--navy-light);border-radius:var(--r);padding:.7rem 1rem}
+.info-label{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
+.info-val{font-family:'Syne',sans-serif;font-size:.83rem;font-weight:600;color:var(--text)}
+.info-val.placeholder{color:var(--text-3);font-style:italic;font-weight:400}
+
+/* HIGHLIGHT */
+.highlight{background:var(--navy-xlight);border-left:3px solid var(--navy);border-radius:0 var(--r) var(--r) 0;padding:.9rem 1.1rem;margin:.8rem 0;font-size:.85rem;color:var(--text-2);font-family:'Syne',sans-serif}
+
+/* COPYRIGHT BOX */
+.copyright-box{background:var(--navy);border-radius:var(--r2);padding:1.5rem 2rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:1.5rem}
+.cp-icon{font-size:2rem;flex-shrink:0}
+.cp-text{font-family:'Syne',sans-serif;font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.7}
+.cp-text strong{color:#fff;display:block;font-size:.95rem;margin-bottom:.25rem}
+
+/* WARNING */
+.warning-box{background:#fef2f2;border:1.5px solid rgba(220,38,38,.25);border-radius:var(--r2);padding:1.2rem 1.5rem;margin-bottom:1.2rem;display:flex;gap:1rem;align-items:flex-start}
+.warn-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.warn-text{font-family:'Syne',sans-serif;font-size:.82rem;color:#7f1d1d;line-height:1.65}
+.warn-text strong{display:block;margin-bottom:.2rem;font-size:.88rem}
+
+/* FOOTER */
+.footer{text-align:center;padding:2rem 1rem;font-family:'Syne',sans-serif;font-size:.72rem;color:var(--text-3);border-top:1px solid var(--border)}
+.footer-flag{display:flex;height:3px;width:30px;border-radius:2px;overflow:hidden;margin:0 auto .8rem}
+
+@media(max-width:600px){
+  .info-grid{grid-template-columns:1fr}
+  .hero-title{font-size:1.6rem}
+  .copyright-box{flex-direction:column;gap:.8rem}
+  .topbar{padding:.8rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-brand">
+    <div class="tb-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
+    Citoyenneté Française
+  </div>
+  <a class="tb-back" href="index.html">← Retour au site</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Informations légales</div>
+  <div class="hero-title">Mentions <span>légales</span></div>
+  <div class="hero-date">Dernière mise à jour : <span id="update-date"></span></div>
+</div>
+
+<div class="wrap">
+
+  <!-- COPYRIGHT -->
+  <div class="copyright-box">
+    <div class="cp-icon">©</div>
+    <div class="cp-text">
+      <strong>© <span id="cp-year"></span> Citoyenneté Française — Tous droits réservés</strong>
+      Ce site, son contenu, son design et ses fonctionnalités sont protégés par le droit d'auteur français et les conventions internationales sur la propriété intellectuelle. Toute reproduction sans autorisation est interdite.
+    </div>
+  </div>
+
+  <!-- AVERTISSEMENT COPIE -->
+  <div class="warning-box">
+    <div class="warn-icon">⚠️</div>
+    <div class="warn-text">
+      <strong>Reproduction et copie interdites</strong>
+      Toute reproduction, copie, distribution, modification ou exploitation commerciale du code source, des questions, des contenus pédagogiques ou du design de ce site est strictement interdite sans autorisation écrite préalable du propriétaire.
+    </div>
+  </div>
+
+  <!-- 1. ÉDITEUR -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">1</span>Éditeur du site
+    </div>
+    <p>Le site <strong>Citoyenneté Française</strong> est un outil de préparation à l'entretien de naturalisation, accessible à l'adresse :</p>
+    <div class="highlight" id="site-url">https://shankis.github.io/naturalisation</div>
+    <div class="info-grid">
+      <div class="info-row">
+        <div class="info-label">Propriétaire</div>
+        <div class="info-val placeholder" id="owner-name">devby.fou</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Contact</div>
+        <div class="info-val placeholder" id="contact-email">devby.fou@gmail.com</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Pays</div>
+        <div class="info-val">France</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Statut</div>
+        <div class="info-val">Particulier / Usage non commercial</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. HÉBERGEMENT -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">2</span>Hébergement
+    </div>
+    <p>Ce site est hébergé par :</p>
+    <div class="info-grid">
+      <div class="info-row">
+        <div class="info-label">Hébergeur</div>
+        <div class="info-val">GitHub, Inc.</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Service</div>
+        <div class="info-val">GitHub Pages</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Adresse</div>
+        <div class="info-val">88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Site</div>
+        <div class="info-val"><a href="https://pages.github.com" target="_blank">pages.github.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. PROPRIÉTÉ INTELLECTUELLE -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">3</span>Propriété intellectuelle
+    </div>
+    <p>L'ensemble des éléments constituant ce site (structure, design, code source, questions, explications pédagogiques, textes, organisation des données) est la propriété exclusive de l'éditeur et est protégé par les dispositions du <strong>Code de la propriété intellectuelle français</strong>.</p>
+    <p>Sont notamment protégés :</p>
+    <div class="highlight">
+      Le code JavaScript · Le design de l'interface · La base de questions et réponses · Les explications pédagogiques · La structure de l'application · Les données d'entraînement à l'entretien oral
+    </div>
+    <p>Toute représentation ou reproduction intégrale ou partielle, par quelque procédé que ce soit, sans l'autorisation expresse et préalable de l'éditeur, est illicite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+  </div>
+
+  <!-- 4. UTILISATION AUTORISÉE -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">4</span>Utilisation autorisée
+    </div>
+    <p>Ce site est mis à disposition du public à titre <strong>strictement personnel et non commercial</strong>. Sont autorisés :</p>
+    <div class="highlight">
+      ✔ Utilisation personnelle pour préparer son entretien de naturalisation<br>
+      ✔ Partage du lien vers le site<br>
+      ✔ Impression des contenus pour un usage personnel
+    </div>
+    <p>Sont en revanche <strong>strictement interdits</strong> sans autorisation écrite :</p>
+    <div class="highlight" style="border-color:var(--red);background:#fef2f2">
+      ✕ Reproduction ou copie du code source<br>
+      ✕ Création d'un site dérivé ou concurrent<br>
+      ✕ Utilisation commerciale quelconque<br>
+      ✕ Extraction automatisée des données (scraping)<br>
+      ✕ Redistribution des questions ou contenus pédagogiques
+    </div>
+  </div>
+
+  <!-- 5. DONNÉES PERSONNELLES -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">5</span>Données personnelles (RGPD)
+    </div>
+    <p>Ce site <strong>ne collecte aucune donnée personnelle</strong>. Aucun formulaire d'inscription, aucun cookie de tracking, aucune analytics ne sont utilisés.</p>
+    <p>La progression de l'utilisateur (scores, favoris, historique) est stockée <strong>exclusivement en local</strong> dans le navigateur via <code>localStorage</code>. Ces données ne quittent jamais votre appareil et ne sont jamais transmises à un serveur.</p>
+    <div class="highlight">
+      Conformément au Règlement (UE) 2016/679 (RGPD), vous pouvez supprimer à tout moment vos données locales depuis le Tableau de bord → Réinitialiser.
+    </div>
+  </div>
+
+  <!-- 6. RESPONSABILITÉ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">6</span>Limitation de responsabilité
+    </div>
+    <p>Les contenus de ce site sont fournis à titre <strong>pédagogique et informatif</strong>. Ils ne constituent pas un avis juridique officiel sur la procédure de naturalisation.</p>
+    <p>L'éditeur s'efforce de maintenir les informations à jour mais ne garantit pas leur exhaustivité ou leur exactitude à tout moment. Les procédures administratives peuvent évoluer ; il est recommandé de consulter les sources officielles (service-public.fr, préfecture compétente).</p>
+    <p>L'éditeur ne saurait être tenu responsable des décisions prises sur la base des contenus de ce site.</p>
+  </div>
+
+  <!-- 7. CONTACT -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">7</span>Contact & signalement
+    </div>
+    <p>Pour toute question relative aux mentions légales, demande d'autorisation, ou signalement d'une violation de droits, vous pouvez contacter l'éditeur à l'adresse suivante :</p>
+    <div class="highlight">
+      📧 <span id="contact-email-2" style="font-weight:600">devby.fou@gmail.com</span>
+    </div>
+    <p>Toute demande de reproduction ou d'utilisation commerciale doit être formulée par écrit et fera l'objet d'une réponse dans un délai de 30 jours.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
+  © <span id="footer-year"></span> Citoyenneté Française · Tous droits réservés · <a href="index.html" style="color:var(--navy)">Retour au site</a>
+</div>
+
+<script>
+  var yr = new Date().getFullYear();
+  document.getElementById('cp-year').textContent = yr;
+  document.getElementById('footer-year').textContent = yr;
+  document.getElementById('update-date').textContent = new Date().toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
+</script>
+</body>
+</html>
