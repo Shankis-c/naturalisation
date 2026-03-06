@@ -2161,7 +2161,7 @@ const QUESTIONS = [
     question: "Qu'est-ce que le Parlement européen et comment est-il élu ?",
     reponse:  "Le Parlement européen est l'assemblée législative de l'Union européenne, composée de 705 députés européens élus au suffrage universel direct tous les 5 ans par les citoyens des États membres. Il siège officiellement à Strasbourg.",
     choix: [
-      "Assemblée de l'UE, 705 députés élus au suffrage universel direct, tous les 5 ans",
+      "Assemblée de l'UE, 720 députés élus au suffrage universel direct, tous les 5 ans",
       "Institution nommée par les gouvernements des États membres",
       "Assemblée consultative dont les membres sont désignés par les Parlements nationaux",
       "Organe composé de 27 représentants, un par État membre",
@@ -2569,3 +2569,4 @@ const QUESTIONS = [
   // ← Ajoute ici de nouvelles questions de Société & Quotidien ↑
 
 ]; // ← NE PAS SUPPRIMER CETTE LIGNE
+
