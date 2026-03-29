@@ -6,6 +6,7 @@
 <title>Citoyenneté Française — Naturalisation</title>
 <script src="questions.js"></script>
 <script src="interview.js"></script>
+<script src="prefecture.js"></script>
 <!-- SEO -->
 <meta name="description" content="Préparez votre entretien de naturalisation française avec Cap Naturalisation. Quiz officiel, entraînement oral, flashcards et simulation d'entretien. Gratuit et complet."/>
 <meta name="keywords" content="naturalisation française, entretien naturalisation, quiz citoyenneté, valeurs républicaines, préparation naturalisation, devenir français, test civique"/>
@@ -387,6 +388,7 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
     <button class="sb-btn" data-view="oral" onclick="go('oral')"><span class="sb-icon">🗣️</span>Entraînement oral</button>
     <button class="sb-btn" data-view="revision" onclick="go('revision')"><span class="sb-icon">📚</span>Révision</button>
     <button class="sb-btn" data-view="interview" onclick="go('interview')"><span class="sb-icon">🎙️</span>Entretien simulé</button>
+    <button class="sb-btn" data-view="prefecture" onclick="go('prefecture')"><span class="sb-icon">🏛️</span>Par préfecture</button>
     <div class="sb-divider"></div>
     <div class="sb-section-label">Suivi</div>
     <button class="sb-btn" data-view="favoris" onclick="go('favoris')">
@@ -408,7 +410,9 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
   <div class="sb-copyright">
     © <span id="cp-year"></span> Citoyenneté Française<br>
     Tous droits réservés · Usage personnel uniquement<br>
-    <a href="mentions-legales.html" style="color:rgba(255,255,255,.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:1px;transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Mentions légales</a>
+    <a href="mentions-legales.html" style="color:rgba(255,255,255,.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:1px" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Mentions légales</a>
+    &nbsp;·&nbsp;
+    <a href="politique-confidentialite.html" style="color:rgba(255,255,255,.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:1px" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Confidentialité</a>
   </div>
 </aside>
 
@@ -707,6 +711,81 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
     </div>
   </div>
 
+  <!-- PRÉFECTURE -->
+  <div class="view" id="view-prefecture">
+    <div class="page-hd">
+      <div class="page-eyebrow">Questions selon votre région</div>
+      <h1>Par <span>préfecture</span></h1>
+    </div>
+    <div id="pref-landing">
+      <div style="background:var(--navy);border-radius:var(--r2);padding:1.5rem 2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md)">
+        <div style="font-family:Syne,sans-serif;font-size:.75rem;color:rgba(255,255,255,.45);margin-bottom:.4rem">💡 Bon à savoir</div>
+        <div style="font-family:Syne,sans-serif;font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.6">Chaque préfecture a ses habitudes. Certaines insistent sur la laïcité, d'autres sur l'intégration locale ou l'histoire régionale. Entraînez-vous avec les questions de votre préfecture.</div>
+      </div>
+      <div id="pref-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem"></div>
+    </div>
+    <div id="pref-screen" style="display:none">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+        <button class="btn btn-outline btn-sm" onclick="resetPref()">← Changer de préfecture</button>
+        <div style="font-family:Syne,sans-serif;font-size:.85rem;color:var(--text-3)" id="pref-screen-title"></div>
+      </div>
+      <div style="max-width:620px;margin:0 auto">
+        <div class="oral-progress-bar">
+          <div class="oral-prog-lbl" id="pref-prog-lbl">1 / 0</div>
+          <div class="prog-wrap"><div class="prog-fill" id="pref-prog" style="width:0%"></div></div>
+        </div>
+        <div class="oral-card">
+          <div class="oral-card-head">
+            <div class="oral-num" id="pref-num">Question 1</div>
+            <div class="oral-icon" id="pref-icon">🏛️</div>
+            <div class="oral-q" id="pref-q"></div>
+          </div>
+          <div class="oral-card-body">
+            <div class="oral-hint">Réfléchissez à votre réponse, puis cliquez pour révéler</div>
+            <button class="oral-reveal-btn" id="pref-reveal-btn" onclick="revealPref()">Voir la réponse ▾</button>
+            <div class="oral-answer" id="pref-answer">
+              <div style="height:1rem"></div>
+              <div class="oral-ans-label">Réponse idéale</div>
+              <div class="oral-ans-correct" id="pref-ans-correct"></div>
+              <div style="margin-top:.8rem" id="pref-conseil-wrap">
+                <div style="font-family:Syne,sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">💡 Conseil</div>
+                <div style="background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:.8rem 1rem;font-family:Syne,sans-serif;font-size:.82rem;color:var(--text-2);line-height:1.65" id="pref-conseil"></div>
+              </div>
+              <div style="height:1rem"></div>
+              <div class="oral-score-btns">
+                <button class="oral-score-btn knew" onclick="scorePref(true)">✓&nbsp; Je maîtrise</button>
+                <button class="oral-score-btn nope" onclick="scorePref(false)">✗&nbsp; À retravailler</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pref-results" style="display:none">
+      <div style="max-width:540px;margin:0 auto">
+        <div class="oral-res-wrap">
+          <div class="oral-res-pct" id="pref-res-pct">0%</div>
+          <div class="oral-res-sub" id="pref-res-sub">de questions maîtrisées</div>
+          <div class="oral-res-grid">
+            <div class="oral-res-box knew">
+              <div class="oral-res-n" id="pref-knew-n">0</div>
+              <div class="oral-res-lbl">Je maîtrise</div>
+            </div>
+            <div class="oral-res-box nope">
+              <div class="oral-res-n" id="pref-nope-n">0</div>
+              <div class="oral-res-lbl">À retravailler</div>
+            </div>
+          </div>
+          <div id="pref-missed-list"></div>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn" onclick="replayPref()">🔄 Recommencer</button>
+            <button class="btn btn-outline" onclick="resetPref()">← Changer de préfecture</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FAVORIS -->
   <div class="view" id="view-favoris">
     <div class="page-hd">
@@ -832,6 +911,7 @@ function go(v){
   document.getElementById('view-'+v).classList.add('active');
   var btn=document.querySelector('[data-view="'+v+'"]');
   if(btn)btn.classList.add('active');
+  if(v==='prefecture')buildPrefLanding();
   if(v==='home')buildHome();
   if(v==='revision')buildRevision();
   if(v==='interview')buildInterview();
@@ -1284,6 +1364,97 @@ function renderRev(f){
   }).join('');
 }
 function tAcc(id){var el=document.getElementById(id);if(el)el.classList.toggle('open');}
+
+// ══════════════════════
+// PRÉFECTURE
+// ══════════════════════
+var GP={pref:null,qs:[],idx:0,knew:0,nope:0,missed:[]};
+function buildPrefLanding(){
+  var regions={};
+  PREFECTURE_QUESTIONS.forEach(function(p){
+    if(!regions[p.region])regions[p.region]=[];
+    regions[p.region].push(p);
+  });
+  var html='';
+  Object.keys(regions).forEach(function(r){
+    html+='<div style="grid-column:1/-1"><div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">'+r+'</div><div class="sec-div-line"></div></div></div>';
+    regions[r].forEach(function(p){
+      html+='<div class="hc" onclick="startPref(\''+p.prefecture.replace(/'/g,"\\'")+'\')" style="cursor:pointer">'+
+        '<div class="hc-icon" style="font-size:1.4rem;width:40px;height:40px">'+p.icon+'</div>'+
+        '<div class="hc-title">'+p.prefecture+'</div>'+
+        '<div class="hc-desc">'+p.questions.length+' question'+(p.questions.length>1?'s':'')+' · Flashcards</div>'+
+        '<div class="hc-badge">'+r+'</div>'+
+        '</div>';
+    });
+  });
+  document.getElementById('pref-grid').innerHTML=html;
+  document.getElementById('pref-landing').style.display='block';
+  document.getElementById('pref-screen').style.display='none';
+  document.getElementById('pref-results').style.display='none';
+}
+function startPref(prefName){
+  var p=PREFECTURE_QUESTIONS.find(function(x){return x.prefecture===prefName;});
+  if(!p)return;
+  GP.pref=p;GP.qs=p.questions;GP.idx=0;GP.knew=0;GP.nope=0;GP.missed=[];
+  document.getElementById('pref-landing').style.display='none';
+  document.getElementById('pref-results').style.display='none';
+  document.getElementById('pref-screen').style.display='block';
+  document.getElementById('pref-screen-title').textContent=p.icon+' '+p.prefecture;
+  renderPref();
+}
+function renderPref(){
+  var q=GP.qs[GP.idx],tot=GP.qs.length;
+  document.getElementById('pref-prog-lbl').textContent=(GP.idx+1)+' / '+tot;
+  document.getElementById('pref-prog').style.width=(GP.idx/tot*100)+'%';
+  document.getElementById('pref-num').textContent='Question '+(GP.idx+1)+' sur '+tot;
+  document.getElementById('pref-icon').textContent=GP.pref.icon;
+  document.getElementById('pref-q').textContent=q.q;
+  document.getElementById('pref-ans-correct').textContent=q.r;
+  var cw=document.getElementById('pref-conseil-wrap');
+  var cl=document.getElementById('pref-conseil');
+  if(q.conseil){cw.style.display='block';cl.textContent=q.conseil;}
+  else{cw.style.display='none';}
+  document.getElementById('pref-reveal-btn').style.display='block';
+  document.getElementById('pref-answer').classList.remove('show');
+}
+function revealPref(){
+  document.getElementById('pref-reveal-btn').style.display='none';
+  document.getElementById('pref-answer').classList.add('show');
+}
+function scorePref(knew){
+  if(knew){GP.knew++;}else{GP.nope++;GP.missed.push(GP.qs[GP.idx]);}
+  GP.idx++;
+  if(GP.idx>=GP.qs.length){finishPref();}else{renderPref();}
+}
+function finishPref(){
+  var tot=GP.qs.length,pct=Math.round(GP.knew/tot*100);
+  document.getElementById('pref-screen').style.display='none';
+  document.getElementById('pref-results').style.display='block';
+  document.getElementById('pref-res-pct').textContent=pct+'%';
+  document.getElementById('pref-res-sub').textContent=GP.knew+' questions maîtrisées sur '+tot;
+  document.getElementById('pref-knew-n').textContent=GP.knew;
+  document.getElementById('pref-nope-n').textContent=GP.nope;
+  var ml=document.getElementById('pref-missed-list');
+  if(GP.missed.length>0){
+    ml.innerHTML='<div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">À retravailler ('+GP.missed.length+')</div><div class="sec-div-line"></div></div>'+
+      GP.missed.map(function(q){
+        return '<div class="wrong-item"><div class="wi-q">'+q.q+'</div><div class="wi-correct" style="color:var(--navy)">'+q.r.slice(0,80)+'...</div></div>';
+      }).join('');
+  }else{
+    ml.innerHTML='<div style="text-align:center;padding:1rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Toutes maîtrisées !</div>';
+  }
+}
+function replayPref(){
+  GP.idx=0;GP.knew=0;GP.nope=0;GP.missed=[];
+  document.getElementById('pref-results').style.display='none';
+  document.getElementById('pref-screen').style.display='block';
+  renderPref();
+}
+function resetPref(){
+  document.getElementById('pref-results').style.display='none';
+  document.getElementById('pref-screen').style.display='none';
+  document.getElementById('pref-landing').style.display='block';
+}
 
 // ══════════════════════
 // ENTRETIEN
