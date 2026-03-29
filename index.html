@@ -3,28 +3,30 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Citoyenneté Française — Naturalisation</title>
+<title>Quiz Naturalisation Française Gratuit — QCM & Bilan | Cap Naturalisation</title>
 <script src="questions.js"></script>
 <script src="interview.js"></script>
 <script src="prefecture.js"></script>
-<!-- SEO -->
-<meta name="description" content="Préparez votre entretien de naturalisation française avec Cap Naturalisation. Quiz officiel, entraînement oral, flashcards et simulation d'entretien. Gratuit et complet."/>
-<meta name="keywords" content="naturalisation française, entretien naturalisation, quiz citoyenneté, valeurs républicaines, préparation naturalisation, devenir français, test civique"/>
+
+<!-- SEO OPTIMISÉ -->
+<meta name="description" content="Quiz et QCM gratuits pour préparer votre naturalisation française. Test de naturalisation, quiz citoyenneté, bilan complet avec chrono. Entraînement oral, flashcards et simulation d'entretien. 100% gratuit."/>
+<meta name="keywords" content="quiz naturalisation, QCM naturalisation, quiz naturalisation gratuit, test de naturalisation française, quiz nationalité française, qcm nationalité française, chronobilan naturalisation, quizz naturalisation, préparation naturalisation, entretien naturalisation, quiz citoyenneté, devenir français, valeurs républicaines"/>
 <meta name="author" content="Cap Naturalisation"/>
-<meta name="robots" content="index, follow"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <link rel="canonical" href="https://cap-naturalisation.fr"/>
 
-<!-- Open Graph (aperçu sur réseaux sociaux) -->
+<!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Cap Naturalisation — Préparez votre entretien"/>
-<meta property="og:description" content="Quiz officiel, entraînement oral et simulation d'entretien pour réussir votre naturalisation française. Gratuit et complet."/>
+<meta property="og:title" content="Quiz Naturalisation Gratuit — QCM & Test de Naturalisation Française"/>
+<meta property="og:description" content="Quiz et QCM gratuits pour préparer votre naturalisation française. Test officiel, bilan complet, entraînement oral et simulation d'entretien. 100% gratuit."/>
 <meta property="og:url" content="https://cap-naturalisation.fr"/>
 <meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="Cap Naturalisation"/>
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Cap Naturalisation — Préparez votre entretien"/>
-<meta name="twitter:description" content="Quiz officiel, entraînement oral et simulation d'entretien pour réussir votre naturalisation française."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Quiz Naturalisation Gratuit — QCM & Test Naturalisation Française"/>
+<meta name="twitter:description" content="Quiz et QCM gratuits pour réussir votre naturalisation française. Test officiel avec chrono et bilan complet."/>
 
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -371,6 +373,11 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
 </style>
 </head>
 <body>
+<!-- Schema.org BreadcrumbList -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cap-naturalisation.fr"},{"@type":"ListItem","position":2,"name":"Quiz naturalisation gratuit","item":"https://cap-naturalisation.fr"},{"@type":"ListItem","position":3,"name":"QCM nationalité française","item":"https://cap-naturalisation.fr"}]}
+</script>
+
 <div class="shell">
 
 <!-- SIDEBAR -->
@@ -422,8 +429,8 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
   <div class="view active" id="view-home">
     <div class="home-hero">
       <div class="hero-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
-      <div class="hero-title">Préparez votre<br><span>entretien de</span> naturalisation</div>
-      <div class="hero-sub">Maîtrisez les valeurs, l'histoire et les institutions de la République française</div>
+      <h1 class="hero-title">Quiz <span>naturalisation française</span> gratuit</h1>
+      <p class="hero-sub">QCM et test de naturalisation officiel : préparez votre entretien avec chrono, bilan complet et entraînement oral. 100&nbsp;% gratuit.</p>
       <button class="hero-btn" onclick="go('quiz')">▶ &nbsp;Commencer le Quiz</button>
       <div class="hero-stats">
         <div><div class="hero-stat-n" id="h-total">0</div><div class="hero-stat-l">Questions</div></div>
@@ -436,7 +443,7 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
       <div class="hc red-card" onclick="go('quiz')">
         <div class="hc-icon">📝</div>
         <div class="hc-title">Quiz officiel</div>
-        <div class="hc-desc">40 questions · chrono · bilan complet</div>
+        <div class="hc-desc">40 questions · chrono · <strong>chronobilan</strong> complet</div>
         <div class="hc-badge">Recommandé</div>
       </div>
       <div class="hc" onclick="go('theme-quiz')">
@@ -464,7 +471,7 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
   <div class="view" id="view-quiz">
     <div class="page-hd">
       <div class="page-eyebrow">Épreuve civique</div>
-      <h1>Quiz <span>officiel</span></h1>
+      <h1>Quiz <span>officiel</span> de naturalisation</h1>
     </div>
     <div id="quiz-landing">
       <div class="quiz-landing-wrap">
@@ -533,7 +540,7 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
   <div class="view" id="view-theme-quiz">
     <div class="page-hd">
       <div class="page-eyebrow">Entraînement ciblé</div>
-      <h1>Quiz par <span>thème</span></h1>
+      <h1>QCM naturalisation par <span>thème</span></h1>
     </div>
     <div id="tq-landing">
       <div class="quiz-landing-wrap">
@@ -823,6 +830,85 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
     <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Historique des quiz</div><div class="sec-div-line"></div></div>
     <div class="card"><div class="card-pad"><div id="d-history"></div></div></div>
   </div>
+
+
+  <!-- SEO : section texte indexable + FAQ structurée -->
+  <div class="view" id="view-seo-content" aria-hidden="true" style="display:block;position:absolute;left:-9999px;top:-9999px;pointer-events:none;" tabindex="-1">
+    <h2>Quiz naturalisation française gratuit</h2>
+    <p>Cap Naturalisation propose le meilleur QCM et quiz de naturalisation gratuit pour préparer votre entretien de naturalisation française. Notre test de naturalisation reprend les questions officielles sur la citoyenneté, les valeurs républicaines et les institutions.</p>
+    <h2>QCM nationalité française</h2>
+    <p>Entraînez-vous avec notre QCM nationalité française : questions sur l'histoire, les symboles de la République, les droits et devoirs du citoyen. Idéal pour réussir votre test de naturalisation.</p>
+    <h2>Quizz naturalisation et chronobilan</h2>
+    <p>Notre quizz naturalisation intègre un chronobilan complet à l'issue de chaque session : score détaillé, thèmes à retravailler, progression. Le chronobilan vous aide à cibler vos lacunes avant l'entretien.</p>
+  </div>
+
+  <!-- Schema.org : données structurées FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cap-naturalisation.fr/#website",
+        "url": "https://cap-naturalisation.fr",
+        "name": "Cap Naturalisation",
+        "description": "Quiz et QCM gratuits pour préparer la naturalisation française",
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://cap-naturalisation.fr/#app",
+        "name": "Quiz Naturalisation Française Gratuit",
+        "url": "https://cap-naturalisation.fr",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Application de quiz et QCM gratuits pour préparer l'entretien de naturalisation française. Test de naturalisation avec chrono, chronobilan et entraînement oral."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment préparer l'entretien de naturalisation française ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Préparez votre entretien de naturalisation avec nos quiz et QCM gratuits sur la citoyenneté française, les valeurs républicaines, l'histoire et les institutions. Cap Naturalisation propose un test de naturalisation officiel de 40 questions avec chrono et chronobilan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce qu'un quiz de naturalisation gratuit ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un quiz naturalisation gratuit est un outil en ligne permettant de s'entraîner aux questions posées lors de l'entretien de naturalisation française. Cap Naturalisation propose des QCM, des quiz par thème et un chronobilan 100% gratuits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que le chronobilan dans un quiz de naturalisation ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le chronobilan est le bilan détaillé obtenu à la fin d'un quiz de naturalisation : il indique votre score, les thèmes maîtrisés et ceux à retravailler, avec un chronomètre par question. C'est un outil clé pour cibler vos révisions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le test de naturalisation française est-il difficile ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'entretien de naturalisation française porte sur les valeurs républicaines, l'histoire et les institutions françaises. Avec notre QCM nationalité française et nos quiz gratuits, vous pouvez vous entraîner autant que nécessaire pour réussir."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
 </main>
 </div>
