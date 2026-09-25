@@ -12,14 +12,14 @@
 </script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Quiz naturalisation française gratuit : QCM et test | Cap Naturalisation</title>
+<title>Quiz naturalisation & examen civique gratuit : QCM CSP, CR | Cap Naturalisation</title>
 <script src="questions.js"></script>
 <script src="interview.js"></script>
 <script src="prefecture.js"></script>
 
 <!-- SEO OPTIMISÉ -->
-<meta name="description" content="Quiz naturalisation française gratuit : entraînez-vous avec des QCM, tests, questions de citoyenneté et simulations d’entretien. Chrono, bilan, révision et entraînement oral."/>
-<meta name="keywords" content="quiz naturalisation, quiz naturalisation gratuit, quiz naturalisation française, test naturalisation, test naturalisation française, test nationalité française, questionnaire naturalisation, QCM naturalisation, QCM nationalité française, quiz citoyenneté, questions entretien naturalisation"/>
+<meta name="description" content="Quiz naturalisation et examen civique gratuits : QCM, tests et listes officielles pour la carte de séjour pluriannuelle (CSP), la carte de résident (CR) et la naturalisation. Chrono, bilan et entraînement oral."/>
+<meta name="keywords" content="quiz naturalisation, quiz naturalisation gratuit, examen civique, examen civique CSP, examen civique CR, quiz examen civique, questions examen civique, carte de séjour pluriannuelle, carte de résident, test naturalisation, test naturalisation française, questionnaire naturalisation, QCM naturalisation, QCM nationalité française, quiz citoyenneté, questions entretien naturalisation"/>
 <meta name="author" content="Cap Naturalisation"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <meta name="theme-color" content="#0d2b5e"/>
@@ -27,16 +27,16 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Quiz naturalisation française gratuit : QCM et test"/>
-<meta property="og:description" content="Entraînez-vous gratuitement avec des quiz, QCM, tests de naturalisation française, révisions thématiques et simulation d’entretien."/>
+<meta property="og:title" content="Quiz naturalisation & examen civique gratuit : QCM CSP, CR"/>
+<meta property="og:description" content="Entraînez-vous gratuitement avec des quiz, QCM et listes officielles pour la naturalisation et l'examen civique (CSP, CR)."/>
 <meta property="og:url" content="https://cap-naturalisation.fr"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:site_name" content="Cap Naturalisation"/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Quiz naturalisation française gratuit : QCM et test"/>
-<meta name="twitter:description" content="Quiz, QCM et tests gratuits pour préparer la naturalisation française : questions, révisions, chrono et entretien."/>
+<meta name="twitter:title" content="Quiz naturalisation & examen civique gratuit : QCM CSP, CR"/>
+<meta name="twitter:description" content="Quiz, QCM et listes officielles gratuits pour préparer la naturalisation et l'examen civique CSP/CR : questions, révisions, chrono et entretien."/>
 
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -61,44 +61,79 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:100vh;font-size:15px;line-height:1.6}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:3px}
-.shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.6rem}
 
-/* SIDEBAR */
-.sidebar{background:var(--navy);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
-.sb-brand{padding:1.8rem 1.5rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.08)}
-.sb-flag{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:1.2rem}
-.sb-flag div{flex:1}
-.f-b{background:#002395}.f-w{background:#fff}.f-r{background:#ED2939}
-.sb-brand-name{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;color:#fff;line-height:1.2}
-.sb-brand-sub{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.25rem;font-family:'Syne',sans-serif;letter-spacing:.06em}
-.sb-nav{padding:1rem .8rem;flex:1}
-.sb-section-label{font-family:'Syne',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);padding:.2rem .7rem .5rem}
-.sb-btn{display:flex;align-items:center;gap:.75rem;width:100%;padding:.65rem .85rem;background:none;border:none;border-radius:var(--r);color:rgba(255,255,255,.55);font-family:'Syne',sans-serif;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .18s;text-align:left;margin-bottom:2px;position:relative}
-.sb-btn .sb-icon{width:20px;text-align:center;font-size:.95rem;flex-shrink:0}
-.sb-btn:hover{background:rgba(255,255,255,.07);color:#fff}
-.sb-btn.active{background:rgba(255,255,255,.1);color:#fff}
-.sb-btn.active::before{content:'';position:absolute;left:0;top:25%;bottom:25%;width:3px;background:var(--red);border-radius:0 2px 2px 0}
-.sb-fav-badge{margin-left:auto;background:var(--gold);color:#000;border-radius:20px;padding:.1rem .55rem;font-size:.65rem;font-weight:800;font-family:'Syne',sans-serif;display:none}
-.sb-divider{height:1px;background:rgba(255,255,255,.07);margin:.6rem .8rem}
-.sb-bottom{padding:1rem 1.2rem 1.4rem;border-top:1px solid rgba(255,255,255,.08)}
-.sb-stats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
-.sb-stat{background:rgba(255,255,255,.06);border-radius:var(--r);padding:.6rem .8rem}
-.sb-stat-n{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#fff;line-height:1}
-.sb-stat-l{font-size:.62rem;color:rgba(255,255,255,.35);font-family:'Syne',sans-serif;letter-spacing:.04em;margin-top:.15rem}
-.sb-save-btn{width:100%;padding:.55rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);font-family:'Syne',sans-serif;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.6);cursor:pointer;transition:all .2s;letter-spacing:.05em;text-transform:uppercase}
-.sb-save-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+/* HEADER / NAVIGATION */
+.top{background:var(--navy);position:sticky;top:0;z-index:40;box-shadow:0 2px 10px rgba(13,43,94,.15);border-bottom:2px solid var(--red)}
+.top-in{display:flex;align-items:center;gap:.9rem;padding:.7rem 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.6rem;background:none;border:0;cursor:pointer;padding:0}
+.brand-flag{display:flex;flex-direction:column;height:20px;width:20px;border-radius:5px;overflow:hidden;flex-shrink:0}
+.brand-flag div{flex:1}
+.brand-txt{text-align:left;line-height:1.15}
+.brand-name{font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:#fff;letter-spacing:.02em;white-space:nowrap}
+.brand-sub{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:.6rem;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-top:.1rem}
+.topnav{display:flex;flex-wrap:wrap;gap:1px;margin-left:.3rem}
+.topnav-btn{display:flex;align-items:center;gap:.45rem;background:none;border:0;padding:.55rem .7rem;border-radius:8px;color:rgba(255,255,255,.6);font-family:'Syne',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;white-space:nowrap;position:relative;text-decoration:none}
+.topnav-btn .nb-icon{font-size:.95rem;line-height:1}
+.topnav-btn:hover{background:rgba(255,255,255,.08);color:#fff}
+.topnav-btn.active{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.nb-badge{background:var(--gold);color:#000;border-radius:20px;padding:0 .4rem;font-size:.6rem;font-weight:800;margin-left:.1rem;display:none}
+.top-actions{display:flex;align-items:center;gap:.35rem;margin-left:auto}
+.ta-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;font-size:.95rem;cursor:pointer;text-decoration:none;flex-shrink:0}
+.ta-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.ta-btn.support{border-color:rgba(245,158,11,.4);color:var(--gold)}
+.ta-btn.support:hover{background:rgba(245,158,11,.18)}
 
-/* COPYRIGHT WATERMARK */
-.sb-copyright{padding:.8rem 1.2rem;border-top:1px solid rgba(255,255,255,.06);font-family:'Syne',sans-serif;font-size:.6rem;color:rgba(255,255,255,.2);letter-spacing:.04em;line-height:1.6;text-align:center;user-select:none}
-.sb-copyright a{color:rgba(255,255,255,.3);text-decoration:none}
-.sb-copyright a:hover{color:rgba(255,255,255,.6)}
+/* STATS STRIP */
+.stats-strip{background:var(--navy-mid);border-bottom:1px solid rgba(255,255,255,.08)}
+.stats-strip-in{display:flex;align-items:center;gap:1.4rem;padding:.55rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ss-item{display:flex;align-items:baseline;gap:.35rem;flex-shrink:0}
+.ss-n{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;color:#fff}
+.ss-l{font-family:'Syne',sans-serif;font-size:.62rem;color:rgba(255,255,255,.45);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.ss-save{margin-left:auto;flex-shrink:0;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:.35rem .9rem;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.8);cursor:pointer;letter-spacing:.03em;white-space:nowrap}
+.ss-save:hover{background:rgba(255,255,255,.2);color:#fff}
+.ss-donate{flex-shrink:0;background:var(--gold);border:1px solid var(--gold);border-radius:20px;padding:.4rem 1.05rem;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;color:#241900;cursor:pointer;letter-spacing:.02em;white-space:nowrap;display:flex;align-items:center;gap:.4rem;box-shadow:0 2px 10px rgba(245,158,11,.4);text-decoration:none}
+.ss-donate:hover{background:#e29009;box-shadow:0 3px 12px rgba(245,158,11,.55)}
 
-/* Footer watermark (visible sur mobile) */
-.footer-copyright{display:none;background:var(--navy);color:rgba(255,255,255,.25);font-family:'Syne',sans-serif;font-size:.6rem;text-align:center;padding:.6rem 1rem;letter-spacing:.04em;user-select:none}
+/* APP SHELL — SIDEBAR PRINCIPALE VERTICALE */
+.app-shell{display:flex;align-items:stretch}
+.app-sidebar{width:248px;flex-shrink:0;background:var(--navy);border-right:2px solid var(--red);position:sticky;top:0;height:100vh;display:flex;flex-direction:column;z-index:50;overflow-y:auto}
+.side-hd{padding:1.1rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.side-hd .brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:none;border:0;cursor:pointer;padding:.3rem 0;width:100%;text-align:center}
+.side-hd .brand-txt{text-align:center}
+.side-nav{flex:1;display:flex;flex-direction:column;gap:.15rem;padding:.9rem .7rem;overflow-y:auto}
+.side-nav-btn{display:flex;align-items:center;gap:.65rem;width:100%;background:none;border:0;padding:.62rem .75rem;border-radius:9px;color:rgba(255,255,255,.62);font-family:'Syne',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;text-align:left;position:relative;text-decoration:none}
+.side-nav-btn .nb-icon{font-size:1rem;line-height:1;width:1.3rem;text-align:center;flex-shrink:0}
+.side-nav-btn span:nth-child(2){flex:1}
+.side-nav-btn:hover{background:rgba(255,255,255,.08);color:#fff}
+.side-nav-btn.active{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.side-nav-btn.active::before{content:"";position:absolute;left:-.7rem;top:.3rem;bottom:.3rem;width:3px;background:var(--red);border-radius:2px}
+.side-actions{display:flex;align-items:center;gap:.4rem;padding:.9rem 1rem 1.1rem;border-top:1px solid rgba(255,255,255,.1)}
+.app-content{flex:1;min-width:0;display:flex;flex-direction:column}
+.content-topbar{background:var(--navy-mid);position:sticky;top:0;z-index:40;box-shadow:0 2px 10px rgba(13,43,94,.12)}
+.content-topbar-in{display:flex;align-items:center;gap:1rem;padding:0 1.6rem}
+.sidebar-toggle{display:none;flex-shrink:0;width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;font-size:1.05rem;align-items:center;justify-content:center;cursor:pointer}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,46,.5);z-index:49}
+.sidebar-overlay.open{display:block}
+@media (max-width:860px){
+  .app-sidebar{position:fixed;left:0;top:0;height:100vh;transform:translateX(-100%);transition:transform .25s ease;box-shadow:0 0 30px rgba(0,0,0,.3)}
+  .app-sidebar.open{transform:translateX(0)}
+  .sidebar-toggle{display:flex}
+}
+
+/* FOOTER */
+.site-footer{background:var(--navy);color:rgba(255,255,255,.45);padding:1.8rem 0 2.2rem;margin-top:2rem}
+.site-footer .wrap{display:flex;flex-direction:column;gap:.5rem}
+.site-footer .sf-flag{display:flex;height:4px;width:44px;border-radius:2px;overflow:hidden;margin-bottom:.4rem}
+.site-footer .sf-flag div{flex:1}
+.site-footer p{font-family:'Syne',sans-serif;font-size:.72rem;line-height:1.7;letter-spacing:.02em}
+.site-footer .sf-copy{color:rgba(255,255,255,.75);font-weight:700}
+.site-footer a{color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2)}
+.site-footer a:hover{color:#fff}
+.sf-links{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin-top:.3rem}
 
 /* MAIN */
-.main{padding:2.5rem 3rem;max-width:860px}
+main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 .page-hd{margin-bottom:2rem}
 .page-eyebrow{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
 .page-eyebrow::before{content:'';display:inline-block;width:20px;height:2px;background:var(--red);border-radius:1px}
@@ -111,8 +146,9 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
 @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 /* HOME */
-.home-hero{background:var(--navy);border-radius:var(--r2);padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden;box-shadow:var(--shadow-md)}
-.home-hero::before{content:'';position:absolute;right:60px;top:20px;width:100px;height:100px;border-radius:50%;background:rgba(193,18,31,.15)}
+.home-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--r2);padding:2.6rem 2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden;box-shadow:var(--shadow-md)}
+.home-hero::before{content:'';position:absolute;right:-20px;top:-30px;width:220px;height:220px;border-radius:50%;background:rgba(193,18,31,.12)}
+.home-hero::after{content:'';position:absolute;left:-40px;bottom:-60px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.04)}
 .hero-flag{display:flex;height:4px;width:60px;border-radius:2px;overflow:hidden;margin-bottom:1.2rem}
 .hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.9rem;color:#fff;letter-spacing:-.02em;line-height:1.2;margin-bottom:.5rem}
 .hero-title span{color:rgba(255,255,255,.45)}
@@ -122,7 +158,7 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
 .hero-stats{display:flex;gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1)}
 .hero-stat-n{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
 .hero-stat-l{font-size:.7rem;color:rgba(255,255,255,.4);font-family:'Syne',sans-serif;letter-spacing:.04em}
-.home-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:2rem}
+.home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin-bottom:2rem}
 .hc{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.2rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
 .hc:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .hc-icon{width:36px;height:36px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.8rem;background:var(--navy-xlight)}
@@ -139,6 +175,98 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
 .tc-icon{font-size:1.4rem;margin-bottom:.3rem}
 .tc-name{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:600;color:var(--text-2);letter-spacing:.02em}
 .tc-n{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--navy)}
+
+/* COMMUNAUTÉ & SOUTIEN */
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}
+.mc{border-radius:var(--r2);padding:1.2rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
+.mc:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.mc-interview{background:var(--navy-xlight);border:1px solid var(--navy-light)}
+.mc-fb{background:var(--white);border:1px solid var(--border)}
+.mc-support{background:var(--gold-bg);border:1.5px solid rgba(245,158,11,.4)}
+.mc-icon{font-size:1.4rem;margin-bottom:.5rem}
+.mc-title{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:.25rem}
+.mc-desc{font-size:.73rem;color:var(--text-3);font-family:'Syne',sans-serif;line-height:1.5}
+.mc-support .mc-title{color:#92600a}
+.contact-note{font-family:'Syne',sans-serif;font-size:.75rem;color:var(--text-3);text-align:center;margin-bottom:2rem}
+.contact-note a{color:var(--navy);font-weight:700;text-decoration:underline}
+.date-row{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin-top:.8rem}
+.date-row input[type=date]{font-family:'Syne',sans-serif;font-size:.85rem;padding:.6rem .9rem;border:1.5px solid var(--border-strong);border-radius:var(--r);color:var(--text);background:var(--white)}
+.countdown-box{margin-top:1.3rem;padding:1.3rem 1.5rem;border-radius:var(--r2);font-family:'Syne',sans-serif}
+.countdown-n{font-size:2.1rem;font-weight:800;line-height:1}
+.countdown-l{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin-top:.2rem}
+.countdown-msg{margin-top:.9rem;font-family:'Lora',serif;font-size:.92rem;line-height:1.65}
+.tier-far{background:var(--navy-xlight);color:var(--navy)}
+.tier-mid{background:var(--warning-bg);color:var(--warning)}
+.tier-close{background:var(--red-light);color:var(--red)}
+.tier-passed{background:var(--gold-bg);color:#92600a}
+.rex-btn{margin-top:1rem;background:#fff;border:1.5px solid #92600a;color:#92600a;border-radius:var(--r);padding:.6rem 1.3rem;font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.04em;cursor:pointer}
+.rex-btn:hover{background:#92600a;color:#fff}
+
+/* EXAMEN CIVIQUE */
+.ec-intro{background:var(--navy-xlight);border:1px solid var(--navy-light);border-radius:var(--r2);padding:1.3rem 1.5rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--text-2);line-height:1.7}
+.ec-intro strong{color:var(--navy)}
+.ec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}
+.ec-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.2rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
+.ec-card:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.ec-card .hc-icon{width:36px;height:36px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.8rem;background:var(--navy-xlight)}
+.ec-source{margin-top:1.8rem;font-family:'Syne',sans-serif;font-size:.75rem;color:var(--text-3);background:var(--off-white);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1.1rem;line-height:1.6}
+.ec-source a{color:var(--navy);font-weight:700;text-decoration:underline}
+.official-list .faq-answer ul{padding-left:0;list-style:none}
+.official-list .faq-answer li{margin-bottom:.9rem;padding-bottom:.9rem;border-bottom:1px solid var(--border);color:var(--text-2)}
+.official-list .faq-answer li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.official-list .faq-answer li>strong{display:block;font-family:'Lora',serif;font-weight:600;color:var(--text);margin-bottom:.35rem}
+
+/* EXAMEN CIVIQUE — LAYOUT SIDEBAR */
+.ec-layout{display:grid;grid-template-columns:280px 1fr;gap:1.6rem;align-items:start}
+.ec-sidebar{position:sticky;top:calc(3.4rem + 1rem);background:var(--white);border:1px solid var(--border);border-radius:var(--r2);box-shadow:var(--shadow);overflow:hidden;align-self:start}
+.ec-sidebar-hd{padding:1.1rem 1.2rem .8rem;border-bottom:1px solid var(--border)}
+.ec-sidebar-title{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:.82rem;color:var(--navy);letter-spacing:.01em}
+.ec-sidebar-sub{display:block;font-family:'Syne',sans-serif;font-weight:600;font-size:.68rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-top:.2rem}
+.ec-search{padding:.8rem 1.2rem;border-bottom:1px solid var(--border);background:var(--off-white)}
+.ec-search-input{width:100%;border:1px solid var(--border);border-radius:var(--r);padding:.5rem .7rem;font-family:'Lora',serif;font-size:.82rem;color:var(--text);background:var(--white)}
+.ec-search-input:focus{outline:2px solid var(--navy-light);border-color:var(--navy)}
+.ec-nav-list{padding:.5rem}
+.ec-nav-btn{display:flex;align-items:center;gap:.6rem;width:100%;text-align:left;background:none;border:0;border-radius:var(--r);padding:.65rem .7rem;cursor:pointer;font-family:'Syne',sans-serif;font-size:.78rem;font-weight:600;color:var(--text-2);transition:all .15s}
+.ec-nav-btn:hover{background:var(--navy-xlight);color:var(--navy)}
+.ec-nav-btn.active{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(13,43,94,.25)}
+.ec-nav-ico{font-size:.95rem;flex-shrink:0;width:1.3rem;text-align:center}
+.ec-nav-label{flex:1;line-height:1.3}
+.ec-nav-count{flex-shrink:0;background:rgba(13,43,94,.08);color:var(--navy);border-radius:20px;padding:.1rem .5rem;font-size:.66rem;font-weight:800}
+.ec-nav-btn.active .ec-nav-count{background:rgba(255,255,255,.2);color:#fff}
+.ec-panels{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);box-shadow:var(--shadow);padding:1.6rem 1.8rem;min-height:400px}
+.ec-panel{display:none}
+.ec-panel.active{display:block;animation:up .25s ease}
+.ec-panel-hd{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;border-bottom:2px solid var(--navy-light);padding-bottom:.8rem;margin-bottom:1.1rem}
+.ec-panel-hd h2{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);letter-spacing:-.01em}
+.ec-panel-count{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.ec-panel ul{padding-left:0;list-style:none}
+.ec-panel li{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border);color:var(--text-2)}
+.ec-panel li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ec-panel li>strong{display:block;font-family:'Lora',serif;font-weight:600;color:var(--text);margin-bottom:.35rem}
+.ec-panel li.ec-hidden{display:none}
+.ec-noresult{text-align:center;color:var(--text-3);font-family:'Syne',sans-serif;font-size:.82rem;padding:2rem 0}
+@media (max-width:860px){
+  .ec-layout{grid-template-columns:210px 1fr;gap:.9rem}
+  .ec-sidebar-hd{padding:.9rem 1rem .7rem}
+  .ec-search{padding:.7rem .9rem}
+  .ec-nav-btn{padding:.55rem .55rem;font-size:.72rem}
+  .ec-nav-label{font-size:.72rem}
+  .ec-panels{padding:1.2rem 1.1rem}
+}
+@media (max-width:600px){
+  .ec-layout{grid-template-columns:170px 1fr;gap:.6rem}
+  .ec-sidebar-title{font-size:.74rem}
+  .ec-sidebar-sub,.ec-nav-count{font-size:.6rem}
+  .ec-nav-btn{padding:.5rem .45rem}
+  .ec-nav-ico{font-size:.85rem;width:1.1rem}
+  .ec-nav-label{font-size:.68rem}
+  .ec-panel-hd h2{font-size:1rem}
+  .ec-panels{padding:1rem .8rem}
+}
+.ec-a{display:block;font-family:'Syne',sans-serif;font-size:.78rem;line-height:1.55;color:var(--navy);background:var(--navy-xlight);border-left:3px solid var(--navy);padding:.5rem .8rem;border-radius:0 8px 8px 0}
+.ec-a strong{color:inherit;font-weight:700}
+.ec-a.avis{background:var(--gold-bg);border-left-color:var(--gold);color:#7a5310}
+.ec-a.hint{background:var(--off-white);border-left-color:var(--border-strong);color:var(--text-3);font-style:italic}
 
 /* DIVIDER */
 .sec-div{display:flex;align-items:center;gap:.8rem;margin:1.8rem 0 1.2rem}
@@ -393,10 +521,10 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
 .toast.show{transform:translateY(0);opacity:1}
 
 @media(max-width:768px){
-  .shell{grid-template-columns:1fr}
-  .sidebar{display:none}
-  .footer-copyright{display:block}
-  .main{padding:1.5rem}
+  .ta-btn{width:32px;height:32px;font-size:.85rem}
+  .stats-strip-in{gap:1rem}
+  .ss-l{display:none}
+  main.main{padding:1.6rem 1.1rem 2.6rem}
   .home-grid{grid-template-columns:1fr 1fr}
   .opts-grid,.pitfalls-wrap ul,.oral-score-btns,.oral-res-grid{grid-template-columns:1fr}
   .themes-grid,.theme-selector{grid-template-columns:repeat(2,1fr)}
@@ -404,6 +532,7 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
   .res-hero{grid-template-columns:1fr}
   .seo-grid{grid-template-columns:1fr!important}
   .seo-links{grid-template-columns:1fr!important}
+  .mini-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -413,59 +542,58 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cap-naturalisation.fr/"}]}
 </script>
 
-<div class="shell">
-
-<!-- SIDEBAR -->
-<aside class="sidebar">
-  <div class="sb-brand">
-    <div class="sb-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
-    <div class="sb-brand-name">Citoyenneté<br>Française</div>
-    <div class="sb-brand-sub">Préparation à la Naturalisation</div>
-  </div>
-  <nav class="sb-nav">
-    <div class="sb-section-label">Menu principal</div>
-    <button class="sb-btn active" data-view="home" onclick="go('home')"><span class="sb-icon">🏠</span>Accueil</button>
-    <button class="sb-btn" data-view="quiz" onclick="go('quiz')"><span class="sb-icon">📝</span>Quiz de naturalisation</button>
-    <button class="sb-btn" data-view="theme-quiz" onclick="go('theme-quiz')"><span class="sb-icon">🎯</span>Quiz par thème</button>
-    <button class="sb-btn" data-view="oral" onclick="go('oral')"><span class="sb-icon">🗣️</span>Entraînement oral</button>
-    <button class="sb-btn" data-view="revision" onclick="go('revision')"><span class="sb-icon">📚</span>Révision</button>
-    <button class="sb-btn" data-view="interview" onclick="go('interview')"><span class="sb-icon">🎙️</span>Entretien simulé</button>
-    <button class="sb-btn" data-view="prefecture" onclick="go('prefecture')"><span class="sb-icon">🏛️</span>Par préfecture</button>
-    <div class="sb-divider"></div>
-    <div class="sb-section-label">Suivi</div>
-    <button class="sb-btn" data-view="favoris" onclick="go('favoris')">
-      <span class="sb-icon">⭐</span>Mes favoris
-      <span class="sb-fav-badge" id="sb-fav-badge">0</span>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="app-shell">
+<aside class="app-sidebar" id="appSidebar">
+  <div class="side-hd">
+    <button type="button" class="brand" onclick="go('home');closeSidebar()" aria-label="Cap Naturalisation, retour à l'accueil">
+      <span class="brand-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
+      <span class="brand-txt"><span class="brand-name">Cap Naturalisation</span><span class="brand-sub">Naturalisation &amp; examen civique</span></span>
     </button>
-    <button class="sb-btn" data-view="dashboard" onclick="go('dashboard')"><span class="sb-icon">📊</span>Tableau de bord</button>
-  </nav>
-  <div class="sb-bottom">
-    <div class="sb-stats">
-      <div class="sb-stat"><div class="sb-stat-n" id="sb-total">0</div><div class="sb-stat-l">Questions</div></div>
-      <div class="sb-stat"><div class="sb-stat-n" id="sb-quizzes">0</div><div class="sb-stat-l">Quiz</div></div>
-      <div class="sb-stat"><div class="sb-stat-n" id="sb-best">—</div><div class="sb-stat-l">Meilleur</div></div>
-      <div class="sb-stat"><div class="sb-stat-n" id="sb-avg">—</div><div class="sb-stat-l">Moyenne</div></div>
-    </div>
-    <button class="sb-save-btn" onclick="exportData()">⬇ Sauvegarder ma progression</button>
   </div>
-  <!-- COPYRIGHT WATERMARK -->
-  <div class="sb-copyright">
-    © <span id="cp-year"></span> Citoyenneté Française<br>
-    Tous droits réservés · Usage personnel uniquement<br>
-    <a href="mentions-legales.html" style="color:rgba(255,255,255,.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:1px" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Mentions légales</a>
-    &nbsp;·&nbsp;
+  <nav class="side-nav" aria-label="Navigation principale">
+    <button class="side-nav-btn active" data-view="home" onclick="go('home');closeSidebar()"><span class="nb-icon">🏠</span><span>Accueil</span></button>
+    <button class="side-nav-btn" data-view="quiz" onclick="go('quiz');closeSidebar()"><span class="nb-icon">📝</span><span>Quiz</span></button>
+    <button class="side-nav-btn" data-view="theme-quiz" onclick="go('theme-quiz');closeSidebar()"><span class="nb-icon">🎯</span><span>Thèmes</span></button>
+    <button class="side-nav-btn" data-view="oral" onclick="go('oral');closeSidebar()"><span class="nb-icon">🗣️</span><span>Oral</span></button>
+    <button class="side-nav-btn" data-view="revision" onclick="go('revision');closeSidebar()"><span class="nb-icon">📚</span><span>Révision</span></button>
+    <button class="side-nav-btn" data-view="interview" onclick="go('interview');closeSidebar()"><span class="nb-icon">🎙️</span><span>Entretien</span></button>
+    <button class="side-nav-btn" data-view="prefecture" onclick="go('prefecture');closeSidebar()"><span class="nb-icon">🏛️</span><span>Préfecture</span></button>
+    <button class="side-nav-btn" data-view="examen-civique" onclick="go('examen-civique');closeSidebar()"><span class="nb-icon">📝</span><span>Civique</span></button>
+    <button class="side-nav-btn" data-view="favoris" onclick="go('favoris');closeSidebar()"><span class="nb-icon">⭐</span><span>Favoris</span><span class="nb-badge" id="sb-fav-badge">0</span></button>
+    <button class="side-nav-btn" data-view="dashboard" onclick="go('dashboard');closeSidebar()"><span class="nb-icon">📊</span><span>Bilan</span></button>
+    <button class="side-nav-btn" data-view="mon-entretien" onclick="go('mon-entretien');closeSidebar()"><span class="nb-icon">📅</span><span>Jour J</span></button>
+  </nav>
+  <div class="side-actions">
+    <a class="ta-btn" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation" title="Nous contacter" aria-label="Nous contacter par e-mail">✉️</a>
+    <button type="button" class="ta-btn" onclick="window.open('https://www.facebook.com/groups/1663580948311419/','_blank')" title="Groupe Facebook / partager mon retour" aria-label="Rejoindre le groupe Facebook">💬</button>
   </div>
 </aside>
 
-<!-- MAIN -->
+<div class="app-content">
+<div class="content-topbar">
+  <div class="content-topbar-in">
+    <button type="button" class="sidebar-toggle" onclick="openSidebar()" aria-label="Ouvrir le menu">☰</button>
+    <div class="stats-strip-in" style="padding:.55rem 0;flex:1">
+      <div class="ss-item"><span class="ss-n" id="sb-total">0</span><span class="ss-l">Questions</span></div>
+      <div class="ss-item"><span class="ss-n" id="sb-quizzes">0</span><span class="ss-l">Quiz faits</span></div>
+      <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
+      <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
+      <button class="ss-donate" onclick="window.open('https://paypal.me/shankislaitk','_blank')">❤️ Faire un don</button>
+      <button class="ss-save" onclick="exportData()">⬇ Sauvegarder</button>
+    </div>
+  </div>
+</div>
+
+
 <main class="main">
 
   <!-- HOME -->
   <div class="view active" id="view-home">
     <div class="home-hero">
       <div class="hero-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
-      <h1 class="hero-title">Quiz <span>naturalisation française</span> gratuit</h1>
-      <p class="hero-sub">QCM et test de naturalisation : préparez votre entretien avec chrono, bilan complet et entraînement oral. 100&nbsp;% gratuit.</p>
+      <h1 class="hero-title">Quiz <span>naturalisation & examen civique</span> gratuit</h1>
+      <p class="hero-sub">QCM et listes officielles pour la naturalisation et l'examen civique (CSP, CR) : chrono, bilan complet et entraînement oral. 100&nbsp;% gratuit.</p>
       <button class="hero-btn" onclick="go('quiz')">▶ &nbsp;Commencer le Quiz</button>
       <div class="hero-stats">
         <div><div class="hero-stat-n" id="h-total">0</div><div class="hero-stat-l">Questions</div></div>
@@ -497,17 +625,41 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
         <div class="hc-title">Mes favoris</div>
         <div class="hc-desc">Questions marquées à retravailler</div>
       </div>
+      <div class="hc red-card" onclick="go('examen-civique')">
+        <div class="hc-icon">📝</div>
+        <div class="hc-title">Examen civique</div>
+        <div class="hc-desc">CSP, CR, naturalisation : listes officielles &amp; entraînement</div>
+        <div class="hc-badge">Nouveau</div>
+      </div>
     </div>
+    <div class="mini-grid">
+      <div class="mc mc-interview" onclick="go('mon-entretien')">
+        <div class="mc-icon">📅</div>
+        <div class="mc-title">Mon entretien</div>
+        <div class="mc-desc" id="home-interview-sub">Renseignez la date de votre entretien pour un suivi personnalisé</div>
+      </div>
+      <div class="mc mc-fb" onclick="window.open('https://www.facebook.com/groups/1663580948311419/','_blank')">
+        <div class="mc-icon">💬</div>
+        <div class="mc-title">Partagez votre retour</div>
+        <div class="mc-desc">Rejoignez le groupe Facebook et partagez votre REX après l'entretien</div>
+      </div>
+      <div class="mc mc-support" onclick="window.open('https://paypal.me/shankislaitk','_blank')">
+        <div class="mc-icon">💛</div>
+        <div class="mc-title">Soutenir Cap Naturalisation</div>
+        <div class="mc-desc">Site 100% gratuit — un don PayPal (facultatif) nous aide à l'améliorer</div>
+      </div>
+    </div>
+    <p class="contact-note">Une question, une remarque ? Écrivez-nous : <a href="mailto:devby.fou@gmail.com">devby.fou@gmail.com</a></p>
     <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Thèmes</div><div class="sec-div-line"></div></div>
     <div class="themes-grid" id="home-themes"></div>
 
     <!-- CONTENU SEO VISIBLE : répond aux intentions de recherche sans texte caché -->
     <section class="seo-content" aria-labelledby="seo-title">
       <div class="seo-intro">
-        <h2 id="seo-title">Quiz naturalisation française gratuit</h2>
-        <p>Bienvenue sur Cap Naturalisation, un site d’entraînement gratuit pour réviser les connaissances utiles à la préparation de la naturalisation française. Testez vos connaissances avec des <strong>quiz de naturalisation</strong>, des <strong>QCM</strong>, des questions par thème et des exercices de révision.</p>
-        <p>Vous pouvez commencer par un <strong>test de naturalisation française</strong>, travailler les questions de citoyenneté, revoir les valeurs de la République, l’histoire et les institutions françaises, puis vous entraîner à l’entretien oral.</p>
-        <p class="seo-note">Les quiz proposés ici sont des outils d’entraînement et ne constituent pas un examen officiel de l’administration française.</p>
+        <h2 id="seo-title">Quiz naturalisation et examen civique gratuits</h2>
+        <p>Bienvenue sur Cap Naturalisation, un site d’entraînement gratuit pour réviser les connaissances utiles à la préparation de la naturalisation française et de l’examen civique obligatoire pour les titres de séjour (carte de séjour pluriannuelle, carte de résident). Testez vos connaissances avec des <strong>quiz de naturalisation</strong>, des <strong>QCM</strong>, des listes officielles CSP/CR et des exercices de révision.</p>
+        <p>Vous pouvez commencer par un <strong>test de naturalisation française</strong>, travailler les questions de citoyenneté, revoir les valeurs de la République, l’histoire et les institutions françaises, puis vous entraîner à l’entretien oral ou consulter les listes officielles de l’examen civique CSP et CR.</p>
+        <p class="seo-note">Les quiz proposés ici sont des outils d’entraînement et ne constituent pas un examen officiel de l’administration française. Les listes de questions CSP/CR reprennent les intitulés publiés par le ministère de l’Intérieur ; les réponses proposées lors du véritable examen ne sont pas rendues publiques.</p>
       </div>
 
       <div class="seo-grid">
@@ -519,6 +671,16 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
             <li>Questions de citoyenneté française</li>
             <li>Révision par thème</li>
             <li>Chronomètre et bilan de session</li>
+          </ul>
+        </article>
+        <article class="seo-card">
+          <h3>Examen civique CSP &amp; CR</h3>
+          <p>Consultez la liste officielle des questions de connaissance et entraînez-vous sur les mêmes thèmes.</p>
+          <ul>
+            <li>Liste officielle carte de séjour pluriannuelle (CSP)</li>
+            <li>Liste officielle carte de résident (CR)</li>
+            <li>Quiz par thème officiel</li>
+            <li>Simulation chronométrée 40 questions</li>
           </ul>
         </article>
         <article class="seo-card">
@@ -540,6 +702,9 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
         <a class="seo-link" href="#revision" onclick="go('revision');return false;">📚 Questions de naturalisation à réviser</a>
         <a class="seo-link" href="#interview" onclick="go('interview');return false;">🎙️ Simulation d’entretien de naturalisation</a>
         <a class="seo-link" href="#prefecture" onclick="go('prefecture');return false;">🏛️ Questions par préfecture</a>
+        <a class="seo-link" href="#examen-civique" onclick="go('examen-civique');return false;">📝 Examen civique (CSP/CR)</a>
+        <a class="seo-link" href="#examen-csp" onclick="go('examen-csp');return false;">📄 Liste officielle examen civique CSP</a>
+        <a class="seo-link" href="#examen-cr" onclick="go('examen-cr');return false;">🪪 Liste officielle examen civique CR</a>
       </div>
 
       <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Questions fréquentes</div><div class="sec-div-line"></div></div>
@@ -547,6 +712,10 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
         <details class="faq-item">
           <summary>Comment préparer la naturalisation française ?</summary>
           <div class="faq-answer">Pour vous entraîner, vous pouvez réviser les thèmes de citoyenneté, les valeurs de la République, l’histoire et les institutions françaises, puis travailler les questions d’entretien. Cap Naturalisation rassemble ces exercices sous forme de quiz, QCM, fiches de révision et entraînement oral.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Qu’est-ce que l’examen civique CSP et CR ?</summary>
+          <div class="faq-answer">L’examen civique est obligatoire pour obtenir certains titres de séjour : la carte de séjour pluriannuelle (CSP) et la carte de résident (CR), avec un niveau d’exigence différent selon la carte. Cap Naturalisation reprend la liste officielle des questions publiée par le ministère de l’Intérieur pour chaque niveau, et propose un entraînement par thème sur les mêmes sujets.</div>
         </details>
         <details class="faq-item">
           <summary>Existe-t-il un quiz de naturalisation gratuit ?</summary>
@@ -928,6 +1097,616 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
     <div class="card"><div class="card-pad"><div id="d-history"></div></div></div>
   </div>
 
+  <!-- MON ENTRETIEN -->
+  <div class="view" id="view-mon-entretien">
+    <div class="page-hd">
+      <div class="page-eyebrow">Suivi personnel</div>
+      <h1>Mon <span>entretien</span></h1>
+    </div>
+    <div class="card">
+      <div class="card-pad">
+        <p style="font-family:'Syne',sans-serif;font-size:.85rem;color:var(--text-2)">Indiquez la date de votre entretien de naturalisation : nous vous afficherons des messages de motivation adaptés à mesure que le jour J approche, puis nous vous inviterons à partager votre retour d'expérience (REX) une fois l'entretien passé.</p>
+        <div class="date-row">
+          <input type="date" id="interview-date-input"/>
+          <button class="btn" onclick="saveInterviewDate()">Enregistrer la date</button>
+          <button class="btn btn-outline" id="clear-interview-date" onclick="clearInterviewDate()" style="display:none">Effacer</button>
+        </div>
+        <div id="interview-countdown"></div>
+      </div>
+    </div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Après votre entretien</div><div class="sec-div-line"></div></div>
+    <div class="mini-grid" style="grid-template-columns:1fr 1fr">
+      <div class="mc mc-fb" onclick="window.open('https://www.facebook.com/groups/1663580948311419/','_blank')">
+        <div class="mc-icon">💬</div>
+        <div class="mc-title">Partager mon retour</div>
+        <div class="mc-desc">Racontez votre entretien sur le groupe Facebook pour aider les futurs candidats</div>
+      </div>
+      <div class="mc mc-support" onclick="window.open('https://paypal.me/shankislaitk','_blank')">
+        <div class="mc-icon">💛</div>
+        <div class="mc-title">Soutenir le projet</div>
+        <div class="mc-desc">Un don PayPal (facultatif) nous aide à améliorer le contenu du site</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- EXAMEN CIVIQUE : HUB -->
+  <div class="view" id="view-examen-civique">
+    <div class="page-hd">
+      <div class="page-eyebrow">Nouveau</div>
+      <h1>Examen <span>civique</span></h1>
+    </div>
+    <div class="ec-intro">
+      Depuis la réforme de l'immigration, un <strong>examen civique</strong> est obligatoire pour obtenir un titre de séjour longue durée. Le niveau de connaissances demandé diffère selon la carte visée : <strong>carte de séjour pluriannuelle (CSP)</strong>, <strong>carte de résident (CR)</strong>, ou dans le cadre d'une <strong>demande de naturalisation</strong>. Choisissez votre parcours ci-dessous.
+    </div>
+    <div class="ec-grid">
+      <div class="ec-card" onclick="go('quiz')">
+        <div class="hc-icon">🇫🇷</div>
+        <div class="hc-title">Examen civique — Naturalisation</div>
+        <div class="hc-desc">Révisez les valeurs de la République, l'histoire et les institutions avec le quiz complet</div>
+      </div>
+      <div class="ec-card" onclick="go('examen-csp')">
+        <div class="hc-icon">📄</div>
+        <div class="hc-title">Examen civique — CSP</div>
+        <div class="hc-desc">Liste officielle des questions pour la carte de séjour pluriannuelle</div>
+      </div>
+      <div class="ec-card" onclick="go('examen-cr')">
+        <div class="hc-icon">🪪</div>
+        <div class="hc-title">Examen civique — CR</div>
+        <div class="hc-desc">Liste officielle des questions pour la carte de résident</div>
+      </div>
+      <div class="ec-card" onclick="go('theme-quiz')">
+        <div class="hc-icon">🎯</div>
+        <div class="hc-title">Quiz examen civique</div>
+        <div class="hc-desc">Entraînez-vous thème par thème sur les sujets de l'examen civique</div>
+      </div>
+      <div class="ec-card" onclick="go('quiz')">
+        <div class="hc-icon">⏱️</div>
+        <div class="hc-title">Simulation 40 questions</div>
+        <div class="hc-desc">Simulation chronométrée en conditions d'examen, bilan à la fin</div>
+      </div>
+      <div class="ec-card" onclick="window.open('https://formation-civique.interieur.gouv.fr/examen-civique/informations-generales-sur-lexamen-civique/','_blank')">
+        <div class="hc-icon">ℹ️</div>
+        <div class="hc-title">Infos officielles</div>
+        <div class="hc-desc">Consulter les informations générales du ministère de l'Intérieur</div>
+      </div>
+    </div>
+    <div class="ec-source">Le contenu des rubriques CSP et CR ci-dessus est publié à titre de révision, d'après la <a href="https://formation-civique.interieur.gouv.fr/examen-civique/informations-generales-sur-lexamen-civique/" target="_blank">liste officielle du ministère de l'Intérieur</a>. L'administration ne rend pas publiques les propositions de réponses de l'examen ; les questions à choix multiples proposées sur Cap Naturalisation portent sur les mêmes thèmes officiels mais restent des exercices d'entraînement indépendants.</div>
+  </div>
+
+  <!-- EXAMEN CIVIQUE CSP -->
+  <div class="view" id="view-examen-csp">
+    <div class="page-hd">
+      <div class="page-eyebrow">Carte de séjour pluriannuelle</div>
+      <h1>Examen civique <span>CSP</span></h1>
+    </div>
+    <div class="ec-intro">Voici la liste officielle des questions de connaissance pour le niveau <strong>carte de séjour pluriannuelle (CSP)</strong>, avec une réponse pour chaque question directe (🔹) et un exemple pour les questions qui demandent un avis ou un comportement à adopter (💬). L'administration ne publie pas de réponses officielles : celles proposées ici sont rédigées par Cap Naturalisation à titre d'entraînement. L'examen comporte aussi des questions de mise en situation orales, non rendues publiques, sur les mêmes thèmes.</div>
+    <div class="ec-layout">
+      <nav class="ec-sidebar" aria-label="Thèmes CSP">
+        <div class="ec-sidebar-hd">
+          <span class="ec-sidebar-title">Thèmes officiels</span>
+          <span class="ec-sidebar-sub">5 catégories</span>
+        </div>
+        <div class="ec-search">
+          <input type="text" class="ec-search-input" placeholder="Rechercher une question…" oninput="ecFilter(this,'csp')" />
+        </div>
+        <div class="ec-nav-list">
+          <button class="ec-nav-btn active" data-panel="csp-p1" type="button"><span class="ec-nav-ico">🏛️</span><span class="ec-nav-label">Principes et valeurs de la République</span><span class="ec-nav-count">38</span></button>
+          <button class="ec-nav-btn" data-panel="csp-p2" type="button"><span class="ec-nav-ico">⚖️</span><span class="ec-nav-label">Système institutionnel et politique</span><span class="ec-nav-count">48</span></button>
+          <button class="ec-nav-btn" data-panel="csp-p3" type="button"><span class="ec-nav-ico">📜</span><span class="ec-nav-label">Droits et devoirs</span><span class="ec-nav-count">28</span></button>
+          <button class="ec-nav-btn" data-panel="csp-p4" type="button"><span class="ec-nav-ico">🗺️</span><span class="ec-nav-label">Histoire, géographie et culture</span><span class="ec-nav-count">46</span></button>
+          <button class="ec-nav-btn" data-panel="csp-p5" type="button"><span class="ec-nav-ico">🤝</span><span class="ec-nav-label">Vivre dans la société française</span><span class="ec-nav-count">31</span></button>
+        </div>
+      </nav>
+      <div class="ec-panels" id="ec-panels-csp">
+        <div class="ec-panel active" id="csp-p1">
+          <div class="ec-panel-hd"><h2>Principes et valeurs de la République</h2><span class="ec-panel-count">38 questions</span></div>
+          <ul>
+          <li><strong>À quoi correspond la date du 14 juillet ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Fête nationale : commémoration de la prise de la Bastille (1789) et de la Fête de la Fédération (1790).</span></li>
+          <li><strong>Quel est l'un des symboles de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le drapeau tricolore, Marianne, le coq gaulois ou la devise « Liberté, égalité, fraternité ».</span></li>
+          <li><strong>Le principe d'égalité signifie que :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les citoyens ont les mêmes droits et devoirs, sans distinction d'origine, de sexe ou de religion.</span></li>
+          <li><strong>"Liberté, égalité, fraternité", c'est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La devise de la République française.</span></li>
+          <li><strong>A-t-on le droit d'insulter publiquement quelqu'un parce qu'il est différent (handicap, apparence physique, sexe…) ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non : c'est une discrimination interdite et punie par la loi.</span></li>
+          <li><strong>Certains métiers peuvent-ils être réservés aux hommes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, l'égalité femmes-hommes interdit de réserver un métier à un seul sexe.</span></li>
+          <li><strong>De quand date la Constitution de la Ve République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Du 4 octobre 1958.</span></li>
+          <li><strong>Le régime de la France est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une République démocratique, indivisible, laïque et sociale.</span></li>
+          <li><strong>Lequel de ces symboles représente officiellement la République française ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions : privilégier le drapeau tricolore ou Marianne, symboles officiels.</span></li>
+          <li><strong>Où peut-on voir la devise de la République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Sur les frontons des mairies, des écoles et des bâtiments publics, et sur les pièces de monnaie.</span></li>
+          <li><strong>Quels sont des symboles officiels de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le drapeau tricolore, Marianne, le coq gaulois, la Marseillaise et la devise républicaine.</span></li>
+          <li><strong>Qu'est-ce que l'égalité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le principe selon lequel tous les citoyens ont les mêmes droits devant la loi.</span></li>
+          <li><strong>Que signifie la liberté ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Pouvoir agir et penser librement, dans le respect de la loi et des droits d'autrui.</span></li>
+          <li><strong>Que signifie le mot "fraternité" dans la devise française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La solidarité entre tous les citoyens.</span></li>
+          <li><strong>Quel animal est un symbole de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le coq gaulois.</span></li>
+          <li><strong>Quel est l'un des rôles des associations ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Défendre une cause ou proposer des activités d'intérêt général.</span></li>
+          <li><strong>Quel est le nom de l'hymne national ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Marseillaise.</span></li>
+          <li><strong>Quel symbole de la République française est tricolore ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le drapeau français.</span></li>
+          <li><strong>Quelle est la date de la fête nationale française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 14 juillet.</span></li>
+          <li><strong>Quelle est la devise de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Liberté, Égalité, Fraternité.</span></li>
+          <li><strong>Quelle est la langue officielle de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le français.</span></li>
+          <li><strong>Quelle est la place de la langue française dans la République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elle est la langue officielle de la République, inscrite dans la Constitution (article 2).</span></li>
+          <li><strong>Quelle liberté permet à chacun d'exprimer ses idées ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté d'expression.</span></li>
+          <li><strong>Quelle proposition est correcte ? La liberté d'expression :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elle est garantie mais limitée par la loi (diffamation, injure, incitation à la haine).</span></li>
+          <li><strong>Quelles sont les couleurs du drapeau français ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Bleu, blanc, rouge.</span></li>
+          <li><strong>Qu'est-ce que la Marseillaise ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'hymne national de la France.</span></li>
+          <li><strong>Qu'est ce qui est traditionnellement organisé sur les Champs Élysées le 14 juillet pour célébrer la fête nationale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le défilé militaire.</span></li>
+          <li><strong>Qui est Marianne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La figure symbolique de la République française.</span></li>
+          <li><strong>Une personne peut-elle changer librement de religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, la liberté de conscience et de culte le garantit.</span></li>
+          <li><strong>"La France est une République indivisible, ..., démocratique et sociale". Complétez cette phrase extraite de l'article 1er de la Constitution :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> « laïque » — République indivisible, laïque, démocratique et sociale.</span></li>
+          <li><strong>En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1905.</span></li>
+          <li><strong>Que permet le principe de laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La neutralité de l'État et la liberté de croire ou de ne pas croire.</span></li>
+          <li><strong>Quel droit est garanti par la laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté de conscience et de culte.</span></li>
+          <li><strong>Pourquoi le principe de laïcité doit-il être respecté à l'école ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Pour garantir la neutralité de l'enseignement public et l'égalité entre tous les élèves, quelles que soient leurs convictions.</span></li>
+          <li><strong>Qu'est-ce que la laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La séparation des Églises et de l'État, et la neutralité religieuse des institutions publiques.</span></li>
+          <li><strong>Un enfant peut-il refuser d'aller à l'école pour une raison religieuse ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, l'instruction est obligatoire quelle que soit la religion.</span></li>
+          <li><strong>Une personne a-t-elle le droit de ne pas croire en une religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, elle peut être athée ou agnostique librement.</span></li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="csp-p2">
+          <div class="ec-panel-hd"><h2>Système institutionnel et politique</h2><span class="ec-panel-count">48 questions</span></div>
+          <ul>
+          <li><strong>Qui nomme le Premier ministre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République.</span></li>
+          <li><strong>Le Parlement est composé :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De l'Assemblée nationale et du Sénat.</span></li>
+          <li><strong>Qu'est-ce que le pouvoir exécutif ? Le pouvoir :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir qui applique et fait exécuter les lois (président et gouvernement).</span></li>
+          <li><strong>Les dirigeants sont élus par les citoyens dans :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une démocratie.</span></li>
+          <li><strong>A-t-on le droit de ne pas respecter une loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, la loi s'applique à tous et sa violation est sanctionnée.</span></li>
+          <li><strong>Qui doit respecter la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Toute personne présente sur le territoire français.</span></li>
+          <li><strong>Quel est le rôle de l'autorité judiciaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Rendre la justice et sanctionner les infractions.</span></li>
+          <li><strong>Quel pouvoir détient un juge ? Le pouvoir :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir judiciaire.</span></li>
+          <li><strong>L'autorité judiciaire est exercée par :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les juges et les tribunaux.</span></li>
+          <li><strong>Que se passe-t-il si un ministre ne respecte pas la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Il peut être poursuivi et jugé comme tout citoyen.</span></li>
+          <li><strong>Qui est élu lors des élections législatives ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les députés.</span></li>
+          <li><strong>Combien de députés composent l'Assemblée nationale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 577.</span></li>
+          <li><strong>Quand sont élus les sénateurs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Au suffrage indirect (par les grands électeurs), avec un renouvellement partiel tous les 3 ans.</span></li>
+          <li><strong>Qui est élu lors des élections municipales ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les conseillers municipaux, qui élisent ensuite le maire.</span></li>
+          <li><strong>Qui est élu lors des élections présidentielles ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République.</span></li>
+          <li><strong>À partir de quel âge a-t-on le droit de voter ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 18 ans.</span></li>
+          <li><strong>Pour combien de temps est élu le président de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 5 ans (quinquennat).</span></li>
+          <li><strong>Pour combien de temps sont élus les députés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 5 ans.</span></li>
+          <li><strong>Pour combien de temps sont élus les sénateurs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 6 ans.</span></li>
+          <li><strong>Qui possède le pouvoir exécutif ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République et le gouvernement.</span></li>
+          <li><strong>Quelle condition est nécessaire pour voter aux élections ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être majeur, de nationalité française et inscrit sur les listes électorales.</span></li>
+          <li><strong>Qui peut voter aux élections en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les citoyens français majeurs inscrits sur les listes électorales.</span></li>
+          <li><strong>Que signifie « suffrage universel » ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les citoyens majeurs peuvent voter, sans condition de fortune ou de diplôme.</span></li>
+          <li><strong>Concernant les partis politiques, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Ils sont libres de se former et de se présenter aux élections (pluralisme politique).</span></li>
+          <li><strong>Quel est le rôle des députés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Voter les lois et contrôler l'action du gouvernement.</span></li>
+          <li><strong>La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire.</span></li>
+          <li><strong>Qui possède le pouvoir législatif ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Parlement (Assemblée nationale et Sénat).</span></li>
+          <li><strong>Qui sanctionne l'auteur d'un vol ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le juge / le tribunal (autorité judiciaire).</span></li>
+          <li><strong>Qui élit les députés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les citoyens français, au suffrage universel direct.</span></li>
+          <li><strong>Qui vote les lois ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Parlement.</span></li>
+          <li><strong>Qui réside au palais de l'Élysée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République.</span></li>
+          <li><strong>Combien y a-t-il de départements en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 101 (dont 5 départements et régions d'outre-mer).</span></li>
+          <li><strong>Qui représente l'État dans un département ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le préfet.</span></li>
+          <li><strong>Qui dirige la commune ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le maire.</span></li>
+          <li><strong>Est-ce que le président de la République a tous les pouvoirs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, ses pouvoirs sont encadrés par la Constitution et partagés avec le gouvernement et le Parlement.</span></li>
+          <li><strong>Qui est le préfet ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le représentant de l'État dans un département ou une région.</span></li>
+          <li><strong>Quel est le rôle du Parlement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Voter les lois et contrôler l'action du gouvernement.</span></li>
+          <li><strong>Quel est le régime politique de la France aujourd'hui ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une République démocratique (Ve République).</span></li>
+          <li><strong>Combien d'États font partie de l'Union européenne au 1er janvier 2025 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 27.</span></li>
+          <li><strong>Quel État n'est pas membre de l'Union européenne ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions : par exemple le Royaume-Uni (sorti en 2020), la Suisse ou la Norvège.</span></li>
+          <li><strong>Quelle condition est nécessaire pour voter aux élections européennes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être citoyen d'un État membre de l'Union européenne et majeur.</span></li>
+          <li><strong>À quelle fréquence les élections européennes sont-elles organisées ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les 5 ans.</span></li>
+          <li><strong>Quel pays est un pays fondateur de l'Union européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La France (avec l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg).</span></li>
+          <li><strong>Quelle est la monnaie utilisée en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'euro.</span></li>
+          <li><strong>Qui élit les députés européens ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les citoyens des États membres de l'Union européenne, au suffrage universel direct.</span></li>
+          <li><strong>Quand célèbre-t-on la journée de l'Europe ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 9 mai.</span></li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="csp-p3">
+          <div class="ec-panel-hd"><h2>Droits et devoirs</h2><span class="ec-panel-count">28 questions</span></div>
+          <ul>
+          <li><strong>Comment s'appelle la Constitution actuelle de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Constitution de la Ve République (4 octobre 1958).</span></li>
+          <li><strong>Comment s'appelle le texte qui énonce les droits et devoirs des personnes résidant en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Constitution, et la Déclaration des droits de l'homme et du citoyen de 1789.</span></li>
+          <li><strong>Concernant les droits individuels, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Ils sont garantis à tous, dans le respect des droits d'autrui et de la loi.</span></li>
+          <li><strong>De quelle année date la Déclaration des droits de l'homme et du citoyen ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1789.</span></li>
+          <li><strong>Lequel de ces droits est un droit fondamental ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions : la liberté d'expression, l'égalité devant la loi ou le droit à la sûreté sont des droits fondamentaux.</span></li>
+          <li><strong>Parmi ces textes, lequel garantit les droits et libertés en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen de 1789.</span></li>
+          <li><strong>Qu'est-ce que la liberté d'expression ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit de dire, écrire et publier ses opinions, dans le respect de la loi.</span></li>
+          <li><strong>Quel droit permet à une personne de se défendre devant la justice ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit à un procès équitable et à la défense.</span></li>
+          <li><strong>Quel est le texte fondateur établissant en France les droits et les devoirs de chaque citoyen ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen (1789).</span></li>
+          <li><strong>Quel texte a été adopté pendant la Révolution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen (1789).</span></li>
+          <li><strong>Quelle liberté permet à une personne de ne pas avoir de religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté de conscience (elle peut être athée).</span></li>
+          <li><strong>Une femme peut avorter :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Librement, dans les conditions et délais prévus par la loi (IVG).</span></li>
+          <li><strong>Est-il toujours possible de divorcer ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, le divorce est un droit reconnu par la loi française.</span></li>
+          <li><strong>La peine de mort est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Abolie en France depuis 1981.</span></li>
+          <li><strong>Concernant les limites aux libertés individuelles, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elles peuvent être limitées par la loi pour protéger l'ordre public ou les droits d'autrui.</span></li>
+          <li><strong>En France, est-ce légal d'être marié à plusieurs personnes en même temps ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, la polygamie est interdite.</span></li>
+          <li><strong>Faut-il réduire ses déchets ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Oui, c'est un geste citoyen utile pour protéger l'environnement.</span></li>
+          <li><strong>Jeter une bouteille dans la rue est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une infraction (incivilité sanctionnée par une amende).</span></li>
+          <li><strong>Pourquoi les libertés individuelles peuvent-elles être limitées ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Pour protéger l'ordre public, la sécurité et les droits des autres personnes.</span></li>
+          <li><strong>Que doit faire une personne en cas d'accident ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Porter secours si possible et alerter les secours (15, 17, 18 ou 112).</span></li>
+          <li><strong>Que permet la citoyenneté française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De voter, d'être élu, d'accéder à certains emplois publics et de bénéficier de la protection de l'État.</span></li>
+          <li><strong>Que risque une personne qui ne respecte pas la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Des sanctions pénales (amende ou prison selon la gravité de l'infraction).</span></li>
+          <li><strong>Quel est le rôle de la gendarmerie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Assurer la sécurité, notamment en zone rurale et périurbaine.</span></li>
+          <li><strong>Quel est le rôle de la police ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Assurer la sécurité et l'ordre public, et faire respecter la loi.</span></li>
+          <li><strong>Qu'est-ce qu'une infraction ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un acte interdit par la loi et sanctionné (contravention, délit ou crime).</span></li>
+          <li><strong>Comment peut-on réduire ses déchets ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> En triant, en recyclant et en limitant les emballages et le gaspillage.</span></li>
+          <li><strong>Déposer une machine à laver cassée sur le trottoir est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une infraction (dépôt sauvage sanctionné par une amende).</span></li>
+          <li><strong>En quoi consiste la traite des êtres humains ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'exploitation d'une personne (travail forcé, prostitution…) contre son gré ; c'est un crime.</span></li>
+          <li><strong>Que doit faire une victime de violences ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Porter plainte auprès de la police ou de la gendarmerie et se faire soigner ou aider.</span></li>
+          <li><strong>Quelle est l'infraction la plus grave ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le crime.</span></li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="csp-p4">
+          <div class="ec-panel-hd"><h2>Histoire, géographie et culture</h2><span class="ec-panel-count">46 questions</span></div>
+          <ul>
+          <li><strong>En quelle année a débuté la Révolution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1789.</span></li>
+          <li><strong>Qui était Napoléon Ier ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un général devenu empereur des Français (1804-1815).</span></li>
+          <li><strong>Lequel de ces personnages historiques est français ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Napoléon, Charles de Gaulle).</span></li>
+          <li><strong>Dans quelle République est-on aujourd'hui ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Ve République.</span></li>
+          <li><strong>Qu'est-ce que la Shoah ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'extermination des Juifs d'Europe par les nazis pendant la Seconde Guerre mondiale.</span></li>
+          <li><strong>Quel pays ou région du monde a été colonisé par la France ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : l'Algérie, le Vietnam, une partie de l'Afrique).</span></li>
+          <li><strong>Qui a rendu l'école gratuite, laïque et obligatoire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Jules Ferry.</span></li>
+          <li><strong>Quand a eu lieu la Seconde Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De 1939 à 1945.</span></li>
+          <li><strong>Quand a eu lieu la Première Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De 1914 à 1918.</span></li>
+          <li><strong>En quelle année a été créée la Communauté Économique Européenne (CEE) ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1957 (traité de Rome).</span></li>
+          <li><strong>Le 11 novembre est un jour férié. À quoi correspond cette date ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'armistice de 1918, marquant la fin de la Première Guerre mondiale.</span></li>
+          <li><strong>Qui a été le premier Président élu sous la Ve République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Charles de Gaulle.</span></li>
+          <li><strong>En quelle année l'esclavage a-t-il été aboli définitivement en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1848.</span></li>
+          <li><strong>Depuis quelle année l'école publique est-elle gratuite ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1881 (lois de Jules Ferry).</span></li>
+          <li><strong>Combien y a-t-il eu de républiques en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 5.</span></li>
+          <li><strong>Qui était le roi de France au moment de la Révolution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Louis XVI.</span></li>
+          <li><strong>Qui a fondé la Ve République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Charles de Gaulle.</span></li>
+          <li><strong>Que célèbre-t-on le 14 juillet ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La prise de la Bastille (1789) et la Fête de la Fédération.</span></li>
+          <li><strong>Quelle guerre a eu lieu entre 1914 et 1918 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Première Guerre mondiale.</span></li>
+          <li><strong>Pourquoi l'année 1958 est importante pour la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> C'est l'année de la Constitution qui a fondé la Ve République.</span></li>
+          <li><strong>Quel fleuve coule en France ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : la Seine, la Loire, le Rhône).</span></li>
+          <li><strong>Quelle ville est française ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Lyon, Marseille, Toulouse).</span></li>
+          <li><strong>Quel océan borde la côte ouest française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'océan Atlantique.</span></li>
+          <li><strong>Qu'est-ce que Paris ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La capitale de la France.</span></li>
+          <li><strong>Quelle est la capitale de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Paris.</span></li>
+          <li><strong>Sur quel continent se situe la France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Europe.</span></li>
+          <li><strong>Quelle île est un département d'outre-mer français ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : la Réunion, la Martinique, la Guadeloupe).</span></li>
+          <li><strong>Combien y a-t-il de régions en France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 13.</span></li>
+          <li><strong>Quelle ville est un grand port maritime ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Marseille, Le Havre).</span></li>
+          <li><strong>Quelle est la mer au sud de la France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La mer Méditerranée.</span></li>
+          <li><strong>Quelle ville est située au bord de la mer Méditerranée ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Marseille, Nice, Montpellier).</span></li>
+          <li><strong>Où se situe la Corse ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En mer Méditerranée, au sud-est de la France continentale.</span></li>
+          <li><strong>Quelle chaîne de montagnes est située entre la France et l'Italie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les Alpes.</span></li>
+          <li><strong>Qui était Molière ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un auteur et acteur de théâtre français du XVIIe siècle.</span></li>
+          <li><strong>Qui était Charles Baudelaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un poète français du XIXe siècle, auteur des Fleurs du mal.</span></li>
+          <li><strong>Qui était George Sand ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une écrivaine française du XIXe siècle.</span></li>
+          <li><strong>Qui était Simone de Beauvoir ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une écrivaine et philosophe féministe française.</span></li>
+          <li><strong>Qui était Albert Camus ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un écrivain et philosophe français, prix Nobel de littérature.</span></li>
+          <li><strong>Qui était Paul Cézanne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un peintre français, précurseur du cubisme.</span></li>
+          <li><strong>Qui était Marc Chagall ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un peintre franco-russe.</span></li>
+          <li><strong>Qui était Joséphine Baker ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une artiste franco-américaine, résistante, entrée au Panthéon.</span></li>
+          <li><strong>Qui était une chanteuse française célèbre ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Édith Piaf).</span></li>
+          <li><strong>Qu'est-ce que le Louvre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un grand musée d'art situé à Paris.</span></li>
+          <li><strong>Qui était Jean de la Fontaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un poète français, auteur des Fables.</span></li>
+          <li><strong>Quel écrivain est français ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Victor Hugo, Molière).</span></li>
+          <li><strong>Dans quelle ville se trouve la tour Eiffel ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Paris.</span></li>
+          <li><strong>Quand célèbre-t-on Noël ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 25 décembre.</span></li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="csp-p5">
+          <div class="ec-panel-hd"><h2>Vivre dans la société française</h2><span class="ec-panel-count">31 questions</span></div>
+          <ul>
+          <li><strong>Quel numéro d'urgence permet d'appeler le SAMU ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 15.</span></li>
+          <li><strong>Quel numéro d'urgence permet d'appeler les pompiers ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 18.</span></li>
+          <li><strong>Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Assurer le véhicule (assurance obligatoire) et l'immatriculer.</span></li>
+          <li><strong>À quelles conditions un mariage est-il reconnu juridiquement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> S'il est célébré civilement à la mairie, devant un officier d'état civil.</span></li>
+          <li><strong>Quand faut-il déclarer son enfant au service d'état civil de la mairie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Dans les 5 jours suivant la naissance.</span></li>
+          <li><strong>Le travail non déclaré est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Interdit et sanctionné (travail dissimulé).</span></li>
+          <li><strong>Que doit faire un employeur pour fixer un salaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Respecter au minimum le SMIC et la convention collective applicable.</span></li>
+          <li><strong>Qu'est-ce que le SMIC ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le salaire minimum interprofessionnel de croissance, salaire minimum légal en France.</span></li>
+          <li><strong>Quelle est la première démarche à réaliser pour chercher un emploi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> S'inscrire à France Travail (ex-Pôle emploi).</span></li>
+          <li><strong>Quelle est la durée légale du temps de travail par semaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 35 heures.</span></li>
+          <li><strong>Qui est aidé par France Travail ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les personnes qui recherchent un emploi.</span></li>
+          <li><strong>Une personne étrangère en situation régulière peut créer son entreprise :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, si son titre de séjour l'y autorise.</span></li>
+          <li><strong>Une femme peut-elle créer son entreprise ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, librement, comme un homme.</span></li>
+          <li><strong>À partir de quel âge un mineur peut-il travailler ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 16 ans en principe (14 ans sous conditions, pendant les vacances scolaires).</span></li>
+          <li><strong>Auprès de quel organisme faut-il demander le remboursement des frais de santé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Caisse primaire d'assurance maladie (Sécurité sociale).</span></li>
+          <li><strong>Qu'est-ce qu'un numéro d'urgence ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un numéro gratuit permettant d'alerter les services de secours.</span></li>
+          <li><strong>Concernant l'accès aux soins, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Toute personne peut être soignée, y compris en urgence, quelle que soit sa situation.</span></li>
+          <li><strong>En cas de problème de santé non urgent, à qui faut-il s'adresser en premier ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Au médecin traitant (médecin généraliste).</span></li>
+          <li><strong>Quel est le rôle du médecin traitant ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Suivre la santé du patient et l'orienter vers des spécialistes si besoin.</span></li>
+          <li><strong>Dans quelles situations doit-on se rendre aux urgences de l'hôpital ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En cas d'urgence vitale ou de situation grave nécessitant des soins immédiats.</span></li>
+          <li><strong>Quel est l'objectif des vaccinations obligatoires ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Protéger la santé individuelle et collective contre certaines maladies.</span></li>
+          <li><strong>À quoi sert la carte Vitale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À justifier des droits à l'assurance maladie et faciliter le remboursement des soins.</span></li>
+          <li><strong>À quoi sert une mutuelle santé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À compléter le remboursement de la Sécurité sociale sur la part non prise en charge.</span></li>
+          <li><strong>Jusqu'à quel âge l'école est-elle obligatoire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 16 ans.</span></li>
+          <li><strong>L'autorité parentale prévoit l'obligation :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> D'assurer la santé, la sécurité, l'éducation et l'entretien de l'enfant.</span></li>
+          <li><strong>Pour qui l'école est-elle obligatoire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les enfants de 3 à 16 ans résidant en France.</span></li>
+          <li><strong>Quel diplôme obtient-on à la fin du lycée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le baccalauréat.</span></li>
+          <li><strong>Dans quels établissements scolaires vont les élèves après l'école élémentaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le collège.</span></li>
+          <li><strong>Un enfant inscrit à l'école :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> A le droit d'y être scolarisé, quelle que soit la situation administrative de ses parents.</span></li>
+          <li><strong>Les enfants qui ne parlent pas français :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Bénéficient d'un accompagnement spécifique pour apprendre le français à l'école.</span></li>
+        </ul>
+        </div>
+        <p class="ec-noresult" style="display:none">Aucune question ne correspond à votre recherche.</p>
+      </div>
+    </div>
+    <div class="ec-source">Questions issues de la <a href="https://formation-civique.interieur.gouv.fr/examen-civique/liste-officielle-des-questions-de-connaissance-csp/" target="_blank">liste officielle des questions de connaissance – CSP</a> publiée par le ministère de l'Intérieur. Les réponses affichées ci-dessus sont proposées par Cap Naturalisation (l'administration ne publie pas de corrigé officiel) ; vérifiez les points sensibles auprès de sources officielles.</div>
+    <div class="mini-grid" style="grid-template-columns:1fr 1fr;margin-top:1.5rem">
+      <div class="mc mc-interview" onclick="go('theme-quiz')">
+        <div class="mc-icon">🎯</div>
+        <div class="mc-title">S'entraîner sur ces thèmes</div>
+        <div class="mc-desc">Lancer un quiz par thème correspondant aux catégories officielles</div>
+      </div>
+      <div class="mc mc-fb" onclick="go('examen-cr')">
+        <div class="mc-icon">🪪</div>
+        <div class="mc-title">Voir la liste CR</div>
+        <div class="mc-desc">Consulter la liste officielle pour la carte de résident</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAMEN CIVIQUE CR -->
+  <div class="view" id="view-examen-cr">
+    <div class="page-hd">
+      <div class="page-eyebrow">Carte de résident</div>
+      <h1>Examen civique <span>CR</span></h1>
+    </div>
+    <div class="ec-intro">Voici la liste officielle des questions de connaissance pouvant être posées lors de l'examen civique de niveau <strong>carte de résident (CR)</strong>, généralement plus exigeant que le niveau CSP. L'examen comporte aussi des questions de mise en situation, non rendues publiques. Chaque question est posée sous forme de QCM à 4 choix.</div>
+    <div class="ec-layout">
+      <nav class="ec-sidebar" aria-label="Thèmes CR">
+        <div class="ec-sidebar-hd">
+          <span class="ec-sidebar-title">Thèmes officiels</span>
+          <span class="ec-sidebar-sub">5 catégories</span>
+        </div>
+        <div class="ec-search">
+          <input type="text" class="ec-search-input" placeholder="Rechercher une question…" oninput="ecFilter(this,'cr')" />
+        </div>
+        <div class="ec-nav-list">
+          <button class="ec-nav-btn active" data-panel="cr-p1" type="button"><span class="ec-nav-ico">🏛️</span><span class="ec-nav-label">Principes et valeurs de la République</span><span class="ec-nav-count">40</span></button>
+          <button class="ec-nav-btn" data-panel="cr-p2" type="button"><span class="ec-nav-ico">⚖️</span><span class="ec-nav-label">Système institutionnel et politique</span><span class="ec-nav-count">49</span></button>
+          <button class="ec-nav-btn" data-panel="cr-p3" type="button"><span class="ec-nav-ico">📜</span><span class="ec-nav-label">Droits et devoirs</span><span class="ec-nav-count">37</span></button>
+          <button class="ec-nav-btn" data-panel="cr-p4" type="button"><span class="ec-nav-ico">🗺️</span><span class="ec-nav-label">Histoire, géographie et culture</span><span class="ec-nav-count">47</span></button>
+          <button class="ec-nav-btn" data-panel="cr-p5" type="button"><span class="ec-nav-ico">🤝</span><span class="ec-nav-label">Vivre dans la société française</span><span class="ec-nav-count">31</span></button>
+        </div>
+      </nav>
+      <div class="ec-panels" id="ec-panels-cr">
+        <div class="ec-panel active" id="cr-p1">
+          <div class="ec-panel-hd"><h2>Principes et valeurs de la République</h2><span class="ec-panel-count">40 questions</span></div>
+          <ul>
+          <li>Parmi les propositions suivantes, laquelle constitue une participation citoyenne ?</li>
+          <li>Que garantit la liberté d'expression ?</li>
+          <li>À quoi sert un titre de séjour ?</li>
+          <li>La liberté de circulation permet à toute personne de :</li>
+          <li>Sur quel site internet peut-on retrouver le symbole de la République française ?</li>
+          <li>Complétez ces paroles de la Marseillaise : "Aux armes […] ! Formez vos bataillons"</li>
+          <li>Complétez les paroles de la Marseillaise : "Allons enfants de la patrie […]"</li>
+          <li>En application de la liberté individuelle, quelle proposition est correcte ? Une personne peut :</li>
+          <li>Concernant la pratique de la religion, quelle proposition est correcte ?</li>
+          <li>En tant que parent, peut-on refuser que son enfant participe aux cours de sport à l'école car ils sont mixtes ?</li>
+          <li>Quelle est la devise de la France ?</li>
+          <li>La répudiation de sa femme est :</li>
+          <li>Les impôts permettent de financer les dépenses publiques. Quelle proposition est correcte ?</li>
+          <li>Peut-on brûler publiquement un drapeau français ?</li>
+          <li>Que fait l'État pour lutter contre les discriminations ?</li>
+          <li>Que représente Marianne ?</li>
+          <li>Qu'est-ce que la liberté d'association ?</li>
+          <li>Qu'est-ce que la liberté ?</li>
+          <li>Qu'est-ce que la Marseillaise ?</li>
+          <li>Sur quel document peut-on voir Marianne ?</li>
+          <li>Un employeur refuse d'embaucher des femmes dans son entreprise. Que dit la loi ?</li>
+          <li>Une des valeurs de la devise républicaine est l'égalité. Qu'est-ce que cela signifie ?</li>
+          <li>Quelle est la place de la langue française dans la République ?</li>
+          <li>Quels sont des symboles officiels de la République française ?</li>
+          <li>A-t-on le droit d'insulter publiquement quelqu'un parce qu'il est différent (handicap, apparence physique, sexe…) ?</li>
+          <li>Le régime de la France est :</li>
+          <li>Pourquoi le principe de laïcité doit-il être respecté à l'école ?</li>
+          <li>En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?</li>
+          <li>Une personne a-t-elle le droit de ne pas croire en une religion ?</li>
+          <li>Quel droit est garanti par la laïcité ?</li>
+          <li>À l'école publique, qui peut porter des signes religieux très visibles ?</li>
+          <li>Selon le principe de laïcité, que signifie la neutralité de l'État ?</li>
+          <li>Que peut faire un usager du service public dans une mairie ?</li>
+          <li>Qui doit respecter le principe de neutralité religieuse dans une préfecture ?</li>
+          <li>La laïcité impose-t-elle aux agents publics d'être neutres vis-à-vis des usagers ?</li>
+          <li>Que garantit le principe de laïcité ?</li>
+          <li>A-t-on le droit de changer de religion ?</li>
+          <li>Que représente la laïcité ?</li>
+          <li>Qu'est ce qui est interdit par la Charte de la laïcité à l'école ?</li>
+          <li>Que dit l'article 1er de la Constitution française ?</li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="cr-p2">
+          <div class="ec-panel-hd"><h2>Système institutionnel et politique</h2><span class="ec-panel-count">49 questions</span></div>
+          <ul>
+          <li>Qu'est-ce que l'État de droit ?</li>
+          <li>Le président de la République a commis un crime. Quelle proposition est correcte ?</li>
+          <li>La loi est l'expression de :</li>
+          <li>Quelle est la durée du mandat du conseil municipal et du maire ?</li>
+          <li>Que garantit l'État de droit ?</li>
+          <li>Une personne peut-elle voter à la place d'une autre ?</li>
+          <li>Est-ce que le vote est obligatoire ?</li>
+          <li>À la fin de son mandat, le président de la République peut-il décider de rester au pouvoir ?</li>
+          <li>Qui dirige l'action du Gouvernement ?</li>
+          <li>Qui nomme le Premier ministre ?</li>
+          <li>Quelle est l'organisation administrative de la France ?</li>
+          <li>Qu'est-ce que le pouvoir législatif ? Le pouvoir :</li>
+          <li>Pourquoi séparer les trois pouvoirs dans une démocratie ?</li>
+          <li>Qui sanctionne l'auteur d'un vol ?</li>
+          <li>Quel est le rôle du gouvernement ?</li>
+          <li>Que se passe-t-il si un ministre ne respecte pas la loi ?</li>
+          <li>Combien de députés composent l'Assemblée nationale ?</li>
+          <li>Qui peut voter aux élections en France ?</li>
+          <li>Pour combien de temps sont élus les sénateurs ?</li>
+          <li>La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?</li>
+          <li>Est-ce que le président de la République a tous les pouvoirs ?</li>
+          <li>Qui est le préfet ?</li>
+          <li>Quelle condition est nécessaire pour voter aux élections ?</li>
+          <li>Qui dirige la commune ?</li>
+          <li>Quel est le régime politique de la France aujourd'hui ?</li>
+          <li>Qu'est-ce que l'Hôtel de Matignon ?</li>
+          <li>Le Parlement est composé :</li>
+          <li>Quel est le rôle du président de la République ?</li>
+          <li>Quel est le rôle du Premier ministre ?</li>
+          <li>Qui est le chef du Gouvernement ?</li>
+          <li>Combien y a-t-il de régions en France ?</li>
+          <li>Quel est le rôle du Défenseur des droits ?</li>
+          <li>Depuis quand l'euro est-elle la monnaie unique ?</li>
+          <li>Quel est le rôle principal du département ?</li>
+          <li>Quel est le rôle principal des communes ?</li>
+          <li>Combien de communes environ existe-t-il en France ?</li>
+          <li>Quel traité concerne la construction de l'Union européenne ?</li>
+          <li>Quel État a quitté l'Union européenne en 2020 ?</li>
+          <li>Quelle est la devise de l'Union européenne ?</li>
+          <li>Quel est l'hymne de l'Union européenne ?</li>
+          <li>De quoi est composé le drapeau européen ?</li>
+          <li>De quelle couleur est le drapeau européen ?</li>
+          <li>En quelle année le traité de Maastricht, qui marque la fondation de l'Union européenne, a-t-il été signé ?</li>
+          <li>Où est le siège du Parlement européen ?</li>
+          <li>Où est le siège de la Commission européenne ?</li>
+          <li>Quel État n'est pas membre de l'Union européenne ?</li>
+          <li>Quand célèbre-t-on la journée de l'Europe ?</li>
+          <li>À quelle fréquence les élections européennes sont-elles organisées ?</li>
+          <li>Quelle condition est nécessaire pour voter aux élections européennes ?</li>
+          <li>Quel pays est un pays fondateur de l'Union européenne ?</li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="cr-p3">
+          <div class="ec-panel-hd"><h2>Droits et devoirs</h2><span class="ec-panel-count">37 questions</span></div>
+          <ul>
+          <li>À quelle liberté la PMA fait-elle référence ?</li>
+          <li>Au nom de quoi l'État justifie-t-il la restriction des droits ?</li>
+          <li>Concernant le droit de se marier, quelle proposition est correcte ?</li>
+          <li>Est-il toujours possible de divorcer ?</li>
+          <li>La peine de mort est :</li>
+          <li>Laquelle de ces citations est inscrite dans la Déclaration des Droits de l'homme et du Citoyen de 1789 ?</li>
+          <li>Le recours à l'avortement est-il autorisé ?</li>
+          <li>Que contient la Constitution ?</li>
+          <li>Que garantit la liberté de la presse ?</li>
+          <li>Que prévoit la Charte de l'environnement ?</li>
+          <li>Que signifie la dignité humaine ?</li>
+          <li>Que signifie le droit de manifester ?</li>
+          <li>Que signifie PMA ?</li>
+          <li>Quel texte est le plus difficile à modifier ?</li>
+          <li>Quelle liberté permet à une personne de croire en la religion de son choix ?</li>
+          <li>Qu'est-ce que le droit de grève ?</li>
+          <li>Qu'est-ce que la Constitution ?</li>
+          <li>Qui peut demander à avorter ?</li>
+          <li>Une femme majeure de nationalité française a-t-elle le droit de voter aux élections ?</li>
+          <li>Concernant l'utilisation des réseaux sociaux, quelle proposition est correcte ?</li>
+          <li>Jeter un mégot par terre est :</li>
+          <li>L'État peut-il limiter les droits et libertés ?</li>
+          <li>Parmi ces actions, laquelle permet d'adopter une attitude respectueuse de l'environnement ?</li>
+          <li>Quelle proposition constitue une obligation ?</li>
+          <li>Pour quel motif peut-on limiter la liberté d'expression ?</li>
+          <li>Pourquoi doit-on trier ses déchets ?</li>
+          <li>Que doit faire une victime de violences ?</li>
+          <li>Que doit-on faire face aux ordres des policiers ou gendarmes ?</li>
+          <li>Quel est le rôle de la police ?</li>
+          <li>Quel est un exemple d'assistance à personne en danger ?</li>
+          <li>Quel exemple illustre une limitation de liberté pour protéger l'intérêt général ?</li>
+          <li>Quelle est l'attitude à avoir lorsque qu'on est témoin de violences ?</li>
+          <li>Quelle est l'infraction la plus grave ?</li>
+          <li>Quelle obligation concerne toutes les personnes résidant en France quelle que soit leur nationalité ?</li>
+          <li>Quelle proposition représente un exemple de crime ?</li>
+          <li>Quelle proposition représente un exemple de délit ?</li>
+          <li>Qui veille au maintien de l'ordre public ?</li>
+          <li>S'agissant des déchets, quelle proposition est correcte ?</li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="cr-p4">
+          <div class="ec-panel-hd"><h2>Histoire, géographie et culture</h2><span class="ec-panel-count">47 questions</span></div>
+          <ul>
+          <li>Quel était le surnom de Louis XIV ?</li>
+          <li>Quel roi de France a été exécuté pendant la Révolution française ?</li>
+          <li>En quelle année Napoléon Ier est-il devenu empereur ?</li>
+          <li>Lequel de ces personnages a un lien avec la République française ?</li>
+          <li>De quand date l'appel à la résistance du général de Gaulle ?</li>
+          <li>Pourquoi la Shoah est-elle étudiée à l'école ?</li>
+          <li>Quel pays a été colonisé par la France ?</li>
+          <li>Depuis quand les Français élisent-ils le président de la République au suffrage universel direct ?</li>
+          <li>Quelle est la première étape de la construction européenne en 1951 ?</li>
+          <li>Durant le mandat de quel président la peine de mort a-t-elle été abolie ?</li>
+          <li>Quel régime politique a été mis en place pendant la Révolution française en 1792 ?</li>
+          <li>Qui était une figure de la Résistance française pendant la Seconde Guerre mondiale ?</li>
+          <li>En 1944, qu'est-ce qui a changé pour les femmes ?</li>
+          <li>Quelle organisation internationale a été créée en 1945 après la Seconde Guerre mondiale ?</li>
+          <li>Quelle peine a été supprimée en 1981 ?</li>
+          <li>En quelle année l'euro est-elle devenue la monnaie utilisée en France ?</li>
+          <li>En quelle année a commencé la Première Guerre mondiale ?</li>
+          <li>Où a eu lieu le débarquement en 1944 ?</li>
+          <li>Quel continent a été le plus concerné par la décolonisation française après la Seconde Guerre mondiale ?</li>
+          <li>Que fête-t-on le 8 mai ?</li>
+          <li>Quelle mer ou océan borde la France métropolitaine ?</li>
+          <li>Quel pays a une frontière terrestre avec la France métropolitaine ?</li>
+          <li>Quelle ville française est un port maritime ?</li>
+          <li>Quelle mer se situe entre la France et l'Angleterre ?</li>
+          <li>Qu'est ce que la France d'outre-mer ?</li>
+          <li>Quelle chaîne de montagnes est située entre la France et l'Espagne ?</li>
+          <li>Quelle île française se trouve dans l'océan Indien ?</li>
+          <li>Quelle est la population approximative de la France en 2025 ?</li>
+          <li>Quel fleuve traverse Paris ?</li>
+          <li>Lequel de ces pays partage des frontières terrestres avec la France ?</li>
+          <li>Quel pays a une frontière avec la France métropolitaine au nord-est ?</li>
+          <li>Où se trouvent les principales activités économiques en France ?</li>
+          <li>Parmi ces pays, lequel attire le plus de visiteurs chaque année ?</li>
+          <li>Où habite la majorité des Français ?</li>
+          <li>Quelle région est la plus peuplée ?</li>
+          <li>Quelle ville française fait partie des 10 plus grandes métropoles du pays ?</li>
+          <li>Lequel de ces départements de France est le plus touristique ?</li>
+          <li>Quand peut-on visiter gratuitement des lieux culturels en France ?</li>
+          <li>Combien de personnes parlent français dans le monde ?</li>
+          <li>Qui était Marguerite Yourcenar ?</li>
+          <li>Quel peintre est français ?</li>
+          <li>Quel musée est situé à Paris ?</li>
+          <li>Qui était Auguste Rodin ?</li>
+          <li>Quel est le classement de la langue française parmi les langues les plus parlées dans le monde ?</li>
+          <li>Quelle cathédrale célèbre a été en partie détruite par un incendie en 2019 ?</li>
+          <li>Qui était une écrivaine française célèbre ?</li>
+          <li>Qui était un célèbre musicien français ?</li>
+          <li>Qui était Auguste Renoir ?</li>
+        </ul>
+        </div>
+        <div class="ec-panel" id="cr-p5">
+          <div class="ec-panel-hd"><h2>Vivre dans la société française</h2><span class="ec-panel-count">31 questions</span></div>
+          <ul>
+          <li>Quel mariage est reconnu par l'État ?</li>
+          <li>Auprès de quelle institution les parents peuvent-ils inscrire leur enfant à l'école publique ?</li>
+          <li>En cas de divorce, qui exerce l'autorité parentale ?</li>
+          <li>Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?</li>
+          <li>Où faut-il déclarer la naissance d'un enfant ?</li>
+          <li>Quelle est l'une des conditions pour passer l'examen du permis de conduire ?</li>
+          <li>Un bail locatif est valide s'il est :</li>
+          <li>Où peut-on déposer un lave-vaisselle cassé ?</li>
+          <li>Quel numéro d'urgence permet d'appeler la police ?</li>
+          <li>Concernant l'accès aux soins, quelle proposition est correcte ?</li>
+          <li>À qui est accessible la contraception ?</li>
+          <li>Qu'est-ce que le principe de confidentialité dans le domaine de la santé ?</li>
+          <li>L'inscription à l'Assurance maladie est :</li>
+          <li>Qui peut demander un congé parental d'éducation ?</li>
+          <li>Quelles sont les affaires traitées par le conseil de prud'hommes ?</li>
+          <li>Travailler sans être déclaré est :</li>
+          <li>Lorsqu'un employeur veut qu'un salarié travaille plus longtemps que la durée prévue dans le contrat de travail :</li>
+          <li>Quelle est la mission de France Travail ?</li>
+          <li>Dans une entreprise, le droit syndical permet :</li>
+          <li>Dans une entreprise, le droit de grève autorise :</li>
+          <li>Quelles sont les conditions pour toucher les allocations chômage ?</li>
+          <li>Qu'est-ce que l'école maternelle ?</li>
+          <li>Comment s'appelle le diplôme passé par les élèves à la fin du collège ?</li>
+          <li>Les parents d'élève ont le droit de :</li>
+          <li>Qui peut manger à la cantine scolaire ?</li>
+          <li>À quel âge commence l'instruction obligatoire des enfants ?</li>
+          <li>Quel est l'âge de la majorité ?</li>
+          <li>À l'école, il est interdit aux parents de :</li>
+          <li>Quel motif d'absence est accepté par l'école ?</li>
+          <li>Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?</li>
+          <li>Quand ont lieu les vacances scolaires de Noël ?</li>
+        </ul>
+        </div>
+        <p class="ec-noresult" style="display:none">Aucune question ne correspond à votre recherche.</p>
+      </div>
+    </div>
+    <div class="ec-source">Source : <a href="https://formation-civique.interieur.gouv.fr/examen-civique/liste-officielle-des-questions-de-connaissance-cr/" target="_blank">Liste officielle des questions de connaissance – CR</a>, ministère de l'Intérieur. Les réponses et propositions de choix ne sont pas publiées par l'administration.</div>
+    <div class="mini-grid" style="grid-template-columns:1fr 1fr;margin-top:1.5rem">
+      <div class="mc mc-interview" onclick="go('theme-quiz')">
+        <div class="mc-icon">🎯</div>
+        <div class="mc-title">S'entraîner sur ces thèmes</div>
+        <div class="mc-desc">Lancer un quiz par thème correspondant aux catégories officielles</div>
+      </div>
+      <div class="mc mc-fb" onclick="go('examen-csp')">
+        <div class="mc-icon">📄</div>
+        <div class="mc-title">Voir la liste CSP</div>
+        <div class="mc-desc">Consulter la liste officielle pour la carte de séjour pluriannuelle</div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Données structurées : site et application -->
   <script type="application/ld+json">
@@ -939,13 +1718,13 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
         "@id":"https://cap-naturalisation.fr/#website",
         "url":"https://cap-naturalisation.fr/",
         "name":"Cap Naturalisation",
-        "description":"Quiz, QCM et outils d'entraînement gratuits pour préparer la naturalisation française.",
+        "description":"Quiz, QCM et outils d’entraînement gratuits pour préparer la naturalisation française et l’examen civique (CSP, CR).",
         "inLanguage":"fr-FR"
       },
       {
         "@type":"WebApplication",
         "@id":"https://cap-naturalisation.fr/#app",
-        "name":"Quiz Naturalisation Française Gratuit",
+        "name":"Quiz Naturalisation & Examen Civique Gratuit",
         "url":"https://cap-naturalisation.fr/",
         "applicationCategory":"EducationalApplication",
         "operatingSystem":"All",
@@ -954,7 +1733,7 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
           "price":"0",
           "priceCurrency":"EUR"
         },
-        "description":"Application gratuite de quiz, QCM, révision et entraînement oral pour préparer la naturalisation française."
+        "description":"Application gratuite de quiz, QCM, listes officielles et entraînement oral pour préparer la naturalisation française et l’examen civique (CSP, CR)."
       },
       {
         "@type":"FAQPage",
@@ -965,6 +1744,14 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
             "acceptedAnswer":{
               "@type":"Answer",
               "text":"Pour vous entraîner, vous pouvez réviser les thèmes de citoyenneté, les valeurs de la République, l’histoire et les institutions françaises, puis travailler les questions d’entretien. Cap Naturalisation rassemble ces exercices sous forme de quiz, QCM, fiches de révision et entraînement oral."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Qu’est-ce que l’examen civique CSP et CR ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"L’examen civique est obligatoire pour obtenir la carte de séjour pluriannuelle (CSP) ou la carte de résident (CR). Cap Naturalisation reprend la liste officielle des questions publiée par le ministère de l’Intérieur pour chaque niveau et propose un entraînement par thème sur ces mêmes sujets."
             }
           },
           {
@@ -998,13 +1785,23 @@ body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:
   </script>
 
 </main>
+
+</div>
 </div>
 
-<!-- FOOTER COPYRIGHT (mobile uniquement) -->
-<div class="footer-copyright">
-  © <span id="cp-year-footer"></span> Citoyenneté Française · Tous droits réservés · <a href="mentions-legales.html" style="color:rgba(255,255,255,.4);text-decoration:none">Mentions légales</a>
-</div>
-
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sf-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
+    <p class="sf-copy">© <span id="cp-year"></span> Cap Naturalisation — Citoyenneté Française · Tous droits réservés</p>
+    <p>Site gratuit d'entraînement à l'examen civique et à l'entretien de naturalisation. Usage personnel uniquement.</p>
+    <p class="sf-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mailto:devby.fou@gmail.com">devby.fou@gmail.com</a>
+      <a href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer">Groupe Facebook</a>
+      <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer">Soutenir le projet</a>
+    </p>
+  </div>
+</footer>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -1023,8 +1820,8 @@ var IQS = INTERVIEW_QUESTIONS.map(function(q){
 // ══════════════════════
 var SK = 'rf_v4';
 function loadData(){
-  try{var r=localStorage.getItem(SK);if(r)return JSON.parse(r);}catch(e){}
-  return {history:[],thStats:{},streak:{last:'',count:0},favoris:[]};
+  try{var r=localStorage.getItem(SK);if(r){var p=JSON.parse(r);if(p.interviewDate===undefined)p.interviewDate=null;return p;}}catch(e){}
+  return {history:[],thStats:{},streak:{last:'',count:0},favoris:[],interviewDate:null};
 }
 function saveData(){ try{localStorage.setItem(SK,JSON.stringify(G.data));}catch(e){} }
 function exportData(){
@@ -1052,7 +1849,7 @@ function importData(input){
 }
 function confirmReset(){
   if(confirm('Supprimer toute votre progression ? Cette action est irréversible.')){
-    G.data={history:[],thStats:{},streak:{last:'',count:0},favoris:[]};
+    G.data={history:[],thStats:{},streak:{last:'',count:0},favoris:[],interviewDate:G.data.interviewDate||null};
     saveData();updateSidebar();
     if(document.getElementById('view-dashboard').classList.contains('active'))buildDashboard();
     toast('🗑 Progression réinitialisée');
@@ -1077,9 +1874,11 @@ var G={
 // ══════════════════════
 // NAV
 // ══════════════════════
+function openSidebar(){document.getElementById('appSidebar').classList.add('open');document.getElementById('sidebarOverlay').classList.add('open');}
+function closeSidebar(){document.getElementById('appSidebar').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('open');}
 function go(v){
   document.querySelectorAll('.view').forEach(function(e){e.classList.remove('active');});
-  document.querySelectorAll('.sb-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.side-nav-btn').forEach(function(b){b.classList.remove('active');});
   document.getElementById('view-'+v).classList.add('active');
   var btn=document.querySelector('[data-view="'+v+'"]');
   if(btn)btn.classList.add('active');
@@ -1091,6 +1890,8 @@ function go(v){
   if(v==='favoris')buildFavoris();
   if(v==='theme-quiz')buildThemeQuizLanding();
   if(v==='oral')buildOralLanding();
+  if(v==='mon-entretien')buildInterviewDate();
+  if(v==='examen-civique'||v==='examen-csp'||v==='examen-cr')window.scrollTo(0,0);
   if(v==='quiz'&&!G.active){
     document.getElementById('quiz-landing').style.display='block';
     document.getElementById('quiz-screen').style.display='none';
@@ -1107,6 +1908,7 @@ var themes=function(){return[...new Set(DB.map(function(q){return q.th;}))];};
 // ══════════════════════
 function buildHome(){
   document.getElementById('h-total').textContent=DB.length;
+  buildHomeInterviewWidget();
   document.getElementById('home-themes').innerHTML=themes().map(function(t){
     return '<div class="theme-chip" onclick="go(\'theme-quiz\')">' +
       '<div class="tc-icon">'+t.split(' ')[0]+'</div>' +
@@ -1712,6 +2514,73 @@ function buildDashboard(){
 }
 
 // ══════════════════════
+// MON ENTRETIEN
+// ══════════════════════
+function interviewInfo(){
+  var ds=G.data.interviewDate;
+  if(!ds)return null;
+  var today=new Date();today.setHours(0,0,0,0);
+  var d=new Date(ds+'T00:00:00');
+  var days=Math.round((d-today)/86400000);
+  return {date:d,days:days};
+}
+function interviewTier(days){
+  if(days<0)return{cls:'tier-passed',label:'Entretien passé'};
+  if(days===0)return{cls:'tier-close',label:"C'est aujourd'hui !"};
+  if(days<=7)return{cls:'tier-close',label:'Jour J tout proche'};
+  if(days<=30)return{cls:'tier-mid',label:'Approche'};
+  return{cls:'tier-far',label:'Vous avez le temps'};
+}
+function interviewMessage(days){
+  if(days<0)return"Votre entretien est passé — bravo pour votre préparation ! Dites-nous comment ça s'est passé et partagez votre retour d'expérience (REX) avec la communauté, ça aide énormément les futurs candidats. 🙏";
+  if(days===0)return"C'est aujourd'hui ! Respirez, relisez vos points clés une dernière fois et présentez-vous avec confiance. Vous êtes prêt(e) ! 🇫🇷";
+  if(days<=7)return"Le jour J approche à grands pas ! Concentrez-vous sur les questions les plus fréquentes, révisez vos favoris ⭐ et faites une simulation d'entretien. Vous allez y arriver 💪";
+  if(days<=30)return"Votre entretien approche : c'est le bon moment pour intensifier vos révisions par thème et vous entraîner à l'oral régulièrement. 🔥";
+  return"Vous avez encore du temps devant vous : profitez-en pour réviser tranquillement, thème par thème, sans stress. La régularité fait la différence. 📚";
+}
+function buildInterviewDate(){
+  var info=interviewInfo();
+  var input=document.getElementById('interview-date-input');
+  if(input)input.value=G.data.interviewDate||'';
+  var clearBtn=document.getElementById('clear-interview-date');
+  if(clearBtn)clearBtn.style.display=G.data.interviewDate?'inline-block':'none';
+  var box=document.getElementById('interview-countdown');
+  if(!box)return;
+  if(!info){
+    box.innerHTML='';
+    return;
+  }
+  var tier=interviewTier(info.days);
+  var dLabel=info.date.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+  var numHtml=info.days>=0
+    ?'<div class="countdown-n">'+info.days+'</div><div class="countdown-l">jour(s) restant(s) — '+dLabel+'</div>'
+    :'<div class="countdown-n">'+dLabel+'</div><div class="countdown-l">Entretien passé</div>';
+  var rex=info.days<0?'<button class="rex-btn" onclick="window.open(\'https://www.facebook.com/groups/1663580948311419/\',\'_blank\')">💬 Partager mon retour d\'expérience</button>':'';
+  box.innerHTML='<div class="countdown-box '+tier.cls+'">'+numHtml+'<div class="countdown-msg">'+interviewMessage(info.days)+'</div>'+rex+'</div>';
+}
+function saveInterviewDate(){
+  var v=document.getElementById('interview-date-input').value;
+  if(!v){toast('❌ Choisissez une date');return;}
+  G.data.interviewDate=v;saveData();
+  buildInterviewDate();buildHomeInterviewWidget();
+  toast('✅ Date d\'entretien enregistrée');
+}
+function clearInterviewDate(){
+  G.data.interviewDate=null;saveData();
+  buildInterviewDate();buildHomeInterviewWidget();
+  toast('🗑 Date effacée');
+}
+function buildHomeInterviewWidget(){
+  var el=document.getElementById('home-interview-sub');
+  if(!el)return;
+  var info=interviewInfo();
+  if(!info){el.textContent="Renseignez la date de votre entretien pour un suivi personnalisé";return;}
+  if(info.days<0){el.textContent="Entretien passé — partagez votre retour d'expérience !";return;}
+  if(info.days===0){el.textContent="C'est aujourd'hui ! Bonne chance 🇫🇷";return;}
+  el.textContent=info.days+' jour(s) avant votre entretien';
+}
+
+// ══════════════════════
 // COMMUN
 // ══════════════════════
 function updateTh(th,ok){
@@ -1723,6 +2592,58 @@ function updateStreak(){
   if(s.last===today)return;
   var yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
   s.count=s.last===yesterday?s.count+1:1;s.last=today;
+}
+// ══════════════════════
+// EXAMEN CIVIQUE — NAV SIDEBAR + RECHERCHE
+// ══════════════════════
+function ecInitLayouts(){
+  document.querySelectorAll('.ec-layout').forEach(function(layout){
+    layout.querySelectorAll('.ec-nav-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var panelsWrap=layout.querySelector('.ec-panels');
+        layout.querySelectorAll('.ec-nav-btn').forEach(function(b){b.classList.remove('active');});
+        panelsWrap.querySelectorAll('.ec-panel').forEach(function(p){p.classList.remove('active');});
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-panel')).classList.add('active');
+        panelsWrap.scrollTop=0;
+      });
+    });
+  });
+}
+function ecFilter(input,prefix){
+  var q=input.value.trim().toLowerCase();
+  var wrap=document.getElementById('ec-panels-'+prefix);
+  if(!wrap)return;
+  var anyVisibleGlobal=false;
+  wrap.querySelectorAll('.ec-panel').forEach(function(panel){
+    var count=0;
+    panel.querySelectorAll('li').forEach(function(li){
+      var match=!q||li.textContent.toLowerCase().indexOf(q)!==-1;
+      li.classList.toggle('ec-hidden',!match);
+      if(match)count++;
+    });
+    if(count>0)anyVisibleGlobal=true;
+  });
+  var noResult=wrap.querySelector('.ec-noresult');
+  if(!q){
+    if(noResult)noResult.style.display='none';
+    return;
+  }
+  var activePanel=wrap.querySelector('.ec-panel.active');
+  var activeHasResults=activePanel&&activePanel.querySelectorAll('li:not(.ec-hidden)').length>0;
+  if(noResult)noResult.style.display=(!anyVisibleGlobal)?'block':'none';
+  if(!activeHasResults&&anyVisibleGlobal){
+    // bascule automatiquement sur le premier thème contenant un résultat
+    var layout=wrap.closest('.ec-layout');
+    var target=null;
+    wrap.querySelectorAll('.ec-panel').forEach(function(p){
+      if(!target&&p.querySelectorAll('li:not(.ec-hidden)').length>0)target=p;
+    });
+    if(target){
+      layout.querySelectorAll('.ec-nav-btn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-panel')===target.id);});
+      wrap.querySelectorAll('.ec-panel').forEach(function(p){p.classList.toggle('active',p.id===target.id);});
+    }
+  }
 }
 function updateSidebar(){
   var h=G.data.history;
@@ -1744,7 +2665,7 @@ document.addEventListener('DOMContentLoaded',function(){
   if(cpY) cpY.textContent = yr;
   if(cpYf) cpYf.textContent = yr;
 
-  buildHome();updateSidebar();
+  buildHome();updateSidebar();ecInitLayouts();
   document.getElementById('ql-sub').textContent='Questions mélangées parmi les '+DB.length+' de la base';
 });
 </script>
