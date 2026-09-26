@@ -12,14 +12,15 @@
 </script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Quiz naturalisation & examen civique gratuit : QCM CSP, CR | Cap Naturalisation</title>
+<title>Quiz Naturalisation Gratuit : Questionnaire, Test, QCM & Examen Civique</title>
 <script src="questions.js"></script>
 <script src="interview.js"></script>
 <script src="prefecture.js"></script>
+<script src="civique.js"></script>
 
 <!-- SEO OPTIMISÉ -->
-<meta name="description" content="Quiz naturalisation et examen civique gratuits : QCM, tests et listes officielles pour la carte de séjour pluriannuelle (CSP), la carte de résident (CR) et la naturalisation. Chrono, bilan et entraînement oral."/>
-<meta name="keywords" content="quiz naturalisation, quiz naturalisation gratuit, examen civique, examen civique CSP, examen civique CR, quiz examen civique, questions examen civique, carte de séjour pluriannuelle, carte de résident, test naturalisation, test naturalisation française, questionnaire naturalisation, QCM naturalisation, QCM nationalité française, quiz citoyenneté, questions entretien naturalisation"/>
+<meta name="description" content="100% gratuit, sans inscription : quiz, test, questionnaire et QCM de naturalisation, nationalité française et examen civique CSP/CR officiel. Résultats immédiats."/>
+<meta name="keywords" content="quiz naturalisation gratuit, quiz naturalisation, quiz naturalisation française, quiz naturalisation france, quiz nationalité française, quizz naturalisation, quiz entretien naturalisation, quiz français gratuit, test naturalisation, test naturalisation française, test naturalisation france, test de naturalisation française, test de naturalisation, test de naturalisation france, test de naturalisation française en ligne, test nationalité française, test de nationalité française, test nationalite francaise, nationalité française test, test pour nationalité française gratuit, test pour avoir la nationalité française, test pour devenir français, naturalisation test, naturalisation, questionnaire naturalisation, questionnaire de naturalisation, questionnaire naturalisation française, questionnaire naturalisation france, questionnaire nationalité française, questionnaire nationalité francaise, questionnaire pour obtenir la nationalité française, questionnaire pour avoir la nationalité francaise, questionnaire pour la naturalisation française, questionnaire pour naturalisation française, qcm naturalisation, qcm naturalisation française, qcm nationalité française, question naturalisation, question naturalisation 2020, quizz citoyenneté, examen civique, examen civique CSP, examen civique CR, examen civique gratuit, quiz examen civique, questions examen civique, carte de séjour pluriannuelle, carte de résident, questions entretien naturalisation"/>
 <meta name="author" content="Cap Naturalisation"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <meta name="theme-color" content="#0d2b5e"/>
@@ -27,16 +28,17 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Quiz naturalisation & examen civique gratuit : QCM CSP, CR"/>
-<meta property="og:description" content="Entraînez-vous gratuitement avec des quiz, QCM et listes officielles pour la naturalisation et l'examen civique (CSP, CR)."/>
+<meta property="og:title" content="Quiz Naturalisation Gratuit : Test, QCM & Questionnaire + Examen Civique CSP/CR"/>
+<meta property="og:description" content="100% gratuit et sans inscription : quiz, test, questionnaire et QCM de naturalisation et de nationalité française, + examen civique CSP/CR (listes officielles)."/>
 <meta property="og:url" content="https://cap-naturalisation.fr"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:site_name" content="Cap Naturalisation"/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Quiz naturalisation & examen civique gratuit : QCM CSP, CR"/>
-<meta name="twitter:description" content="Quiz, QCM et listes officielles gratuits pour préparer la naturalisation et l'examen civique CSP/CR : questions, révisions, chrono et entretien."/>
+<meta name="twitter:title" content="Quiz Naturalisation Gratuit : Test, QCM & Questionnaire + Examen Civique CSP/CR"/>
+<meta name="twitter:description" content="100% gratuit : quiz, test, questionnaire et QCM de naturalisation / nationalité française, + examen civique CSP/CR. Questions, révisions, chrono et entretien."/>
+
 
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -153,6 +155,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 .hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.9rem;color:#fff;letter-spacing:-.02em;line-height:1.2;margin-bottom:.5rem}
 .hero-title span{color:rgba(255,255,255,.45)}
 .hero-sub{font-size:.88rem;color:rgba(255,255,255,.55);font-family:'Syne',sans-serif;margin-bottom:1.8rem}
+.hero-free-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(245,158,11,.15);border:1px solid var(--gold);color:var(--gold);font-family:'Syne',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.02em;padding:.45rem 1rem;border-radius:20px;margin-bottom:1.4rem}
 .hero-btn{background:#fff;color:var(--navy);border:none;border-radius:var(--r);padding:.7rem 1.6rem;font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .hero-btn:hover{background:var(--off-white);transform:translateY(-1px)}
 .hero-stats{display:flex;gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1)}
@@ -593,7 +596,8 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     <div class="home-hero">
       <div class="hero-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
       <h1 class="hero-title">Quiz <span>naturalisation & examen civique</span> gratuit</h1>
-      <p class="hero-sub">QCM et listes officielles pour la naturalisation et l'examen civique (CSP, CR) : chrono, bilan complet et entraînement oral. 100&nbsp;% gratuit.</p>
+      <p class="hero-sub">Quiz, test, questionnaire ou QCM : révisez la naturalisation, la nationalité française et l'examen civique (CSP, CR) avec des listes officielles. Chrono, bilan complet, entraînement oral. <strong>100&nbsp;% gratuit, sans inscription.</strong></p>
+      <div class="hero-free-badge">🎁 100% gratuit · Sans inscription · Sans publicité</div>
       <button class="hero-btn" onclick="go('quiz')">▶ &nbsp;Commencer le Quiz</button>
       <div class="hero-stats">
         <div><div class="hero-stat-n" id="h-total">0</div><div class="hero-stat-l">Questions</div></div>
@@ -656,10 +660,11 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     <!-- CONTENU SEO VISIBLE : répond aux intentions de recherche sans texte caché -->
     <section class="seo-content" aria-labelledby="seo-title">
       <div class="seo-intro">
-        <h2 id="seo-title">Quiz naturalisation et examen civique gratuits</h2>
-        <p>Bienvenue sur Cap Naturalisation, un site d’entraînement gratuit pour réviser les connaissances utiles à la préparation de la naturalisation française et de l’examen civique obligatoire pour les titres de séjour (carte de séjour pluriannuelle, carte de résident). Testez vos connaissances avec des <strong>quiz de naturalisation</strong>, des <strong>QCM</strong>, des listes officielles CSP/CR et des exercices de révision.</p>
-        <p>Vous pouvez commencer par un <strong>test de naturalisation française</strong>, travailler les questions de citoyenneté, revoir les valeurs de la République, l’histoire et les institutions françaises, puis vous entraîner à l’entretien oral ou consulter les listes officielles de l’examen civique CSP et CR.</p>
-        <p class="seo-note">Les quiz proposés ici sont des outils d’entraînement et ne constituent pas un examen officiel de l’administration française. Les listes de questions CSP/CR reprennent les intitulés publiés par le ministère de l’Intérieur ; les réponses proposées lors du véritable examen ne sont pas rendues publiques.</p>
+        <h2 id="seo-title">Quiz, test, questionnaire et QCM de naturalisation 100% gratuits</h2>
+        <p>Bienvenue sur Cap Naturalisation, un site <strong>entièrement gratuit et sans inscription</strong> pour réviser les connaissances utiles à la préparation de la naturalisation française, de la nationalité française et de l'examen civique obligatoire pour les titres de séjour (carte de séjour pluriannuelle, carte de résident). Que vous cherchiez un <strong>quiz</strong>, un <strong>test</strong>, un <strong>questionnaire</strong> ou un <strong>QCM de naturalisation</strong>, vous trouverez ici le même contenu : des questions de citoyenneté, des listes officielles CSP/CR et des exercices de révision, gratuits du début à la fin.</p>
+        <p>Vous pouvez commencer par un <strong>test de naturalisation française</strong> ou un <strong>questionnaire de nationalité française</strong>, travailler les questions de citoyenneté, revoir les valeurs de la République, l'histoire et les institutions françaises, puis vous entraîner à l'entretien oral ou consulter les listes officielles de l'examen civique CSP et CR.</p>
+        <p>Ce <strong>quiz français gratuit</strong> couvre aussi bien la <strong>naturalisation</strong> que l'<strong>examen civique</strong> obligatoire pour la carte de séjour pluriannuelle et la carte de résident : QCM, quizz citoyenneté, test pour devenir français, tout est réuni au même endroit, gratuitement et sans limite d'utilisation.</p>
+        <p class="seo-note">Les quiz proposés ici sont des outils d'entraînement et ne constituent pas un examen officiel de l'administration française. Les listes de questions CSP/CR reprennent les intitulés publiés par le ministère de l'Intérieur ; les réponses proposées lors du véritable examen ne sont pas rendues publiques.</p>
       </div>
 
       <div class="seo-grid">
@@ -675,19 +680,29 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         </article>
         <article class="seo-card">
           <h3>Examen civique CSP &amp; CR</h3>
-          <p>Consultez la liste officielle des questions de connaissance et entraînez-vous sur les mêmes thèmes.</p>
+          <p>Consultez la liste officielle des questions de connaissance et entraînez-vous sur les mêmes thèmes, gratuitement.</p>
           <ul>
-            <li>Liste officielle carte de séjour pluriannuelle (CSP)</li>
-            <li>Liste officielle carte de résident (CR)</li>
-            <li>Quiz par thème officiel</li>
-            <li>Simulation chronométrée 40 questions</li>
+            <li>Liste officielle carte de séjour pluriannuelle (CSP), avec réponses</li>
+            <li>Liste officielle carte de résident (CR), avec réponses</li>
+            <li>Quiz examen civique CSP/CR au choix, par thème</li>
+            <li>Simulation gratuite chronométrée 40 questions</li>
           </ul>
         </article>
         <article class="seo-card">
-          <h3>Préparer l’entretien de naturalisation</h3>
-          <p>Après le quiz, utilisez l’entraînement oral et la simulation d’entretien pour travailler vos réponses et revoir les sujets à retravailler.</p>
+          <h3>Test, questionnaire ou QCM : quelle différence ?</h3>
+          <p>Sur Cap Naturalisation, quiz, test, questionnaire et QCM de naturalisation renvoient au même entraînement gratuit : des questions à choix multiples sur la nationalité française, corrigées instantanément.</p>
           <ul>
-            <li>Questions d’entretien</li>
+            <li>Test de nationalité française gratuit</li>
+            <li>Questionnaire pour obtenir la nationalité française</li>
+            <li>QCM naturalisation en ligne</li>
+            <li>Aucune inscription, aucune publicité</li>
+          </ul>
+        </article>
+        <article class="seo-card">
+          <h3>Préparer l'entretien de naturalisation</h3>
+          <p>Après le quiz, utilisez l'entraînement oral et la simulation d'entretien pour travailler vos réponses et revoir les sujets à retravailler.</p>
+          <ul>
+            <li>Questions d'entretien</li>
             <li>Exemples de réponses</li>
             <li>Flashcards</li>
             <li>Entraînement par préfecture</li>
@@ -696,38 +711,68 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
       </div>
 
       <div class="seo-links" aria-label="Accès rapide aux entraînements">
-        <a class="seo-link" href="#quiz" onclick="go('quiz');return false;">📝 Test de naturalisation</a>
+        <a class="seo-link" href="#quiz" onclick="go('quiz');return false;">📝 Test de naturalisation gratuit</a>
         <a class="seo-link" href="#theme-quiz" onclick="go('theme-quiz');return false;">🎯 QCM naturalisation par thème</a>
-        <a class="seo-link" href="#oral" onclick="go('oral');return false;">🗣️ Questions d’entretien et entraînement oral</a>
-        <a class="seo-link" href="#revision" onclick="go('revision');return false;">📚 Questions de naturalisation à réviser</a>
-        <a class="seo-link" href="#interview" onclick="go('interview');return false;">🎙️ Simulation d’entretien de naturalisation</a>
+        <a class="seo-link" href="#oral" onclick="go('oral');return false;">🗣️ Questions d'entretien et entraînement oral</a>
+        <a class="seo-link" href="#revision" onclick="go('revision');return false;">📚 Questionnaire de naturalisation à réviser</a>
+        <a class="seo-link" href="#interview" onclick="go('interview');return false;">🎙️ Simulation d'entretien de naturalisation</a>
         <a class="seo-link" href="#prefecture" onclick="go('prefecture');return false;">🏛️ Questions par préfecture</a>
-        <a class="seo-link" href="#examen-civique" onclick="go('examen-civique');return false;">📝 Examen civique (CSP/CR)</a>
+        <a class="seo-link" href="#examen-civique" onclick="go('examen-civique');return false;">📝 Examen civique gratuit (CSP/CR)</a>
         <a class="seo-link" href="#examen-csp" onclick="go('examen-csp');return false;">📄 Liste officielle examen civique CSP</a>
         <a class="seo-link" href="#examen-cr" onclick="go('examen-cr');return false;">🪪 Liste officielle examen civique CR</a>
+        <a class="seo-link" href="#civique-quiz" onclick="go('civique-quiz');return false;">🎯 Quiz examen civique CSP + CR</a>
+        <a class="seo-link" href="examen-civique-questions.html" target="_blank">📚 Toutes les questions CSP + CR (page dédiée)</a>
       </div>
 
       <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Questions fréquentes</div><div class="sec-div-line"></div></div>
       <div class="faq-list">
         <details class="faq-item">
           <summary>Comment préparer la naturalisation française ?</summary>
-          <div class="faq-answer">Pour vous entraîner, vous pouvez réviser les thèmes de citoyenneté, les valeurs de la République, l’histoire et les institutions françaises, puis travailler les questions d’entretien. Cap Naturalisation rassemble ces exercices sous forme de quiz, QCM, fiches de révision et entraînement oral.</div>
+          <div class="faq-answer">Pour vous entraîner, vous pouvez réviser les thèmes de citoyenneté, les valeurs de la République, l'histoire et les institutions françaises, puis travailler les questions d'entretien. Cap Naturalisation rassemble ces exercices sous forme de quiz, QCM, fiches de révision et entraînement oral.</div>
         </details>
         <details class="faq-item">
-          <summary>Qu’est-ce que l’examen civique CSP et CR ?</summary>
-          <div class="faq-answer">L’examen civique est obligatoire pour obtenir certains titres de séjour : la carte de séjour pluriannuelle (CSP) et la carte de résident (CR), avec un niveau d’exigence différent selon la carte. Cap Naturalisation reprend la liste officielle des questions publiée par le ministère de l’Intérieur pour chaque niveau, et propose un entraînement par thème sur les mêmes sujets.</div>
+          <summary>Qu'est-ce que l'examen civique CSP et CR ?</summary>
+          <div class="faq-answer">L'examen civique est obligatoire pour obtenir certains titres de séjour : la carte de séjour pluriannuelle (CSP) et la carte de résident (CR), avec un niveau d'exigence différent selon la carte. Cap Naturalisation reprend la liste officielle des questions publiée par le ministère de l'Intérieur pour chaque niveau, propose les réponses correspondantes, et permet de lancer un quiz au choix sur les questions CSP, CR ou les deux.</div>
         </details>
         <details class="faq-item">
           <summary>Existe-t-il un quiz de naturalisation gratuit ?</summary>
-          <div class="faq-answer">Oui. Cap Naturalisation propose gratuitement des quiz et QCM d’entraînement, avec des sessions générales ou par thème, ainsi qu’un bilan permettant de repérer les questions à retravailler.</div>
+          <div class="faq-answer">Oui. Cap Naturalisation est un site 100% gratuit et sans inscription : quiz, QCM, tests et questionnaires d'entraînement pour la naturalisation, la nationalité française et l'examen civique sont accessibles librement, avec des sessions générales ou par thème et un bilan permettant de repérer les questions à retravailler.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle différence entre un test, un questionnaire et un QCM de naturalisation ?</summary>
+          <div class="faq-answer">Aucune sur ce site : qu'on l'appelle quiz, test, questionnaire ou QCM, il s'agit du même exercice — des questions à choix multiples sur la citoyenneté et la nationalité française, avec correction immédiate et bilan de session.</div>
         </details>
         <details class="faq-item">
           <summary>Que contient un test de naturalisation française ?</summary>
-          <div class="faq-answer">Les exercices proposés sur ce site portent notamment sur la citoyenneté française, les valeurs de la République, l’histoire, les institutions et différents sujets utiles à la préparation de l’entretien.</div>
+          <div class="faq-answer">Les exercices proposés sur ce site portent notamment sur la citoyenneté française, les valeurs de la République, l'histoire, les institutions et différents sujets utiles à la préparation de l'entretien.</div>
         </details>
         <details class="faq-item">
-          <summary>Comment s’entraîner aux questions d’entretien de naturalisation ?</summary>
-          <div class="faq-answer">La rubrique d’entraînement oral permet de travailler les questions sous forme de flashcards. La simulation d’entretien propose également des questions, des conseils et des exemples de réponses.</div>
+          <summary>Comment s'entraîner aux questions d'entretien de naturalisation ?</summary>
+          <div class="faq-answer">La rubrique d'entraînement oral permet de travailler les questions sous forme de flashcards. La simulation d'entretien propose également des questions, des conseils et des exemples de réponses.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Où trouver un questionnaire de naturalisation française gratuit ?</summary>
+          <div class="faq-answer">Sur Cap Naturalisation, le questionnaire de naturalisation est entièrement gratuit et accessible sans inscription : questions de citoyenneté, valeurs de la République, histoire, institutions, avec correction immédiate et bilan par thème.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Existe-t-il un test de naturalisation française en ligne gratuit ?</summary>
+          <div class="faq-answer">Oui, le test de naturalisation française proposé ici est gratuit, en ligne et sans inscription. Vous pouvez le lancer en session complète (40 questions chronométrées) ou par thème, avec un bilan détaillé à la fin.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Qu'est-ce qu'un QCM de nationalité française ?</summary>
+          <div class="faq-answer">C'est un questionnaire à choix multiples portant sur la citoyenneté, l'histoire, la géographie et les institutions françaises, utilisé pour s'entraîner avant une demande de naturalisation ou de nationalité française. Le QCM proposé sur ce site est gratuit et corrigé instantanément.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Le quiz de l'examen civique CSP/CR est-il gratuit ?</summary>
+          <div class="faq-answer">Oui, entièrement. Vous choisissez le type de carte visée (carte de séjour pluriannuelle, carte de résident, ou les deux), le thème et le nombre de questions, pour un entraînement gratuit basé sur les listes officielles publiées par le ministère de l'Intérieur.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Le quiz examen civique couvre-t-il toutes les questions officielles ?</summary>
+          <div class="faq-answer">Oui, Cap Naturalisation reprend l'ensemble des questions officielles CSP et CR publiées par le ministère de l'Intérieur, réparties dans les 5 mêmes thèmes que la liste officielle, avec une réponse rédigée pour chacune.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Le format du quiz est-il le même que celui de l'examen civique officiel ?</summary>
+          <div class="faq-answer">Oui : comme pour le quiz de naturalisation, chaque question est posée sous forme de QCM à 4 propositions avec une seule bonne réponse, pour retrouver les conditions du véritable examen. Une simulation chronométrée de 40 questions est également proposée.</div>
         </details>
       </div>
     </section>
@@ -1133,11 +1178,11 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
   <!-- EXAMEN CIVIQUE : HUB -->
   <div class="view" id="view-examen-civique">
     <div class="page-hd">
-      <div class="page-eyebrow">Nouveau</div>
+      <div class="page-eyebrow">100% gratuit</div>
       <h1>Examen <span>civique</span></h1>
     </div>
     <div class="ec-intro">
-      Depuis la réforme de l'immigration, un <strong>examen civique</strong> est obligatoire pour obtenir un titre de séjour longue durée. Le niveau de connaissances demandé diffère selon la carte visée : <strong>carte de séjour pluriannuelle (CSP)</strong>, <strong>carte de résident (CR)</strong>, ou dans le cadre d'une <strong>demande de naturalisation</strong>. Choisissez votre parcours ci-dessous.
+      Depuis la réforme de l'immigration, un <strong>examen civique</strong> est obligatoire pour obtenir un titre de séjour longue durée. Le niveau de connaissances demandé diffère selon la carte visée : <strong>carte de séjour pluriannuelle (CSP)</strong>, <strong>carte de résident (CR)</strong>, ou dans le cadre d'une <strong>demande de naturalisation</strong>. Cap Naturalisation propose un entraînement <strong>100% gratuit, sans inscription</strong>, avec les listes officielles CSP/CR (réponses incluses) et un quiz dédié. Choisissez votre parcours ci-dessous.
     </div>
     <div class="ec-grid">
       <div class="ec-card" onclick="go('quiz')">
@@ -1155,15 +1200,20 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         <div class="hc-title">Examen civique — CR</div>
         <div class="hc-desc">Liste officielle des questions pour la carte de résident</div>
       </div>
-      <div class="ec-card" onclick="go('theme-quiz')">
+      <div class="ec-card" onclick="go('civique-quiz')">
         <div class="hc-icon">🎯</div>
         <div class="hc-title">Quiz examen civique</div>
-        <div class="hc-desc">Entraînez-vous thème par thème sur les sujets de l'examen civique</div>
+        <div class="hc-desc">QCM à partir des questions officielles CSP + CR, par thème</div>
       </div>
-      <div class="ec-card" onclick="go('quiz')">
+      <div class="ec-card" onclick="launchCivicSimulation()">
         <div class="hc-icon">⏱️</div>
         <div class="hc-title">Simulation 40 questions</div>
-        <div class="hc-desc">Simulation chronométrée en conditions d'examen, bilan à la fin</div>
+        <div class="hc-desc">Simulation chronométrée CSP/CR en conditions d'examen, bilan à la fin</div>
+      </div>
+      <div class="ec-card" onclick="window.open('examen-civique-questions.html','_blank')">
+        <div class="hc-icon">📚</div>
+        <div class="hc-title">Toutes les questions CSP + CR</div>
+        <div class="hc-desc">Banque complète et fusionnée, consultable et imprimable sur une page à part</div>
       </div>
       <div class="ec-card" onclick="window.open('https://formation-civique.interieur.gouv.fr/examen-civique/informations-generales-sur-lexamen-civique/','_blank')">
         <div class="hc-icon">ℹ️</div>
@@ -1172,6 +1222,38 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
       </div>
     </div>
     <div class="ec-source">Le contenu des rubriques CSP et CR ci-dessus est publié à titre de révision, d'après la <a href="https://formation-civique.interieur.gouv.fr/examen-civique/informations-generales-sur-lexamen-civique/" target="_blank">liste officielle du ministère de l'Intérieur</a>. L'administration ne rend pas publiques les propositions de réponses de l'examen ; les questions à choix multiples proposées sur Cap Naturalisation portent sur les mêmes thèmes officiels mais restent des exercices d'entraînement indépendants.</div>
+
+    <section class="seo-content" aria-labelledby="seo-ec-title">
+      <div class="seo-intro">
+        <h2 id="seo-ec-title">Examen civique CSP/CR gratuit : toutes les questions officielles, au format de l'examen</h2>
+        <p>Cap Naturalisation reprend <strong>l'ensemble des questions officielles</strong> de l'examen civique publiées par le ministère de l'Intérieur, pour les deux niveaux concernés : la <strong>carte de séjour pluriannuelle (CSP)</strong> et la <strong>carte de résident (CR)</strong>. Comme pour le quiz de naturalisation, chaque question est proposée sous <strong>un format identique à celui de l'examen officiel</strong> : un QCM à 4 choix, une seule bonne réponse, avec correction immédiate — pour vous entraîner exactement dans les conditions du jour J.</p>
+        <p>Vous pouvez réviser question par question (avec réponse rédigée) sur les listes CSP et CR, ou passer directement au <strong>quiz examen civique</strong> en choisissant votre carte (CSP, CR, ou les deux), un thème précis, et jusqu'à une <strong>simulation complète de 40 questions chronométrée</strong>, comme un véritable passage d'examen. Le tout <strong>100% gratuit et sans inscription</strong>.</p>
+      </div>
+
+      <div class="seo-grid">
+        <article class="seo-card">
+          <h3>Toutes les questions officielles</h3>
+          <p>Aucune question de la liste publiée par l'administration n'est laissée de côté : les catégories CSP et CR sont couvertes intégralement, thème par thème.</p>
+          <ul>
+            <li>Principes et valeurs de la République</li>
+            <li>Système institutionnel et politique</li>
+            <li>Droits et devoirs</li>
+            <li>Histoire, géographie et culture</li>
+            <li>Vivre dans la société française</li>
+          </ul>
+        </article>
+        <article class="seo-card">
+          <h3>Un format calqué sur l'examen officiel</h3>
+          <p>Comme pour le quiz de naturalisation, le quiz examen civique reprend le principe du QCM à 4 propositions et une seule bonne réponse, pour vous habituer au format réel.</p>
+          <ul>
+            <li>QCM à 4 choix, comme le jour de l'examen</li>
+            <li>Simulation chronométrée de 40 questions</li>
+            <li>Bilan détaillé et questions à revoir</li>
+            <li>CSP, CR ou les deux, au choix</li>
+          </ul>
+        </article>
+      </div>
+    </section>
   </div>
 
   <!-- EXAMEN CIVIQUE CSP -->
@@ -1419,10 +1501,10 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     </div>
     <div class="ec-source">Questions issues de la <a href="https://formation-civique.interieur.gouv.fr/examen-civique/liste-officielle-des-questions-de-connaissance-csp/" target="_blank">liste officielle des questions de connaissance – CSP</a> publiée par le ministère de l'Intérieur. Les réponses affichées ci-dessus sont proposées par Cap Naturalisation (l'administration ne publie pas de corrigé officiel) ; vérifiez les points sensibles auprès de sources officielles.</div>
     <div class="mini-grid" style="grid-template-columns:1fr 1fr;margin-top:1.5rem">
-      <div class="mc mc-interview" onclick="go('theme-quiz')">
+      <div class="mc mc-interview" onclick="go('civique-quiz')">
         <div class="mc-icon">🎯</div>
         <div class="mc-title">S'entraîner sur ces thèmes</div>
-        <div class="mc-desc">Lancer un quiz par thème correspondant aux catégories officielles</div>
+        <div class="mc-desc">Lancer le quiz Examen civique (questions CSP + CR)</div>
       </div>
       <div class="mc mc-fb" onclick="go('examen-cr')">
         <div class="mc-icon">🪪</div>
@@ -1460,233 +1542,233 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         <div class="ec-panel active" id="cr-p1">
           <div class="ec-panel-hd"><h2>Principes et valeurs de la République</h2><span class="ec-panel-count">40 questions</span></div>
           <ul>
-          <li>Parmi les propositions suivantes, laquelle constitue une participation citoyenne ?</li>
-          <li>Que garantit la liberté d'expression ?</li>
-          <li>À quoi sert un titre de séjour ?</li>
-          <li>La liberté de circulation permet à toute personne de :</li>
-          <li>Sur quel site internet peut-on retrouver le symbole de la République française ?</li>
-          <li>Complétez ces paroles de la Marseillaise : "Aux armes […] ! Formez vos bataillons"</li>
-          <li>Complétez les paroles de la Marseillaise : "Allons enfants de la patrie […]"</li>
-          <li>En application de la liberté individuelle, quelle proposition est correcte ? Une personne peut :</li>
-          <li>Concernant la pratique de la religion, quelle proposition est correcte ?</li>
-          <li>En tant que parent, peut-on refuser que son enfant participe aux cours de sport à l'école car ils sont mixtes ?</li>
-          <li>Quelle est la devise de la France ?</li>
-          <li>La répudiation de sa femme est :</li>
-          <li>Les impôts permettent de financer les dépenses publiques. Quelle proposition est correcte ?</li>
-          <li>Peut-on brûler publiquement un drapeau français ?</li>
-          <li>Que fait l'État pour lutter contre les discriminations ?</li>
-          <li>Que représente Marianne ?</li>
-          <li>Qu'est-ce que la liberté d'association ?</li>
-          <li>Qu'est-ce que la liberté ?</li>
-          <li>Qu'est-ce que la Marseillaise ?</li>
-          <li>Sur quel document peut-on voir Marianne ?</li>
-          <li>Un employeur refuse d'embaucher des femmes dans son entreprise. Que dit la loi ?</li>
-          <li>Une des valeurs de la devise républicaine est l'égalité. Qu'est-ce que cela signifie ?</li>
-          <li>Quelle est la place de la langue française dans la République ?</li>
-          <li>Quels sont des symboles officiels de la République française ?</li>
-          <li>A-t-on le droit d'insulter publiquement quelqu'un parce qu'il est différent (handicap, apparence physique, sexe…) ?</li>
-          <li>Le régime de la France est :</li>
-          <li>Pourquoi le principe de laïcité doit-il être respecté à l'école ?</li>
-          <li>En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?</li>
-          <li>Une personne a-t-elle le droit de ne pas croire en une religion ?</li>
-          <li>Quel droit est garanti par la laïcité ?</li>
-          <li>À l'école publique, qui peut porter des signes religieux très visibles ?</li>
-          <li>Selon le principe de laïcité, que signifie la neutralité de l'État ?</li>
-          <li>Que peut faire un usager du service public dans une mairie ?</li>
-          <li>Qui doit respecter le principe de neutralité religieuse dans une préfecture ?</li>
-          <li>La laïcité impose-t-elle aux agents publics d'être neutres vis-à-vis des usagers ?</li>
-          <li>Que garantit le principe de laïcité ?</li>
-          <li>A-t-on le droit de changer de religion ?</li>
-          <li>Que représente la laïcité ?</li>
-          <li>Qu'est ce qui est interdit par la Charte de la laïcité à l'école ?</li>
-          <li>Que dit l'article 1er de la Constitution française ?</li>
+          <li><strong>Parmi les propositions suivantes, laquelle constitue une participation citoyenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Voter aux élections, s'engager dans une association ou faire du bénévolat.</span></li>
+          <li><strong>Que garantit la liberté d'expression ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit de dire, écrire et exprimer ses opinions librement, dans le respect de la loi (pas d'injure, de diffamation ni d'incitation à la haine).</span></li>
+          <li><strong>À quoi sert un titre de séjour ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Il permet à un étranger de résider légalement en France et d'y exercer certains droits (travail, soins…) selon son type.</span></li>
+          <li><strong>La liberté de circulation permet à toute personne de :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Se déplacer librement sur le territoire, y entrer et le quitter, dans le respect des lois.</span></li>
+          <li><strong>Sur quel site internet peut-on retrouver le symbole de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Sur le site officiel de l'administration française, service-public.fr.</span></li>
+          <li><strong>Complétez ces paroles de la Marseillaise : "Aux armes […] ! Formez vos bataillons"</strong><span class="ec-a">🔹 <strong>Réponse :</strong> « Aux armes, citoyens ! »</span></li>
+          <li><strong>Complétez les paroles de la Marseillaise : "Allons enfants de la patrie […]"</strong><span class="ec-a">🔹 <strong>Réponse :</strong> « Allons enfants de la patrie, le jour de gloire est arrivé ! »</span></li>
+          <li><strong>En application de la liberté individuelle, quelle proposition est correcte ? Une personne peut :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Choisir librement son mode de vie, ses opinions et sa religion, tant qu'elle respecte la loi et les droits d'autrui.</span></li>
+          <li><strong>Concernant la pratique de la religion, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Chacun est libre de pratiquer la religion de son choix, ou de n'en pratiquer aucune, dans le respect de l'ordre public.</span></li>
+          <li><strong>En tant que parent, peut-on refuser que son enfant participe aux cours de sport à l'école car ils sont mixtes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non : l'école publique est laïque et mixte, les cours obligatoires ne peuvent être refusés pour ce motif.</span></li>
+          <li><strong>Quelle est la devise de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> « Liberté, Égalité, Fraternité ».</span></li>
+          <li><strong>La répudiation de sa femme est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Interdite et non reconnue en droit français, car contraire à l'égalité entre époux.</span></li>
+          <li><strong>Les impôts permettent de financer les dépenses publiques. Quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Ils financent les services publics (écoles, hôpitaux, sécurité, infrastructures) ; payer ses impôts est une obligation légale.</span></li>
+          <li><strong>Peut-on brûler publiquement un drapeau français ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, c'est une infraction pénale : l'outrage au drapeau est puni par la loi.</span></li>
+          <li><strong>Que fait l'État pour lutter contre les discriminations ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Il légifère (lois anti-discrimination), sanctionne les auteurs et soutient des organismes comme le Défenseur des droits.</span></li>
+          <li><strong>Que représente Marianne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'allégorie de la République française et de ses valeurs : liberté, égalité, fraternité.</span></li>
+          <li><strong>Qu'est-ce que la liberté d'association ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit de créer librement une association ou d'y adhérer, dans le respect de la loi.</span></li>
+          <li><strong>Qu'est-ce que la liberté ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit de faire tout ce qui ne nuit pas à autrui, dans le respect de la loi.</span></li>
+          <li><strong>Qu'est-ce que la Marseillaise ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'hymne national de la France.</span></li>
+          <li><strong>Sur quel document peut-on voir Marianne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Sur les timbres, les pièces de monnaie, ou le buste présent dans les mairies.</span></li>
+          <li><strong>Un employeur refuse d'embaucher des femmes dans son entreprise. Que dit la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> C'est interdit : la loi interdit toute discrimination liée au sexe lors de l'embauche.</span></li>
+          <li><strong>Une des valeurs de la devise républicaine est l'égalité. Qu'est-ce que cela signifie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les citoyens ont les mêmes droits et devoirs, sans distinction d'origine, de sexe, de religion ou de condition sociale.</span></li>
+          <li><strong>Quelle est la place de la langue française dans la République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> C'est la langue officielle de la République, inscrite à l'article 2 de la Constitution.</span></li>
+          <li><strong>Quels sont des symboles officiels de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le drapeau tricolore, Marianne, la Marseillaise, le coq gaulois, la devise « Liberté, égalité, fraternité » et le 14 juillet.</span></li>
+          <li><strong>A-t-on le droit d'insulter publiquement quelqu'un parce qu'il est différent (handicap, apparence physique, sexe…) ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non : c'est une discrimination et une injure interdites et punies par la loi.</span></li>
+          <li><strong>Le régime de la France est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une République démocratique, indivisible, laïque et sociale.</span></li>
+          <li><strong>Pourquoi le principe de laïcité doit-il être respecté à l'école ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Pour garantir la neutralité religieuse et permettre à tous les élèves, quelles que soient leurs croyances, d'être traités de façon égale.</span></li>
+          <li><strong>En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En 1905.</span></li>
+          <li><strong>Une personne a-t-elle le droit de ne pas croire en une religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, la liberté de conscience garantit aussi le droit d'être athée ou agnostique.</span></li>
+          <li><strong>Quel droit est garanti par la laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté de conscience et de religion, ainsi que la neutralité de l'État envers toutes les religions.</span></li>
+          <li><strong>À l'école publique, qui peut porter des signes religieux très visibles ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Personne : le port de signes religieux ostensibles est interdit pour les élèves des écoles, collèges et lycées publics.</span></li>
+          <li><strong>Selon le principe de laïcité, que signifie la neutralité de l'État ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'État ne favorise ni ne défavorise aucune religion et garantit leur libre exercice dans le respect de l'ordre public.</span></li>
+          <li><strong>Que peut faire un usager du service public dans une mairie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être reçu et traité de façon égale, sans discrimination, par des agents publics neutres.</span></li>
+          <li><strong>Qui doit respecter le principe de neutralité religieuse dans une préfecture ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les agents publics (fonctionnaires) qui y travaillent.</span></li>
+          <li><strong>La laïcité impose-t-elle aux agents publics d'être neutres vis-à-vis des usagers ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, les agents publics doivent rester neutres et ne peuvent porter de signes religieux dans l'exercice de leurs fonctions.</span></li>
+          <li><strong>Que garantit le principe de laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La séparation des religions et de l'État, la liberté de conscience et l'égalité de tous devant la loi quelle que soit leur religion.</span></li>
+          <li><strong>A-t-on le droit de changer de religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, la liberté de conscience et de religion permet de changer de religion ou de n'en avoir aucune.</span></li>
+          <li><strong>Que représente la laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le principe de séparation entre l'État et les religions, garantissant la neutralité de l'État et la liberté de croyance.</span></li>
+          <li><strong>Qu'est ce qui est interdit par la Charte de la laïcité à l'école ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le prosélytisme religieux et le port de signes religieux ostensibles.</span></li>
+          <li><strong>Que dit l'article 1er de la Constitution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Que la France est une République indivisible, laïque, démocratique et sociale, qui assure l'égalité devant la loi de tous les citoyens sans distinction.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="cr-p2">
           <div class="ec-panel-hd"><h2>Système institutionnel et politique</h2><span class="ec-panel-count">49 questions</span></div>
           <ul>
-          <li>Qu'est-ce que l'État de droit ?</li>
-          <li>Le président de la République a commis un crime. Quelle proposition est correcte ?</li>
-          <li>La loi est l'expression de :</li>
-          <li>Quelle est la durée du mandat du conseil municipal et du maire ?</li>
-          <li>Que garantit l'État de droit ?</li>
-          <li>Une personne peut-elle voter à la place d'une autre ?</li>
-          <li>Est-ce que le vote est obligatoire ?</li>
-          <li>À la fin de son mandat, le président de la République peut-il décider de rester au pouvoir ?</li>
-          <li>Qui dirige l'action du Gouvernement ?</li>
-          <li>Qui nomme le Premier ministre ?</li>
-          <li>Quelle est l'organisation administrative de la France ?</li>
-          <li>Qu'est-ce que le pouvoir législatif ? Le pouvoir :</li>
-          <li>Pourquoi séparer les trois pouvoirs dans une démocratie ?</li>
-          <li>Qui sanctionne l'auteur d'un vol ?</li>
-          <li>Quel est le rôle du gouvernement ?</li>
-          <li>Que se passe-t-il si un ministre ne respecte pas la loi ?</li>
-          <li>Combien de députés composent l'Assemblée nationale ?</li>
-          <li>Qui peut voter aux élections en France ?</li>
-          <li>Pour combien de temps sont élus les sénateurs ?</li>
-          <li>La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?</li>
-          <li>Est-ce que le président de la République a tous les pouvoirs ?</li>
-          <li>Qui est le préfet ?</li>
-          <li>Quelle condition est nécessaire pour voter aux élections ?</li>
-          <li>Qui dirige la commune ?</li>
-          <li>Quel est le régime politique de la France aujourd'hui ?</li>
-          <li>Qu'est-ce que l'Hôtel de Matignon ?</li>
-          <li>Le Parlement est composé :</li>
-          <li>Quel est le rôle du président de la République ?</li>
-          <li>Quel est le rôle du Premier ministre ?</li>
-          <li>Qui est le chef du Gouvernement ?</li>
-          <li>Combien y a-t-il de régions en France ?</li>
-          <li>Quel est le rôle du Défenseur des droits ?</li>
-          <li>Depuis quand l'euro est-elle la monnaie unique ?</li>
-          <li>Quel est le rôle principal du département ?</li>
-          <li>Quel est le rôle principal des communes ?</li>
-          <li>Combien de communes environ existe-t-il en France ?</li>
-          <li>Quel traité concerne la construction de l'Union européenne ?</li>
-          <li>Quel État a quitté l'Union européenne en 2020 ?</li>
-          <li>Quelle est la devise de l'Union européenne ?</li>
-          <li>Quel est l'hymne de l'Union européenne ?</li>
-          <li>De quoi est composé le drapeau européen ?</li>
-          <li>De quelle couleur est le drapeau européen ?</li>
-          <li>En quelle année le traité de Maastricht, qui marque la fondation de l'Union européenne, a-t-il été signé ?</li>
-          <li>Où est le siège du Parlement européen ?</li>
-          <li>Où est le siège de la Commission européenne ?</li>
-          <li>Quel État n'est pas membre de l'Union européenne ?</li>
-          <li>Quand célèbre-t-on la journée de l'Europe ?</li>
-          <li>À quelle fréquence les élections européennes sont-elles organisées ?</li>
-          <li>Quelle condition est nécessaire pour voter aux élections européennes ?</li>
-          <li>Quel pays est un pays fondateur de l'Union européenne ?</li>
+          <li><strong>Qu'est-ce que l'État de droit ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un système où l'État lui-même est soumis au respect du droit, et où les droits des citoyens sont garantis par des lois et des tribunaux indépendants.</span></li>
+          <li><strong>Le président de la République a commis un crime. Quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Il n'est pas au-dessus des lois : il peut être jugé, notamment après la fin de son mandat, ou par la Haute Cour en cas de manquement grave à ses devoirs.</span></li>
+          <li><strong>La loi est l'expression de :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La volonté générale, votée par le Parlement (Assemblée nationale et Sénat) qui représente les citoyens.</span></li>
+          <li><strong>Quelle est la durée du mandat du conseil municipal et du maire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 6 ans.</span></li>
+          <li><strong>Que garantit l'État de droit ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Que nul, y compris l'État, n'est au-dessus de la loi, et que les droits et libertés des citoyens sont protégés par la justice.</span></li>
+          <li><strong>Une personne peut-elle voter à la place d'une autre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, c'est interdit (fraude électorale), sauf en cas de procuration légale.</span></li>
+          <li><strong>Est-ce que le vote est obligatoire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, voter est un droit en France, pas une obligation.</span></li>
+          <li><strong>À la fin de son mandat, le président de la République peut-il décider de rester au pouvoir ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, il doit se soumettre à une nouvelle élection ; son pouvoir est limité par la Constitution.</span></li>
+          <li><strong>Qui dirige l'action du Gouvernement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Premier ministre.</span></li>
+          <li><strong>Qui nomme le Premier ministre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République.</span></li>
+          <li><strong>Quelle est l'organisation administrative de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elle est organisée en régions, départements et communes.</span></li>
+          <li><strong>Qu'est-ce que le pouvoir législatif ? Le pouvoir :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir de voter les lois, exercé par le Parlement (Assemblée nationale et Sénat).</span></li>
+          <li><strong>Pourquoi séparer les trois pouvoirs dans une démocratie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Pour éviter la concentration du pouvoir et les abus, et garantir un équilibre entre exécutif, législatif et judiciaire.</span></li>
+          <li><strong>Qui sanctionne l'auteur d'un vol ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La justice, à travers les tribunaux (pouvoir judiciaire).</span></li>
+          <li><strong>Quel est le rôle du gouvernement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Déterminer et conduire la politique de la nation et faire appliquer les lois (pouvoir exécutif).</span></li>
+          <li><strong>Que se passe-t-il si un ministre ne respecte pas la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Il peut être poursuivi et jugé, notamment devant la Cour de justice de la République pour des actes liés à ses fonctions.</span></li>
+          <li><strong>Combien de députés composent l'Assemblée nationale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 577 députés.</span></li>
+          <li><strong>Qui peut voter aux élections en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les citoyens français majeurs (18 ans), inscrits sur les listes électorales et jouissant de leurs droits civiques.</span></li>
+          <li><strong>Pour combien de temps sont élus les sénateurs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 6 ans.</span></li>
+          <li><strong>La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire.</span></li>
+          <li><strong>Est-ce que le président de la République a tous les pouvoirs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, son pouvoir est encadré par la Constitution et partagé avec le gouvernement, le Parlement et la justice.</span></li>
+          <li><strong>Qui est le préfet ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le représentant de l'État dans un département ou une région, nommé par le gouvernement.</span></li>
+          <li><strong>Quelle condition est nécessaire pour voter aux élections ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être de nationalité française, majeur, et inscrit sur les listes électorales.</span></li>
+          <li><strong>Qui dirige la commune ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le maire.</span></li>
+          <li><strong>Quel est le régime politique de la France aujourd'hui ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une République démocratique parlementaire, régie par la Constitution de la Ve République.</span></li>
+          <li><strong>Qu'est-ce que l'Hôtel de Matignon ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La résidence officielle et le lieu de travail du Premier ministre.</span></li>
+          <li><strong>Le Parlement est composé :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De l'Assemblée nationale et du Sénat.</span></li>
+          <li><strong>Quel est le rôle du président de la République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Chef de l'État et garant de la Constitution, il nomme le Premier ministre et représente la France.</span></li>
+          <li><strong>Quel est le rôle du Premier ministre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Diriger l'action du gouvernement et faire appliquer les lois.</span></li>
+          <li><strong>Qui est le chef du Gouvernement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Premier ministre.</span></li>
+          <li><strong>Combien y a-t-il de régions en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 18 régions (13 en métropole et 5 en outre-mer).</span></li>
+          <li><strong>Quel est le rôle du Défenseur des droits ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Défendre les droits et libertés des citoyens face aux administrations et lutter contre les discriminations.</span></li>
+          <li><strong>Depuis quand l'euro est-elle la monnaie unique ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Depuis 2002, date de la mise en circulation des pièces et billets en euros.</span></li>
+          <li><strong>Quel est le rôle principal du département ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Gérer l'action sociale, les collèges et les routes départementales.</span></li>
+          <li><strong>Quel est le rôle principal des communes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Gérer les écoles primaires, l'état civil, l'urbanisme local et les services de proximité.</span></li>
+          <li><strong>Combien de communes environ existe-t-il en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Environ 35 000 communes.</span></li>
+          <li><strong>Quel traité concerne la construction de l'Union européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le traité de Rome (1957), qui crée la Communauté économique européenne, ancêtre de l'Union européenne.</span></li>
+          <li><strong>Quel État a quitté l'Union européenne en 2020 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Royaume-Uni (Brexit).</span></li>
+          <li><strong>Quelle est la devise de l'Union européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> « Unie dans la diversité ».</span></li>
+          <li><strong>Quel est l'hymne de l'Union européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Ode à la joie, de Beethoven.</span></li>
+          <li><strong>De quoi est composé le drapeau européen ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De 12 étoiles dorées disposées en cercle sur un fond bleu.</span></li>
+          <li><strong>De quelle couleur est le drapeau européen ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Bleu, avec des étoiles jaunes/dorées.</span></li>
+          <li><strong>En quelle année le traité de Maastricht, qui marque la fondation de l'Union européenne, a-t-il été signé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En 1992.</span></li>
+          <li><strong>Où est le siège du Parlement européen ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À Strasbourg.</span></li>
+          <li><strong>Où est le siège de la Commission européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À Bruxelles.</span></li>
+          <li><strong>Quel État n'est pas membre de l'Union européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Royaume-Uni (ou la Suisse, la Norvège), qui ne font pas partie de l'UE.</span></li>
+          <li><strong>Quand célèbre-t-on la journée de l'Europe ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 9 mai.</span></li>
+          <li><strong>À quelle fréquence les élections européennes sont-elles organisées ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les 5 ans.</span></li>
+          <li><strong>Quelle condition est nécessaire pour voter aux élections européennes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être citoyen d'un État membre de l'UE, majeur, et inscrit sur les listes électorales.</span></li>
+          <li><strong>Quel pays est un pays fondateur de l'Union européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La France, avec l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="cr-p3">
           <div class="ec-panel-hd"><h2>Droits et devoirs</h2><span class="ec-panel-count">37 questions</span></div>
           <ul>
-          <li>À quelle liberté la PMA fait-elle référence ?</li>
-          <li>Au nom de quoi l'État justifie-t-il la restriction des droits ?</li>
-          <li>Concernant le droit de se marier, quelle proposition est correcte ?</li>
-          <li>Est-il toujours possible de divorcer ?</li>
-          <li>La peine de mort est :</li>
-          <li>Laquelle de ces citations est inscrite dans la Déclaration des Droits de l'homme et du Citoyen de 1789 ?</li>
-          <li>Le recours à l'avortement est-il autorisé ?</li>
-          <li>Que contient la Constitution ?</li>
-          <li>Que garantit la liberté de la presse ?</li>
-          <li>Que prévoit la Charte de l'environnement ?</li>
-          <li>Que signifie la dignité humaine ?</li>
-          <li>Que signifie le droit de manifester ?</li>
-          <li>Que signifie PMA ?</li>
-          <li>Quel texte est le plus difficile à modifier ?</li>
-          <li>Quelle liberté permet à une personne de croire en la religion de son choix ?</li>
-          <li>Qu'est-ce que le droit de grève ?</li>
-          <li>Qu'est-ce que la Constitution ?</li>
-          <li>Qui peut demander à avorter ?</li>
-          <li>Une femme majeure de nationalité française a-t-elle le droit de voter aux élections ?</li>
-          <li>Concernant l'utilisation des réseaux sociaux, quelle proposition est correcte ?</li>
-          <li>Jeter un mégot par terre est :</li>
-          <li>L'État peut-il limiter les droits et libertés ?</li>
-          <li>Parmi ces actions, laquelle permet d'adopter une attitude respectueuse de l'environnement ?</li>
-          <li>Quelle proposition constitue une obligation ?</li>
-          <li>Pour quel motif peut-on limiter la liberté d'expression ?</li>
-          <li>Pourquoi doit-on trier ses déchets ?</li>
-          <li>Que doit faire une victime de violences ?</li>
-          <li>Que doit-on faire face aux ordres des policiers ou gendarmes ?</li>
-          <li>Quel est le rôle de la police ?</li>
-          <li>Quel est un exemple d'assistance à personne en danger ?</li>
-          <li>Quel exemple illustre une limitation de liberté pour protéger l'intérêt général ?</li>
-          <li>Quelle est l'attitude à avoir lorsque qu'on est témoin de violences ?</li>
-          <li>Quelle est l'infraction la plus grave ?</li>
-          <li>Quelle obligation concerne toutes les personnes résidant en France quelle que soit leur nationalité ?</li>
-          <li>Quelle proposition représente un exemple de crime ?</li>
-          <li>Quelle proposition représente un exemple de délit ?</li>
-          <li>Qui veille au maintien de l'ordre public ?</li>
-          <li>S'agissant des déchets, quelle proposition est correcte ?</li>
+          <li><strong>À quelle liberté la PMA fait-elle référence ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À la liberté de disposer de son corps et au droit de fonder une famille.</span></li>
+          <li><strong>Au nom de quoi l'État justifie-t-il la restriction des droits ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Au nom de l'ordre public, de la sécurité, ou de la protection des droits d'autrui et de l'intérêt général.</span></li>
+          <li><strong>Concernant le droit de se marier, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Toute personne majeure et consentante peut se marier, y compris les couples de même sexe depuis 2013.</span></li>
+          <li><strong>Est-il toujours possible de divorcer ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, le divorce est un droit reconnu, selon plusieurs procédures possibles (consentement mutuel, faute…).</span></li>
+          <li><strong>La peine de mort est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Abolie en France depuis 1981.</span></li>
+          <li><strong>Laquelle de ces citations est inscrite dans la Déclaration des Droits de l'homme et du Citoyen de 1789 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> « Les hommes naissent et demeurent libres et égaux en droits » (article 1er).</span></li>
+          <li><strong>Le recours à l'avortement est-il autorisé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, l'IVG (interruption volontaire de grossesse) est un droit légal en France, inscrit dans la Constitution depuis 2024.</span></li>
+          <li><strong>Que contient la Constitution ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'organisation des pouvoirs publics ainsi que les droits et libertés fondamentaux des citoyens.</span></li>
+          <li><strong>Que garantit la liberté de la presse ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit d'informer et d'être informé librement, dans le respect de la loi (pas de diffamation ni d'atteinte à la vie privée).</span></li>
+          <li><strong>Que prévoit la Charte de l'environnement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Que chacun a le droit de vivre dans un environnement équilibré et le devoir de le protéger ; elle a valeur constitutionnelle depuis 2005.</span></li>
+          <li><strong>Que signifie la dignité humaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le respect dû à toute personne humaine, quelle que soit sa situation, interdisant tout traitement dégradant.</span></li>
+          <li><strong>Que signifie le droit de manifester ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit de se réunir et d'exprimer publiquement une opinion, dans le respect de la loi et de l'ordre public.</span></li>
+          <li><strong>Que signifie PMA ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Procréation médicalement assistée.</span></li>
+          <li><strong>Quel texte est le plus difficile à modifier ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Constitution, qui nécessite une procédure de révision spécifique.</span></li>
+          <li><strong>Quelle liberté permet à une personne de croire en la religion de son choix ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté de conscience et de religion (liberté de culte).</span></li>
+          <li><strong>Qu'est-ce que le droit de grève ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit des salariés de cesser collectivement le travail pour défendre leurs revendications.</span></li>
+          <li><strong>Qu'est-ce que la Constitution ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le texte fondamental qui organise les pouvoirs publics et garantit les droits et libertés des citoyens.</span></li>
+          <li><strong>Qui peut demander à avorter ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Toute femme enceinte qui le souhaite, dans les délais légaux prévus par la loi.</span></li>
+          <li><strong>Une femme majeure de nationalité française a-t-elle le droit de voter aux élections ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, depuis 1944 les femmes ont les mêmes droits de vote que les hommes.</span></li>
+          <li><strong>Concernant l'utilisation des réseaux sociaux, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté d'expression s'y applique, mais dans les limites de la loi (pas de diffamation, d'injure ni d'incitation à la haine).</span></li>
+          <li><strong>Jeter un mégot par terre est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Interdit et passible d'une amende (infraction environnementale).</span></li>
+          <li><strong>L'État peut-il limiter les droits et libertés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, dans certaines conditions prévues par la loi, pour protéger l'ordre public ou les droits d'autrui.</span></li>
+          <li><strong>Parmi ces actions, laquelle permet d'adopter une attitude respectueuse de l'environnement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Trier ses déchets, économiser l'eau et l'énergie, ou utiliser les transports en commun.</span></li>
+          <li><strong>Quelle proposition constitue une obligation ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Payer ses impôts, respecter la loi, ou scolariser ses enfants.</span></li>
+          <li><strong>Pour quel motif peut-on limiter la liberté d'expression ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Pour éviter la diffamation, l'injure, l'incitation à la haine ou à la violence, ou pour protéger l'ordre public.</span></li>
+          <li><strong>Pourquoi doit-on trier ses déchets ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Pour protéger l'environnement et permettre leur recyclage ; c'est aussi une obligation légale.</span></li>
+          <li><strong>Que doit faire une victime de violences ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Porter plainte auprès de la police ou de la gendarmerie et consulter un médecin si besoin.</span></li>
+          <li><strong>Que doit-on faire face aux ordres des policiers ou gendarmes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les respecter et s'y conformer, car ils agissent dans le cadre de la loi.</span></li>
+          <li><strong>Quel est le rôle de la police ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Assurer la sécurité des personnes et des biens, et faire respecter la loi et l'ordre public.</span></li>
+          <li><strong>Quel est un exemple d'assistance à personne en danger ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Appeler les secours (15, 17, 18 ou 112) ou porter assistance dans la mesure de ses moyens.</span></li>
+          <li><strong>Quel exemple illustre une limitation de liberté pour protéger l'intérêt général ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'obligation du port de la ceinture de sécurité, ou l'interdiction de fumer dans les lieux publics.</span></li>
+          <li><strong>Quelle est l'attitude à avoir lorsque qu'on est témoin de violences ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Alerter les secours ou la police, et porter assistance si possible sans se mettre en danger.</span></li>
+          <li><strong>Quelle est l'infraction la plus grave ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le crime (par exemple le meurtre), jugé par la Cour d'assises.</span></li>
+          <li><strong>Quelle obligation concerne toutes les personnes résidant en France quelle que soit leur nationalité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Respecter les lois françaises.</span></li>
+          <li><strong>Quelle proposition représente un exemple de crime ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le meurtre, le viol ou le vol à main armée.</span></li>
+          <li><strong>Quelle proposition représente un exemple de délit ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le vol simple, la conduite en état d'ivresse, ou des coups et blessures légers.</span></li>
+          <li><strong>Qui veille au maintien de l'ordre public ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La police et la gendarmerie.</span></li>
+          <li><strong>S'agissant des déchets, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le tri des déchets est une obligation et permet leur recyclage.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="cr-p4">
           <div class="ec-panel-hd"><h2>Histoire, géographie et culture</h2><span class="ec-panel-count">47 questions</span></div>
           <ul>
-          <li>Quel était le surnom de Louis XIV ?</li>
-          <li>Quel roi de France a été exécuté pendant la Révolution française ?</li>
-          <li>En quelle année Napoléon Ier est-il devenu empereur ?</li>
-          <li>Lequel de ces personnages a un lien avec la République française ?</li>
-          <li>De quand date l'appel à la résistance du général de Gaulle ?</li>
-          <li>Pourquoi la Shoah est-elle étudiée à l'école ?</li>
-          <li>Quel pays a été colonisé par la France ?</li>
-          <li>Depuis quand les Français élisent-ils le président de la République au suffrage universel direct ?</li>
-          <li>Quelle est la première étape de la construction européenne en 1951 ?</li>
-          <li>Durant le mandat de quel président la peine de mort a-t-elle été abolie ?</li>
-          <li>Quel régime politique a été mis en place pendant la Révolution française en 1792 ?</li>
-          <li>Qui était une figure de la Résistance française pendant la Seconde Guerre mondiale ?</li>
-          <li>En 1944, qu'est-ce qui a changé pour les femmes ?</li>
-          <li>Quelle organisation internationale a été créée en 1945 après la Seconde Guerre mondiale ?</li>
-          <li>Quelle peine a été supprimée en 1981 ?</li>
-          <li>En quelle année l'euro est-elle devenue la monnaie utilisée en France ?</li>
-          <li>En quelle année a commencé la Première Guerre mondiale ?</li>
-          <li>Où a eu lieu le débarquement en 1944 ?</li>
-          <li>Quel continent a été le plus concerné par la décolonisation française après la Seconde Guerre mondiale ?</li>
-          <li>Que fête-t-on le 8 mai ?</li>
-          <li>Quelle mer ou océan borde la France métropolitaine ?</li>
-          <li>Quel pays a une frontière terrestre avec la France métropolitaine ?</li>
-          <li>Quelle ville française est un port maritime ?</li>
-          <li>Quelle mer se situe entre la France et l'Angleterre ?</li>
-          <li>Qu'est ce que la France d'outre-mer ?</li>
-          <li>Quelle chaîne de montagnes est située entre la France et l'Espagne ?</li>
-          <li>Quelle île française se trouve dans l'océan Indien ?</li>
-          <li>Quelle est la population approximative de la France en 2025 ?</li>
-          <li>Quel fleuve traverse Paris ?</li>
-          <li>Lequel de ces pays partage des frontières terrestres avec la France ?</li>
-          <li>Quel pays a une frontière avec la France métropolitaine au nord-est ?</li>
-          <li>Où se trouvent les principales activités économiques en France ?</li>
-          <li>Parmi ces pays, lequel attire le plus de visiteurs chaque année ?</li>
-          <li>Où habite la majorité des Français ?</li>
-          <li>Quelle région est la plus peuplée ?</li>
-          <li>Quelle ville française fait partie des 10 plus grandes métropoles du pays ?</li>
-          <li>Lequel de ces départements de France est le plus touristique ?</li>
-          <li>Quand peut-on visiter gratuitement des lieux culturels en France ?</li>
-          <li>Combien de personnes parlent français dans le monde ?</li>
-          <li>Qui était Marguerite Yourcenar ?</li>
-          <li>Quel peintre est français ?</li>
-          <li>Quel musée est situé à Paris ?</li>
-          <li>Qui était Auguste Rodin ?</li>
-          <li>Quel est le classement de la langue française parmi les langues les plus parlées dans le monde ?</li>
-          <li>Quelle cathédrale célèbre a été en partie détruite par un incendie en 2019 ?</li>
-          <li>Qui était une écrivaine française célèbre ?</li>
-          <li>Qui était un célèbre musicien français ?</li>
-          <li>Qui était Auguste Renoir ?</li>
+          <li><strong>Quel était le surnom de Louis XIV ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Roi-Soleil.</span></li>
+          <li><strong>Quel roi de France a été exécuté pendant la Révolution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Louis XVI.</span></li>
+          <li><strong>En quelle année Napoléon Ier est-il devenu empereur ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En 1804.</span></li>
+          <li><strong>Lequel de ces personnages a un lien avec la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Marianne, allégorie de la République, ou une figure historique comme Charles de Gaulle qui l'a incarnée.</span></li>
+          <li><strong>De quand date l'appel à la résistance du général de Gaulle ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Du 18 juin 1940.</span></li>
+          <li><strong>Pourquoi la Shoah est-elle étudiée à l'école ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Pour comprendre et se souvenir du génocide des Juifs perpétré par les nazis pendant la Seconde Guerre mondiale, et prévenir toute répétition.</span></li>
+          <li><strong>Quel pays a été colonisé par la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Par exemple l'Algérie, le Sénégal ou le Vietnam, parmi de nombreux territoires en Afrique, Asie et Amérique.</span></li>
+          <li><strong>Depuis quand les Français élisent-ils le président de la République au suffrage universel direct ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Depuis 1965 (réforme instaurée en 1962 par le général de Gaulle).</span></li>
+          <li><strong>Quelle est la première étape de la construction européenne en 1951 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La création de la Communauté européenne du charbon et de l'acier (CECA).</span></li>
+          <li><strong>Durant le mandat de quel président la peine de mort a-t-elle été abolie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> François Mitterrand, en 1981.</span></li>
+          <li><strong>Quel régime politique a été mis en place pendant la Révolution française en 1792 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Première République.</span></li>
+          <li><strong>Qui était une figure de la Résistance française pendant la Seconde Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Jean Moulin (ou le général de Gaulle).</span></li>
+          <li><strong>En 1944, qu'est-ce qui a changé pour les femmes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elles ont obtenu le droit de vote et d'éligibilité.</span></li>
+          <li><strong>Quelle organisation internationale a été créée en 1945 après la Seconde Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Organisation des Nations unies (ONU).</span></li>
+          <li><strong>Quelle peine a été supprimée en 1981 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La peine de mort.</span></li>
+          <li><strong>En quelle année l'euro est-elle devenue la monnaie utilisée en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En 2002.</span></li>
+          <li><strong>En quelle année a commencé la Première Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En 1914.</span></li>
+          <li><strong>Où a eu lieu le débarquement en 1944 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En Normandie.</span></li>
+          <li><strong>Quel continent a été le plus concerné par la décolonisation française après la Seconde Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Afrique (ainsi que l'Asie, avec l'Indochine).</span></li>
+          <li><strong>Que fête-t-on le 8 mai ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La victoire des Alliés et la fin de la Seconde Guerre mondiale en Europe (armistice de 1945).</span></li>
+          <li><strong>Quelle mer ou océan borde la France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Manche, l'océan Atlantique et la mer Méditerranée.</span></li>
+          <li><strong>Quel pays a une frontière terrestre avec la France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Par exemple l'Espagne, l'Italie, l'Allemagne, la Belgique ou la Suisse.</span></li>
+          <li><strong>Quelle ville française est un port maritime ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Marseille (ou Le Havre, Bordeaux).</span></li>
+          <li><strong>Quelle mer se situe entre la France et l'Angleterre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Manche.</span></li>
+          <li><strong>Qu'est ce que la France d'outre-mer ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les territoires français situés hors d'Europe (Guadeloupe, Martinique, Guyane, Réunion, Mayotte…), qui font partie intégrante de la République.</span></li>
+          <li><strong>Quelle chaîne de montagnes est située entre la France et l'Espagne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les Pyrénées.</span></li>
+          <li><strong>Quelle île française se trouve dans l'océan Indien ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Réunion (ou Mayotte).</span></li>
+          <li><strong>Quelle est la population approximative de la France en 2025 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Environ 68 millions d'habitants.</span></li>
+          <li><strong>Quel fleuve traverse Paris ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Seine.</span></li>
+          <li><strong>Lequel de ces pays partage des frontières terrestres avec la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Espagne, l'Italie, la Belgique, l'Allemagne, la Suisse, le Luxembourg, Andorre ou Monaco.</span></li>
+          <li><strong>Quel pays a une frontière avec la France métropolitaine au nord-est ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Allemagne (ainsi que le Luxembourg et la Belgique).</span></li>
+          <li><strong>Où se trouvent les principales activités économiques en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Dans les grandes métropoles, avec une forte concentration en Île-de-France.</span></li>
+          <li><strong>Parmi ces pays, lequel attire le plus de visiteurs chaque année ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La France, première destination touristique mondiale.</span></li>
+          <li><strong>Où habite la majorité des Français ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En zone urbaine, dans les villes et leurs agglomérations.</span></li>
+          <li><strong>Quelle région est la plus peuplée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Île-de-France.</span></li>
+          <li><strong>Quelle ville française fait partie des 10 plus grandes métropoles du pays ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Par exemple Lyon, Marseille ou Toulouse.</span></li>
+          <li><strong>Lequel de ces départements de France est le plus touristique ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Paris (ou les Alpes-Maritimes).</span></li>
+          <li><strong>Quand peut-on visiter gratuitement des lieux culturels en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Lors des Journées européennes du patrimoine, en septembre, ou le premier dimanche du mois dans certains musées.</span></li>
+          <li><strong>Combien de personnes parlent français dans le monde ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Plus de 320 millions de personnes.</span></li>
+          <li><strong>Qui était Marguerite Yourcenar ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une écrivaine française, première femme élue à l'Académie française, en 1980.</span></li>
+          <li><strong>Quel peintre est français ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Claude Monet (ou Auguste Renoir, Edgar Degas).</span></li>
+          <li><strong>Quel musée est situé à Paris ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Louvre (ou le musée d'Orsay).</span></li>
+          <li><strong>Qui était Auguste Rodin ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un célèbre sculpteur français, auteur notamment du « Penseur ».</span></li>
+          <li><strong>Quel est le classement de la langue française parmi les langues les plus parlées dans le monde ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elle figure parmi les cinq langues les plus parlées au monde.</span></li>
+          <li><strong>Quelle cathédrale célèbre a été en partie détruite par un incendie en 2019 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Notre-Dame de Paris.</span></li>
+          <li><strong>Qui était une écrivaine française célèbre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Simone de Beauvoir (ou George Sand, Marguerite Yourcenar).</span></li>
+          <li><strong>Qui était un célèbre musicien français ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Claude Debussy (ou Édith Piaf, Hector Berlioz).</span></li>
+          <li><strong>Qui était Auguste Renoir ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un peintre impressionniste français.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="cr-p5">
           <div class="ec-panel-hd"><h2>Vivre dans la société française</h2><span class="ec-panel-count">31 questions</span></div>
           <ul>
-          <li>Quel mariage est reconnu par l'État ?</li>
-          <li>Auprès de quelle institution les parents peuvent-ils inscrire leur enfant à l'école publique ?</li>
-          <li>En cas de divorce, qui exerce l'autorité parentale ?</li>
-          <li>Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?</li>
-          <li>Où faut-il déclarer la naissance d'un enfant ?</li>
-          <li>Quelle est l'une des conditions pour passer l'examen du permis de conduire ?</li>
-          <li>Un bail locatif est valide s'il est :</li>
-          <li>Où peut-on déposer un lave-vaisselle cassé ?</li>
-          <li>Quel numéro d'urgence permet d'appeler la police ?</li>
-          <li>Concernant l'accès aux soins, quelle proposition est correcte ?</li>
-          <li>À qui est accessible la contraception ?</li>
-          <li>Qu'est-ce que le principe de confidentialité dans le domaine de la santé ?</li>
-          <li>L'inscription à l'Assurance maladie est :</li>
-          <li>Qui peut demander un congé parental d'éducation ?</li>
-          <li>Quelles sont les affaires traitées par le conseil de prud'hommes ?</li>
-          <li>Travailler sans être déclaré est :</li>
-          <li>Lorsqu'un employeur veut qu'un salarié travaille plus longtemps que la durée prévue dans le contrat de travail :</li>
-          <li>Quelle est la mission de France Travail ?</li>
-          <li>Dans une entreprise, le droit syndical permet :</li>
-          <li>Dans une entreprise, le droit de grève autorise :</li>
-          <li>Quelles sont les conditions pour toucher les allocations chômage ?</li>
-          <li>Qu'est-ce que l'école maternelle ?</li>
-          <li>Comment s'appelle le diplôme passé par les élèves à la fin du collège ?</li>
-          <li>Les parents d'élève ont le droit de :</li>
-          <li>Qui peut manger à la cantine scolaire ?</li>
-          <li>À quel âge commence l'instruction obligatoire des enfants ?</li>
-          <li>Quel est l'âge de la majorité ?</li>
-          <li>À l'école, il est interdit aux parents de :</li>
-          <li>Quel motif d'absence est accepté par l'école ?</li>
-          <li>Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?</li>
-          <li>Quand ont lieu les vacances scolaires de Noël ?</li>
+          <li><strong>Quel mariage est reconnu par l'État ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le mariage civil célébré à la mairie ; un mariage religieux seul n'a pas de valeur légale.</span></li>
+          <li><strong>Auprès de quelle institution les parents peuvent-ils inscrire leur enfant à l'école publique ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La mairie.</span></li>
+          <li><strong>En cas de divorce, qui exerce l'autorité parentale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En général les deux parents (autorité parentale conjointe), sauf décision contraire du juge.</span></li>
+          <li><strong>Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'aide juridictionnelle.</span></li>
+          <li><strong>Où faut-il déclarer la naissance d'un enfant ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À la mairie du lieu de naissance, dans les cinq jours suivant la naissance.</span></li>
+          <li><strong>Quelle est l'une des conditions pour passer l'examen du permis de conduire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Avoir l'âge minimum requis (17 ou 18 ans selon le permis) et suivre une formation dans une auto-école.</span></li>
+          <li><strong>Un bail locatif est valide s'il est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Écrit et signé par le propriétaire et le locataire.</span></li>
+          <li><strong>Où peut-on déposer un lave-vaisselle cassé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À la déchetterie.</span></li>
+          <li><strong>Quel numéro d'urgence permet d'appeler la police ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 17 (ou le 112, numéro d'urgence européen).</span></li>
+          <li><strong>Concernant l'accès aux soins, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Toute personne résidant en France a accès aux soins, notamment via l'Assurance maladie ou l'Aide médicale d'État.</span></li>
+          <li><strong>À qui est accessible la contraception ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À toutes les femmes, y compris les mineures, souvent de façon gratuite ou remboursée.</span></li>
+          <li><strong>Qu'est-ce que le principe de confidentialité dans le domaine de la santé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le secret médical : les informations de santé d'un patient ne peuvent être divulguées sans son consentement.</span></li>
+          <li><strong>L'inscription à l'Assurance maladie est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Obligatoire pour toute personne résidant en France.</span></li>
+          <li><strong>Qui peut demander un congé parental d'éducation ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tout salarié, homme ou femme, à la naissance ou à l'adoption d'un enfant.</span></li>
+          <li><strong>Quelles sont les affaires traitées par le conseil de prud'hommes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les litiges individuels entre employeurs et salariés liés au contrat de travail.</span></li>
+          <li><strong>Travailler sans être déclaré est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Illégal (travail dissimulé) et passible de sanctions pénales.</span></li>
+          <li><strong>Lorsqu'un employeur veut qu'un salarié travaille plus longtemps que la durée prévue dans le contrat de travail :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Il doit rémunérer ces heures supplémentaires, selon les règles légales ou conventionnelles.</span></li>
+          <li><strong>Quelle est la mission de France Travail ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Aider les demandeurs d'emploi à retrouver un emploi et verser les allocations chômage (anciennement Pôle emploi).</span></li>
+          <li><strong>Dans une entreprise, le droit syndical permet :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Aux salariés de se syndiquer et de défendre collectivement leurs intérêts.</span></li>
+          <li><strong>Dans une entreprise, le droit de grève autorise :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les salariés à cesser collectivement le travail pour défendre leurs revendications.</span></li>
+          <li><strong>Quelles sont les conditions pour toucher les allocations chômage ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Avoir suffisamment cotisé, être inscrit comme demandeur d'emploi et rechercher activement un emploi.</span></li>
+          <li><strong>Qu'est-ce que l'école maternelle ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'école destinée aux enfants de 3 à 6 ans, avant l'école élémentaire ; elle est obligatoire dès 3 ans.</span></li>
+          <li><strong>Comment s'appelle le diplôme passé par les élèves à la fin du collège ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le brevet (Diplôme national du brevet).</span></li>
+          <li><strong>Les parents d'élève ont le droit de :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être informés de la scolarité de leur enfant et participer aux instances de l'école (conseil d'école…).</span></li>
+          <li><strong>Qui peut manger à la cantine scolaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les élèves inscrits, sans discrimination.</span></li>
+          <li><strong>À quel âge commence l'instruction obligatoire des enfants ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 3 ans.</span></li>
+          <li><strong>Quel est l'âge de la majorité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 18 ans.</span></li>
+          <li><strong>À l'école, il est interdit aux parents de :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Faire du prosélytisme religieux ou politique, ou pénétrer dans les classes sans autorisation.</span></li>
+          <li><strong>Quel motif d'absence est accepté par l'école ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La maladie de l'enfant, justifiée par un certificat médical ou une note des parents.</span></li>
+          <li><strong>Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une amende pouvant aller jusqu'à 750 €, voire des poursuites pénales dans les cas graves.</span></li>
+          <li><strong>Quand ont lieu les vacances scolaires de Noël ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Fin décembre, généralement pendant environ deux semaines à la charnière de l'année.</span></li>
         </ul>
         </div>
         <p class="ec-noresult" style="display:none">Aucune question ne correspond à votre recherche.</p>
@@ -1694,15 +1776,99 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     </div>
     <div class="ec-source">Source : <a href="https://formation-civique.interieur.gouv.fr/examen-civique/liste-officielle-des-questions-de-connaissance-cr/" target="_blank">Liste officielle des questions de connaissance – CR</a>, ministère de l'Intérieur. Les réponses et propositions de choix ne sont pas publiées par l'administration.</div>
     <div class="mini-grid" style="grid-template-columns:1fr 1fr;margin-top:1.5rem">
-      <div class="mc mc-interview" onclick="go('theme-quiz')">
+      <div class="mc mc-interview" onclick="go('civique-quiz')">
         <div class="mc-icon">🎯</div>
         <div class="mc-title">S'entraîner sur ces thèmes</div>
-        <div class="mc-desc">Lancer un quiz par thème correspondant aux catégories officielles</div>
+        <div class="mc-desc">Lancer le quiz Examen civique (questions CSP + CR)</div>
       </div>
       <div class="mc mc-fb" onclick="go('examen-csp')">
         <div class="mc-icon">📄</div>
         <div class="mc-title">Voir la liste CSP</div>
         <div class="mc-desc">Consulter la liste officielle pour la carte de séjour pluriannuelle</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ EXAMEN CIVIQUE (CSP + CR) -->
+  <div class="view" id="view-civique-quiz">
+    <div class="page-hd">
+      <div class="page-eyebrow">CSP · CR</div>
+      <h1>Quiz <span>examen civique</span></h1>
+    </div>
+    <div id="cq-landing">
+      <div class="quiz-landing-wrap">
+        <div class="ql-badge">🎯 Questions officielles CSP + CR</div>
+        <div class="ql-title" id="cq-title">Examen civique</div>
+        <div class="ql-sub" id="cq-sub">QCM basé sur la banque fusionnée des listes officielles CSP et CR</div>
+        <div class="ql-params">
+          <div class="ql-p"><div class="ql-p-n" id="cq-pool-n">0</div><div class="ql-p-l">Questions dispo.</div></div>
+        </div>
+        <div style="margin-bottom:1.5rem;text-align:left">
+          <div style="font-family:Syne,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:.7rem;text-align:center">Quel type de carte préparez-vous ?</div>
+          <div class="theme-selector" id="cq-source-sel"></div>
+        </div>
+        <div style="margin-bottom:1.5rem;text-align:left">
+          <div style="font-family:Syne,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:.7rem;text-align:center">Choisir un thème</div>
+          <div class="theme-selector" id="cq-theme-sel"></div>
+        </div>
+        <div class="quiz-controls-row">
+          <div class="qc-group">
+            <div class="qc-label">Nombre de questions</div>
+            <div class="qty-row">
+              <button class="qty-btn" onclick="changeQtyCQ(-5)">−</button>
+              <div class="qty-val" id="cq-qty">10</div>
+              <button class="qty-btn" onclick="changeQtyCQ(5)">+</button>
+            </div>
+          </div>
+          <div class="qc-group">
+            <div class="qc-label">Chronomètre</div>
+            <div class="toggle-row" onclick="toggleChronoCQ()">
+              <div class="tog-track on" id="cq-chrono-track"><div class="tog-thumb"></div></div>
+              <div class="tog-label" id="cq-chrono-lbl">Activé</div>
+            </div>
+          </div>
+        </div>
+        <button class="btn" onclick="launchCivicQuiz()">▶ &nbsp;Lancer le quiz</button>
+      </div>
+    </div>
+    <div id="cq-screen" style="display:none">
+      <div class="qz-bar">
+        <div class="qz-count" id="cqz-count">1 <small>/ 10</small></div>
+        <div class="prog-wrap"><div class="prog-fill" id="cqz-prog" style="width:0%"></div></div>
+        <div class="timer-wrap" id="cqz-timer">
+          <svg width="54" height="54" viewBox="0 0 54 54">
+            <circle class="t-bg" cx="27" cy="27" r="22"/>
+            <circle class="t-fg" id="cqz-t-fg" cx="27" cy="27" r="22" stroke-dasharray="138.2" stroke-dashoffset="0"/>
+          </svg>
+          <div class="t-txt" id="cqz-t-txt">30</div>
+        </div>
+      </div>
+      <div class="q-top">
+        <div class="q-theme-tag" id="cqz-theme"></div>
+      </div>
+      <div class="q-text" id="cqz-q"></div>
+      <div id="cqz-banner"></div>
+      <div class="opts-grid" id="cqz-opts"></div>
+      <div id="cqz-expl"></div>
+      <div style="text-align:right"><button class="btn" id="cqz-next" onclick="nextCQ()" style="display:none">Suivant →</button></div>
+    </div>
+    <div id="cq-results" style="display:none">
+      <div class="res-hero">
+        <div>
+          <div class="res-score-big" id="cqz-sc">—</div>
+          <div class="res-mention" id="cqz-mention"></div>
+          <div class="res-date" id="cqz-date"></div>
+        </div>
+        <div>
+          <span class="res-pct-val" id="cqz-pct">—</span>
+          <span class="res-pct-lbl">Score</span>
+        </div>
+      </div>
+      <div id="cqz-wrongs"></div>
+      <div class="btn-row">
+        <button class="btn" onclick="launchCivicQuiz()">🔄 Rejouer</button>
+        <button class="btn btn-outline" onclick="resetCivicQuiz()">← Changer de thème</button>
+        <button class="btn btn-outline" onclick="go('examen-civique')">🇫🇷 Retour Examen civique</button>
       </div>
     </div>
   </div>
@@ -1718,22 +1884,23 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         "@id":"https://cap-naturalisation.fr/#website",
         "url":"https://cap-naturalisation.fr/",
         "name":"Cap Naturalisation",
-        "description":"Quiz, QCM et outils d’entraînement gratuits pour préparer la naturalisation française et l’examen civique (CSP, CR).",
+        "description":"Quiz, test, questionnaire et QCM 100% gratuits pour préparer la naturalisation française, la nationalité française et l’examen civique (CSP, CR).",
         "inLanguage":"fr-FR"
       },
       {
         "@type":"WebApplication",
         "@id":"https://cap-naturalisation.fr/#app",
-        "name":"Quiz Naturalisation & Examen Civique Gratuit",
+        "name":"Quiz Naturalisation Gratuit : Questionnaire, Test, QCM & Examen Civique",
         "url":"https://cap-naturalisation.fr/",
         "applicationCategory":"EducationalApplication",
         "operatingSystem":"All",
+        "isAccessibleForFree":true,
         "offers":{
           "@type":"Offer",
           "price":"0",
           "priceCurrency":"EUR"
         },
-        "description":"Application gratuite de quiz, QCM, listes officielles et entraînement oral pour préparer la naturalisation française et l’examen civique (CSP, CR)."
+        "description":"Application 100% gratuite et sans inscription : quiz, test, questionnaire, QCM, listes officielles et entraînement oral pour préparer la naturalisation française, la nationalité française et l’examen civique (CSP, CR)."
       },
       {
         "@type":"FAQPage",
@@ -1751,7 +1918,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
             "name":"Qu’est-ce que l’examen civique CSP et CR ?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"L’examen civique est obligatoire pour obtenir la carte de séjour pluriannuelle (CSP) ou la carte de résident (CR). Cap Naturalisation reprend la liste officielle des questions publiée par le ministère de l’Intérieur pour chaque niveau et propose un entraînement par thème sur ces mêmes sujets."
+              "text":"L’examen civique est obligatoire pour obtenir certains titres de séjour : la carte de séjour pluriannuelle (CSP) et la carte de résident (CR), avec un niveau d’exigence différent selon la carte. Cap Naturalisation reprend la liste officielle des questions publiée par le ministère de l’Intérieur pour chaque niveau, propose les réponses correspondantes, et permet de lancer un quiz au choix sur les questions CSP, CR ou les deux."
             }
           },
           {
@@ -1759,7 +1926,15 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
             "name":"Existe-t-il un quiz de naturalisation gratuit ?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Oui. Cap Naturalisation propose gratuitement des quiz et QCM d’entraînement, avec des sessions générales ou par thème, ainsi qu’un bilan permettant de repérer les questions à retravailler."
+              "text":"Oui. Cap Naturalisation est un site 100% gratuit et sans inscription : quiz, QCM, tests et questionnaires d’entraînement pour la naturalisation, la nationalité française et l’examen civique sont accessibles librement, avec des sessions générales ou par thème et un bilan permettant de repérer les questions à retravailler."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Quelle différence entre un test, un questionnaire et un QCM de naturalisation ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Aucune sur ce site : qu’on l’appelle quiz, test, questionnaire ou QCM, il s’agit du même exercice — des questions à choix multiples sur la citoyenneté et la nationalité française, avec correction immédiate et bilan de session."
             }
           },
           {
@@ -1776,6 +1951,54 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
             "acceptedAnswer":{
               "@type":"Answer",
               "text":"La rubrique d’entraînement oral permet de travailler les questions sous forme de flashcards. La simulation d’entretien propose également des questions, des conseils et des exemples de réponses."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Où trouver un questionnaire de naturalisation française gratuit ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Sur Cap Naturalisation, le questionnaire de naturalisation est entièrement gratuit et accessible sans inscription : questions de citoyenneté, valeurs de la République, histoire, institutions, avec correction immédiate et bilan par thème."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Existe-t-il un test de naturalisation française en ligne gratuit ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Oui, le test de naturalisation française proposé ici est gratuit, en ligne et sans inscription. Vous pouvez le lancer en session complète (40 questions chronométrées) ou par thème, avec un bilan détaillé à la fin."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Qu’est-ce qu’un QCM de nationalité française ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"C’est un questionnaire à choix multiples portant sur la citoyenneté, l’histoire, la géographie et les institutions françaises, utilisé pour s’entraîner avant une demande de naturalisation ou de nationalité française. Le QCM proposé sur ce site est gratuit et corrigé instantanément."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Le quiz de l’examen civique CSP/CR est-il gratuit ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Oui, entièrement. Vous choisissez le type de carte visée (carte de séjour pluriannuelle, carte de résident, ou les deux), le thème et le nombre de questions, pour un entraînement gratuit basé sur les listes officielles publiées par le ministère de l’Intérieur."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Le quiz examen civique couvre-t-il toutes les questions officielles ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Oui, Cap Naturalisation reprend l’ensemble des questions officielles CSP et CR publiées par le ministère de l’Intérieur, réparties dans les 5 mêmes thèmes que la liste officielle, avec une réponse rédigée pour chacune."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Le format du quiz est-il le même que celui de l’examen civique officiel ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Oui : comme pour le quiz de naturalisation, chaque question est posée sous forme de QCM à 4 propositions avec une seule bonne réponse, pour retrouver les conditions du véritable examen. Une simulation chronométrée de 40 questions est également proposée."
             }
           }
         ]
@@ -1814,6 +2037,28 @@ var DB = QUESTIONS.map(function(q){
 var IQS = INTERVIEW_QUESTIONS.map(function(q){
   return {icon:q.icon, q:q.question, why:q.pourquoi, tips:q.conseils, ex:q.exemple, avoid:q.eviter||[]};
 });
+var CIVIQUE_DB = (typeof CIVIQUE_QUESTIONS!=='undefined'?CIVIQUE_QUESTIONS:[]).map(function(q){
+  return {th:q.theme, q:q.question, r:q.reponse, src:q.source||['csp','cr']};
+});
+function civiqueThemes(){
+  var seen=[],out=[];
+  CIVIQUE_DB.forEach(function(q){if(seen.indexOf(q.th)===-1){seen.push(q.th);out.push(q.th);}});
+  return out;
+}
+function civiquePool(source,theme){
+  return CIVIQUE_DB.filter(function(q){
+    var srcOk = (source==='all') || q.src.indexOf(source)!==-1;
+    var thOk = (!theme || theme==='all') || q.th===theme;
+    return srcOk && thOk;
+  });
+}
+function buildCivicOptions(item,poolTh){
+  var distractors=poolTh.filter(function(x){return x.r!==item.r;});
+  if(distractors.length<3)distractors=CIVIQUE_DB.filter(function(x){return x.r!==item.r;});
+  var wrongs=shuffle(distractors).slice(0,3).map(function(x){return x.r;});
+  var opts=shuffle([item.r].concat(wrongs));
+  return {opts:opts, c:opts.indexOf(item.r)};
+}
 
 // ══════════════════════
 // STORAGE
@@ -1889,6 +2134,7 @@ function go(v){
   if(v==='dashboard')buildDashboard();
   if(v==='favoris')buildFavoris();
   if(v==='theme-quiz')buildThemeQuizLanding();
+  if(v==='civique-quiz')buildCivicQuizLanding();
   if(v==='oral')buildOralLanding();
   if(v==='mon-entretien')buildInterviewDate();
   if(v==='examen-civique'||v==='examen-csp'||v==='examen-cr')window.scrollTo(0,0);
@@ -2222,6 +2468,165 @@ function finishTQ(){
       }).join('')
     :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Parfait !</div>';
   updateSidebar();
+}
+
+// ══════════════════════
+// QUIZ EXAMEN CIVIQUE (CSP + CR)
+// ══════════════════════
+function buildCivicQuizLanding(){
+  var ts=civiqueThemes();if(!G.cqtheme)G.cqtheme='all';
+  if(G.cqsource===undefined)G.cqsource='all';
+  if(G.cqqty===undefined)G.cqqty=10;
+  if(G.cqchrono===undefined)G.cqchrono=true;
+  var srcLabels={csp:'📄 CSP', cr:'🪪 CR', all:'🇫🇷 Les deux'};
+  document.getElementById('cq-source-sel').innerHTML=['csp','cr','all'].map(function(s){
+    return '<button class="theme-sel-btn'+(G.cqsource===s?' sel':'')+'" onclick="selCQSource(\''+s+'\')">'+srcLabels[s]+'</button>';
+  }).join('');
+  document.getElementById('cq-theme-sel').innerHTML=
+    '<button class="theme-sel-btn'+(G.cqtheme==='all'?' sel':'')+'" onclick="selCQTheme(\'all\')">🌐 Tous les thèmes</button>' +
+    ts.map(function(t){
+      return '<button class="theme-sel-btn'+(G.cqtheme===t?' sel':'')+'" onclick="selCQTheme(\''+t.replace(/'/g,"\\'")+'\')">' + t + '</button>';
+    }).join('');
+  var max=civiquePool(G.cqsource,G.cqtheme).length;
+  if(G.cqqty>max)G.cqqty=Math.max(5,max);
+  document.getElementById('cq-qty').textContent=G.cqqty;
+  document.getElementById('cq-pool-n').textContent=max;
+  document.getElementById('cq-chrono-track').className='tog-track'+(G.cqchrono?' on':'');
+  document.getElementById('cq-chrono-lbl').textContent=G.cqchrono?'Activé':'Désactivé';
+  document.getElementById('cq-landing').style.display='block';
+  document.getElementById('cq-screen').style.display='none';
+  document.getElementById('cq-results').style.display='none';
+}
+function selCQSource(s){
+  G.cqsource=s;
+  document.querySelectorAll('#cq-source-sel .theme-sel-btn').forEach(function(b){b.classList.remove('sel');});
+  event.target.classList.add('sel');
+  var max=civiquePool(G.cqsource,G.cqtheme).length;
+  document.getElementById('cq-pool-n').textContent=max;
+  if(G.cqqty>max){G.cqqty=Math.max(5,max);document.getElementById('cq-qty').textContent=G.cqqty;}
+}
+function selCQTheme(t){
+  G.cqtheme=t;
+  document.querySelectorAll('#cq-theme-sel .theme-sel-btn').forEach(function(b){b.classList.remove('sel');});
+  event.target.classList.add('sel');
+  var max=civiquePool(G.cqsource,G.cqtheme).length;
+  document.getElementById('cq-pool-n').textContent=max;
+  if(G.cqqty>max){G.cqqty=Math.max(5,max);document.getElementById('cq-qty').textContent=G.cqqty;}
+}
+function changeQtyCQ(d){
+  var max=civiquePool(G.cqsource,G.cqtheme).length;
+  G.cqqty=Math.max(5,Math.min(G.cqqty+d,max));
+  document.getElementById('cq-qty').textContent=G.cqqty;
+}
+function toggleChronoCQ(){
+  G.cqchrono=!G.cqchrono;
+  document.getElementById('cq-chrono-track').className='tog-track'+(G.cqchrono?' on':'');
+  document.getElementById('cq-chrono-lbl').textContent=G.cqchrono?'Activé':'Désactivé';
+}
+function resetCivicQuiz(){
+  document.getElementById('cq-results').style.display='none';
+  document.getElementById('cq-screen').style.display='none';
+  document.getElementById('cq-landing').style.display='block';
+}
+function launchCivicSimulation(){
+  G.cqtheme='all';G.cqqty=40;G.cqchrono=true;
+  go('civique-quiz');
+}
+function launchCivicQuiz(){
+  if(G.timer)clearInterval(G.timer);
+  var poolTh=civiquePool(G.cqsource,G.cqtheme);
+  var chosen=shuffle(poolTh).slice(0,Math.min(G.cqqty,poolTh.length));
+  G.cqs=chosen.map(function(item){
+    var built=buildCivicOptions(item,poolTh);
+    return {th:item.th,q:item.q,r:item.r,opts:built.opts,c:built.c};
+  });
+  G.cqidx=0;G.cqanswers=[];
+  document.getElementById('cq-landing').style.display='none';
+  document.getElementById('cq-results').style.display='none';
+  document.getElementById('cq-screen').style.display='block';
+  renderCQ();
+}
+function renderCQ(){
+  var q=G.cqs[G.cqidx],n=G.cqidx+1,tot=G.cqs.length;
+  document.getElementById('cqz-count').innerHTML=n+' <small>/ '+tot+'</small>';
+  document.getElementById('cqz-prog').style.width=((n-1)/tot*100)+'%';
+  document.getElementById('cqz-theme').textContent=q.th;
+  document.getElementById('cqz-q').textContent=q.q;
+  document.getElementById('cqz-banner').innerHTML='';
+  document.getElementById('cqz-expl').innerHTML='';
+  document.getElementById('cqz-next').style.display='none';
+  var keys=['A','B','C','D'];
+  document.getElementById('cqz-opts').innerHTML=q.opts.map(function(opt,i){
+    return '<button class="opt" onclick="pickCQ(this,'+i+','+q.c+',\''+q.r.replace(/'/g,"\\'").replace(/\n/g,' ')+'\')">' +
+      '<span class="opt-key">'+keys[i]+'</span>'+opt+'</button>';
+  }).join('');
+  var tw=document.getElementById('cqz-timer');
+  if(G.cqchrono){tw.style.display='flex';startTimerCQ();}
+  else{tw.style.display='none';if(G.timer)clearInterval(G.timer);}
+}
+function startTimerCQ(){
+  if(G.timer)clearInterval(G.timer);
+  G.sec=30;updateTimerCQ(30);
+  G.timer=setInterval(function(){G.sec--;updateTimerCQ(G.sec);if(G.sec<=0){clearInterval(G.timer);timeoutCQ();}},1000);
+}
+function updateTimerCQ(s){
+  var fg=document.getElementById('cqz-t-fg'),txt=document.getElementById('cqz-t-txt');
+  fg.style.strokeDashoffset=138.2*(1-s/30);txt.textContent=s;
+  fg.classList.toggle('urgent',s<=10);txt.classList.toggle('urgent',s<=10);
+}
+function timeoutCQ(){
+  var q=G.cqs[G.cqidx];
+  G.cqanswers.push({q:q.q,ok:false,to:true,correct:q.opts[q.c],given:'—'});
+  document.querySelectorAll('#cqz-opts .opt').forEach(function(b){
+    b.disabled=true;
+    if(b.textContent.replace(/^[ABCD]/,'').trim()===q.opts[q.c])b.classList.add('show-ok');
+  });
+  document.getElementById('cqz-banner').innerHTML='<div class="result-bar to">⏰ Temps écoulé — Bonne réponse : <strong>'+q.opts[q.c]+'</strong></div>';
+  document.getElementById('cqz-expl').innerHTML='<div class="expl"><strong>Explication :</strong> '+q.r+'</div>';
+  document.getElementById('cqz-next').style.display='inline-block';
+}
+function pickCQ(btn,chosen,correct,expl){
+  if(btn.disabled)return;
+  clearInterval(G.timer);
+  var q=G.cqs[G.cqidx],ok=chosen===correct;
+  document.querySelectorAll('#cqz-opts .opt').forEach(function(b){b.disabled=true;});
+  btn.classList.add(ok?'correct':'wrong');
+  if(!ok)document.querySelectorAll('#cqz-opts .opt').forEach(function(b){
+    if(b.textContent.replace(/^[ABCD]/,'').trim()===q.opts[correct])b.classList.add('show-ok');
+  });
+  G.cqanswers.push({q:q.q,ok:ok,to:false,correct:q.opts[correct],given:q.opts[chosen]});
+  document.getElementById('cqz-banner').innerHTML=ok
+    ?'<div class="result-bar ok">✅ Bonne réponse !</div>'
+    :'<div class="result-bar ko">✕ Mauvaise réponse — Bonne réponse : <strong>'+q.opts[correct]+'</strong></div>';
+  document.getElementById('cqz-expl').innerHTML='<div class="expl"><strong>Explication :</strong> '+expl+'</div>';
+  document.getElementById('cqz-next').style.display='inline-block';
+}
+function nextCQ(){G.cqidx++;G.cqidx>=G.cqs.length?finishCQ():renderCQ();}
+function finishCQ(){
+  clearInterval(G.timer);
+  var ok=G.cqanswers.filter(function(a){return a.ok;}).length;
+  var tot=G.cqanswers.length,pct=Math.round(ok/tot*100);
+  document.getElementById('cq-screen').style.display='none';
+  document.getElementById('cq-results').style.display='block';
+  document.getElementById('cqz-sc').innerHTML=ok+'<small>/'+tot+'</small>';
+  document.getElementById('cqz-pct').textContent=pct+'%';
+  var m,c;
+  if(pct>=85){m='🌟 Excellent !';c='var(--success)';}
+  else if(pct>=70){m='👍 Bien !';c='var(--warning)';}
+  else if(pct>=50){m='📖 Encore un effort';c='var(--navy)';}
+  else{m='🔄 À retravailler';c='var(--error)';}
+  document.getElementById('cqz-mention').style.color=c;
+  document.getElementById('cqz-mention').textContent=m;
+  document.getElementById('cqz-date').textContent=new Date().toLocaleDateString('fr-FR');
+  var wrongs=G.cqanswers.filter(function(a){return!a.ok;});
+  document.getElementById('cqz-wrongs').innerHTML=wrongs.length
+    ?'<div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">'+wrongs.length+' erreur(s)</div><div class="sec-div-line"></div></div>' +
+      wrongs.map(function(a){
+        return '<div class="wrong-item"><div class="wi-q">'+a.q+'</div>' +
+          '<div class="wi-given">'+(a.to?'⏰ Temps écoulé':'Votre réponse : '+a.given)+'</div>' +
+          '<div class="wi-correct">✔ '+a.correct+'</div></div>';
+      }).join('')
+    :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Parfait !</div>';
 }
 
 // ══════════════════════
