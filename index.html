@@ -31,6 +31,10 @@
 <meta property="og:title" content="Quiz Naturalisation Gratuit : Test, QCM & Questionnaire + Examen Civique CSP/CR"/>
 <meta property="og:description" content="100% gratuit et sans inscription : quiz, test, questionnaire et QCM de naturalisation et de nationalité française, + examen civique CSP/CR (listes officielles)."/>
 <meta property="og:url" content="https://cap-naturalisation.fr"/>
+<meta property="og:image" content="https://cap-naturalisation.fr/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Cap Naturalisation — Quiz Naturalisation & Examen Civique CSP/CR, 100% gratuit"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:site_name" content="Cap Naturalisation"/>
 
@@ -38,6 +42,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Quiz Naturalisation Gratuit : Test, QCM & Questionnaire + Examen Civique CSP/CR"/>
 <meta name="twitter:description" content="100% gratuit : quiz, test, questionnaire et QCM de naturalisation / nationalité française, + examen civique CSP/CR. Questions, révisions, chrono et entretien."/>
+<meta name="twitter:image" content="https://cap-naturalisation.fr/og-image.png"/>
+<meta name="twitter:image:alt" content="Cap Naturalisation — Quiz Naturalisation & Examen Civique CSP/CR, 100% gratuit"/>
 
 
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
@@ -156,6 +162,9 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 .hero-title span{color:rgba(255,255,255,.45)}
 .hero-sub{font-size:.88rem;color:rgba(255,255,255,.55);font-family:'Syne',sans-serif;margin-bottom:1.8rem}
 .hero-free-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(245,158,11,.15);border:1px solid var(--gold);color:var(--gold);font-family:'Syne',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.02em;padding:.45rem 1rem;border-radius:20px;margin-bottom:1.4rem}
+.social-counter{display:inline-flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-weight:700;font-size:.76rem;color:var(--navy);background:var(--navy-xlight);border:1px solid var(--navy-light);padding:.4rem 1rem;border-radius:20px;margin:0 0 1.2rem}
+.sc-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 rgba(34,197,94,.5);animation:scPulse 2s infinite}
+@keyframes scPulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 .hero-btn{background:#fff;color:var(--navy);border:none;border-radius:var(--r);padding:.7rem 1.6rem;font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .hero-btn:hover{background:var(--off-white);transform:translateY(-1px)}
 .hero-stats{display:flex;gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1)}
@@ -466,6 +475,15 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 /* DASHBOARD */
 .dash-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:1.5rem}
 .kpi{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.1rem}
+.badges-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.7rem}
+.badge-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:.9rem .7rem;text-align:center;transition:all .15s}
+.badge-item.unlocked{border-color:var(--gold);box-shadow:0 3px 12px rgba(245,158,11,.15)}
+.badge-item.locked{opacity:.4;filter:grayscale(1)}
+.badge-ic{font-size:1.6rem;line-height:1;margin-bottom:.4rem}
+.badge-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;color:var(--text);line-height:1.3}
+.badge-desc{font-family:'Lora',serif;font-size:.68rem;color:var(--text-3);margin-top:.25rem;line-height:1.4}
+.badge-toast{position:fixed;left:50%;bottom:6rem;transform:translateX(-50%);background:var(--navy);color:#fff;padding:.8rem 1.2rem;border-radius:var(--r2);box-shadow:0 6px 24px rgba(0,0,0,.25);font-family:'Syne',sans-serif;font-weight:700;font-size:.82rem;z-index:200;display:flex;align-items:center;gap:.6rem;animation:badgePop .35s ease}
+@keyframes badgePop{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .kpi-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);line-height:1}
 .kpi-lbl{font-family:'Syne',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:.2rem}
 .save-section{background:var(--navy-xlight);border:1px solid var(--navy-light);border-radius:var(--r2);padding:1.5rem;margin-bottom:1.5rem}
@@ -582,7 +600,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
       <div class="ss-item"><span class="ss-n" id="sb-quizzes">0</span><span class="ss-l">Quiz faits</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
-      <button class="ss-donate" onclick="window.open('https://paypal.me/shankislaitk','_blank')">❤️ Faire un don</button>
+      <button class="ss-donate" onclick="window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
       <button class="ss-save" onclick="exportData()">⬇ Sauvegarder</button>
     </div>
   </div>
@@ -598,6 +616,9 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
       <h1 class="hero-title">Quiz <span>naturalisation & examen civique</span> gratuit</h1>
       <p class="hero-sub">Quiz, test, questionnaire ou QCM : révisez la naturalisation, la nationalité française et l'examen civique (CSP, CR) avec des listes officielles. Chrono, bilan complet, entraînement oral. <strong>100&nbsp;% gratuit, sans inscription.</strong></p>
       <div class="hero-free-badge">🎁 100% gratuit · Sans inscription · Sans publicité</div>
+      <div class="social-counter" id="social-counter" style="display:none">
+        <span class="sc-dot"></span> <span id="social-counter-txt">Chargement…</span>
+      </div>
       <button class="hero-btn" onclick="go('quiz')">▶ &nbsp;Commencer le Quiz</button>
       <div class="hero-stats">
         <div><div class="hero-stat-n" id="h-total">0</div><div class="hero-stat-l">Questions</div></div>
@@ -1136,6 +1157,8 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     </div>
     <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Progression par thème</div><div class="sec-div-line"></div></div>
     <div id="d-themes" style="margin-bottom:1.5rem"></div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Mes badges</div><div class="sec-div-line"></div></div>
+    <div class="badges-grid" id="d-badges" style="margin-bottom:1.5rem"></div>
     <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Favoris récents</div><div class="sec-div-line"></div></div>
     <div id="d-favoris" style="margin-bottom:1.5rem"></div>
     <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Historique des quiz</div><div class="sec-div-line"></div></div>
@@ -2017,6 +2040,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     <span class="sf-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
     <p class="sf-copy">© <span id="cp-year"></span> Cap Naturalisation — Citoyenneté Française · Tous droits réservés</p>
     <p>Site gratuit d'entraînement à l'examen civique et à l'entretien de naturalisation. Usage personnel uniquement.</p>
+    <p>💛 Ce site restera toujours gratuit et sans publicité. Un don ponctuel aide à couvrir l'hébergement et le temps passé à maintenir les questions à jour — <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer">faire un don</a>.</p>
     <p class="sf-links">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="mailto:devby.fou@gmail.com">devby.fou@gmail.com</a>
@@ -2065,8 +2089,8 @@ function buildCivicOptions(item,poolTh){
 // ══════════════════════
 var SK = 'rf_v4';
 function loadData(){
-  try{var r=localStorage.getItem(SK);if(r){var p=JSON.parse(r);if(p.interviewDate===undefined)p.interviewDate=null;return p;}}catch(e){}
-  return {history:[],thStats:{},streak:{last:'',count:0},favoris:[],interviewDate:null};
+  try{var r=localStorage.getItem(SK);if(r){var p=JSON.parse(r);if(p.interviewDate===undefined)p.interviewDate=null;if(!p.badges)p.badges=[];return p;}}catch(e){}
+  return {history:[],thStats:{},streak:{last:'',count:0},favoris:[],interviewDate:null,badges:[]};
 }
 function saveData(){ try{localStorage.setItem(SK,JSON.stringify(G.data));}catch(e){} }
 function exportData(){
@@ -2297,8 +2321,8 @@ function finishQuiz(){
   var ok=G.answers.filter(function(a){return a.ok;}).length;
   var tot=G.answers.length,pct=Math.round(ok/tot*100);
   var toC=G.answers.filter(function(a){return a.to;}).length;
-  G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct});
-  updateStreak();saveData();
+  G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'main'});
+  updateStreak();saveData();checkBadges();
   document.getElementById('quiz-screen').style.display='none';
   document.getElementById('quiz-results').style.display='block';
   document.getElementById('res-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2446,6 +2470,8 @@ function finishTQ(){
   clearInterval(G.timer);
   var ok=G.tanswers.filter(function(a){return a.ok;}).length;
   var tot=G.tanswers.length,pct=Math.round(ok/tot*100);
+  G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'theme'});
+  updateStreak();saveData();checkBadges();
   document.getElementById('tq-screen').style.display='none';
   document.getElementById('tq-results').style.display='block';
   document.getElementById('tqz-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2606,6 +2632,8 @@ function finishCQ(){
   clearInterval(G.timer);
   var ok=G.cqanswers.filter(function(a){return a.ok;}).length;
   var tot=G.cqanswers.length,pct=Math.round(ok/tot*100);
+  G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'civic'});
+  updateStreak();saveData();checkBadges();
   document.getElementById('cq-screen').style.display='none';
   document.getElementById('cq-results').style.display='block';
   document.getElementById('cqz-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2887,6 +2915,7 @@ function buildDashboard(){
   document.getElementById('d-avg').textContent=h.length?Math.round(h.reduce(function(s,x){return s+x.pct;},0)/h.length)+'%':'—';
   document.getElementById('d-total').textContent=h.length;
   document.getElementById('d-streak').textContent=(G.data.streak&&G.data.streak.count)||0;
+  renderBadges();
   document.getElementById('d-themes').innerHTML=themes().map(function(t){
     var st=G.data.thStats[t],pct=st?Math.round(st.ok/st.tot*100):0;
     var bc=pct>=70?'var(--success)':pct>=50?'var(--warning)':'var(--navy)';
@@ -2999,6 +3028,78 @@ function updateStreak(){
   s.count=s.last===yesterday?s.count+1:1;s.last=today;
 }
 // ══════════════════════
+// BADGES
+// ══════════════════════
+var BADGES=[
+  {id:'first',icon:'🎉',name:'Premier pas',desc:'Terminer un premier quiz',check:function(d){return d.history.length>=1;}},
+  {id:'five',icon:'🔥',name:'Sur la lancée',desc:'5 quiz complétés',check:function(d){return d.history.length>=5;}},
+  {id:'twenty',icon:'🏆',name:'Habitué(e)',desc:'20 quiz complétés',check:function(d){return d.history.length>=20;}},
+  {id:'perfect',icon:'💯',name:'Sans faute',desc:'100% à un quiz (5 questions min.)',check:function(d){return d.history.some(function(h){return h.pct===100&&h.tot>=5;});}},
+  {id:'streak3',icon:'📅',name:'3 jours de suite',desc:'Réviser 3 jours consécutifs',check:function(d){return (d.streak&&d.streak.count||0)>=3;}},
+  {id:'streak7',icon:'🗓️',name:'Une semaine assidue',desc:'Réviser 7 jours consécutifs',check:function(d){return (d.streak&&d.streak.count||0)>=7;}},
+  {id:'favs',icon:'⭐',name:'Collectionneur',desc:'5 questions mises en favoris',check:function(d){return (d.favoris||[]).length>=5;}},
+  {id:'civic',icon:'🇫🇷',name:'Expert civique',desc:'Réussir un quiz Examen civique (≥70%)',check:function(d){return d.history.some(function(h){return h.mode==='civic'&&h.pct>=70;});}},
+  {id:'themes5',icon:'🗺️',name:'Tour de France',desc:'Avoir travaillé les 5 grands thèmes',check:function(d){return Object.keys(d.thStats||{}).length>=5;}},
+  {id:'marathon',icon:'🌙',name:'Marathonien(ne)',desc:'50 quiz complétés au total',check:function(d){return d.history.length>=50;}}
+];
+function checkBadges(){
+  var newly=[];
+  BADGES.forEach(function(b){
+    if(G.data.badges.indexOf(b.id)===-1 && b.check(G.data)){
+      G.data.badges.push(b.id);newly.push(b);
+    }
+  });
+  if(newly.length){saveData();showBadgeToasts(newly);}
+  return newly;
+}
+function showBadgeToasts(list){
+  list.forEach(function(b,i){
+    setTimeout(function(){
+      var el=document.createElement('div');
+      el.className='badge-toast';
+      el.innerHTML='<span style="font-size:1.3rem">'+b.icon+'</span><span>Badge débloqué : '+b.name+'</span>';
+      document.body.appendChild(el);
+      setTimeout(function(){el.remove();},3200);
+    }, i*1600);
+  });
+}
+function renderBadges(){
+  var el=document.getElementById('d-badges');
+  if(!el)return;
+  el.innerHTML=BADGES.map(function(b){
+    var unlocked=G.data.badges.indexOf(b.id)!==-1;
+    return '<div class="badge-item '+(unlocked?'unlocked':'locked')+'" title="'+b.desc+'">' +
+      '<div class="badge-ic">'+b.icon+'</div>' +
+      '<div class="badge-name">'+b.name+'</div>' +
+      '<div class="badge-desc">'+(unlocked?b.desc:'🔒 '+b.desc)+'</div></div>';
+  }).join('');
+}
+// ══════════════════════
+// COMPTEUR SOCIAL (réel, partagé entre visiteurs via CountAPI)
+// ══════════════════════
+function isoWeekKey(){
+  var d=new Date();
+  var t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));
+  var day=(t.getUTCDay()+6)%7;t.setUTCDate(t.getUTCDate()-day+3);
+  var firstThu=new Date(Date.UTC(t.getUTCFullYear(),0,4));
+  var week=1+Math.round(((t-firstThu)/86400000-3+((firstThu.getUTCDay()+6)%7))/7);
+  return t.getUTCFullYear()+'-w'+week;
+}
+function initSocialCounter(){
+  var el=document.getElementById('social-counter'),txt=document.getElementById('social-counter-txt');
+  if(!el||!txt)return;
+  var key='visites_'+isoWeekKey();
+  var already=sessionStorage.getItem('sc_hit_done');
+  var url='https://api.countapi.xyz/'+(already?'get':'hit')+'/cap-naturalisation-fr/'+key;
+  fetch(url).then(function(r){return r.json();}).then(function(data){
+    if(typeof data.value==='number'){
+      if(!already)sessionStorage.setItem('sc_hit_done','1');
+      txt.textContent=data.value.toLocaleString('fr-FR')+' visites cette semaine';
+      el.style.display='inline-flex';
+    }
+  }).catch(function(){ /* API indisponible : on masque simplement le compteur */ });
+}
+// ══════════════════════
 // EXAMEN CIVIQUE — NAV SIDEBAR + RECHERCHE
 // ══════════════════════
 function ecInitLayouts(){
@@ -3070,7 +3171,7 @@ document.addEventListener('DOMContentLoaded',function(){
   if(cpY) cpY.textContent = yr;
   if(cpYf) cpYf.textContent = yr;
 
-  buildHome();updateSidebar();ecInitLayouts();
+  buildHome();updateSidebar();ecInitLayouts();initSocialCounter();
   document.getElementById('ql-sub').textContent='Questions mélangées parmi les '+DB.length+' de la base';
 });
 </script>
