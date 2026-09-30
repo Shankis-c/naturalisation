@@ -600,7 +600,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
       <div class="ss-item"><span class="ss-n" id="sb-quizzes">0</span><span class="ss-l">Quiz faits</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
-      <button class="ss-donate" onclick="window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
+      <button class="ss-donate" onclick="trackEvent('donate_click',{location:'topbar'});window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
       <button class="ss-save" onclick="exportData()">⬇ Sauvegarder</button>
     </div>
   </div>
@@ -668,7 +668,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         <div class="mc-title">Partagez votre retour</div>
         <div class="mc-desc">Rejoignez le groupe Facebook et partagez votre REX après l'entretien</div>
       </div>
-      <div class="mc mc-support" onclick="window.open('https://paypal.me/shankislaitk','_blank')">
+      <div class="mc mc-support" onclick="trackEvent('donate_click',{location:'home_card'});window.open('https://paypal.me/shankislaitk','_blank')">
         <div class="mc-icon">💛</div>
         <div class="mc-title">Soutenir Cap Naturalisation</div>
         <div class="mc-desc">Site 100% gratuit — un don PayPal (facultatif) nous aide à l'améliorer</div>
@@ -1189,7 +1189,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         <div class="mc-title">Partager mon retour</div>
         <div class="mc-desc">Racontez votre entretien sur le groupe Facebook pour aider les futurs candidats</div>
       </div>
-      <div class="mc mc-support" onclick="window.open('https://paypal.me/shankislaitk','_blank')">
+      <div class="mc mc-support" onclick="trackEvent('donate_click',{location:'examen_civique_card'});window.open('https://paypal.me/shankislaitk','_blank')">
         <div class="mc-icon">💛</div>
         <div class="mc-title">Soutenir le projet</div>
         <div class="mc-desc">Un don PayPal (facultatif) nous aide à améliorer le contenu du site</div>
@@ -2040,12 +2040,12 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     <span class="sf-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
     <p class="sf-copy">© <span id="cp-year"></span> Cap Naturalisation — Citoyenneté Française · Tous droits réservés</p>
     <p>Site gratuit d'entraînement à l'examen civique et à l'entretien de naturalisation. Usage personnel uniquement.</p>
-    <p>💛 Ce site restera toujours gratuit et sans publicité. Un don ponctuel aide à couvrir l'hébergement et le temps passé à maintenir les questions à jour — <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer">faire un don</a>.</p>
+    <p>💛 Ce site restera toujours gratuit et sans publicité. Un don ponctuel aide à couvrir l'hébergement et le temps passé à maintenir les questions à jour — <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_text'})">faire un don</a>.</p>
     <p class="sf-links">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="mailto:devby.fou@gmail.com">devby.fou@gmail.com</a>
       <a href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer">Groupe Facebook</a>
-      <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer">Soutenir le projet</a>
+      <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_link'})">Soutenir le projet</a>
     </p>
   </div>
 </footer>
@@ -2099,6 +2099,7 @@ function exportData(){
   a.href=URL.createObjectURL(b);
   a.download='progression-naturalisation-'+new Date().toISOString().slice(0,10)+'.json';
   a.click(); toast('✅ Progression exportée !');
+  trackEvent('data_export',{quiz_count:(G.data.history||[]).length});
 }
 function importData(input){
   var file=input.files[0];if(!file)return;
@@ -2146,6 +2147,11 @@ var G={
 // ══════════════════════
 function openSidebar(){document.getElementById('appSidebar').classList.add('open');document.getElementById('sidebarOverlay').classList.add('open');}
 function closeSidebar(){document.getElementById('appSidebar').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('open');}
+function trackEvent(name,params){
+  try{
+    if(typeof gtag==='function')gtag('event',name,params||{});
+  }catch(e){ /* GA indisponible (bloqueur de pub, etc.) : on ignore */ }
+}
 function go(v){
   document.querySelectorAll('.view').forEach(function(e){e.classList.remove('active');});
   document.querySelectorAll('.side-nav-btn').forEach(function(b){b.classList.remove('active');});
@@ -2169,6 +2175,7 @@ function go(v){
     document.getElementById('quiz-results').style.display='none';
   }
   updateSidebar();
+  trackEvent('page_view',{page_title:v,page_path:'/#'+v});
 }
 
 var shuffle=function(a){return[...a].sort(function(){return Math.random()-.5;});};
@@ -2195,7 +2202,7 @@ function isFav(q){return G.data.favoris.some(function(f){return f.q===q.q;});}
 function toggleFav(q){
   var i=G.data.favoris.findIndex(function(f){return f.q===q.q;});
   if(i>=0){G.data.favoris.splice(i,1);toast('☆ Retiré des favoris');}
-  else{G.data.favoris.push({q:q.q,th:q.th,r:q.r,opts:q.opts,c:q.c});toast('⭐ Ajouté aux favoris');}
+  else{G.data.favoris.push({q:q.q,th:q.th,r:q.r,opts:q.opts,c:q.c});toast('⭐ Ajouté aux favoris');trackEvent('favorite_added',{theme:q.th});}
   saveData();updateSidebar();
   return isFav(q);
 }
@@ -2255,6 +2262,7 @@ function startQuiz(theme,qty,withTimer){
   document.getElementById('quiz-landing').style.display='none';
   document.getElementById('quiz-results').style.display='none';
   document.getElementById('quiz-screen').style.display='block';
+  trackEvent('quiz_start',{quiz_type:'naturalisation',theme:theme||'all',quantity:G.qs.length,timer:!!withTimer});
   renderQ();
 }
 function renderQ(){
@@ -2324,6 +2332,7 @@ function finishQuiz(){
   var toC=G.answers.filter(function(a){return a.to;}).length;
   G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'main'});
   updateStreak();saveData();
+  trackEvent('quiz_complete',{quiz_type:'naturalisation',score:ok,total:tot,percent:pct});
   document.getElementById('quiz-screen').style.display='none';
   document.getElementById('quiz-results').style.display='block';
   document.getElementById('res-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2406,6 +2415,7 @@ function launchThemeQuiz(){
   document.getElementById('tq-landing').style.display='none';
   document.getElementById('tq-results').style.display='none';
   document.getElementById('tq-screen').style.display='block';
+  trackEvent('quiz_start',{quiz_type:'theme',theme:G.ttheme||'all',quantity:G.tqs.length});
   renderTQ();
 }
 function renderTQ(){
@@ -2474,6 +2484,7 @@ function finishTQ(){
   var tot=G.tanswers.length,pct=Math.round(ok/tot*100);
   G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'theme'});
   updateStreak();saveData();
+  trackEvent('quiz_complete',{quiz_type:'theme',theme:G.ttheme||'all',score:ok,total:tot,percent:pct});
   document.getElementById('tq-screen').style.display='none';
   document.getElementById('tq-results').style.display='block';
   document.getElementById('tqz-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2573,6 +2584,7 @@ function launchCivicQuiz(){
   document.getElementById('cq-landing').style.display='none';
   document.getElementById('cq-results').style.display='none';
   document.getElementById('cq-screen').style.display='block';
+  trackEvent('quiz_start',{quiz_type:'civique',source:G.cqsource||'all',theme:G.cqtheme||'all',quantity:G.cqs.length});
   renderCQ();
 }
 function renderCQ(){
@@ -2637,6 +2649,7 @@ function finishCQ(){
   var tot=G.cqanswers.length,pct=Math.round(ok/tot*100);
   G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'civic'});
   updateStreak();saveData();
+  trackEvent('quiz_complete',{quiz_type:'civique',source:G.cqsource||'all',theme:G.cqtheme||'all',score:ok,total:tot,percent:pct});
   document.getElementById('cq-screen').style.display='none';
   document.getElementById('cq-results').style.display='block';
   document.getElementById('cqz-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2697,6 +2710,7 @@ function startOral(){
   document.getElementById('oral-landing').style.display='none';
   document.getElementById('oral-results').style.display='none';
   document.getElementById('oral-screen').style.display='block';
+  trackEvent('oral_practice_start',{theme:G.otheme||'all'});
   renderOral();
 }
 function renderOral(){
@@ -3065,6 +3079,7 @@ function checkBadges(){
 }
 function showBadgeToasts(list){
   list.forEach(function(b,i){
+    trackEvent('badge_unlocked',{badge_id:b.id,badge_name:b.name});
     setTimeout(function(){
       try{
         var el=document.createElement('div');
