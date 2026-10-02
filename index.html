@@ -225,6 +225,12 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 
 /* EXAMEN CIVIQUE */
 .ec-intro{background:var(--navy-xlight);border:1px solid var(--navy-light);border-radius:var(--r2);padding:1.3rem 1.5rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--text-2);line-height:1.7}
+.reg-info{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:.8rem}
+.reg-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:.9rem .8rem;text-align:center;box-shadow:var(--shadow)}
+.reg-val{font-family:'Syne',sans-serif;font-weight:800;font-size:.92rem;color:var(--navy);line-height:1.3}
+.reg-lbl{font-family:'Lora',serif;font-size:.68rem;color:var(--text-3);margin-top:.3rem;line-height:1.4}
+.reg-note{font-family:'Lora',serif;font-size:.74rem;color:var(--text-3);line-height:1.6;margin-bottom:1.5rem}
+@media(max-width:700px){.reg-info{grid-template-columns:repeat(2,1fr)}}
 .ec-intro strong{color:var(--navy)}
 .ec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}
 .ec-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.2rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
@@ -621,9 +627,9 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
       </div>
       <button class="hero-btn" onclick="go('quiz')">▶ &nbsp;Commencer le Quiz</button>
       <div class="hero-stats">
+        <div><div class="hero-stat-n" id="h-quiz-total">—</div><div class="hero-stat-l">Quiz complétés 🎓</div></div>
         <div><div class="hero-stat-n" id="h-total">0</div><div class="hero-stat-l">Questions</div></div>
         <div><div class="hero-stat-n">6</div><div class="hero-stat-l">Thèmes</div></div>
-        <div><div class="hero-stat-n">30s</div><div class="hero-stat-l">Par question</div></div>
         <div><div class="hero-stat-n">40</div><div class="hero-stat-l">Questions par quiz</div></div>
       </div>
     </div>
@@ -1207,6 +1213,25 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
     <div class="ec-intro">
       Depuis la réforme de l'immigration, un <strong>examen civique</strong> est obligatoire pour obtenir un titre de séjour longue durée. Le niveau de connaissances demandé diffère selon la carte visée : <strong>carte de séjour pluriannuelle (CSP)</strong>, <strong>carte de résident (CR)</strong>, ou dans le cadre d'une <strong>demande de naturalisation</strong>. Cap Naturalisation propose un entraînement <strong>100% gratuit, sans inscription</strong>, avec les listes officielles CSP/CR (réponses incluses) et un quiz dédié. Choisissez votre parcours ci-dessous.
     </div>
+    <div class="reg-info">
+      <div class="reg-item">
+        <div class="reg-val">40 questions</div>
+        <div class="reg-lbl">en 45 minutes</div>
+      </div>
+      <div class="reg-item">
+        <div class="reg-val">32/40</div>
+        <div class="reg-lbl">seuil de réussite (80%)</div>
+      </div>
+      <div class="reg-item">
+        <div class="reg-val">Décret n° 2025-647</div>
+        <div class="reg-lbl">du 15 juillet 2025 — institue l'examen</div>
+      </div>
+      <div class="reg-item">
+        <div class="reg-val">Arrêté du 10/10/2025</div>
+        <div class="reg-lbl">fixe le programme et les 5 thèmes</div>
+      </div>
+    </div>
+    <p class="reg-note">Format et seuil conformes au cadre réglementaire applicable depuis le 1<sup>er</sup> janvier 2026 (décret n° 2025-647 du 15 juillet 2025 et arrêté du 10 octobre 2025 du ministère de l'Intérieur). Le quiz et la simulation 40 questions de Cap Naturalisation reprennent ce même format pour s'entraîner dans les conditions réelles de l'examen.</p>
     <div class="ec-grid">
       <div class="ec-card" onclick="go('quiz')">
         <div class="hc-icon">🇫🇷</div>
@@ -2333,6 +2358,7 @@ function finishQuiz(){
   G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'main'});
   updateStreak();saveData();
   trackEvent('quiz_complete',{quiz_type:'naturalisation',score:ok,total:tot,percent:pct});
+  incrementCumulativeCounter();
   document.getElementById('quiz-screen').style.display='none';
   document.getElementById('quiz-results').style.display='block';
   document.getElementById('res-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2485,6 +2511,7 @@ function finishTQ(){
   G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'theme'});
   updateStreak();saveData();
   trackEvent('quiz_complete',{quiz_type:'theme',theme:G.ttheme||'all',score:ok,total:tot,percent:pct});
+  incrementCumulativeCounter();
   document.getElementById('tq-screen').style.display='none';
   document.getElementById('tq-results').style.display='block';
   document.getElementById('tqz-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -2650,6 +2677,7 @@ function finishCQ(){
   G.data.history.push({date:new Date().toISOString(),score:ok,tot:tot,pct:pct,mode:'civic'});
   updateStreak();saveData();
   trackEvent('quiz_complete',{quiz_type:'civique',source:G.cqsource||'all',theme:G.cqtheme||'all',score:ok,total:tot,percent:pct});
+  incrementCumulativeCounter();
   document.getElementById('cq-screen').style.display='none';
   document.getElementById('cq-results').style.display='block';
   document.getElementById('cqz-sc').innerHTML=ok+'<small>/'+tot+'</small>';
@@ -3114,6 +3142,23 @@ function isoWeekKey(){
   var week=1+Math.round(((t-firstThu)/86400000-3+((firstThu.getUTCDay()+6)%7))/7);
   return t.getUTCFullYear()+'-w'+week;
 }
+function initCumulativeCounter(){
+  try{
+    var el=document.getElementById('h-quiz-total');
+    if(!el)return;
+    fetch('https://api.countapi.xyz/get/cap-naturalisation-fr/quiz_completes_total').then(function(r){return r.json();}).then(function(data){
+      if(typeof data.value==='number')el.textContent=data.value.toLocaleString('fr-FR');
+    }).catch(function(){ /* API indisponible : on laisse le tiret */ });
+  }catch(e){}
+}
+function incrementCumulativeCounter(){
+  try{
+    fetch('https://api.countapi.xyz/hit/cap-naturalisation-fr/quiz_completes_total').then(function(r){return r.json();}).then(function(data){
+      var el=document.getElementById('h-quiz-total');
+      if(el&&typeof data.value==='number')el.textContent=data.value.toLocaleString('fr-FR');
+    }).catch(function(){});
+  }catch(e){}
+}
 function initSocialCounter(){
   try{
     var el=document.getElementById('social-counter'),txt=document.getElementById('social-counter-txt');
@@ -3204,6 +3249,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   buildHome();updateSidebar();ecInitLayouts();
   try{initSocialCounter();}catch(e){}
+  try{initCumulativeCounter();}catch(e){}
   document.getElementById('ql-sub').textContent='Questions mélangées parmi les '+DB.length+' de la base';
 });
 </script>
