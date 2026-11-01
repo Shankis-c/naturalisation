@@ -568,6 +568,55 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 .donate-skip:hover{color:var(--text-2)}
 @media(max-width:480px){.donate-opts{grid-template-columns:1fr}}
 
+/* BARRE D'ASTUCES (accueil) */
+.tip-bar{display:flex;align-items:center;gap:.8rem;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:var(--r2);padding:.7rem 1rem;margin-bottom:1.2rem;box-shadow:var(--shadow);min-height:3.4rem}
+.tip-ic{font-size:1.3rem;flex-shrink:0;line-height:1}
+.tip-bar.typing .tip-ic{animation:tipwiggle .5s ease-in-out infinite alternate}
+@keyframes tipwiggle{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.tip-txt{flex:1;font-family:'Syne',sans-serif;font-size:.84rem;font-weight:600;color:var(--navy);line-height:1.45;min-height:1.3em}
+.tip-caret{display:inline-block;width:2px;height:1em;background:var(--gold);margin-left:2px;vertical-align:-.15em;animation:tipblink .9s steps(1) infinite}
+@keyframes tipblink{50%{opacity:0}}
+.tip-go{flex-shrink:0;background:var(--gold);border:none;border-radius:20px;padding:.45rem 1rem;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:800;color:#241900;cursor:pointer;white-space:nowrap;box-shadow:0 2px 8px rgba(245,158,11,.35)}
+.tip-go:hover{background:#e29009}
+.tip-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.hero-guide{display:inline-block;margin-left:1rem;background:none;border:none;color:rgba(255,255,255,.85);font-family:'Syne',sans-serif;font-size:.78rem;font-weight:600;text-decoration:underline;cursor:pointer;padding:.5rem 0}
+.hero-guide:hover{color:#fff}
+@media(max-width:480px){.tip-bar{flex-wrap:wrap}.tip-txt{flex-basis:calc(100% - 2.4rem);min-height:3em}.tip-go{margin-left:auto}.hero-guide{margin-left:0;display:block}}
+@media(prefers-reduced-motion:reduce){.tip-caret,.tip-bar.typing .tip-ic{animation:none}}
+/* PAGE COMMENT UTILISER */
+.gd-lead{font-family:'Syne',sans-serif;font-size:.9rem;color:var(--text-2);line-height:1.65;max-width:68ch;margin-top:.7rem}
+.gd-paths{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gd-path{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.3rem;box-shadow:var(--shadow)}
+.gd-path.nat{border-top:4px solid var(--navy)}
+.gd-path.civic{border-top:4px solid var(--red)}
+.gd-path h3{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:.9rem}
+.gd-steps{list-style:none;counter-reset:gd;margin:0;padding:0}
+.gd-steps li{counter-increment:gd;position:relative;padding:0 0 .8rem 2.1rem;font-family:'Syne',sans-serif;font-size:.8rem;line-height:1.55;color:var(--text-2)}
+.gd-steps li::before{content:counter(gd);position:absolute;left:0;top:0;width:1.45rem;height:1.45rem;border-radius:50%;background:var(--navy);color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.gd-path.civic .gd-steps li::before{background:var(--red)}
+.gd-steps li strong{color:var(--text)}
+.gd-open{display:inline-block;margin-left:.3rem;background:var(--navy-xlight);border:1px solid var(--navy-light);color:var(--navy);border-radius:20px;padding:.1rem .7rem;font-size:.68rem;font-weight:700;cursor:pointer;font-family:'Syne',sans-serif}
+.gd-open:hover{background:var(--navy-light)}
+.gd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.8rem}
+.gd-card{display:block;width:100%;text-align:left;background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.1rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow);font:inherit;color:inherit}
+.gd-card:hover{transform:translateY(-2px);border-color:var(--navy);box-shadow:var(--shadow-md)}
+.gd-ic{display:block;font-size:1.5rem;margin-bottom:.4rem;line-height:1}
+.gd-t{display:block;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;color:var(--navy);margin-bottom:.25rem}
+.gd-d{display:block;font-family:'Syne',sans-serif;font-size:.74rem;color:var(--text-3);line-height:1.55}
+.gd-more .faq-answer{font-family:'Syne',sans-serif}
+.gd-more .faq-answer p{margin-bottom:.7rem}
+.gd-note{background:var(--gold-bg);border:1px solid rgba(245,158,11,.35);border-radius:var(--r);padding:.7rem .9rem;font-family:'Syne',sans-serif;font-size:.78rem;line-height:1.6;color:#92600a;margin:.4rem 0 .8rem}
+.gd-mock{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--off-white);border:1px dashed var(--border-strong);border-radius:var(--r);padding:.6rem .9rem;margin:.2rem 0 .9rem;font-family:'Syne',sans-serif}
+.gd-mock-tag{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.gd-star{display:inline-flex;align-items:center;justify-content:center;width:1.9rem;height:1.9rem;border-radius:50%;background:rgba(245,158,11,.2);color:var(--gold);font-size:1.15rem;flex-shrink:0;animation:favpulse 1.6s ease-in-out infinite}
+.gd-tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.7rem}
+.gd-tip{background:var(--navy-xlight);border:1px solid var(--navy-light);border-radius:var(--r2);padding:.9rem 1rem;font-family:'Syne',sans-serif;font-size:.78rem;line-height:1.55;color:var(--text-2)}
+.gd-tip b{display:block;font-size:1.2rem;margin-bottom:.3rem;font-weight:400}
+.gd-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem;align-items:center}
+.gd-gold{background:var(--gold);color:#241900}
+.gd-gold:hover{background:#e29009}
+@media(max-width:768px){.gd-paths{grid-template-columns:1fr}.page-hd h1{font-size:1.7rem}}
+
 @media(max-width:768px){
   .ta-btn{width:32px;height:32px;font-size:.85rem}
   .stats-strip-in{gap:1rem}
@@ -601,6 +650,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
   </div>
   <nav class="side-nav" aria-label="Navigation principale">
     <button class="side-nav-btn active" data-view="home" onclick="go('home');closeSidebar()"><span class="nb-icon">🏠</span><span>Accueil</span></button>
+    <button class="side-nav-btn" data-view="aide" onclick="go('aide');closeSidebar()"><span class="nb-icon">💡</span><span>Comment utiliser</span></button>
     <button class="side-nav-btn" data-view="quiz" onclick="go('quiz');closeSidebar()"><span class="nb-icon">📝</span><span>Quiz</span></button>
     <button class="side-nav-btn" data-view="theme-quiz" onclick="go('theme-quiz');closeSidebar()"><span class="nb-icon">🎯</span><span>Thèmes</span></button>
     <button class="side-nav-btn" data-view="oral" onclick="go('oral');closeSidebar()"><span class="nb-icon">🗣️</span><span>Oral</span></button>
@@ -647,12 +697,19 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         <span class="sc-dot"></span> <span id="social-counter-txt">Chargement…</span>
       </div>
       <button class="hero-btn" onclick="go('quiz')">▶ &nbsp;Commencer le Quiz</button>
+      <button type="button" class="hero-guide" onclick="go('aide')">💡 Nouveau ici ? Comment utiliser le site</button>
       <div class="hero-stats">
         <div><div class="hero-stat-n" id="h-quiz-total">—</div><div class="hero-stat-l">Quiz complétés 🎓</div></div>
         <div><div class="hero-stat-n" id="h-total">0</div><div class="hero-stat-l">Questions</div></div>
         <div><div class="hero-stat-n">6</div><div class="hero-stat-l">Thèmes</div></div>
         <div><div class="hero-stat-n">40</div><div class="hero-stat-l">Questions par quiz</div></div>
       </div>
+    </div>
+    <div class="tip-bar" id="tip-bar" role="status" aria-live="polite">
+      <span class="tip-ic" id="tip-ic" aria-hidden="true">💡</span>
+      <span class="tip-txt" aria-hidden="true"><span id="tip-txt">Découvrez comment profiter au maximum du site.</span><span class="tip-caret"></span></span>
+      <span class="tip-sr" id="tip-sr"></span>
+      <button type="button" class="tip-go" id="tip-go" onclick="go('aide')">Mode d'emploi →</button>
     </div>
     <div class="home-grid">
       <div class="hc red-card" onclick="go('quiz')">
@@ -850,6 +907,125 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
         </details>
       </div>
     </section>
+  </div>
+
+  <!-- COMMENT UTILISER -->
+  <div class="view" id="view-aide">
+    <div class="page-hd">
+      <div class="page-eyebrow">Mode d'emploi</div>
+      <h1>Comment <span>utiliser</span> le site</h1>
+      <p class="gd-lead">Cap Naturalisation est <strong>100&nbsp;% gratuit et sans inscription</strong>. Voici, en quelques minutes, comment en tirer le meilleur : par où commencer, à quoi sert chaque rubrique, comment marchent les quiz, les favoris et les badges.</p>
+    </div>
+
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Par où commencer ?</div><div class="sec-div-line"></div></div>
+    <div class="gd-paths">
+      <div class="gd-path nat">
+        <h3>🇫🇷 Je prépare la naturalisation</h3>
+        <ol class="gd-steps">
+          <li><strong>Mesurez votre niveau</strong> avec un premier quiz de 40 questions. <button type="button" class="gd-open" onclick="go('quiz')">Ouvrir le Quiz</button></li>
+          <li><strong>Ciblez vos points faibles</strong> avec le Quiz par thème et les fiches de Révision. <button type="button" class="gd-open" onclick="go('theme-quiz')">Quiz par thème</button></li>
+          <li><strong>Préparez l'entretien</strong> : flashcards à l'Oral, guide de l'Entretien, questions par Préfecture. <button type="button" class="gd-open" onclick="go('oral')">Oral</button></li>
+          <li><strong>Indiquez la date de votre entretien</strong> dans « Jour J » pour un suivi personnalisé. <button type="button" class="gd-open" onclick="go('mon-entretien')">Jour J</button></li>
+        </ol>
+      </div>
+      <div class="gd-path civic">
+        <h3>📝 Je prépare l'examen civique (CSP / CR)</h3>
+        <ol class="gd-steps">
+          <li><strong>Consultez la liste officielle</strong> des questions CSP ou CR, avec les réponses. <button type="button" class="gd-open" onclick="go('examen-civique')">Civique</button></li>
+          <li><strong>Lancez un quiz examen civique</strong> : choisissez CSP, CR ou les deux, le thème et le nombre de questions. <button type="button" class="gd-open" onclick="go('civique-quiz')">Quiz civique</button></li>
+          <li><strong>Mettez-vous en condition</strong> avec la simulation chronométrée de 40 questions.</li>
+          <li><strong>Suivez vos résultats</strong> dans le Bilan pour savoir quand vous êtes prêt(e). <button type="button" class="gd-open" onclick="go('dashboard')">Bilan</button></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Les rubriques en un coup d'œil</div><div class="sec-div-line"></div></div>
+    <div class="gd-grid">
+      <button type="button" class="gd-card" onclick="go('quiz')"><span class="gd-ic">📝</span><span class="gd-t">Quiz</span><span class="gd-d">40 questions mélangées, 30 secondes par question, correction immédiate et bilan complet.</span></button>
+      <button type="button" class="gd-card" onclick="go('theme-quiz')"><span class="gd-ic">🎯</span><span class="gd-t">Thèmes</span><span class="gd-d">Vous choisissez le thème, le nombre de questions et le chrono pour travailler un point précis.</span></button>
+      <button type="button" class="gd-card" onclick="go('oral')"><span class="gd-ic">🗣️</span><span class="gd-t">Oral</span><span class="gd-d">Des flashcards : réfléchissez, révélez la réponse, puis évaluez-vous honnêtement.</span></button>
+      <button type="button" class="gd-card" onclick="go('revision')"><span class="gd-ic">📚</span><span class="gd-t">Révision</span><span class="gd-d">Des fiches de révision classées par thème à relire avant de vous tester.</span></button>
+      <button type="button" class="gd-card" onclick="go('interview')"><span class="gd-ic">🎙️</span><span class="gd-t">Entretien</span><span class="gd-d">Le déroulement de l'entretien, des conseils et des exemples de réponses.</span></button>
+      <button type="button" class="gd-card" onclick="go('prefecture')"><span class="gd-ic">🏛️</span><span class="gd-t">Préfecture</span><span class="gd-d">Des questions d'entraînement selon votre préfecture, avec auto-évaluation.</span></button>
+      <button type="button" class="gd-card" onclick="go('examen-civique')"><span class="gd-ic">🇫🇷</span><span class="gd-t">Civique</span><span class="gd-d">Listes officielles CSP et CR avec réponses, quiz et simulation chronométrée.</span></button>
+      <button type="button" class="gd-card" onclick="go('favoris')"><span class="gd-ic">⭐</span><span class="gd-t">Favoris</span><span class="gd-d">Les questions que vous avez marquées, à retravailler quand vous voulez.</span></button>
+      <button type="button" class="gd-card" onclick="go('dashboard')"><span class="gd-ic">📊</span><span class="gd-t">Bilan</span><span class="gd-d">Vos scores, votre historique, vos badges et la sauvegarde de votre progression.</span></button>
+      <button type="button" class="gd-card" onclick="go('mon-entretien')"><span class="gd-ic">📅</span><span class="gd-t">Jour J</span><span class="gd-d">Indiquez la date de votre entretien : des messages de motivation s'adaptent à mesure qu'elle approche.</span></button>
+    </div>
+
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Le détail, pas à pas</div><div class="sec-div-line"></div></div>
+    <div class="gd-more">
+      <details class="faq-item" open>
+        <summary>📝 Comment fonctionne un quiz ?</summary>
+        <div class="faq-answer">
+          <ol class="gd-steps">
+            <li><strong>Lisez la question</strong> et choisissez l'une des 4 propositions (A à D).</li>
+            <li><strong>La correction est immédiate</strong> : la bonne réponse s'affiche, avec une explication pour comprendre.</li>
+            <li><strong>Cliquez sur « Suivant »</strong> pour passer à la question d'après.</li>
+            <li><strong>À la fin, le bilan</strong> vous donne votre score, le détail par thème et la liste des questions ratées.</li>
+          </ol>
+          <div class="gd-note">⏱ Avec le chrono, une question sans réponse dans le temps est comptée à part (« temps écoulé ») et la bonne réponse s'affiche quand même.</div>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>⭐ Comment ajouter une question à mes favoris ?</summary>
+        <div class="faq-answer">
+          <p>Dans le <strong>Quiz</strong> et le <strong>Quiz par thème</strong>, une petite étoile se trouve en haut à droite de chaque question :</p>
+          <div class="gd-mock"><span class="gd-mock-tag">⚖️ Valeurs de la République</span><span class="gd-star" aria-hidden="true">☆</span></div>
+          <ol class="gd-steps">
+            <li><strong>Cliquez sur l'étoile ☆</strong> : elle devient ★, la question est enregistrée.</li>
+            <li><strong>Après une mauvaise réponse</strong>, un encadré jaune vous propose aussi de l'ajouter d'un clic.</li>
+            <li><strong>Retrouvez-les dans « Favoris »</strong> avec leur réponse. Retirez-en une avec le ✕.</li>
+          </ol>
+          <div class="gd-note">Vos favoris sont enregistrés dans votre navigateur. Pensez à sauvegarder votre progression (voir plus bas).</div>
+          <button type="button" class="gd-open" onclick="go('favoris')">Voir mes favoris</button>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>🏆 Comment gagner des badges ?</summary>
+        <div class="faq-answer">
+          <p>Les badges se débloquent <strong>automatiquement</strong> quand vous progressez : un message apparaît en bas de l'écran. Pour les séries de jours, il suffit de réviser plusieurs jours de suite. Vos badges sont aussi visibles dans le Bilan.</p>
+          <div class="badges-grid" id="aide-badges" style="margin:.8rem 0"></div>
+          <button type="button" class="gd-open" onclick="go('dashboard')">Voir mon bilan</button>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>🎙️ Oral, Entretien, Préfecture : quelle différence ?</summary>
+        <div class="faq-answer">
+          <ol class="gd-steps">
+            <li><strong>Oral</strong> : des flashcards. Vous révélez la réponse, puis vous indiquez « Je savais » ou « Je ne savais pas » pour obtenir un score.</li>
+            <li><strong>Entretien</strong> : un guide pour comprendre le déroulement, avec des conseils et des exemples de réponses.</li>
+            <li><strong>Préfecture</strong> : des questions d'entraînement selon votre préfecture, avec « Je maîtrise » ou « À retravailler ».</li>
+          </ol>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>💾 Comment sauvegarder ma progression ?</summary>
+        <div class="faq-answer">
+          <p>Vos scores, favoris et badges sont enregistrés <strong>automatiquement dans ce navigateur</strong>, sans compte.</p>
+          <ol class="gd-steps">
+            <li><strong>Exportez</strong> avec le bouton « ⬇ Sauvegarder » en haut de page (ou « Exporter » dans le Bilan) : un fichier .json est téléchargé.</li>
+            <li><strong>Importez-le</strong> avec « Importer (.json) » dans le Bilan pour retrouver votre progression sur un autre appareil.</li>
+          </ol>
+          <div class="gd-note">Si vous effacez les données de votre navigateur, la progression est perdue : exportez-la de temps en temps.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">5 conseils pour progresser</div><div class="sec-div-line"></div></div>
+    <div class="gd-tips">
+      <div class="gd-tip"><b>📆</b>Révisez un peu chaque jour : c'est plus efficace qu'une longue session, et cela débloque des badges.</div>
+      <div class="gd-tip"><b>🔍</b>Après chaque quiz, relisez les questions ratées dans le bilan.</div>
+      <div class="gd-tip"><b>🔀</b>Alternez quiz complet et quiz par thème pour consolider vos points faibles.</div>
+      <div class="gd-tip"><b>🗣️</b>Entraînez-vous à voix haute avec l'Oral avant l'entretien.</div>
+      <div class="gd-tip"><b>💾</b>Exportez votre progression de temps en temps pour ne rien perdre.</div>
+    </div>
+
+    <div class="gd-cta">
+      <button class="btn" onclick="go('quiz')">▶ Commencer le Quiz</button>
+      <a class="btn btn-outline" style="text-decoration:none;display:inline-block" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation">✉️ Une question ? Contactez-nous</a>
+      <button class="btn gd-gold" onclick="trackEvent('donate_click',{location:'guide'});window.open('https://paypal.me/shankislaitk','_blank')">💛 Soutenir le projet</button>
+    </div>
   </div>
 
   <!-- QUIZ DE NATURALISATION -->
@@ -2315,6 +2491,87 @@ function dismissDonate(btn){
 function showDonate(){
   document.querySelectorAll('[data-donate-card]').forEach(function(c){c.style.display='';});
 }
+// ══════════════════════
+// PAGE « COMMENT UTILISER »
+// ══════════════════════
+function buildAide(){
+  var el=document.getElementById('aide-badges');
+  if(el){
+    if(!G.data.badges)G.data.badges=[];
+    el.innerHTML=BADGES.map(function(b){
+      var unlocked=G.data.badges.indexOf(b.id)!==-1;
+      return '<div class="badge-item '+(unlocked?'unlocked':'locked')+'" title="'+b.desc+'">' +
+        '<div class="badge-ic">'+b.icon+'</div>' +
+        '<div class="badge-name">'+b.name+'</div>' +
+        '<div class="badge-desc">'+(unlocked?b.desc:'🔒 '+b.desc)+'</div></div>';
+    }).join('');
+  }
+  window.scrollTo(0,0);
+}
+// ══════════════════════
+// ASTUCES ANIMÉES (accueil) — le texte « s'écrit » de temps en temps
+// ══════════════════════
+var TIPS=[
+  {id:'oral',ic:'🗣️',t:"N'hésitez pas à faire un test oral : s'entraîner à voix haute rassure le jour de l'entretien.",b:"Essayer l'oral",a:function(){go('oral');}},
+  {id:'themes',ic:'🎯',t:"Un thème vous résiste ? Découvrez la rubrique Quiz par thème pour cibler vos points faibles.",b:"Voir les thèmes",a:function(){go('theme-quiz');}},
+  {id:'civique',ic:'📝',t:"Vous préparez l'examen civique ? Entraînez-vous avec les listes officielles CSP et CR.",b:"Ouvrir",a:function(){go('examen-civique');}},
+  {id:'favoris',ic:'⭐',t:"Une question vous échappe ? Cliquez sur l'étoile ☆ pour la retrouver dans vos favoris.",b:"Voir comment",a:function(){go('aide');}},
+  {id:'badges',ic:'🏆',t:"Révisez plusieurs jours de suite pour débloquer des badges.",b:"Mes badges",a:function(){go('dashboard');}},
+  {id:'don',ic:'💛',t:"Vous aimez le projet ? Soutenez-le pour qu'il reste 100 % gratuit.",b:"Soutenir",a:function(){trackEvent('donate_click',{location:'home_ticker'});window.open('https://paypal.me/shankislaitk','_blank');}},
+  {id:'contact',ic:'✉️',t:"Une question, une remarque ? Contactez-nous par e-mail.",b:"Écrire",a:function(){window.location.href='mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation';}},
+  {id:'guide',ic:'💡',t:"Première visite ? Découvrez comment profiter au maximum du site.",b:"Mode d'emploi",a:function(){go('aide');}},
+  {id:'jourj',ic:'📅',t:"Votre entretien approche ? Indiquez sa date dans Jour J pour un suivi personnalisé.",b:"Jour J",a:function(){go('mon-entretien');},ok:function(){return !(G.data&&G.data.interviewDate);}},
+  {id:'pref',ic:'🏛️',t:"Chaque préfecture a ses habitudes : entraînez-vous avec les questions de la vôtre.",b:"Préfecture",a:function(){go('prefecture');}},
+  {id:'fb',ic:'💬',t:"Après votre entretien, partagez votre retour dans le groupe Facebook pour aider les autres.",b:"Rejoindre",a:function(){window.open('https://www.facebook.com/groups/1663580948311419/','_blank');}}
+];
+function initHomeTicker(){
+  var bar=document.getElementById('tip-bar');
+  if(!bar)return;
+  var ic=document.getElementById('tip-ic'),txt=document.getElementById('tip-txt'),sr=document.getElementById('tip-sr'),btn=document.getElementById('tip-go');
+  var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var order=shuffle(TIPS.map(function(x,i){return i;}));
+  var pos=0,cur=null,timer=null;
+  function later(fn,ms){clearTimeout(timer);timer=setTimeout(fn,ms);}
+  function visible(){
+    var h=document.getElementById('view-home');
+    return !document.hidden&&h&&h.classList.contains('active');
+  }
+  function nextTip(){
+    for(var k=0;k<order.length;k++){
+      var t=TIPS[order[pos%order.length]];pos++;
+      if(!t.ok||t.ok())return t;
+    }
+    return TIPS[0];
+  }
+  function show(){
+    if(!visible()){later(show,1500);return;}
+    cur=nextTip();
+    ic.textContent=cur.ic;btn.textContent=cur.b+' →';sr.textContent=cur.t;
+    if(reduce){txt.textContent=cur.t;later(hide,9000);return;}
+    var n=0;txt.textContent='';bar.classList.add('typing');
+    (function type(){
+      if(!visible()){later(type,1200);return;}
+      n++;txt.textContent=cur.t.slice(0,n);
+      if(n<cur.t.length){later(type,26);}
+      else{bar.classList.remove('typing');later(hide,7000);}
+    })();
+  }
+  function hide(){
+    if(reduce){txt.textContent='';later(show,3000);return;}
+    var n=txt.textContent.length;bar.classList.add('typing');
+    (function erase(){
+      n-=3;
+      if(n<=0){txt.textContent='';bar.classList.remove('typing');later(show,2500+Math.random()*3500);return;}
+      txt.textContent=cur.t.slice(0,n);later(erase,12);
+    })();
+  }
+  btn.onclick=function(){
+    if(!cur){go('aide');return;}
+    trackEvent('home_tip_click',{tip:cur.id});
+    cur.a();
+  };
+  later(show,1200);
+}
 function trackEvent(name,params){
   try{
     if(typeof gtag==='function')gtag('event',name,params||{});
@@ -2328,6 +2585,7 @@ function go(v){
   if(btn)btn.classList.add('active');
   if(v==='prefecture')buildPrefLanding();
   if(v==='home')buildHome();
+  if(v==='aide')buildAide();
   if(v==='revision')buildRevision();
   if(v==='interview')buildInterview();
   if(v==='dashboard')buildDashboard();
@@ -3420,6 +3678,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   buildHome();updateSidebar();ecInitLayouts();
   try{initSocialCounter();}catch(e){}
+  try{initHomeTicker();}catch(e){}
   try{initCumulativeCounter();}catch(e){}
   document.getElementById('ql-sub').textContent='Questions mélangées parmi les '+DB.length+' de la base';
 });
