@@ -128,7 +128,7 @@ var TIPS=[
   {id:'favoris',ic:'⭐',t:"Une question vous échappe ? Cliquez sur l'étoile ☆ pour la retrouver dans vos favoris.",b:"Voir comment",a:function(){go('aide');}},
   {id:'badges',ic:'🏆',t:"Révisez plusieurs jours de suite pour débloquer des badges.",b:"Mes badges",a:function(){go('dashboard');}},
   {id:'don',ic:'💛',t:"Vous aimez le projet ? Soutenez-le pour qu'il reste 100 % gratuit.",b:"Soutenir",a:function(){trackEvent('donate_click',{location:'home_ticker'});window.open('https://paypal.me/shankislaitk','_blank');}},
-  {id:'contact',ic:'✉️',t:"Une question, une remarque ? Contactez-nous par e-mail.",b:"Écrire",a:function(){window.location.href='mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation';}},
+  {id:'contact',ic:'✉️',t:"Une question, une remarque ? Contactez-nous par e-mail.",b:"Écrire",a:function(){showContactBubble(document.getElementById('tip-go'));}},
   {id:'guide',ic:'💡',t:"Première visite ? Découvrez comment profiter au maximum du site.",b:"Mode d'emploi",a:function(){go('aide');}},
   {id:'jourj',ic:'📅',t:"Votre entretien approche ? Indiquez sa date dans Jour J pour un suivi personnalisé.",b:"Jour J",a:function(){go('mon-entretien');},ok:function(){return !(G.data&&G.data.interviewDate);}},
   {id:'pref',ic:'🏛️',t:"Chaque préfecture a ses habitudes : entraînez-vous avec les questions de la vôtre.",b:"Préfecture",a:function(){go('prefecture');}},
@@ -211,7 +211,7 @@ function initView(v){
 // Navigation : chaque rubrique est maintenant une page séparée.
 function go(v){
   if(!PAGES[v])v='home';
-  if(v!==currentView()){window.location.href=PAGES[v];return;}
+  if(v!==currentView()){if(!confirmLeave())return;window.location.href=PAGES[v];return;}
   initView(v);
   window.scrollTo(0,0);
 }
@@ -1271,7 +1271,7 @@ function ecFilter(input,prefix){
 }
 function updateSidebar(){
   var h=G.data.history;
-  document.getElementById('sb-total').textContent=DB.length;
+  var sbt=document.getElementById('sb-total');if(sbt)sbt.textContent=DB.length;
   document.getElementById('sb-quizzes').textContent=h.length;
   document.getElementById('sb-best').textContent=h.length?Math.max.apply(null,h.map(function(x){return x.pct;}))+'%':'—';
   document.getElementById('sb-avg').textContent=h.length?Math.round(h.reduce(function(s,x){return s+x.pct;},0)/h.length)+'%':'—';
@@ -1304,4 +1304,177 @@ document.addEventListener('DOMContentLoaded',function(){
   try{initCumulativeCounter();}catch(e){}
   var ql=document.getElementById('ql-sub');
   if(ql)ql.textContent='Questions mélangées parmi les '+DB.length+' de la base';
+});
+
+
+// ══════════════════════════════════════════════════════
+// ERGONOMIE : quiz en cours protégé, clavier, accessibilité
+// ══════════════════════════════════════════════════════
+var QUIZ_SCREENS=['quiz-screen','tq-screen','cq-screen','oral-screen','pref-screen'];
+function quizInProgress(){
+  return QUIZ_SCREENS.some(function(id){var e=document.getElementById(id);return !!(e&&e.style.display==='block');});
+}
+// Demande confirmation avant de quitter une session en cours (clic sur un lien interne ou go())
+function confirmLeave(){
+  if(!quizInProgress())return true;
+  var ok=window.confirm('Quitter cette session ? Votre progression sur ce quiz sera perdue.');
+  if(ok)window.__leaving=true;
+  return ok;
+}
+window.addEventListener('beforeunload',function(e){
+  if(!window.__leaving&&quizInProgress()){e.preventDefault();e.returnValue='';return '';}
+});
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;
+  if(!a||a.target==='_blank'||e.defaultPrevented)return;
+  var href=a.getAttribute('href')||'';
+  if(href.charAt(0)==='#'||/^(mailto:|tel:|javascript:)/i.test(href))return;
+  if(a.origin&&a.origin!==window.location.origin)return;
+  if(!confirmLeave()){e.preventDefault();e.stopPropagation();}
+},true);
+
+// Éléments cliquables non natifs (cartes, puces…) : accessibles au clavier
+function enhanceClickables(root){
+  (root||document).querySelectorAll('[onclick]').forEach(function(el){
+    var tag=el.tagName;
+    if(tag==='A'||tag==='BUTTON'||tag==='INPUT'||tag==='SUMMARY'||tag==='SELECT'||tag==='TEXTAREA'||tag==='LABEL')return;
+    if(!el.hasAttribute('tabindex'))el.setAttribute('tabindex','0');
+    if(!el.hasAttribute('role'))el.setAttribute('role','button');
+  });
+}
+// Raccourcis clavier : 1-4 / A-D pour répondre, Entrée ou → pour continuer, Entrée/Espace pour révéler une flashcard
+function visibleScreen(ids){
+  for(var i=0;i<ids.length;i++){var e=document.getElementById(ids[i]);if(e&&e.style.display==='block')return e;}
+  return null;
+}
+document.addEventListener('keydown',function(e){
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  var t=e.target||document.body,tag=t.tagName;
+  if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||t.isContentEditable)return;
+  var key=e.key;
+  // Entrée / Espace sur un élément cliquable non natif
+  if((key==='Enter'||key===' ')&&t.getAttribute&&t.getAttribute('role')==='button'&&tag!=='BUTTON'&&tag!=='A'){
+    e.preventDefault();t.click();return;
+  }
+  var nativeBtn=(tag==='BUTTON'||tag==='A'||tag==='SUMMARY')&&!/-fav$/.test(t.id||'');
+  // Quiz à choix multiples
+  var qs=visibleScreen(['quiz-screen','tq-screen','cq-screen']);
+  if(qs){
+    var k=key.toLowerCase(),idx=-1;
+    if(k.length===1&&k>='1'&&k<='4')idx=parseInt(k,10)-1;
+    else if(k.length===1&&k>='a'&&k<='d')idx=k.charCodeAt(0)-97;
+    if(idx>-1){
+      var opts=Array.prototype.filter.call(qs.querySelectorAll('.opt'),function(b){return !b.disabled;});
+      if(opts[idx]){e.preventDefault();opts[idx].click();}
+      return;
+    }
+    if((key==='Enter'||key==='ArrowRight')&&!nativeBtn){
+      var nx=qs.querySelector('[id$="-next"]');
+      if(nx&&nx.style.display!=='none'){e.preventDefault();nx.click();}
+    }
+    return;
+  }
+  // Flashcards (oral, préfecture)
+  var fc=visibleScreen(['oral-screen','pref-screen']);
+  if(fc){
+    var pre=fc.id==='oral-screen'?'oral':'pref',fn=fc.id==='oral-screen'?'scoreOral':'scorePref';
+    var rb=document.getElementById(pre+'-reveal-btn'),ans=document.getElementById(pre+'-answer');
+    var revealed=ans&&ans.classList.contains('show');
+    if((key==='Enter'||key===' ')&&!nativeBtn&&rb&&rb.style.display!=='none'&&!revealed){e.preventDefault();rb.click();return;}
+    if(revealed&&(key==='1'||key==='2')){
+      var b=fc.querySelector('[onclick^="'+fn+'('+(key==='1'?'true':'false')+')"]');
+      if(b){e.preventDefault();b.click();}
+    }
+  }
+});
+document.addEventListener('DOMContentLoaded',function(){
+  enhanceClickables(document);
+  var main=document.querySelector('.main'),pending=false;
+  if(main&&window.MutationObserver){
+    new MutationObserver(function(){
+      if(pending)return;pending=true;
+      requestAnimationFrame(function(){pending=false;enhanceClickables(main);});
+    }).observe(main,{childList:true,subtree:true});
+  }
+  // Astuce affichée sous les réponses (ordinateur uniquement)
+  var hints=[['qz-opts','<kbd>1</kbd>–<kbd>4</kbd> ou <kbd>A</kbd>–<kbd>D</kbd> pour répondre · <kbd>Entrée</kbd> pour continuer'],
+             ['tqz-opts','<kbd>1</kbd>–<kbd>4</kbd> ou <kbd>A</kbd>–<kbd>D</kbd> pour répondre · <kbd>Entrée</kbd> pour continuer'],
+             ['cqz-opts','<kbd>1</kbd>–<kbd>4</kbd> ou <kbd>A</kbd>–<kbd>D</kbd> pour répondre · <kbd>Entrée</kbd> pour continuer'],
+             ['oral-reveal-btn','<kbd>Entrée</kbd> pour révéler la réponse · <kbd>1</kbd> Je savais · <kbd>2</kbd> Je ne savais pas'],
+             ['pref-reveal-btn','<kbd>Entrée</kbd> pour révéler la réponse · <kbd>1</kbd> Je maîtrise · <kbd>2</kbd> À retravailler']];
+  hints.forEach(function(h){
+    var el=document.getElementById(h[0]);
+    if(el)el.insertAdjacentHTML('afterend','<div class="kbd-hint" aria-hidden="true">⌨️ '+h[1]+'</div>');
+  });
+});
+
+// Mode focus : pendant une session de quiz, les boutons Don / Facebook de la barre du haut sont masqués
+function syncQuizFocus(){document.body.classList.toggle('quiz-focus',quizInProgress());}
+document.addEventListener('DOMContentLoaded',function(){
+  syncQuizFocus();
+  if(!window.MutationObserver)return;
+  var mo=new MutationObserver(syncQuizFocus);
+  QUIZ_SCREENS.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)mo.observe(el,{attributes:true,attributeFilter:['style']});
+  });
+});
+
+
+// ══════════════════════════════════════════════════════
+// BULLE « CONTACT » : affiche l'adresse e-mail (le lien mailto ne fait rien si aucune messagerie n'est configurée)
+// ══════════════════════════════════════════════════════
+var CONTACT_MAIL='devby.fou@gmail.com';
+function contactEsc(e){if(e.key==='Escape')closeContactBubble(true);}
+function closeContactBubble(refocus){
+  var b=document.getElementById('contact-pop');
+  if(!b)return;
+  var a=b.__anchor;
+  b.parentNode.removeChild(b);
+  document.removeEventListener('keydown',contactEsc,true);
+  if(refocus&&a&&a.focus)a.focus();
+}
+function showContactBubble(anchor){
+  var old=document.getElementById('contact-pop');
+  if(old){var same=old.__anchor===anchor;closeContactBubble();if(same)return;}
+  var b=document.createElement('div');
+  b.id='contact-pop';b.className='contact-pop';
+  b.setAttribute('role','dialog');b.setAttribute('aria-label','Nous contacter par e-mail');
+  b.innerHTML='<button type="button" class="cp-x" aria-label="Fermer">×</button>'+
+    '<div class="cp-t">✉️ Contactez-nous par mail sur :</div>'+
+    '<div class="cp-mail">'+CONTACT_MAIL+'</div>'+
+    '<div class="cp-btns"><button type="button" class="cp-copy">Copier l\'adresse</button>'+
+    '<a class="cp-open" href="mailto:'+CONTACT_MAIL+'?subject=Contact%20Cap%20Naturalisation">Ouvrir ma messagerie</a></div>';
+  b.__anchor=anchor;
+  document.body.appendChild(b);
+  var W=window.innerWidth,H=window.innerHeight,bw=b.offsetWidth,bh=b.offsetHeight;
+  if(anchor&&anchor.getBoundingClientRect&&W>480){
+    var r=anchor.getBoundingClientRect();
+    var left=Math.min(Math.max(8,r.left+r.width/2-bw/2),W-bw-8);
+    var top=(r.top>bh+16)?r.top-bh-10:Math.min(r.bottom+10,H-bh-8);
+    b.style.left=left+'px';b.style.top=Math.max(8,top)+'px';
+  }
+  b.querySelector('.cp-x').onclick=function(){closeContactBubble(true);};
+  b.querySelector('.cp-copy').onclick=function(){
+    var btn=this;
+    function done(){btn.textContent='✓ Adresse copiée';}
+    function fallback(){
+      var ta=document.createElement('textarea');
+      ta.value=CONTACT_MAIL;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');done();}catch(e){btn.textContent='Copiez-la à la main';}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(CONTACT_MAIL).then(done,fallback);}
+    else{fallback();}
+  };
+  document.addEventListener('keydown',contactEsc,true);
+  b.querySelector('.cp-copy').focus();
+}
+document.addEventListener('click',function(e){
+  var t=e.target;
+  if(!t||!t.closest)return;
+  var a=t.closest('a[href^="mailto:devby.fou@gmail.com?subject=Contact"]');
+  if(a&&!a.closest('#contact-pop')){e.preventDefault();showContactBubble(a);return;}
+  if(document.getElementById('contact-pop')&&!t.closest('#contact-pop'))closeContactBubble();
 });
