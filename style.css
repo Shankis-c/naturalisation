@@ -120,7 +120,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 .hero-flag{display:flex;height:4px;width:60px;border-radius:2px;overflow:hidden;margin-bottom:1.2rem}
 .hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.9rem;color:#fff;letter-spacing:-.02em;line-height:1.2;margin-bottom:.5rem}
 .hero-title span{color:rgba(255,255,255,.45)}
-.hero-sub{font-size:.88rem;color:rgba(255,255,255,.55);font-family:'Syne',sans-serif;margin-bottom:1.8rem}
+.hero-sub{font-size:.92rem;color:rgba(255,255,255,.8);max-width:640px;font-family:'Syne',sans-serif;margin-bottom:1.8rem}
 .hero-free-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(245,158,11,.15);border:1px solid var(--gold);color:var(--gold);font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:.02em;padding:.45rem 1rem;border-radius:20px;margin-bottom:1.4rem}
 .hero-btn{background:#fff;color:var(--navy);border:none;border-radius:var(--r);padding:.7rem 1.6rem;font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .hero-btn:hover{background:var(--off-white);transform:translateY(-1px)}
@@ -146,7 +146,7 @@ main.main{max-width:1000px;margin:0 auto;padding:2.4rem 1.6rem 3.5rem}
 .tc-n{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--navy)}
 
 /* COMMUNAUTÉ & SOUTIEN */
-.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin-bottom:1rem}
 .mc{border-radius:var(--r2);padding:1.2rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
 .mc:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .mc-interview{background:var(--navy-xlight);border:1px solid var(--navy-light)}
@@ -654,3 +654,16 @@ body.quiz-focus .ss-donate,body.quiz-focus .ss-fb{display:none}
 .cp-open{background:var(--white);border:1px solid var(--border-strong);color:var(--navy)}
 .cp-open:hover{background:var(--navy-xlight)}
 @media(max-width:480px){.contact-pop{left:.8rem!important;right:.8rem;top:auto!important;bottom:1rem;width:auto}}
+
+/* ===== Accueil : deux parcours ===== */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.6rem}
+.path{border-radius:var(--r2);padding:1.5rem;color:#fff;display:flex;flex-direction:column;gap:.9rem;box-shadow:var(--shadow-md)}
+.path.nat{background:linear-gradient(135deg,var(--navy),var(--navy-mid))}
+.path.civ{background:linear-gradient(135deg,#8f0c22,#a50e27)}
+.path-h{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;margin:0;color:#fff}
+.path ol{margin:0;padding-left:1.2rem;font-family:'Syne',sans-serif;font-size:.9rem;line-height:1.75;color:#eef3fc}
+.path-btn{align-self:flex-start;margin-top:auto;border:0;border-radius:20px;padding:.7rem 1.4rem;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;cursor:pointer;transition:transform .15s}
+.path-btn:hover{transform:translateY(-1px)}
+.path.nat .path-btn{background:var(--gold);color:#241900}
+.path.civ .path-btn{background:#fff;color:#a50e27}
+@media(max-width:768px){.paths{grid-template-columns:1fr}}
