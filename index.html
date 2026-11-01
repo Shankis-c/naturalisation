@@ -114,7 +114,7 @@
     <div class="home-hero">
       <div class="hero-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
       <h1 class="hero-title">Quiz <span>naturalisation française & examen civique</span> gratuit</h1>
-      <p class="hero-sub">Quiz, test, questionnaire ou QCM : révisez la naturalisation, la nationalité française et l'examen civique (CSP, CR) avec des listes officielles. Chrono, bilan complet, entraînement oral. <strong>100&nbsp;% gratuit, sans inscription.</strong></p>
+      <p class="hero-sub">Entraînez-vous sans inscription : correction immédiate, bilan par thème, entraînement oral et listes officielles de l'examen civique (CSP, CR).</p>
       <div class="hero-free-badge">🎁 100% gratuit · Sans inscription · Sans publicité</div>
       <div class="social-counter" id="social-counter" style="display:none">
         <span class="sc-dot"></span> <span id="social-counter-txt">Chargement…</span>
@@ -134,11 +134,33 @@
       <span class="tip-sr" id="tip-sr"></span>
       <button type="button" class="tip-go" id="tip-go" onclick="go('aide')">Mode d'emploi →</button>
     </div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Par où commencer ?</div><div class="sec-div-line"></div></div>
+    <div class="paths">
+      <section class="path nat">
+        <h2 class="path-h">Je prépare la naturalisation</h2>
+        <ol>
+          <li>Quiz de 40 questions pour mesurer votre niveau</li>
+          <li>Quiz par thème sur vos points faibles</li>
+          <li>Oral et Entretien pour être prêt(e) le jour J</li>
+        </ol>
+        <button type="button" class="path-btn" onclick="trackEvent('home_path_click',{path:'naturalisation'});go('quiz')">Commencer le quiz</button>
+      </section>
+      <section class="path civ">
+        <h2 class="path-h">Je prépare l'examen civique</h2>
+        <ol>
+          <li>Listes officielles CSP et CR avec les réponses</li>
+          <li>Quiz examen civique par thème</li>
+          <li>Simulation chronométrée de 40 questions</li>
+        </ol>
+        <button type="button" class="path-btn" onclick="trackEvent('home_path_click',{path:'examen_civique'});go('examen-civique')">Ouvrir l'examen civique</button>
+      </section>
+    </div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Accès rapide</div><div class="sec-div-line"></div></div>
     <div class="home-grid">
       <div class="hc red-card" onclick="go('quiz')">
         <div class="hc-icon">📝</div>
         <div class="hc-title">Quiz de naturalisation</div>
-        <div class="hc-desc">40 questions · chrono · <strong>chronobilan</strong> complet</div>
+        <div class="hc-desc">40 questions · chrono · bilan complet</div>
         <div class="hc-badge">Recommandé</div>
       </div>
       <div class="hc" onclick="go('theme-quiz')">
@@ -152,11 +174,6 @@
         <div class="hc-desc">Flashcards · auto-évaluation · score</div>
         <div class="hc-badge">Nouveau</div>
       </div>
-      <div class="hc gold-card" onclick="go('favoris')">
-        <div class="hc-icon">⭐</div>
-        <div class="hc-title">Mes favoris</div>
-        <div class="hc-desc">Questions marquées à retravailler</div>
-      </div>
       <div class="hc red-card" onclick="go('examen-civique')">
         <div class="hc-icon">📝</div>
         <div class="hc-title">Examen civique</div>
@@ -169,11 +186,6 @@
         <div class="mc-icon">📅</div>
         <div class="mc-title">Mon entretien</div>
         <div class="mc-desc" id="home-interview-sub">Renseignez la date de votre entretien pour un suivi personnalisé</div>
-      </div>
-      <div class="mc mc-fb" onclick="window.open('https://www.facebook.com/groups/1663580948311419/','_blank')">
-        <div class="mc-icon">💬</div>
-        <div class="mc-title">Partagez votre retour</div>
-        <div class="mc-desc">Rejoignez le groupe Facebook et partagez votre REX après l'entretien</div>
       </div>
       <div class="mc mc-support" onclick="trackEvent('donate_click',{location:'home_card'});window.open('https://paypal.me/shankislaitk','_blank')">
         <div class="mc-icon">💛</div>
