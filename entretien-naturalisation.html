@@ -54,20 +54,31 @@
   <nav class="side-nav" aria-label="Navigation principale">
     <a class="side-nav-btn" data-view="home" href="index.html"><span class="nb-icon">🏠</span><span>Accueil</span></a>
     <a class="side-nav-btn" data-view="aide" href="comment-utiliser.html"><span class="nb-icon">💡</span><span>Comment utiliser</span></a>
-    <a class="side-nav-btn" data-view="quiz" href="quiz-naturalisation.html"><span class="nb-icon">📝</span><span>Quiz</span></a>
-    <a class="side-nav-btn" data-view="theme-quiz" href="quiz-par-theme.html"><span class="nb-icon">🎯</span><span>Thèmes</span></a>
-    <a class="side-nav-btn" data-view="oral" href="entrainement-oral.html"><span class="nb-icon">🗣️</span><span>Oral</span></a>
-    <a class="side-nav-btn" data-view="revision" href="revision-naturalisation.html"><span class="nb-icon">📚</span><span>Révision</span></a>
-    <a class="side-nav-btn active" data-view="interview" href="entretien-naturalisation.html" aria-current="page"><span class="nb-icon">🎙️</span><span>Entretien</span></a>
-    <a class="side-nav-btn" data-view="prefecture" href="questions-par-prefecture.html"><span class="nb-icon">🏛️</span><span>Préfecture</span></a>
-    <a class="side-nav-btn" data-view="examen-civique" href="examen-civique.html"><span class="nb-icon">📝</span><span>Civique</span></a>
-    <a class="side-nav-btn" data-view="favoris" href="mes-favoris.html"><span class="nb-icon">⭐</span><span>Favoris</span><span class="nb-badge" id="sb-fav-badge">0</span></a>
-    <a class="side-nav-btn" data-view="dashboard" href="mon-bilan.html"><span class="nb-icon">📊</span><span>Bilan</span></a>
-    <a class="side-nav-btn" data-view="mon-entretien" href="jour-j.html"><span class="nb-icon">📅</span><span>Jour J</span></a>
+    <div class="side-group" role="group" aria-labelledby="sg-train">
+      <div class="side-grp" id="sg-train">S'entraîner</div>
+      <a class="side-nav-btn" data-view="quiz" href="quiz-naturalisation.html"><span class="nb-icon">📝</span><span>Quiz</span></a>
+      <a class="side-nav-btn" data-view="theme-quiz" href="quiz-par-theme.html"><span class="nb-icon">🎯</span><span>Thèmes</span></a>
+      <a class="side-nav-btn" data-view="oral" href="entrainement-oral.html"><span class="nb-icon">🗣️</span><span>Oral</span></a>
+      <a class="side-nav-btn" data-view="revision" href="revision-naturalisation.html"><span class="nb-icon">📚</span><span>Révision</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-interview">
+      <div class="side-grp" id="sg-interview">Entretien</div>
+      <a class="side-nav-btn active" data-view="interview" href="entretien-naturalisation.html" aria-current="page"><span class="nb-icon">🎙️</span><span>Entretien</span></a>
+      <a class="side-nav-btn" data-view="prefecture" href="questions-par-prefecture.html"><span class="nb-icon">🏛️</span><span>Préfecture</span></a>
+      <a class="side-nav-btn" data-view="mon-entretien" href="jour-j.html"><span class="nb-icon">📅</span><span>Jour J</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-civic">
+      <div class="side-grp" id="sg-civic">Examen civique</div>
+      <a class="side-nav-btn" data-view="examen-civique" href="examen-civique.html"><span class="nb-icon">📝</span><span>CSP / CR</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-follow">
+      <div class="side-grp" id="sg-follow">Mon suivi</div>
+      <a class="side-nav-btn" data-view="favoris" href="mes-favoris.html"><span class="nb-icon">⭐</span><span>Favoris</span><span class="nb-badge" id="sb-fav-badge">0</span></a>
+      <a class="side-nav-btn" data-view="dashboard" href="mon-bilan.html"><span class="nb-icon">📊</span><span>Bilan</span></a>
+    </div>
   </nav>
-  <div class="side-actions">
-    <a class="ta-btn" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation" title="Nous contacter" aria-label="Nous contacter par e-mail">✉️</a>
-    <button type="button" class="ta-btn" onclick="window.open('https://www.facebook.com/groups/1663580948311419/','_blank')" title="Groupe Facebook / partager mon retour" aria-label="Rejoindre le groupe Facebook">💬</button>
+  <div class="side-actions side-cta-wrap">
+    <a class="side-cta contact" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation" onclick="trackEvent('contact_click',{location:'sidebar'})" title="Une question ? Écrivez-nous">✉️ Une question ? Nous contacter</a>
   </div>
 </aside>
 
@@ -76,12 +87,12 @@
   <div class="content-topbar-in">
     <button type="button" class="sidebar-toggle" onclick="openSidebar()" aria-label="Ouvrir le menu">☰</button>
     <div class="stats-strip-in" style="padding:.55rem 0;flex:1">
-      <div class="ss-item"><span class="ss-n" id="sb-total">0</span><span class="ss-l">Questions</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-quizzes">0</span><span class="ss-l">Quiz faits</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
       <button class="ss-donate" onclick="trackEvent('donate_click',{location:'topbar'});window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
-      <button class="ss-save" onclick="exportData()">⬇ Sauvegarder</button>
+      <a class="ss-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('facebook_click',{location:'topbar'})" aria-label="Rejoindre le groupe Facebook" title="Rejoindre le groupe Facebook : posez vos questions et partagez votre retour"><span aria-hidden="true">💬</span><span class="ss-btn-txt">Groupe Facebook</span></a>
+      <button class="ss-save" onclick="exportData()" aria-label="Sauvegarder ma progression" title="Télécharger ma progression (fichier .json)"><span aria-hidden="true">⬇</span><span class="ss-btn-txt">Sauvegarder</span></button>
     </div>
   </div>
 </div>
