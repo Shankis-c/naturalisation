@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DRSJ20QB5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5DRSJ20QB5');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mon Bilan | Cap Naturalisation</title>
+<meta name="description" content="Votre progression : scores, historique, badges et sauvegarde."/>
+<meta name="author" content="Cap Naturalisation"/>
+<meta name="robots" content="noindex, follow"/>
+<meta name="theme-color" content="#0d2b5e"/>
+<link rel="canonical" href="https://cap-naturalisation.fr/mon-bilan.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Mon Bilan | Cap Naturalisation"/>
+<meta property="og:description" content="Votre progression : scores, historique, badges et sauvegarde."/>
+<meta property="og:url" content="https://cap-naturalisation.fr/mon-bilan.html"/>
+<meta property="og:image" content="https://cap-naturalisation.fr/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="Cap Naturalisation"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Mon Bilan | Cap Naturalisation"/>
+<meta name="twitter:description" content="Votre progression : scores, historique, badges et sauvegarde."/>
+<meta name="twitter:image" content="https://cap-naturalisation.fr/og-image.png"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body data-view="dashboard">
+<!-- Schema.org BreadcrumbList -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cap-naturalisation.fr/"}, {"@type": "ListItem", "position": 2, "name": "Mon bilan", "item": "https://cap-naturalisation.fr/mon-bilan.html"}]}
+</script>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="app-shell">
+<aside class="app-sidebar" id="appSidebar">
+  <div class="side-hd">
+    <a class="brand" href="index.html" aria-label="Cap Naturalisation, retour à l'accueil">
+      <span class="brand-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
+      <span class="brand-txt"><span class="brand-name">Cap Naturalisation</span><span class="brand-sub">Naturalisation &amp; examen civique</span></span>
+    </a>
+  </div>
+  <nav class="side-nav" aria-label="Navigation principale">
+    <a class="side-nav-btn" data-view="home" href="index.html"><span class="nb-icon">🏠</span><span>Accueil</span></a>
+    <a class="side-nav-btn" data-view="aide" href="comment-utiliser.html"><span class="nb-icon">💡</span><span>Comment utiliser</span></a>
+    <div class="side-group" role="group" aria-labelledby="sg-train">
+      <div class="side-grp" id="sg-train">S'entraîner</div>
+      <a class="side-nav-btn" data-view="quiz" href="quiz-naturalisation.html"><span class="nb-icon">📝</span><span>Quiz</span></a>
+      <a class="side-nav-btn" data-view="theme-quiz" href="quiz-par-theme.html"><span class="nb-icon">🎯</span><span>Thèmes</span></a>
+      <a class="side-nav-btn" data-view="oral" href="entrainement-oral.html"><span class="nb-icon">🗣️</span><span>Oral</span></a>
+      <a class="side-nav-btn" data-view="revision" href="revision-naturalisation.html"><span class="nb-icon">📚</span><span>Révision</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-interview">
+      <div class="side-grp" id="sg-interview">Entretien</div>
+      <a class="side-nav-btn" data-view="interview" href="entretien-naturalisation.html"><span class="nb-icon">🎙️</span><span>Entretien</span></a>
+      <a class="side-nav-btn" data-view="prefecture" href="questions-par-prefecture.html"><span class="nb-icon">🏛️</span><span>Préfecture</span></a>
+      <a class="side-nav-btn" data-view="mon-entretien" href="jour-j.html"><span class="nb-icon">📅</span><span>Jour J</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-civic">
+      <div class="side-grp" id="sg-civic">Examen civique</div>
+      <a class="side-nav-btn" data-view="examen-civique" href="examen-civique.html"><span class="nb-icon">📝</span><span>CSP / CR</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-follow">
+      <div class="side-grp" id="sg-follow">Mon suivi</div>
+      <a class="side-nav-btn" data-view="favoris" href="mes-favoris.html"><span class="nb-icon">⭐</span><span>Favoris</span><span class="nb-badge" id="sb-fav-badge">0</span></a>
+      <a class="side-nav-btn active" data-view="dashboard" href="mon-bilan.html" aria-current="page"><span class="nb-icon">📊</span><span>Bilan</span></a>
+    </div>
+  </nav>
+  <div class="side-actions side-cta-wrap">
+    <a class="side-cta contact" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation" onclick="trackEvent('contact_click',{location:'sidebar'})" title="Une question ? Écrivez-nous">✉️ Une question ? Nous contacter</a>
+  </div>
+</aside>
+
+<div class="app-content">
+<div class="content-topbar">
+  <div class="content-topbar-in">
+    <button type="button" class="sidebar-toggle" onclick="openSidebar()" aria-label="Ouvrir le menu">☰</button>
+    <div class="stats-strip-in" style="padding:.55rem 0;flex:1">
+      <div class="ss-item"><span class="ss-n" id="sb-quizzes">0</span><span class="ss-l">Quiz faits</span></div>
+      <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
+      <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
+      <button class="ss-donate" onclick="trackEvent('donate_click',{location:'topbar'});window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
+      <a class="ss-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('facebook_click',{location:'topbar'})" aria-label="Rejoindre le groupe Facebook" title="Rejoindre le groupe Facebook : posez vos questions et partagez votre retour"><span aria-hidden="true">💬</span><span class="ss-btn-txt">Groupe Facebook</span></a>
+      <button class="ss-save" onclick="exportData()" aria-label="Sauvegarder ma progression" title="Télécharger ma progression (fichier .json)"><span aria-hidden="true">⬇</span><span class="ss-btn-txt">Sauvegarder</span></button>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="view active" id="view-dashboard">
+    <div class="page-hd">
+      <div class="page-eyebrow">Suivi personnel</div>
+      <h1>Tableau de <span>bord</span></h1>
+    </div>
+    <div class="save-section">
+      <div class="save-title">💾 Sauvegarde de votre progression</div>
+      <div class="save-sub">Votre progression est automatiquement sauvegardée dans ce navigateur. Pour la transférer sur un autre appareil, exportez-la en JSON.</div>
+      <div class="save-btns">
+        <button class="btn btn-sm" onclick="exportData()">⬇ Exporter (.json)</button>
+        <button class="btn btn-sm btn-outline" onclick="document.getElementById('import-file').click()">⬆ Importer (.json)</button>
+        <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(this)"/>
+        <button class="btn btn-sm btn-danger" onclick="confirmReset()">🗑 Réinitialiser</button>
+      </div>
+    </div>
+    <div class="dash-kpis">
+      <div class="kpi"><div class="kpi-val" id="d-best">—</div><div class="kpi-lbl">Meilleur score</div></div>
+      <div class="kpi"><div class="kpi-val" id="d-avg">—</div><div class="kpi-lbl">Score moyen</div></div>
+      <div class="kpi"><div class="kpi-val" id="d-total">0</div><div class="kpi-lbl">Quiz complétés</div></div>
+      <div class="kpi"><div class="kpi-val" id="d-streak">0</div><div class="kpi-lbl">Jours consécutifs</div></div>
+    </div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Progression par thème</div><div class="sec-div-line"></div></div>
+    <div id="d-themes" style="margin-bottom:1.5rem"></div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Mes badges</div><div class="sec-div-line"></div></div>
+    <div class="badges-grid" id="d-badges" style="margin-bottom:1.5rem"></div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Favoris récents</div><div class="sec-div-line"></div></div>
+    <div id="d-favoris" style="margin-bottom:1.5rem"></div>
+    <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Historique des quiz</div><div class="sec-div-line"></div></div>
+    <div class="card"><div class="card-pad"><div id="d-history"></div></div></div>
+  </div>
+
+</main>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sf-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
+    <p class="sf-copy">© <span id="cp-year"></span> Cap Naturalisation — Citoyenneté Française · Tous droits réservés</p>
+    <p>Site gratuit d'entraînement à l'examen civique et à l'entretien de naturalisation. Usage personnel uniquement.</p>
+    <p>💛 Ce site restera toujours gratuit et sans publicité. Un don ponctuel aide à couvrir l'hébergement et le temps passé à maintenir les questions à jour — <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_text'})">faire un don</a>.</p>
+    <p class="sf-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mailto:devby.fou@gmail.com">devby.fou@gmail.com</a>
+      <a href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer">Groupe Facebook</a>
+      <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_link'})">Soutenir le projet</a>
+    </p>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script src="questions.js"></script>
+<script src="interview.js"></script>
+<script src="prefecture.js"></script>
+<script src="civique.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

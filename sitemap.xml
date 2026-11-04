@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://cap-naturalisation.fr</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://cap-naturalisation.fr/examen-civique-questions.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cap-naturalisation.fr/mentions-legales.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url><loc>https://cap-naturalisation.fr/</loc><lastmod>2026-11-01</lastmod><priority>1.0</priority></url>
+  <url><loc>https://cap-naturalisation.fr/comment-utiliser.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/quiz-naturalisation.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/quiz-par-theme.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/entrainement-oral.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/revision-naturalisation.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/entretien-naturalisation.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/questions-par-prefecture.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/examen-civique.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/examen-civique-csp.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/examen-civique-cr.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/quiz-examen-civique.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/examen-civique-questions.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cap-naturalisation.fr/mentions-legales.html</loc><lastmod>2026-11-01</lastmod><priority>0.2</priority></url>
+
+</urlset>
