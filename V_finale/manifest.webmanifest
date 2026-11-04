@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "Cap Naturalisation – Quiz naturalisation et examen civique",
+  "short_name": "Cap Naturalisation",
+  "description": "Quiz gratuits pour préparer la naturalisation française et l'examen civique (CSP, CR).",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0d2b5e",
+  "theme_color": "#0d2b5e",
+  "categories": ["education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Quiz de 40 questions", "short_name": "Quiz", "url": "./quiz-naturalisation.html?source=pwa", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Quiz examen civique", "short_name": "Civique", "url": "./quiz-examen-civique.html?source=pwa", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Entraînement oral", "short_name": "Oral", "url": "./entrainement-oral.html?source=pwa", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
