@@ -5,7 +5,7 @@
 const CACHE = 'cap-naturalisation-v1';
 const NETWORK_TIMEOUT = 4000; // ms : au-delà, on sert la version en cache
 const PRECACHE = [
-  './', 'index.html', 'comment-utiliser.html', 'quiz-naturalisation.html', 'quiz-par-theme.html',
+  './', 'index.html', 'comment-utiliser.html', 'quiz-naturalisation.html', 'test-nationalite-francaise.html', 'quiz-par-theme.html',
   'entrainement-oral.html', 'revision-naturalisation.html', 'entretien-naturalisation.html',
   'questions-par-prefecture.html', 'examen-civique.html', 'examen-civique-csp.html',
   'examen-civique-cr.html', 'quiz-examen-civique.html', 'mes-favoris.html', 'mon-bilan.html', 'jour-j.html',

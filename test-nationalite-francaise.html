@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google Analytics : chargé uniquement après consentement (voir la bannière dans app.js) -->
+<script>
+  window.dataLayer=window.dataLayer||[];
+  var GA_ID='G-5DRSJ20QB5';
+  function gtag(){if(window.__gaOn)dataLayer.push(arguments);}
+  function loadGA(){
+    if(window.__gaOn)return;
+    window['ga-disable-'+GA_ID]=false;
+    window.__gaOn=true;
+    var s=document.createElement('script');s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(s);
+    gtag('js',new Date());gtag('config',GA_ID);
+  }
+  (function(){try{var c=JSON.parse(localStorage.getItem('cap_consent')||'null');if(c&&c.v==='granted'&&Date.now()-c.t<15552000000)loadGA();}catch(e){}})();
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Test de Nationalité Française Gratuit : Quiz de 40 Questions</title>
+<meta name="description" content="Passez un test de nationalité française gratuit : 40 questions, 30 secondes par question, correction immédiate et bilan par thème. Sans inscription."/>
+<meta name="author" content="Cap Naturalisation"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta name="theme-color" content="#0d2b5e"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="Cap Naturalisation"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<link rel="canonical" href="https://cap-naturalisation.fr/test-nationalite-francaise.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Test de Nationalité Française Gratuit : Quiz de 40 Questions"/>
+<meta property="og:description" content="Passez un test de nationalité française gratuit : 40 questions, 30 secondes par question, correction immédiate et bilan par thème. Sans inscription."/>
+<meta property="og:url" content="https://cap-naturalisation.fr/test-nationalite-francaise.html"/>
+<meta property="og:image" content="https://cap-naturalisation.fr/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="Cap Naturalisation"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Test de Nationalité Française Gratuit : Quiz de 40 Questions"/>
+<meta name="twitter:description" content="Passez un test de nationalité française gratuit : 40 questions, 30 secondes par question, correction immédiate et bilan par thème. Sans inscription."/>
+<meta name="twitter:image" content="https://cap-naturalisation.fr/og-image.png"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body data-view="quiz">
+<!-- Schema.org BreadcrumbList -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cap-naturalisation.fr/"}, {"@type": "ListItem", "position": 2, "name": "Test de nationalité française", "item": "https://cap-naturalisation.fr/test-nationalite-francaise.html"}]}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ce test de nationalité française est-il officiel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Cap Naturalisation est un outil d’entraînement : ce test ne constitue pas un examen officiel de l’administration française et ne remplace pas les démarches officielles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de questions comporte le test ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une session comprend 40 questions à choix multiples, avec 4 propositions chacune, et un chrono de 30 secondes par question. Les questions sont tirées au hasard à chaque session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il s’inscrire pour passer le test ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Le test est gratuit, sans inscription ni compte. Votre progression est enregistrée dans votre navigateur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment réviser un thème en particulier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utilisez le QCM par thème : vous choisissez le thème, le nombre de questions et le chrono. Les questions ratées peuvent être ajoutées à vos favoris pour les retravailler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce test comprend-il une épreuve de langue française ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non : il porte sur les connaissances (valeurs de la République, institutions, histoire, géographie, culture, vie en France). Le niveau de langue est justifié séparément, par un diplôme ou un test de langue reconnu ; vérifiez les conditions à jour sur service-public.fr ou auprès de votre préfecture."
+      }
+    }
+  ]
+}
+</script>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="app-shell">
+<aside class="app-sidebar" id="appSidebar">
+  <div class="side-hd">
+    <a class="brand" href="index.html" aria-label="Cap Naturalisation, retour à l'accueil">
+      <span class="brand-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
+      <span class="brand-txt"><span class="brand-name">Cap Naturalisation</span><span class="brand-sub">Naturalisation &amp; examen civique</span></span>
+    </a>
+  </div>
+  <nav class="side-nav" aria-label="Navigation principale">
+    <a class="side-nav-btn" data-view="home" href="index.html"><span class="nb-icon">🏠</span><span>Accueil</span></a>
+    <a class="side-nav-btn" data-view="aide" href="comment-utiliser.html"><span class="nb-icon">💡</span><span>Comment utiliser</span></a>
+    <div class="side-group" role="group" aria-labelledby="sg-train">
+      <div class="side-grp" id="sg-train">S'entraîner</div>
+      <a class="side-nav-btn active" data-view="quiz" href="quiz-naturalisation.html" aria-current="page"><span class="nb-icon">📝</span><span>Quiz</span></a>
+      <a class="side-nav-btn" data-view="theme-quiz" href="quiz-par-theme.html"><span class="nb-icon">🎯</span><span>Thèmes</span></a>
+      <a class="side-nav-btn" data-view="oral" href="entrainement-oral.html"><span class="nb-icon">🗣️</span><span>Oral</span></a>
+      <a class="side-nav-btn" data-view="revision" href="revision-naturalisation.html"><span class="nb-icon">📚</span><span>Révision</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-interview">
+      <div class="side-grp" id="sg-interview">Entretien</div>
+      <a class="side-nav-btn" data-view="interview" href="entretien-naturalisation.html"><span class="nb-icon">🎙️</span><span>Entretien</span></a>
+      <a class="side-nav-btn" data-view="prefecture" href="questions-par-prefecture.html"><span class="nb-icon">🏛️</span><span>Préfecture</span></a>
+      <a class="side-nav-btn" data-view="mon-entretien" href="jour-j.html"><span class="nb-icon">📅</span><span>Jour J</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-civic">
+      <div class="side-grp" id="sg-civic">Examen civique</div>
+      <a class="side-nav-btn" data-view="examen-civique" href="examen-civique.html"><span class="nb-icon">📝</span><span>CSP / CR</span></a>
+    </div>
+    <div class="side-group" role="group" aria-labelledby="sg-follow">
+      <div class="side-grp" id="sg-follow">Mon suivi</div>
+      <a class="side-nav-btn" data-view="favoris" href="mes-favoris.html"><span class="nb-icon">⭐</span><span>Favoris</span><span class="nb-badge" id="sb-fav-badge">0</span></a>
+      <a class="side-nav-btn" data-view="dashboard" href="mon-bilan.html"><span class="nb-icon">📊</span><span>Bilan</span></a>
+    </div>
+  </nav>
+  <div class="side-actions side-cta-wrap">
+    <button type="button" class="side-cta install" data-install hidden onclick="installApp('sidebar')">📲 Installer l'application</button>
+    <a class="side-cta contact" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation" onclick="trackEvent('contact_click',{location:'sidebar'})" title="Une question ? Écrivez-nous">✉️ Une question ? Nous contacter</a>
+  </div>
+</aside>
+
+<div class="app-content">
+<div class="content-topbar">
+  <div class="content-topbar-in">
+    <button type="button" class="sidebar-toggle" onclick="openSidebar()" aria-label="Ouvrir le menu">☰</button>
+    <div class="stats-strip-in" style="padding:.55rem 0;flex:1">
+      <div class="ss-item"><span class="ss-n" id="sb-quizzes">0</span><span class="ss-l">Quiz faits</span></div>
+      <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
+      <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
+      <button class="ss-donate" onclick="trackEvent('donate_click',{location:'topbar'});window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
+      <a class="ss-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('facebook_click',{location:'topbar'})" aria-label="Rejoindre le groupe Facebook" title="Rejoindre le groupe Facebook : posez vos questions et partagez votre retour"><span aria-hidden="true">💬</span><span class="ss-btn-txt">Groupe Facebook</span></a>
+      <button class="ss-save" onclick="exportData()" aria-label="Sauvegarder ma progression" title="Télécharger ma progression (fichier .json)"><span aria-hidden="true">⬇</span><span class="ss-btn-txt">Sauvegarder</span></button>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="view active" id="view-quiz">
+    <div class="page-hd">
+      <div class="page-eyebrow">Test gratuit · sans inscription</div>
+      <h1>Test de <span>nationalité française</span></h1>
+    </div>
+    <div id="quiz-landing">
+      <div class="quiz-landing-wrap">
+        <div class="ql-badge">⏱ 30 secondes par question</div>
+        <div class="ql-title">40 Questions</div>
+        <div class="ql-sub" id="ql-sub">Questions mélangées aléatoirement pour vous entraîner</div>
+        <div class="ql-params">
+          <div class="ql-p"><div class="ql-p-n">40</div><div class="ql-p-l">Questions</div></div>
+          <div class="ql-p"><div class="ql-p-n">30s</div><div class="ql-p-l">Chrono</div></div>
+          <div class="ql-p"><div class="ql-p-n">4</div><div class="ql-p-l">Choix</div></div>
+        </div>
+        <button class="btn" onclick="startQuiz(null,40,true)">▶ &nbsp;Lancer le Quiz</button>
+      </div>
+    
+      <section class="seo-content">
+        <div class="seo-intro">
+          <h2>Test de nationalité française gratuit en ligne</h2>
+          <p>Ce test de nationalité française vous permet de vérifier vos connaissances avant la procédure de naturalisation : <strong>valeurs de la République, institutions, histoire, géographie, culture et vie en France</strong>. Il comporte 40 questions à choix multiples, chacune limitée à 30 secondes.</p>
+          <p>À chaque réponse, la correction s'affiche tout de suite avec une explication. À la fin, vous obtenez votre score et un bilan par thème pour savoir quoi réviser en priorité. Vous pouvez refaire le test autant de fois que vous le souhaitez.</p>
+          <p>Vous préparez l'examen civique (CSP ou CR) ? Passez plutôt le <a href="quiz-examen-civique.html">quiz examen civique</a>, qui reprend les listes de questions correspondantes.</p>
+          <h3 style="margin-top:1.2rem">Questions fréquentes sur le test</h3>
+          <div class="faq-list">
+          <details class="faq-item">
+            <summary>Ce test de nationalité française est-il officiel ?</summary>
+            <div class="faq-answer">Non. Cap Naturalisation est un outil d'entraînement : ce test ne constitue pas un examen officiel de l'administration française et ne remplace pas les démarches officielles.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Combien de questions comporte le test ?</summary>
+            <div class="faq-answer">Une session comprend 40 questions à choix multiples, avec 4 propositions chacune, et un chrono de 30 secondes par question. Les questions sont tirées au hasard à chaque session.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Faut-il s'inscrire pour passer le test ?</summary>
+            <div class="faq-answer">Non. Le test est gratuit, sans inscription ni compte. Votre progression est enregistrée dans votre navigateur.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Comment réviser un thème en particulier ?</summary>
+            <div class="faq-answer">Utilisez le QCM par thème : vous choisissez le thème, le nombre de questions et le chrono. Les questions ratées peuvent être ajoutées à vos favoris pour les retravailler.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Ce test comprend-il une épreuve de langue française ?</summary>
+            <div class="faq-answer">Non : il porte sur les connaissances (valeurs de la République, institutions, histoire, géographie, culture, vie en France). Le niveau de langue est justifié séparément, par un diplôme ou un test de langue reconnu ; vérifiez les conditions à jour sur service-public.fr ou auprès de votre préfecture.</div>
+          </details>
+          </div>
+        </div>
+        <div class="seo-links" aria-label="Voir aussi"><a class="seo-link" href="quiz-par-theme.html">🎯 QCM par thème</a><a class="seo-link" href="quiz-examen-civique.html">📝 Quiz examen civique</a><a class="seo-link" href="entrainement-oral.html">🗣️ Entraînement oral</a><a class="seo-link" href="entretien-naturalisation.html">🎙️ Préparer l'entretien</a></div>
+      </section>
+    </div>
+    <div id="quiz-screen">
+      <div class="qz-bar">
+        <div class="qz-count" id="qz-count">1 <small>/ 40</small></div>
+        <div class="prog-wrap"><div class="prog-fill" id="qz-prog" style="width:0%"></div></div>
+        <div class="timer-wrap" id="qz-timer">
+          <svg width="54" height="54" viewBox="0 0 54 54">
+            <circle class="t-bg" cx="27" cy="27" r="22"/>
+            <circle class="t-fg" id="t-fg" cx="27" cy="27" r="22" stroke-dasharray="138.2" stroke-dashoffset="0"/>
+          </svg>
+          <div class="t-txt" id="t-txt">30</div>
+        </div>
+      </div>
+      <div class="q-top">
+        <div class="q-theme-tag" id="qz-theme"></div>
+        <button class="fav-btn" id="qz-fav" onclick="toggleFavCurrent('qz')" title="Ajouter aux favoris">☆</button>
+      </div>
+      <div class="q-text" id="qz-q"></div>
+      <div id="qz-banner"></div>
+      <div class="opts-grid" id="qz-opts"></div>
+      <div id="qz-expl"></div>
+      <div style="text-align:right"><button class="btn" id="qz-next" onclick="nextQ()" style="display:none">Suivant →</button></div>
+    </div>
+    <div id="quiz-results">
+      <div class="res-hero">
+        <div>
+          <div class="res-score-big" id="res-sc">—<small>/40</small></div>
+          <div class="res-mention" id="res-mention"></div>
+          <div class="res-date" id="res-date"></div>
+        </div>
+        <div>
+          <span class="res-pct-val" id="res-pct-val">—</span>
+          <span class="res-pct-lbl">Score</span>
+        </div>
+      </div>
+      <div class="res-stats">
+        <div class="res-stat"><div class="rs-val" id="rs-ok" style="color:var(--success)">0</div><div class="rs-lbl">Correctes</div></div>
+        <div class="res-stat"><div class="rs-val" id="rs-ko" style="color:var(--error)">0</div><div class="rs-lbl">Erreurs</div></div>
+        <div class="res-stat"><div class="rs-val" id="rs-to" style="color:var(--warning)">0</div><div class="rs-lbl">Temps écoulé</div></div>
+      </div>
+      <div class="sec-div"><div class="sec-div-line"></div><div class="sec-div-label">Par thème</div><div class="sec-div-line"></div></div>
+      <div id="res-themes"></div>
+      <div id="res-wrongs"></div>
+      <div class="donate-card" data-donate-card>
+        <div class="dc-title">Vous préférez soutenir le site ?</div>
+        <div class="dc-sub">Chaque contribution aide à maintenir Cap Naturalisation gratuit.</div>
+        <div class="donate-opts">
+          <a class="donate-opt" href="https://paypal.me/shankislaitk/2EUR" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'quiz_naturalisation_end',amount:2})"><span class="do-amt">2 €</span><span class="do-lbl">Un petit coup de pouce</span></a>
+          <a class="donate-opt" href="https://paypal.me/shankislaitk/5EUR" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'quiz_naturalisation_end',amount:5})"><span class="do-amt">5 €</span><span class="do-lbl">Contribuer à l'amélioration du site</span></a>
+          <a class="donate-opt" href="https://paypal.me/shankislaitk/10EUR" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'quiz_naturalisation_end',amount:10})"><span class="do-amt">10 €</span><span class="do-lbl">Soutenir davantage le projet</span></a>
+        </div>
+        <a class="donate-free" href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'quiz_naturalisation_end',amount:'free'})">Faire un don libre ❤️</a>
+        <button type="button" class="donate-skip" onclick="dismissDonate(this)">Non merci, continuer</button>
+      </div>
+      <div class="community-row">
+        <span>💬 Une question ? Un retour d'expérience à partager ?</span>
+        <a class="cc-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('facebook_click',{location:'quiz_end'})">Rejoindre le groupe Facebook</a>
+        <a class="cc-contact" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation" onclick="trackEvent('contact_click',{location:'quiz_end'})">✉️ Nous contacter</a>
+        <a class="cc-wa" href="https://wa.me/?text=Je%20pr%C3%A9pare%20ma%20naturalisation%20avec%20Cap%20Naturalisation%20%3A%20quiz%20et%20examen%20civique%20gratuits%2C%20sans%20inscription.%20https%3A%2F%2Fcap-naturalisation.fr%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dpartage" target="_blank" rel="noopener noreferrer" onclick="trackEvent('whatsapp_share',{location:'quiz_end'})">📲 Partager sur WhatsApp</a>
+      </div>
+      <div class="btn-row">
+        <button class="btn" onclick="startQuiz(null,40,true)">🔄 Nouveau Quiz</button>
+        <button class="btn btn-outline" onclick="go('revision')">📚 Réviser</button>
+        <button class="btn btn-outline" onclick="go('favoris')">⭐ Mes favoris</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sf-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
+    <p class="sf-copy">© <span id="cp-year"></span> Cap Naturalisation — Citoyenneté Française · Tous droits réservés</p>
+    <p class="sf-updated">Dernière mise à jour du site : <time datetime="2026-11-02">2 novembre 2026</time></p>
+    <p>Site gratuit d'entraînement à l'examen civique et à l'entretien de naturalisation. Usage personnel uniquement.</p>
+    <p>💛 Ce site restera toujours gratuit et sans publicité. Un don ponctuel aide à couvrir l'hébergement et le temps passé à maintenir les questions à jour — <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_text'})">faire un don</a>.</p>
+    <p class="sf-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mailto:devby.fou@gmail.com">devby.fou@gmail.com</a>
+      <a href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer">Groupe Facebook</a>
+      <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_link'})">Soutenir le projet</a>
+      <a href="https://wa.me/?text=Je%20pr%C3%A9pare%20ma%20naturalisation%20avec%20Cap%20Naturalisation%20%3A%20quiz%20et%20examen%20civique%20gratuits%2C%20sans%20inscription.%20https%3A%2F%2Fcap-naturalisation.fr%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dpartage" target="_blank" rel="noopener noreferrer" onclick="trackEvent('whatsapp_share',{location:'footer'})">📲 Partager sur WhatsApp</a>
+      <a href="#" onclick="showConsentBanner();return false;">Gérer les cookies</a>
+    </p>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script src="questions.js"></script>
+<script src="interview.js"></script>
+<script src="prefecture.js"></script>
+<script src="civique.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
