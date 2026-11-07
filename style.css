@@ -699,3 +699,64 @@ body.quiz-focus .ss-donate,body.quiz-focus .ss-fb{display:none}
 .side-cta.install:hover{background:#e29009}
 .ip-steps{margin:.3rem 0 0 1.1rem;padding:0;font-size:.82rem;line-height:1.7;color:var(--text-2)}
 @media(max-width:768px){.install-card{flex-direction:column;align-items:stretch;text-align:center}}
+
+/* ===== Livret du citoyen : cartes ===== */
+.lv-chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1rem 0}
+.lv-chip{border:1px solid var(--border-strong);background:var(--white);color:var(--navy);border-radius:20px;padding:.45rem .9rem;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer}
+.lv-chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.lv-btns{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.lv-note{margin-top:1rem;font-family:'Syne',sans-serif;font-size:.82rem;color:var(--text-2);text-align:center}
+.lv-src{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin:1rem 0 .6rem}
+.lv-card{display:flex;flex-direction:column;gap:.9rem;width:100%;min-height:260px;justify-content:center;text-align:left;background:var(--white);border:1px solid var(--border);border-left:5px solid var(--navy);border-radius:var(--r2);box-shadow:var(--shadow-md);padding:1.6rem;cursor:pointer;font-family:'Syne',sans-serif;color:var(--text)}
+.lv-q{font-size:1.15rem;font-weight:800;color:var(--navy);line-height:1.4}
+.lv-a{font-size:1rem;line-height:1.65;color:var(--text);border-top:1px dashed var(--border-strong);padding-top:.9rem}
+.lv-page{align-self:flex-start;background:var(--gold-bg);border:1px solid rgba(245,158,11,.45);border-radius:20px;padding:.3rem .8rem;font-size:.82rem;font-weight:800;color:#92600a}
+.lv-hint{font-size:.82rem;color:var(--text-3)}
+.lv-act{display:flex;gap:.6rem;justify-content:center;margin-top:1rem}
+.lv-resbox{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem}
+.lv-res{font-family:'Syne',sans-serif;font-size:1.1rem;text-align:center;margin-bottom:1rem;color:var(--navy)}
+.lv-ko{font-family:'Syne',sans-serif;font-size:.88rem;line-height:1.7;margin:0 0 1.2rem 1.2rem}
+.lv-p{display:inline-block;background:var(--gold-bg);border-radius:10px;padding:.05rem .5rem;font-size:.8rem;font-weight:800;color:#92600a}
+#lv-reader .faq-answer p{margin-bottom:.8rem}
+
+/* ===== Livret : parcours, quiz, vrai/faux, écoute ===== */
+.lv-path{display:grid;gap:.8rem;margin:1.2rem 0;text-align:left}
+.lv-step{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.1rem;box-shadow:var(--shadow)}
+.lv-step.done{border-color:var(--success)}
+.lv-step-h{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
+.lv-num{flex:none;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800}
+.lv-step.done .lv-num{background:var(--success)}
+.lv-step-t{font-family:'Syne',sans-serif;color:var(--navy);display:flex;flex-direction:column}
+.lv-step-t small{font-size:.8rem;color:var(--text-3)}
+.lv-modes{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.lv-modes button{flex:1;min-width:6.5rem;border:1px solid var(--border-strong);background:var(--off-white);color:var(--navy);border-radius:20px;padding:.5rem .8rem;font-family:'Syne',sans-serif;font-size:.82rem;font-weight:800;cursor:pointer}
+.lv-modes button:hover{background:var(--navy);color:#fff}
+.lv-listen{align-self:flex-start;margin:.3rem 0 .6rem;border:1px solid var(--border-strong);background:var(--white);color:var(--navy);border-radius:20px;padding:.4rem .9rem;font-family:'Syne',sans-serif;font-size:.82rem;font-weight:800;cursor:pointer}
+.lv-qcard{background:var(--white);border:1px solid var(--border);border-left:5px solid var(--navy);border-radius:var(--r2);box-shadow:var(--shadow-md);padding:1.4rem;display:flex;flex-direction:column;gap:.8rem}
+.lv-prop{font-family:'Syne',sans-serif;font-size:1rem;line-height:1.6;background:var(--navy-xlight);border-radius:var(--r);padding:.8rem 1rem}
+.lv-opts{display:grid;gap:.6rem;margin-top:1rem}
+.lv-opt{display:flex;gap:.8rem;align-items:flex-start;text-align:left;width:100%;background:var(--white);border:1.5px solid var(--border-strong);border-radius:var(--r);padding:.8rem 1rem;font-family:'Syne',sans-serif;font-size:.92rem;line-height:1.5;color:var(--text);cursor:pointer}
+.lv-opt b{flex:none;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--navy-xlight);color:var(--navy);display:flex;align-items:center;justify-content:center}
+.lv-opt:hover:not(:disabled){border-color:var(--navy)}
+.lv-opt.ok{border-color:var(--success);background:var(--success-bg)}
+.lv-opt.ko{border-color:var(--red);background:#fdecee}
+.lv-fb{margin-top:1rem;font-family:'Syne',sans-serif;font-size:.92rem;line-height:1.6;background:var(--gold-bg);border:1px solid rgba(245,158,11,.4);border-radius:var(--r);padding:.9rem 1rem}
+
+/* ===== Parcours découverte ===== */
+.pc-intro p{font-family:'Syne',sans-serif;font-size:.95rem;line-height:1.7;color:var(--text-2);max-width:68ch;margin-bottom:1.2rem}
+.pc-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:'Syne',sans-serif;color:var(--navy);margin-bottom:.5rem}
+.pc-head span{font-size:.85rem;color:var(--text-3)}
+.pc-list{display:grid;gap:.6rem;margin:1rem 0 1.5rem}
+.pc-lv{display:flex;align-items:center;gap:.9rem;width:100%;text-align:left;background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:.9rem 1.1rem;cursor:pointer;font-family:'Syne',sans-serif;box-shadow:var(--shadow)}
+.pc-lv.cur{border-color:var(--navy);border-left:5px solid var(--navy)}
+.pc-lv.done{border-color:var(--success)}
+.pc-lv.done .lv-num{background:var(--success)}
+.pc-t{flex:1;display:flex;flex-direction:column;color:var(--navy)}
+.pc-t small{font-size:.82rem;color:var(--text-3)}
+.pc-st{font-size:.8rem;font-weight:800;color:var(--text-3)}
+.pc-lv.cur .pc-st{color:var(--navy)}
+.pc-final{background:var(--gold-bg);border:1px solid rgba(245,158,11,.45);border-radius:var(--r2);padding:1.2rem;font-family:'Syne',sans-serif;text-align:center;line-height:2.2;margin-bottom:1.5rem}
+.pc-h2{font-family:'Syne',sans-serif;font-size:1.1rem;color:var(--navy);margin:1.5rem 0 .5rem}
+.pc-pt{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.2rem;margin-bottom:.7rem;font-family:'Syne',sans-serif}
+.pc-pt strong{color:var(--navy)}
+.pc-pt p{margin:.3rem 0 0;font-size:.92rem;line-height:1.65;color:var(--text-2)}

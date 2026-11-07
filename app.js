@@ -189,7 +189,7 @@ function trackEvent(name,params){
     if(typeof gtag==='function')gtag('event',name,params||{});
   }catch(e){ /* GA indisponible (bloqueur de pub, etc.) : on ignore */ }
 }
-var PAGES={"home": "index.html", "aide": "comment-utiliser.html", "quiz": "quiz-naturalisation.html", "theme-quiz": "quiz-par-theme.html", "oral": "entrainement-oral.html", "revision": "revision-naturalisation.html", "interview": "entretien-naturalisation.html", "prefecture": "questions-par-prefecture.html", "favoris": "mes-favoris.html", "dashboard": "mon-bilan.html", "mon-entretien": "jour-j.html", "examen-civique": "examen-civique.html", "examen-csp": "examen-civique-csp.html", "examen-cr": "examen-civique-cr.html", "civique-quiz": "quiz-examen-civique.html"};
+var PAGES={"home": "index.html", "aide": "comment-utiliser.html", "quiz": "quiz-naturalisation.html", "theme-quiz": "quiz-par-theme.html", "oral": "entrainement-oral.html", "revision": "revision-naturalisation.html", "interview": "entretien-naturalisation.html", "prefecture": "questions-par-prefecture.html", "favoris": "mes-favoris.html", "dashboard": "mon-bilan.html", "mon-entretien": "jour-j.html", "examen-civique": "examen-civique.html", "examen-csp": "examen-civique-csp.html", "examen-cr": "examen-civique-cr.html", "civique-quiz": "quiz-examen-civique.html", "livret": "livret-citoyen.html"};
 function currentView(){return document.body.getAttribute('data-view')||'home';}
 function initView(v){
   if(v==='prefecture')buildPrefLanding();
@@ -203,6 +203,7 @@ function initView(v){
   if(v==='civique-quiz')buildCivicQuizLanding();
   if(v==='oral')buildOralLanding();
   if(v==='mon-entretien')buildInterviewDate();
+  if(v==='livret'&&typeof buildLivret==='function')buildLivret();
   if(v==='quiz'&&!G.active){
     document.getElementById('quiz-landing').style.display='block';
     document.getElementById('quiz-screen').style.display='none';
@@ -1263,7 +1264,7 @@ document.addEventListener('DOMContentLoaded',function(){
 // ══════════════════════════════════════════════════════
 // ERGONOMIE : quiz en cours protégé, clavier, accessibilité
 // ══════════════════════════════════════════════════════
-var QUIZ_SCREENS=['quiz-screen','tq-screen','cq-screen','oral-screen','pref-screen'];
+var QUIZ_SCREENS=['quiz-screen','tq-screen','cq-screen','oral-screen','pref-screen','lv-screen','lv-quiz','pc-ex'];
 function quizInProgress(){
   return QUIZ_SCREENS.some(function(id){var e=document.getElementById(id);return !!(e&&e.style.display==='block');});
 }
