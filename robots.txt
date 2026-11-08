@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 User-agent: *
 Allow: /
 
-=======
-User-agent: *
-Allow: /
-
->>>>>>> 8a7b413b84abff88f1267aae9697a5e06c856499
 Sitemap: https://cap-naturalisation.fr/sitemap.xml
