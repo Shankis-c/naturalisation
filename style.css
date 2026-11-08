@@ -760,3 +760,13 @@ body.quiz-focus .ss-donate,body.quiz-focus .ss-fb{display:none}
 .pc-pt{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.2rem;margin-bottom:.7rem;font-family:'Syne',sans-serif}
 .pc-pt strong{color:var(--navy)}
 .pc-pt p{margin:.3rem 0 0;font-size:.92rem;line-height:1.65;color:var(--text-2)}
+
+/* ===== Instagram + bulle communauté ===== */
+.cc-ig{display:flex;align-items:center;justify-content:center;gap:.4rem;border-radius:20px;padding:.55rem 1.1rem;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:800;text-decoration:none;white-space:nowrap;background:#c13584;color:#fff;box-shadow:0 2px 10px rgba(193,53,132,.35)}
+.cc-ig:hover{background:#a82b72}
+.community-row .cc-ig{padding:.4rem .95rem}
+.gd-ig{background:#c13584;color:#fff;text-decoration:none;display:inline-block}
+.gd-ig:hover{background:#a82b72}
+.cm-list{margin:.2rem 0 .8rem 1.1rem;padding:0;font-size:.85rem;line-height:1.7;color:var(--text-2)}
+a.cp-copy,a.cp-open{display:block}
+.cp-ig{background:#c13584;border-color:#c13584;color:#fff}

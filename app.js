@@ -39,8 +39,12 @@ function loadData(){
   return {history:[],thStats:{},streak:{last:'',count:0},favoris:[],interviewDate:null,badges:[]};
 }
 function saveData(){ try{localStorage.setItem(SK,JSON.stringify(G.data));}catch(e){} }
+var LS_EXTRA={parcours:'cap_parcours',livret:'cap_livret'};  // progression du parcours d'apprentissage et des fiches du livret
+function lsRead(k){try{return JSON.parse(localStorage.getItem(k)||'null');}catch(e){return null;}}
 function exportData(){
-  var b=new Blob([JSON.stringify(G.data,null,2)],{type:'application/json'});
+  var out=JSON.parse(JSON.stringify(G.data));
+  for(var n in LS_EXTRA){var v=lsRead(LS_EXTRA[n]);if(v)out[n]=v;}
+  var b=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
   var a=document.createElement('a');
   a.href=URL.createObjectURL(b);
   a.download='progression-naturalisation-'+new Date().toISOString().slice(0,10)+'.json';
@@ -56,7 +60,12 @@ function importData(input){
       if(p.history&&p.thStats){
         if(!p.favoris)p.favoris=[];
         if(!p.badges)p.badges=[];
+        for(var n in LS_EXTRA){
+          try{if(p[n])localStorage.setItem(LS_EXTRA[n],JSON.stringify(p[n]));else localStorage.removeItem(LS_EXTRA[n]);}catch(e){}
+          delete p[n];
+        }
         G.data=p;saveData();updateSidebar();
+        if(typeof buildLivret==='function')buildLivret();
         toast('✅ Progression importée !');
         if(currentView()==='dashboard')buildDashboard();
       }else{toast('❌ Fichier invalide');}
@@ -65,9 +74,11 @@ function importData(input){
   reader.readAsText(file);input.value='';
 }
 function confirmReset(){
-  if(confirm('Supprimer toute votre progression ? Cette action est irréversible.')){
+  if(confirm('Supprimer toute votre progression (quiz, favoris, badges et parcours d\'apprentissage) ? Cette action est irréversible.')){
+    for(var n in LS_EXTRA){try{localStorage.removeItem(LS_EXTRA[n]);}catch(e){}}
     G.data={history:[],thStats:{},streak:{last:'',count:0},favoris:[],interviewDate:G.data.interviewDate||null,badges:[]};
     saveData();updateSidebar();
+    if(typeof buildLivret==='function')buildLivret();
     if(currentView()==='dashboard')buildDashboard();
     toast('🗑 Progression réinitialisée');
   }
@@ -131,6 +142,7 @@ var TIPS=[
   {id:'contact',ic:'✉️',t:"Une question, une remarque ? Contactez-nous par e-mail.",b:"Écrire",a:function(){showContactBubble(document.getElementById('tip-go'));}},
   {id:'wa',ic:'📲',t:"Ce site vous aide ? Partagez-le sur WhatsApp avec vos proches qui préparent aussi leur naturalisation.",b:"Partager",a:function(){trackEvent('whatsapp_share',{location:'home_ticker'});window.open(WA_URL,'_blank');}},
   {id:'install',ic:'📲',t:"Installez Cap Naturalisation sur votre téléphone : une icône sur l'écran d'accueil, et le site s'ouvre comme une application.",b:"Installer",a:function(){installApp('home_ticker');},ok:function(){return canInstallHint();}},
+  {id:'ig',ic:'📸',t:"Suivez Cap Naturalisation sur Instagram pour ne rien manquer des nouveautés du site.",b:"Suivre",a:function(){trackEvent('instagram_click',{location:'home_ticker'});window.open(IG_URL,'_blank');}},
   {id:'guide',ic:'💡',t:"Première visite ? Découvrez comment profiter au maximum du site.",b:"Mode d'emploi",a:function(){go('aide');}},
   {id:'jourj',ic:'📅',t:"Votre entretien approche ? Indiquez sa date dans Jour J pour un suivi personnalisé.",b:"Jour J",a:function(){go('mon-entretien');},ok:function(){return !(G.data&&G.data.interviewDate);}},
   {id:'pref',ic:'🏛️',t:"Chaque préfecture a ses habitudes : entraînez-vous avec les questions de la vôtre.",b:"Préfecture",a:function(){go('prefecture');}},
@@ -1549,4 +1561,35 @@ document.addEventListener('click',function(e){
 document.addEventListener('DOMContentLoaded',function(){
   refreshInstallUI();
   if(isStandalone())trackEvent('pwa_launch',{});
+});
+
+
+// ══════════════════════════════════════════════════════
+// BULLE « COMMUNAUTÉ » (barre du haut) : Facebook + Instagram
+// ══════════════════════════════════════════════════════
+var IG_URL='https://www.instagram.com/cap_naturalisation/',FB_URL='https://www.facebook.com/groups/1663580948311419/';
+function closeCommunity(){var b=document.getElementById('community-pop');if(b)b.parentNode.removeChild(b);}
+function showCommunityBubble(anchor){
+  if(document.getElementById('community-pop')){closeCommunity();return;}
+  var b=document.createElement('div');
+  b.id='community-pop';b.className='contact-pop';b.setAttribute('role','dialog');b.setAttribute('aria-label','Rejoindre la communauté');
+  b.innerHTML='<button type="button" class="cp-x" aria-label="Fermer">×</button><div class="cp-t">💬 Rejoignez la communauté</div>'+
+    '<ul class="cm-list"><li>Posez vos questions à d\'autres candidats</li><li>Lisez les retours d\'expérience après l\'entretien</li><li>Suivez les nouveautés du site</li></ul>'+
+    '<div class="cp-btns"><a class="cp-copy" href="'+FB_URL+'" target="_blank" rel="noopener noreferrer" onclick="trackEvent(\'facebook_click\',{location:\'topbar_bubble\'})">Groupe Facebook</a>'+
+    '<a class="cp-open cp-ig" href="'+IG_URL+'" target="_blank" rel="noopener noreferrer" onclick="trackEvent(\'instagram_click\',{location:\'topbar_bubble\'})">Instagram</a></div>';
+  document.body.appendChild(b);
+  var W=window.innerWidth,H=window.innerHeight,bw=b.offsetWidth,bh=b.offsetHeight;
+  if(anchor&&anchor.getBoundingClientRect&&W>480){
+    var r=anchor.getBoundingClientRect();
+    b.style.left=Math.min(Math.max(8,r.left+r.width/2-bw/2),W-bw-8)+'px';
+    b.style.top=Math.max(8,Math.min(r.bottom+10,H-bh-8))+'px';
+  }
+  b.querySelector('.cp-x').onclick=closeCommunity;
+  trackEvent('community_open',{});
+}
+document.addEventListener('click',function(e){
+  var t=e.target;
+  if(!t||!t.closest||!document.getElementById('community-pop'))return;
+  if(t.closest('#community-pop')||t.closest('.ss-fb'))return;
+  closeCommunity();
 });

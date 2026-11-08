@@ -106,7 +106,7 @@
       <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
       <button class="ss-donate" onclick="trackEvent('donate_click',{location:'topbar'});window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
-      <a class="ss-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('facebook_click',{location:'topbar'})" aria-label="Rejoindre le groupe Facebook" title="Rejoindre le groupe Facebook : posez vos questions et partagez votre retour"><span aria-hidden="true">💬</span><span class="ss-btn-txt">Groupe Facebook</span></a>
+      <button type="button" class="ss-fb" onclick="showCommunityBubble(this)" aria-label="Rejoindre la communauté (Facebook, Instagram)" title="Questions, retours d'expérience, nouveautés"><span aria-hidden="true">💬</span><span class="ss-btn-txt">Communauté</span></button>
       <button class="ss-save" onclick="exportData()" aria-label="Sauvegarder ma progression" title="Télécharger ma progression (fichier .json)"><span aria-hidden="true">⬇</span><span class="ss-btn-txt">Sauvegarder</span></button>
     </div>
   </div>
@@ -202,6 +202,7 @@
       <div class="community-row">
         <span>💬 Une question ? Un retour d'expérience à partager ?</span>
         <a class="cc-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('facebook_click',{location:'prefecture_end'})">Rejoindre le groupe Facebook</a>
+        <a class="cc-ig" href="https://www.instagram.com/cap_naturalisation/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('instagram_click',{location:'community'})">📸 Suivre sur Instagram</a>
         <a class="cc-contact" href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation" onclick="trackEvent('contact_click',{location:'prefecture_end'})">✉️ Nous contacter</a>
         <a class="cc-wa" href="https://wa.me/?text=Je%20pr%C3%A9pare%20ma%20naturalisation%20avec%20Cap%20Naturalisation%20%3A%20quiz%20et%20examen%20civique%20gratuits%2C%20sans%20inscription.%20https%3A%2F%2Fcap-naturalisation.fr%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dpartage" target="_blank" rel="noopener noreferrer" onclick="trackEvent('whatsapp_share',{location:'quiz_end'})">📲 Partager sur WhatsApp</a>
       </div>
@@ -232,6 +233,7 @@
       <a href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer">Groupe Facebook</a>
       <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_link'})">Soutenir le projet</a>
       <a href="https://wa.me/?text=Je%20pr%C3%A9pare%20ma%20naturalisation%20avec%20Cap%20Naturalisation%20%3A%20quiz%20et%20examen%20civique%20gratuits%2C%20sans%20inscription.%20https%3A%2F%2Fcap-naturalisation.fr%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dpartage" target="_blank" rel="noopener noreferrer" onclick="trackEvent('whatsapp_share',{location:'footer'})">📲 Partager sur WhatsApp</a>
+      <a href="https://www.instagram.com/cap_naturalisation/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('instagram_click',{location:'footer'})">📸 Instagram</a>
       <a href="#" onclick="showConsentBanner();return false;">Gérer les cookies</a>
     </p>
   </div>

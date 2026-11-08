@@ -88,6 +88,21 @@ function pcAns(k){
   var n=document.getElementById('pc-next');n.textContent=pc.i+1>=PC[pc.l].ex.length?'Voir le résultat':'Suivant →';n.hidden=false;
 }
 function pcNext(){pc.i++;if(pc.i>=PC[pc.l].ex.length){pcEnd();return;}pcQ();}
+
+/* Demande de don : uniquement après un niveau validé. PC_DONATE_AT = numéros de niveaux (à partir de 0) : ici les niveaux 3 et 5. */
+var PC_DONATE_AT=[2,4];
+function pcDonateHtml(){
+  var P="https://paypal.me/shankislaitk";
+  function o(a,l){return '<a class="donate-opt" href="'+P+'/'+a+'EUR" target="_blank" rel="noopener noreferrer" onclick="trackEvent(\'donate_click\',{location:\'parcours_level\',amount:'+a+'})"><span class="do-amt">'+a+' €</span><span class="do-lbl">'+l+'</span></a>';}
+  return '<div class="donate-card" data-donate-card><div class="dc-title">Cap Naturalisation est gratuit, et le restera</div>'+
+  '<div class="dc-sub">Vous avez validé un niveau : bravo ! Si le parcours vous aide, un don couvre l\'hébergement, le nom de domaine et la mise à jour des contenus.</div>'+
+  '<div class="donate-opts">'+o(2,'Un petit coup de pouce')+o(5,'Aider à améliorer le site')+o(10,'Soutenir davantage')+'</div>'+
+  '<a class="donate-free" href="'+P+'" target="_blank" rel="noopener noreferrer" onclick="trackEvent(\'donate_click\',{location:\'parcours_level\',amount:\'free\'})">Faire un don libre ❤️</a>'+
+  '<button type="button" class="donate-skip" onclick="dismissDonate(this)">Non merci, continuer</button></div>';
+}
+function pcCommunityHtml(){
+  return '<div class="community-row"><span>💬 Une question sur ce niveau ? Rejoignez la communauté.</span><a class="cc-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" onclick="trackEvent(\'facebook_click\',{location:\'parcours_level\'})">Groupe Facebook</a><a class="cc-ig" href="'+IG_URL+'" target="_blank" rel="noopener noreferrer" onclick="trackEvent(\'instagram_click\',{location:\'parcours_level\'})">📸 Instagram</a></div>';
+}
 function pcEnd(){
   var t=PC[pc.l].ex.length,ok=pc.ok>=Math.ceil(t*.7),d=pcLoad(),last=pc.l===PC.length-1;
   if(ok){d[pc.l]=pc.ok;try{localStorage.setItem('cap_parcours',JSON.stringify(d));}catch(e){}}
@@ -98,5 +113,5 @@ function pcEnd(){
   else if(ok&&!last)b='<button class="btn" onclick="pcOpen('+(pc.l+1)+')">Niveau suivant →</button> <button class="btn btn-outline" onclick="buildLivret()">Mon parcours</button>';
   else if(ok)b='<button class="btn" onclick="buildLivret()">Mon parcours</button>';
   else b='<button class="btn" onclick="pcOpen('+pc.l+')">Relire la leçon</button> <button class="btn btn-outline" onclick="pcStart()">Réessayer</button>';
-  document.getElementById('pc-actions').innerHTML=b;lvShow('pc-end');
+  document.getElementById('pc-actions').innerHTML=b;document.getElementById('pc-donate').innerHTML=ok?pcCommunityHtml()+(PC_DONATE_AT.indexOf(pc.l)>-1?pcDonateHtml():''):'';lvShow('pc-end');
 }
