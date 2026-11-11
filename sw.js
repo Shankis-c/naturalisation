@@ -2,7 +2,7 @@
    - Précharge les pages et les données pour que le site fonctionne sans connexion.
    - Réseau d'abord (contenu toujours à jour), avec repli sur le cache si le réseau est absent ou trop lent.
    Pour forcer le renouvellement du cache chez tous les utilisateurs, changez le numéro de version ci-dessous. */
-const CACHE = 'cap-naturalisation-v1';
+const CACHE = 'cap-naturalisation-v2';
 const NETWORK_TIMEOUT = 4000; // ms : au-delà, on sert la version en cache
 const PRECACHE = [
   './', 'index.html', 'comment-utiliser.html', 'quiz-naturalisation.html', 'livret-citoyen.html', 'livret.js', 'parcours.js', 'test-nationalite-francaise.html', 'quiz-par-theme.html',
@@ -10,9 +10,9 @@ const PRECACHE = [
   'questions-par-prefecture.html', 'examen-civique.html', 'examen-civique-csp.html',
   'examen-civique-cr.html', 'quiz-examen-civique.html', 'mes-favoris.html', 'mon-bilan.html', 'jour-j.html',
   'examen-civique-questions.html', 'mentions-legales.html',
-  'style.css', 'app.js', 'questions.js', 'interview.js', 'prefecture.js', 'civique.js',
+  'style.css', 'standalone.css', 'app.js', 'questions.js', 'interview.js', 'prefecture.js', 'civique.js',
   'manifest.webmanifest', 'favicon.ico',
-  'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'
+  'icons/icon-192.png', 'icons/logo.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', function (e) {

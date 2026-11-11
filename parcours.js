@@ -115,3 +115,17 @@ function pcEnd(){
   else b='<button class="btn" onclick="pcOpen('+pc.l+')">Relire la leçon</button> <button class="btn btn-outline" onclick="pcStart()">Réessayer</button>';
   document.getElementById('pc-actions').innerHTML=b;document.getElementById('pc-donate').innerHTML=ok?pcCommunityHtml()+(PC_DONATE_AT.indexOf(pc.l)>-1?pcDonateHtml():''):'';lvShow('pc-end');
 }
+
+/* Accueil : cadran + liste des 5 niveaux (lit la progression enregistrée) */
+function pcHome(){
+  var dial=document.getElementById('hero-dial');if(!dial)return;
+  var d=pcLoad(),n=0,next=-1,N=PC.length;
+  PC.forEach(function(l,i){if(d[i])n++;else if(next<0)next=i;});
+  var R=62,C=2*Math.PI*R,off=C*(1-n/N);
+  dial.innerHTML='<svg width="168" height="168" viewBox="0 0 150 150" role="img" aria-label="Parcours : '+n+' niveau'+(n>1?'x':'')+' validé'+(n>1?'s':'')+' sur '+N+'"><circle cx="75" cy="75" r="'+R+'" fill="none" style="stroke:var(--c-todo)" stroke-width="14"/><circle cx="75" cy="75" r="'+R+'" fill="none" style="stroke:var(--c-ok)" stroke-width="14" stroke-linecap="round" stroke-dasharray="'+C.toFixed(1)+'" stroke-dashoffset="'+(n?off.toFixed(1):C.toFixed(1))+'" transform="rotate(-90 75 75)"/><text x="75" y="82" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="46" style="fill:var(--text)">'+n+'/'+N+'</text><text x="75" y="104" text-anchor="middle" font-family="Figtree,Arial,sans-serif" font-size="12" style="fill:var(--text-3)">niveaux validés</text></svg><div class="hd-cap">Parcours découverte</div>';
+  var segs=document.getElementById('hr-segs'),list=document.getElementById('hr-list'),go=document.getElementById('hr-go');
+  if(segs)segs.innerHTML=PC.map(function(l,i){return '<i class="'+(d[i]?'ok':(i===next?'cur':''))+'"></i>';}).join('');
+  if(list)list.innerHTML=PC.map(function(l,i){var c=d[i]?'ok':(i===next?'cur':'');return '<li class="'+c+'"><a href="livret-citoyen.html"><span class="hr-dot">'+(d[i]?'\u2713':(i+1))+'</span><span class="hr-t"><strong>'+l.t+'</strong><small>'+l.s+'</small></span><span class="hr-chip">'+(d[i]?'Validé':(i===next?(n?'En cours':'À commencer'):'À faire'))+'</span></a></li>';}).join('');
+  if(go)go.textContent=n===N?'Parcours terminé : revoir les leçons':(n?'Continuer le niveau '+(next+1):'Commencer le niveau 1');
+}
+document.addEventListener('DOMContentLoaded',pcHome);

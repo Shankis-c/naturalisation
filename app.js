@@ -445,7 +445,7 @@ function finishQuiz(){showDonate();
           '<div class="wi-given">'+(a.to?'⏰ Temps écoulé':'Votre réponse : '+a.given)+'</div>' +
           '<div class="wi-correct">✔ '+a.correct+'</div></div>';
       }).join('')
-    :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Aucune erreur !</div>';
+    :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:var(--font-b);font-weight:700">🎉 Aucune erreur !</div>';
   updateSidebar();
   setTimeout(function(){try{checkBadges();}catch(e){}},0);
 }
@@ -586,7 +586,7 @@ function finishTQ(){showDonate();
           '<div class="wi-given">'+(a.to?'⏰ Temps écoulé':'Votre réponse : '+a.given)+'</div>' +
           '<div class="wi-correct">✔ '+a.correct+'</div></div>';
       }).join('')
-    :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Parfait !</div>';
+    :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:var(--font-b);font-weight:700">🎉 Parfait !</div>';
   updateSidebar();
   setTimeout(function(){try{checkBadges();}catch(e){}},0);
 }
@@ -752,7 +752,7 @@ function finishCQ(){showDonate();
           '<div class="wi-given">'+(a.to?'⏰ Temps écoulé':'Votre réponse : '+a.given)+'</div>' +
           '<div class="wi-correct">✔ '+a.correct+'</div></div>';
       }).join('')
-    :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Parfait !</div>';
+    :'<div style="text-align:center;padding:1.2rem;color:var(--success);font-family:var(--font-b);font-weight:700">🎉 Parfait !</div>';
   updateSidebar();
   setTimeout(function(){try{checkBadges();}catch(e){}},0);
 }
@@ -832,7 +832,7 @@ function finishOral(){showDonate();
         return '<div class="wrong-item"><div class="wi-q">'+q.q+'</div><div class="wi-correct">✔ '+q.opts[q.c]+'</div></div>';
       }).join('');
   }else{
-    ml.innerHTML='<div style="text-align:center;padding:1rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Toutes maîtrisées !</div>';
+    ml.innerHTML='<div style="text-align:center;padding:1rem;color:var(--success);font-family:var(--font-b);font-weight:700">🎉 Toutes maîtrisées !</div>';
   }
 }
 
@@ -949,7 +949,7 @@ function finishPref(){showDonate();
         return '<div class="wrong-item"><div class="wi-q">'+q.q+'</div><div class="wi-correct" style="color:var(--navy)">'+q.r.slice(0,80)+'...</div></div>';
       }).join('');
   }else{
-    ml.innerHTML='<div style="text-align:center;padding:1rem;color:var(--success);font-family:Syne,sans-serif;font-weight:700">🎉 Toutes maîtrisées !</div>';
+    ml.innerHTML='<div style="text-align:center;padding:1rem;color:var(--success);font-family:var(--font-b);font-weight:700">🎉 Toutes maîtrisées !</div>';
   }
 }
 function replayPref(){
@@ -983,7 +983,7 @@ function buildInterview(){
     if(q.avoid&&q.avoid.length){
       var items='';q.avoid.forEach(function(a){items+='<li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.8rem;color:var(--error);padding:.2rem 0;line-height:1.5"><span style="font-weight:700;flex-shrink:0">✕</span>'+a+'</li>';});
       avoid='<div style="background:var(--error-bg);border:1px solid rgba(220,38,38,.2);border-radius:var(--r);padding:1rem 1.2rem;margin-top:1rem">' +
-        '<div style="font-family:Syne,sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--error);margin-bottom:.5rem">À éviter pour cette question</div>' +
+        '<div style="font-family:var(--font-b);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--error);margin-bottom:.5rem">À éviter pour cette question</div>' +
         '<ul style="list-style:none">'+items+'</ul></div>';
     }
     html+='<div class="iq-card">' +
@@ -994,7 +994,7 @@ function buildInterview(){
       '<button class="ex-toggle" onclick="tEx(\'iex'+i+'\',this)">Voir un exemple de réponse ▾</button>' +
       '<div id="iex'+i+'" style="display:none;margin-top:.8rem">' +
       '<div style="background:var(--navy);border-radius:var(--r);padding:1.2rem">' +
-      '<div style="font-family:Syne,sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.7rem">✎ Exemple de réponse</div>' +
+      '<div style="font-family:var(--font-b);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.7rem">✎ Exemple de réponse</div>' +
       ex+'</div>'+avoid+'</div>' +
       '</div></div>';
   });
@@ -1029,23 +1029,23 @@ function buildDashboard(){
   var favs=G.data.favoris||[];
   var df=document.getElementById('d-favoris');
   if(!favs.length){
-    df.innerHTML='<p style="color:var(--text-3);font-family:Syne,sans-serif;font-size:.82rem;padding:.3rem 0">Aucun favori — marquez des questions ★ pendant le quiz.</p>';
+    df.innerHTML='<p style="color:var(--text-3);font-family:var(--font-b);font-size:.82rem;padding:.3rem 0">Aucun favori — marquez des questions ★ pendant le quiz.</p>';
   }else{
     df.innerHTML=favs.slice(0,5).map(function(f){
       return '<div class="dash-fav-item">' +
         '<span style="font-size:1rem">⭐</span>' +
         '<div><div class="dash-fav-q">'+f.q+'</div><div class="dash-fav-th">'+f.th+'</div></div>' +
         '</div>';
-    }).join('')+(favs.length>5?'<div style="font-family:Syne,sans-serif;font-size:.75rem;color:var(--text-3);padding:.3rem 0 0">+ '+(favs.length-5)+' autres — <span style="cursor:pointer;color:var(--navy);text-decoration:underline" onclick="go(\'favoris\')">voir tous</span></div>':'');
+    }).join('')+(favs.length>5?'<div style="font-family:var(--font-b);font-size:.75rem;color:var(--text-3);padding:.3rem 0 0">+ '+(favs.length-5)+' autres — <span style="cursor:pointer;color:var(--navy);text-decoration:underline" onclick="go(\'favoris\')">voir tous</span></div>':'');
   }
   document.getElementById('d-history').innerHTML=h.length
     ?'<table class="hist-table"><thead><tr><th>Date</th><th>Score</th><th>Résultat</th></tr></thead><tbody>' +
       [...h].reverse().slice(0,10).map(function(x){
         var d=new Date(x.date).toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'});
         var cls=x.pct>=70?'badge-green':x.pct>=50?'badge-yellow':'badge-red';
-        return '<tr><td>'+d+'</td><td style="font-family:Syne,sans-serif;font-weight:700">'+x.score+'/'+x.tot+'</td><td><span class="badge '+cls+'">'+x.pct+'%</span></td></tr>';
+        return '<tr><td>'+d+'</td><td style="font-family:var(--font-b);font-weight:700">'+x.score+'/'+x.tot+'</td><td><span class="badge '+cls+'">'+x.pct+'%</span></td></tr>';
       }).join('')+'</tbody></table>'
-    :'<p style="text-align:center;color:var(--text-3);font-family:Syne,sans-serif;font-size:.85rem;padding:1.5rem">Aucun quiz complété pour l\'instant</p>';
+    :'<div class="empty">Aucun quiz complété pour l\'instant. Lancez un quiz pour voir votre historique ici.</div>';
 }
 
 // ══════════════════════
@@ -1593,3 +1593,220 @@ document.addEventListener('click',function(e){
   if(t.closest('#community-pop')||t.closest('.ss-fb'))return;
   closeCommunity();
 });
+
+/* Thème sombre et contraste élevé (mémorisés sur l'appareil) */
+(function(){
+  var R=document.documentElement;
+  function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function put(k,v){try{if(v)localStorage.setItem(k,v);else localStorage.removeItem(k);}catch(e){}}
+  function apply(){
+    if(get('cap_theme')==='dark')R.setAttribute('data-theme','dark');else R.removeAttribute('data-theme');
+    if(get('cap_contrast')==='high')R.setAttribute('data-contrast','high');else R.removeAttribute('data-contrast');
+    var a=document.getElementById('tc-theme'),b=document.getElementById('tc-contrast');
+    if(a){a.setAttribute('aria-pressed',get('cap_theme')==='dark');a.setAttribute('aria-label',get('cap_theme')==='dark'?'Passer au thème clair':'Passer au thème sombre');}
+    if(b)b.setAttribute('aria-pressed',get('cap_contrast')==='high');
+  }
+  window.toggleTheme=function(){put('cap_theme',get('cap_theme')==='dark'?'':'dark');apply();if(window.trackEvent)trackEvent('theme_toggle',{theme:get('cap_theme')||'light'});};
+  window.toggleContrast=function(){put('cap_contrast',get('cap_contrast')==='high'?'':'high');apply();};
+  document.addEventListener('DOMContentLoaded',function(){
+    var host=document.querySelector('.stats-strip-in');
+    if(host&&!document.getElementById('tc-theme')){
+      var g=document.createElement('div');g.className='tc-grp';
+      g.innerHTML='<button type="button" class="tc-btn" id="tc-theme" onclick="toggleTheme()" title="Thème clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button><button type="button" class="tc-btn" id="tc-contrast" onclick="toggleContrast()" aria-label="Contraste élevé" title="Contraste élevé"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>';
+      var save=host.querySelector('.ss-save');host.insertBefore(g,save||null);
+    }
+    apply();
+  });
+  apply();
+})();
+
+/* ===== Icônes : remplace les emojis par des icônes en traits (aussi pour les contenus ajoutés par le script) ===== */
+(function(){
+  var P={
+    check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',
+    star:'<path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z"/>',
+    clock:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/>',
+    spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
+    bulb:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+    phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+    chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/>',
+    mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/>',
+    down:'<path d="M12 4v11M7 11l5 5 5-5M5 20h14"/>',up:'<path d="M12 20V9M7 13l5-5 5 5M5 4h14"/>',
+    trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/>',
+    save:'<path d="M5 3h11l4 4v14H5zM8 3v5h7V3M8 21v-7h8v7"/>',
+    mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/>',
+    filecheck:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M9 14l2 2 4-4"/>',
+    file:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/>',
+    target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    book:'<path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/>',
+    bank:'<path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-7 10 7z"/>',
+    idcard:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.5-1.5 1.7-2 3-2s2.5.5 3 2M14 10h4M14 14h3"/>',
+    scale:'<path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/>',
+    scroll:'<path d="M8 4h11v13a3 3 0 0 1-3 3H6a3 3 0 0 0 3-3V4zM8 4a2 2 0 0 0-2 2v2h3M12 9h4M12 13h4"/>',
+    map:'<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/>',
+    users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.5 3-5.5 6.5-5.5s6 2 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c2 .6 3.3 2.4 3.5 5.2"/>',
+    heart:'<path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/>',
+    vol:'<path d="M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/>',
+    play:'<path d="M7 4.5v15l12-7.5z"/>',
+    refresh:'<path d="M20 11a8 8 0 0 0-14.5-4L4 9M4 4v5h5M4 13a8 8 0 0 0 14.5 4L20 15M20 20v-5h-5"/>',
+    alert:'<path d="M12 3l10 18H2zM12 10v5M12 18h.01"/>',
+    thumb:'<path d="M7 11v9H4v-9zM7 11l4-8c1.7 0 2.5 1.2 2.3 2.7L13 9h6a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7"/>',
+    cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    sprout:'<path d="M12 21v-9M12 12c0-4 2.5-6 7-6 0 4-2.5 6-7 6zM12 15c0-3-2-5-6-5 0 3 2 5 6 5z"/>',
+    menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4v2a3 3 0 0 0 4 2.8M16 6h4v2a3 3 0 0 1-4 2.8M12 13v4M8 21h8M10 17h4"/>',
+    flame:'<path d="M12 22c4 0 7-2.7 7-6.5 0-3-2-4.8-3-7-1 1.2-1.5 2-2 3 0-4-1.5-7-4-9 .3 4-3.5 6-3.5 11.5C6.5 19.3 8.5 22 12 22z"/>',
+    lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+    search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',shuffle:'<path d="M3 7h4l10 10h4M3 17h4l3-3M14 10l3-3h4M18 4l3 3-3 3M18 14l3 3-3 3"/>',
+    keyb:'<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>',
+    pen:'<path d="M4 20l1-4L16 5l3 3L8 19zM14 7l3 3"/>',moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+    cards:'<rect x="3" y="6" width="13" height="15" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v12"/>',hands:'<path d="M3 12l4-4 4 2 4-2 6 5-6 6-3-1-3 1zM7 8l3-2"/>',
+    flagi:'<path d="M5 21V4M5 4h12l-2.5 4L17 12H5"/>',palette:'<path d="M12 3a9 9 0 0 0 0 18c1.3 0 2-.8 2-1.8 0-1.3-1-1.5-1-2.7 0-1 .8-1.5 1.8-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8zM7.5 11h.01M10 7.5h.01M14.5 7.5h.01"/>',cap:'<path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/>',briefcase:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 13h18"/>',cross:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/>',tag:'<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/>',vote:'<rect x="4" y="9" width="16" height="11" rx="2"/><path d="M8 9l2-5 3 3M9 14h6"/>',
+    chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',pray:'<path d="M12 21v-8M12 13c-3 0-5-2-5-6 3 0 5 2 5 6zM12 13c3 0 5-2 5-6-3 0-5 2-5 6z"/>',up2:'<path d="M6 15l6-6 6 6"/>',dn2:'<path d="M6 9l6 6 6-6"/>'
+  };
+  var M={'✅':'check','✔':'check','✓':'check','❌':'x','✕':'x','✗':'x','✖':'x','⭐':'star!','★':'star!','☆':'star','⏰':'clock','⏱':'clock','🎉':'spark','🌟':'spark','💡':'bulb','📲':'phone','💬':'chat','✉':'mail','⬇':'down','⬆':'up','🗑':'trash','💾':'save','🗣':'mic','🎙':'mic','📝':'filecheck','📄':'file','📋':'file','🎯':'target','📚':'book','📖':'book','🏛':'bank','🪪':'idcard','⚖':'scale','📜':'scroll','🗺':'map','🤝':'hands','❤':'heart','💛':'heart','📸':'chat','👥':'users','🔊':'vol','▶':'play!','🔄':'refresh','↻':'refresh','⚠':'alert','👍':'thumb','📅':'cal','📆':'cal','🗓':'cal','🌱':'sprout','☰':'menu','🏆':'trophy','🔥':'flame','🔒':'lock','🌐':'globe','🔍':'search','🔀':'shuffle','⌨':'keyb','✎':'pen','🙏':'pray','💪':'flame','💯':'check','🌙':'moon','🃏':'cards','📊':'chart','▾':'dn2','▴':'up2'};
+  var KW=[[/valeur|r[ée]publi|principe|symbole|la[iï]cit|libert|devise/,'flagi'],[/institution|politique|pouvoir|[ée]tat|gouvern|[ée]lu|parlement|constitution/,'bank'],[/droit|devoir|justice|loi\b|lois/,'scale'],[/histoire|pass[ée]|dates?\b|guerre|r[ée]volution/,'scroll'],[/g[ée]ograph|territoire|r[ée]gion|d[ée]partement|carte|pays/,'map'],[/culture|patrimoine|art\b|arts\b|litt[ée]rature|gastronomie|f[eê]te/,'palette'],[/soci[ée]t[ée]|vivre|vie\b|quotidien|famille|solidarit|citoyenne/,'hands'],[/langue|fran[cç]ais|communication/,'chat'],[/sant[ée]|soin/,'cross'],[/travail|emploi|m[ée]tier|profession/,'briefcase'],[/[ée]cole|[ée]ducation|enseignement|[ée]tude/,'cap'],[/nationalit|naturalis|titre|s[ée]jour|identit/,'idcard'],[/europe|monde|international/,'globe'],[/vote|[ée]lection|d[ée]mocratie/,'vote']];
+  function guess(ctx){ctx=(ctx||'').toLowerCase();for(var i=0;i<KW.length;i++)if(KW[i][0].test(ctx))return KW[i][1];return 'tag';}
+  var keys=Object.keys(M).sort(function(a,b){return b.length-a.length;}).map(function(k){return k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');});
+  var RX=new RegExp('(?:\\uD83C[\\uDDE6-\\uDDFF]\\uD83C[\\uDDE6-\\uDDFF])|(?:'+keys.join('|')+')[\\uFE0E\\uFE0F]?|(?=\\p{Extended_Pictographic})[\\u2300-\\u2BFF\\u{1F000}-\\u{1FAFF}][\\uFE0E\\uFE0F]?(?:\\u200D\\p{Extended_Pictographic}[\\uFE0E\\uFE0F]?)*','gu');
+  var SKIP={SCRIPT:1,STYLE:1,TEXTAREA:1,TITLE:1,OPTION:1,NOSCRIPT:1};
+  function svg(name){var f=/!$/.test(name);name=name.replace('!','');return '<svg class="ei'+(f?' ei-f':'')+'" viewBox="0 0 24 24" aria-hidden="true">'+P[name]+'</svg>';}
+  function conv(txt,ctx){
+    return txt.replace(RX,function(m){
+      if(/^[\u{1F1E6}-\u{1F1FF}]{2}$/u.test(m))return '<span class="ei-flag" aria-hidden="true"><i></i><i></i><i></i></span>';
+      var k=m.replace(/[︎️]/g,'');return M[k]?svg(M[k]):svg(guess(ctx||txt));});
+  }
+  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function walk(root){
+    if(!root||root.nodeType===8)return;
+    if(root.nodeType===3){fix(root);return;}
+    if(root.nodeType!==1||SKIP[root.nodeName]||(root.classList&&(root.classList.contains('ei')||root.classList.contains('ei-flag')))||root.closest&&root.closest('[data-noicon]'))return;
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){return SKIP[n.parentNode.nodeName]?NodeFilter.FILTER_REJECT:(RX.lastIndex=0,RX.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT);}}),a=[],n;
+    while((n=w.nextNode()))a.push(n);a.forEach(fix);
+  }
+  function fix(n){
+    RX.lastIndex=0;if(!n.parentNode||SKIP[n.parentNode.nodeName]||!RX.test(n.nodeValue))return;
+    var sp=document.createElement('span');sp.className='ei-w';var pp=n.parentNode;sp.innerHTML=conv(esc(n.nodeValue),((pp.closest&&(pp.closest('.theme-chip,.theme-sel-btn,.theme-res-row')||pp.closest('li,button')))||pp).textContent);
+    var frag=document.createDocumentFragment();while(sp.firstChild)frag.appendChild(sp.firstChild);
+    n.parentNode.replaceChild(frag,n);
+  }
+  function start(){
+    walk(document.body);
+    if(!window.MutationObserver)return;
+    var busy=false;
+    new MutationObserver(function(ms){
+      if(busy)return;busy=true;
+      try{ms.forEach(function(m){
+        if(m.type==='characterData')fix(m.target);
+        else m.addedNodes.forEach(function(x){walk(x);});
+      });}finally{busy=false;}
+    }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+
+/* ===== Partage : copier le lien ===== */
+function copyShareLink(btn){
+  var url='https://cap-naturalisation.fr/?utm_source=copie&utm_medium=partage';
+  function ok(){if(window.toast)toast('Lien copié');btn.classList.add('done');setTimeout(function(){btn.classList.remove('done');},1500);if(window.trackEvent)trackEvent('copy_link',{location:'footer'});}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(ok,function(){window.prompt('Copiez le lien :',url);});}
+  else window.prompt('Copiez le lien :',url);
+}
+
+/* ===== Cadran de score (résultats des quiz et bilan) ===== */
+(function(){
+  var R=62,C=2*Math.PI*R;
+  function col(p){return p<50?'#d2452c':(p<75?'#e5ac00':'#1e8449');}
+  function paint(host,p){
+    p=Math.max(0,Math.min(100,p));
+    var arc=host.querySelector('.dial-arc');if(!arc)return;
+    arc.style.stroke=col(p);arc.setAttribute('stroke-dasharray',C.toFixed(1));arc.setAttribute('stroke-dashoffset',(C*(1-p/100)).toFixed(1));
+  }
+  function build(host){
+    host.classList.add('dial-wrap');
+    host.insertAdjacentHTML('afterbegin','<svg class="dial-svg" viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="'+R+'" class="dial-track"/><circle cx="75" cy="75" r="'+R+'" class="dial-arc" transform="rotate(-90 75 75)" stroke-dasharray="'+C.toFixed(1)+'" stroke-dashoffset="'+C.toFixed(1)+'"/></svg>');
+  }
+  function legend(){return '<div class="dial-leg"><span><b style="background:#d2452c"></b>À revoir (moins de 50 %)</span><span><b style="background:#e5ac00"></b>En progrès (50 à 74 %)</span><span><b style="background:#1e8449"></b>Prêt(e) (75 % et plus)</span></div>';}
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('.res-hero').forEach(function(h){
+      var v=h.querySelector('.res-pct-val');if(!v)return;
+      var host=v.parentNode;build(host);
+      h.insertAdjacentHTML('afterend',legend());
+      var up=function(){var n=parseInt(v.textContent,10);paint(host,isNaN(n)?0:n);};
+      new MutationObserver(up).observe(v,{childList:true,characterData:true,subtree:true});up();
+    });
+    var bd=document.getElementById('bilan-dial'),avg=document.getElementById('d-avg');
+    if(bd&&avg){
+      build(bd);var out=document.getElementById('bd-val'),tot=document.getElementById('d-total'),cap=document.getElementById('bd-cap');
+      var up2=function(){var n=parseInt(avg.textContent,10),t=parseInt(tot&&tot.textContent,10)||0;
+        out.textContent=isNaN(n)?'—':n+'%';paint(bd,isNaN(n)?0:n);
+        if(cap)cap.textContent=isNaN(n)?'Faites votre premier quiz pour voir votre score moyen ici.':'Moyenne de vos '+t+' quiz'+(t>1?'':'')+' terminé'+(t>1?'s':'')+'.';};
+      var mo=new MutationObserver(up2);[avg,tot].forEach(function(e){if(e)mo.observe(e,{childList:true,characterData:true,subtree:true});});up2();
+    }
+  });
+})();
+
+/* ===== Navigation mobile en bas ===== */
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    if(!document.getElementById('appSidebar')||document.getElementById('bottomNav'))return;
+    var v=document.body.getAttribute('data-view')||'';
+    var it=[['home','index.html','Accueil','<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',['home','aide']],
+      ['livret','livret-citoyen.html','Parcours','<path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/>',['livret','revision']],
+      ['quiz','quiz-naturalisation.html','Quiz','<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/>',['quiz','theme-quiz','oral']],
+      ['examen-civique','examen-civique.html','Examen','<path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-7 10 7z"/>',['examen-civique','examen-cr','examen-csp','civique-quiz']],
+      ['dashboard','mon-bilan.html','Bilan','<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',['dashboard','favoris','mon-entretien','interview','prefecture']]];
+    var h='<nav class="bottom-nav" id="bottomNav" aria-label="Navigation rapide">';
+    it.forEach(function(x){var on=x[4].indexOf(v)>=0;h+='<a href="'+x[1]+'"'+(on?' class="on" aria-current="page"':'')+'><svg viewBox="0 0 24 24" aria-hidden="true">'+x[3]+'</svg><span>'+x[2]+'</span></a>';});
+    document.body.insertAdjacentHTML('beforeend',h+'</nav>');
+  });
+})();
+
+/* ===== Message « Nouveautés » (affiché une fois aux visiteurs déjà venus) ===== */
+(function(){
+  var KEY='cap_whatsnew',VER='v2';
+  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+  function ic(p){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+p+'</svg>';}
+  var ITEMS=[
+    ['<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>','Un nouveau design','Menus en haut, pages plus claires, cadrans de progression. Deux boutons permettent de passer en thème sombre ou en contraste élevé.'],
+    ['<path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/>','Parcours découverte : le Livret du citoyen','5 niveaux courts pour partir de zéro, d\'après le Livret du citoyen (mai 2026), avec la page du livret pour chaque point. Une fois les niveaux validés, place aux quiz de naturalisation.'],
+    ['<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>','Un suivi plus clair','Cadran de score après chaque quiz, score moyen dans le bilan, progression du parcours sur l\'accueil.'],
+    ['<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>','Pensé pour le téléphone','Barre de navigation en bas de l\'écran et possibilité d\'installer le site comme une application.'],
+    ['<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.5 3-5.5 6.5-5.5s6 2 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c2 .6 3.3 2.4 3.5 5.2"/>','Une communauté','Rejoignez le groupe Facebook ou suivez le compte Instagram pour poser vos questions et partager votre retour d\'expérience.']
+  ];
+  var last=null;
+  window.showWhatsNew=function(){
+    if(document.getElementById('wn-modal'))return;
+    last=document.activeElement;
+    var h='<div class="wn-back" id="wn-modal" role="dialog" aria-modal="true" aria-labelledby="wn-title"><div class="wn-card"><button type="button" class="wn-x" aria-label="Fermer" onclick="closeWhatsNew()">'+ic('<path d="M6 6l12 12M18 6L6 18"/>')+'</button>'+
+      '<div class="wn-eyebrow">Nouveautés</div><h2 id="wn-title">Cap Naturalisation fait peau neuve</h2><p class="wn-sub">Voici ce qui change, en quelques lignes. Votre progression enregistrée est conservée.</p><ul class="wn-list">';
+    ITEMS.forEach(function(x){h+='<li><span class="wn-ic">'+ic(x[0])+'</span><div><strong>'+x[1]+'</strong><p>'+x[2]+'</p></div></li>';});
+    h+='</ul><div class="wn-btns"><a class="btn" href="livret-citoyen.html" onclick="closeWhatsNew(true);trackEvent(\'whatsnew_click\',{target:\'parcours\'})">Découvrir le parcours</a><button type="button" class="btn btn-outline" id="wn-ok" onclick="closeWhatsNew()">Continuer sur le site</button></div></div></div>';
+    document.body.insertAdjacentHTML('beforeend',h);
+    document.body.classList.add('wn-open');
+    var ok=document.getElementById('wn-ok');if(ok)ok.focus();
+    document.addEventListener('keydown',onKey);
+    if(window.trackEvent)trackEvent('whatsnew_view',{});
+  };
+  window.closeWhatsNew=function(keep){
+    var m=document.getElementById('wn-modal');if(m)m.remove();
+    document.body.classList.remove('wn-open');ls(KEY,VER);
+    document.removeEventListener('keydown',onKey);
+    if(!keep&&last&&last.focus)try{last.focus();}catch(e){}
+  };
+  function onKey(e){
+    if(e.key==='Escape'){closeWhatsNew();return;}
+    if(e.key!=='Tab')return;
+    var f=document.querySelectorAll('#wn-modal button,#wn-modal a');if(!f.length)return;
+    var a=f[0],z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}
+    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(document.body.getAttribute('data-view')!=='home')return;
+    if(ls(KEY)===VER)return;
+    var returning=false;try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k===SK||k.indexOf('cap_')===0){returning=true;break;}}}catch(e){}
+    if(!returning){ls(KEY,VER);return;}   /* première visite : rien à annoncer */
+    setTimeout(function(){if(!document.getElementById('wn-modal')&&!document.body.classList.contains('quiz-focus'))showWhatsNew();},900);
+  });
+})();

@@ -17,6 +17,7 @@
   }
   (function(){try{var c=JSON.parse(localStorage.getItem('cap_consent')||'null');if(c&&c.v==='granted'&&Date.now()-c.t<15552000000)loadGA();}catch(e){}})();
 </script>
+<script>try{var l=localStorage;if(l.getItem('cap_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');if(l.getItem('cap_contrast')==='high')document.documentElement.setAttribute('data-contrast','high');}catch(e){}</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Examen Civique CSP : Liste des Questions et Réponses</title>
@@ -46,7 +47,8 @@
 <meta name="twitter:image" content="https://cap-naturalisation.fr/og-image.png"/>
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body data-view="examen-csp">
@@ -60,35 +62,43 @@
 <aside class="app-sidebar" id="appSidebar">
   <div class="side-hd">
     <a class="brand" href="index.html" aria-label="Cap Naturalisation, retour à l'accueil">
-      <span class="brand-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
+      <img class="brand-logo" src="icons/logo.png" width="34" height="34" alt="" />
       <span class="brand-txt"><span class="brand-name">Cap Naturalisation</span><span class="brand-sub">Naturalisation &amp; examen civique</span></span>
     </a>
   </div>
   <nav class="side-nav" aria-label="Navigation principale">
-    <a class="side-nav-btn" data-view="home" href="index.html"><span class="nb-icon">🏠</span><span>Accueil</span></a>
-    <a class="side-nav-btn" data-view="aide" href="comment-utiliser.html"><span class="nb-icon">💡</span><span>Comment utiliser</span></a>
+    <a class="side-nav-btn" data-view="home" href="index.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span><span>Accueil</span></a>
+    <a class="side-nav-btn" data-view="aide" href="comment-utiliser.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></svg></span><span>Comment utiliser</span></a>
     <div class="side-group" role="group" aria-labelledby="sg-train">
-      <div class="side-grp" id="sg-train">S'entraîner</div>
-      <a class="side-nav-btn" data-view="quiz" href="quiz-naturalisation.html"><span class="nb-icon">📝</span><span>Quiz</span></a>
-      <a class="side-nav-btn" data-view="theme-quiz" href="quiz-par-theme.html"><span class="nb-icon">🎯</span><span>Thèmes</span></a>
-      <a class="side-nav-btn" data-view="oral" href="entrainement-oral.html"><span class="nb-icon">🗣️</span><span>Oral</span></a>
-      <a class="side-nav-btn" data-view="revision" href="revision-naturalisation.html"><span class="nb-icon">📚</span><span>Révision</span></a>
+      <div class="side-grp" id="sg-train" tabindex="0">S'entraîner</div>
+      <div class="side-menu">
+      <a class="side-nav-btn" data-view="quiz" href="quiz-naturalisation.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span><span>Quiz</span></a>
+      <a class="side-nav-btn" data-view="theme-quiz" href="quiz-par-theme.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span>Thèmes</span></a>
+      <a class="side-nav-btn" data-view="oral" href="entrainement-oral.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></span><span>Oral</span></a>
+      <a class="side-nav-btn" data-view="revision" href="revision-naturalisation.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></span><span>Révision</span></a>
+      </div>
     </div>
     <div class="side-group" role="group" aria-labelledby="sg-interview">
-      <div class="side-grp" id="sg-interview">Entretien</div>
-      <a class="side-nav-btn" data-view="interview" href="entretien-naturalisation.html"><span class="nb-icon">🎙️</span><span>Entretien</span></a>
-      <a class="side-nav-btn" data-view="prefecture" href="questions-par-prefecture.html"><span class="nb-icon">🏛️</span><span>Préfecture</span></a>
-      <a class="side-nav-btn" data-view="mon-entretien" href="jour-j.html"><span class="nb-icon">📅</span><span>Jour J</span></a>
+      <div class="side-grp" id="sg-interview" tabindex="0">Entretien</div>
+      <div class="side-menu">
+      <a class="side-nav-btn" data-view="interview" href="entretien-naturalisation.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg></span><span>Entretien</span></a>
+      <a class="side-nav-btn" data-view="prefecture" href="questions-par-prefecture.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-7 10 7z"/></svg></span><span>Préfecture</span></a>
+      <a class="side-nav-btn" data-view="mon-entretien" href="jour-j.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span>Jour J</span></a>
+      </div>
     </div>
     <div class="side-group" role="group" aria-labelledby="sg-civic">
-      <div class="side-grp" id="sg-civic">Examen civique</div>
-      <a class="side-nav-btn active" data-view="examen-civique" href="examen-civique.html" aria-current="page"><span class="nb-icon">📝</span><span>CSP / CR</span></a>
-      <a class="side-nav-btn" data-view="livret" href="livret-citoyen.html"><span class="nb-icon">📖</span><span>Livret du citoyen</span></a>
+      <div class="side-grp" id="sg-civic" tabindex="0">Examen civique</div>
+      <div class="side-menu">
+      <a class="side-nav-btn active" data-view="examen-civique" href="examen-civique.html" aria-current="page"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-7 10 7z"/></svg></span><span>CSP / CR</span></a>
+      <a class="side-nav-btn" data-view="livret" href="livret-citoyen.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></span><span>Livret du citoyen</span></a>
+      </div>
     </div>
     <div class="side-group" role="group" aria-labelledby="sg-follow">
-      <div class="side-grp" id="sg-follow">Mon suivi</div>
-      <a class="side-nav-btn" data-view="favoris" href="mes-favoris.html"><span class="nb-icon">⭐</span><span>Favoris</span><span class="nb-badge" id="sb-fav-badge">0</span></a>
-      <a class="side-nav-btn" data-view="dashboard" href="mon-bilan.html"><span class="nb-icon">📊</span><span>Bilan</span></a>
+      <div class="side-grp" id="sg-follow" tabindex="0">Mon suivi</div>
+      <div class="side-menu">
+      <a class="side-nav-btn" data-view="favoris" href="mes-favoris.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></span><span>Favoris</span><span class="nb-badge" id="sb-fav-badge">0</span></a>
+      <a class="side-nav-btn" data-view="dashboard" href="mon-bilan.html"><span class="nb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span>Bilan</span></a>
+      </div>
     </div>
   </nav>
   <div class="side-actions side-cta-wrap">
@@ -106,7 +116,7 @@
       <div class="ss-item"><span class="ss-n" id="sb-best">—</span><span class="ss-l">Meilleur score</span></div>
       <div class="ss-item"><span class="ss-n" id="sb-avg">—</span><span class="ss-l">Score moyen</span></div>
       <button class="ss-donate" onclick="trackEvent('donate_click',{location:'topbar'});window.open('https://paypal.me/shankislaitk','_blank')" title="Sert à couvrir l'hébergement et le temps passé à maintenir les questions à jour">❤️ Faire un don</button>
-      <button type="button" class="ss-fb" onclick="showCommunityBubble(this)" aria-label="Rejoindre la communauté (Facebook, Instagram)" title="Questions, retours d'expérience, nouveautés"><span aria-hidden="true">💬</span><span class="ss-btn-txt">Communauté</span></button>
+      <a class="ss-soc ss-soc-fb" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" aria-label="Groupe Facebook" title="Groupe Facebook : questions et retours d'expérience" onclick="trackEvent('facebook_click',{location:'topbar'})"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a><a class="ss-soc ss-soc-ig" href="https://www.instagram.com/cap_naturalisation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram : Cap Naturalisation" onclick="trackEvent('instagram_click',{location:'topbar'})"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a>
       <button class="ss-save" onclick="exportData()" aria-label="Sauvegarder ma progression" title="Télécharger ma progression (fichier .json)"><span aria-hidden="true">⬇</span><span class="ss-btn-txt">Sauvegarder</span></button>
     </div>
   </div>
@@ -119,7 +129,7 @@
       <div class="page-eyebrow">Carte de séjour pluriannuelle</div>
       <h1>Examen civique <span>CSP</span></h1>
     </div>
-    <div class="ec-intro">Voici la liste officielle des questions de connaissance pour le niveau <strong>carte de séjour pluriannuelle (CSP)</strong>, avec une réponse pour chaque question directe (🔹) et un exemple pour les questions qui demandent un avis ou un comportement à adopter (💬). L'administration ne publie pas de réponses officielles : celles proposées ici sont rédigées par Cap Naturalisation à titre d'entraînement. L'examen comporte aussi des questions de mise en situation orales, non rendues publiques, sur les mêmes thèmes.</div>
+    <div class="ec-intro">Voici la liste officielle des questions de connaissance pour le niveau <strong>carte de séjour pluriannuelle (CSP)</strong>, avec une réponse pour chaque question directe (<i class="dot" aria-hidden="true"></i>) et un exemple pour les questions qui demandent un avis ou un comportement à adopter (💬). L'administration ne publie pas de réponses officielles : celles proposées ici sont rédigées par Cap Naturalisation à titre d'entraînement. L'examen comporte aussi des questions de mise en situation orales, non rendues publiques, sur les mêmes thèmes.</div>
     <div class="ec-layout">
       <nav class="ec-sidebar" aria-label="Thèmes CSP">
         <div class="ec-sidebar-hd">
@@ -141,216 +151,216 @@
         <div class="ec-panel active" id="csp-p1">
           <div class="ec-panel-hd"><h2>Principes et valeurs de la République</h2><span class="ec-panel-count">38 questions</span></div>
           <ul>
-          <li><strong>À quoi correspond la date du 14 juillet ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Fête nationale : commémoration de la prise de la Bastille (1789) et de la Fête de la Fédération (1790).</span></li>
-          <li><strong>Quel est l'un des symboles de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le drapeau tricolore, Marianne, le coq gaulois ou la devise « Liberté, égalité, fraternité ».</span></li>
-          <li><strong>Le principe d'égalité signifie que :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les citoyens ont les mêmes droits et devoirs, sans distinction d'origine, de sexe ou de religion.</span></li>
-          <li><strong>"Liberté, égalité, fraternité", c'est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La devise de la République française.</span></li>
-          <li><strong>A-t-on le droit d'insulter publiquement quelqu'un parce qu'il est différent (handicap, apparence physique, sexe…) ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non : c'est une discrimination interdite et punie par la loi.</span></li>
-          <li><strong>Certains métiers peuvent-ils être réservés aux hommes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, l'égalité femmes-hommes interdit de réserver un métier à un seul sexe.</span></li>
-          <li><strong>De quand date la Constitution de la Ve République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Du 4 octobre 1958.</span></li>
-          <li><strong>Le régime de la France est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une République démocratique, indivisible, laïque et sociale.</span></li>
+          <li><strong>À quoi correspond la date du 14 juillet ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Fête nationale : commémoration de la prise de la Bastille (1789) et de la Fête de la Fédération (1790).</span></li>
+          <li><strong>Quel est l'un des symboles de la République française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le drapeau tricolore, Marianne, le coq gaulois ou la devise « Liberté, égalité, fraternité ».</span></li>
+          <li><strong>Le principe d'égalité signifie que :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Tous les citoyens ont les mêmes droits et devoirs, sans distinction d'origine, de sexe ou de religion.</span></li>
+          <li><strong>"Liberté, égalité, fraternité", c'est :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La devise de la République française.</span></li>
+          <li><strong>A-t-on le droit d'insulter publiquement quelqu'un parce qu'il est différent (handicap, apparence physique, sexe…) ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Non : c'est une discrimination interdite et punie par la loi.</span></li>
+          <li><strong>Certains métiers peuvent-ils être réservés aux hommes ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Non, l'égalité femmes-hommes interdit de réserver un métier à un seul sexe.</span></li>
+          <li><strong>De quand date la Constitution de la Ve République ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Du 4 octobre 1958.</span></li>
+          <li><strong>Le régime de la France est :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une République démocratique, indivisible, laïque et sociale.</span></li>
           <li><strong>Lequel de ces symboles représente officiellement la République française ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions : privilégier le drapeau tricolore ou Marianne, symboles officiels.</span></li>
-          <li><strong>Où peut-on voir la devise de la République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Sur les frontons des mairies, des écoles et des bâtiments publics, et sur les pièces de monnaie.</span></li>
-          <li><strong>Quels sont des symboles officiels de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le drapeau tricolore, Marianne, le coq gaulois, la Marseillaise et la devise républicaine.</span></li>
-          <li><strong>Qu'est-ce que l'égalité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le principe selon lequel tous les citoyens ont les mêmes droits devant la loi.</span></li>
-          <li><strong>Que signifie la liberté ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Pouvoir agir et penser librement, dans le respect de la loi et des droits d'autrui.</span></li>
-          <li><strong>Que signifie le mot "fraternité" dans la devise française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La solidarité entre tous les citoyens.</span></li>
-          <li><strong>Quel animal est un symbole de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le coq gaulois.</span></li>
-          <li><strong>Quel est l'un des rôles des associations ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Défendre une cause ou proposer des activités d'intérêt général.</span></li>
-          <li><strong>Quel est le nom de l'hymne national ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Marseillaise.</span></li>
-          <li><strong>Quel symbole de la République française est tricolore ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le drapeau français.</span></li>
-          <li><strong>Quelle est la date de la fête nationale française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 14 juillet.</span></li>
-          <li><strong>Quelle est la devise de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Liberté, Égalité, Fraternité.</span></li>
-          <li><strong>Quelle est la langue officielle de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le français.</span></li>
-          <li><strong>Quelle est la place de la langue française dans la République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elle est la langue officielle de la République, inscrite dans la Constitution (article 2).</span></li>
-          <li><strong>Quelle liberté permet à chacun d'exprimer ses idées ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté d'expression.</span></li>
-          <li><strong>Quelle proposition est correcte ? La liberté d'expression :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elle est garantie mais limitée par la loi (diffamation, injure, incitation à la haine).</span></li>
-          <li><strong>Quelles sont les couleurs du drapeau français ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Bleu, blanc, rouge.</span></li>
-          <li><strong>Qu'est-ce que la Marseillaise ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'hymne national de la France.</span></li>
-          <li><strong>Qu'est ce qui est traditionnellement organisé sur les Champs Élysées le 14 juillet pour célébrer la fête nationale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le défilé militaire.</span></li>
-          <li><strong>Qui est Marianne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La figure symbolique de la République française.</span></li>
-          <li><strong>Une personne peut-elle changer librement de religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, la liberté de conscience et de culte le garantit.</span></li>
-          <li><strong>"La France est une République indivisible, ..., démocratique et sociale". Complétez cette phrase extraite de l'article 1er de la Constitution :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> « laïque » — République indivisible, laïque, démocratique et sociale.</span></li>
-          <li><strong>En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1905.</span></li>
-          <li><strong>Que permet le principe de laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La neutralité de l'État et la liberté de croire ou de ne pas croire.</span></li>
-          <li><strong>Quel droit est garanti par la laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté de conscience et de culte.</span></li>
+          <li><strong>Où peut-on voir la devise de la République ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Sur les frontons des mairies, des écoles et des bâtiments publics, et sur les pièces de monnaie.</span></li>
+          <li><strong>Quels sont des symboles officiels de la République française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le drapeau tricolore, Marianne, le coq gaulois, la Marseillaise et la devise républicaine.</span></li>
+          <li><strong>Qu'est-ce que l'égalité ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le principe selon lequel tous les citoyens ont les mêmes droits devant la loi.</span></li>
+          <li><strong>Que signifie la liberté ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Pouvoir agir et penser librement, dans le respect de la loi et des droits d'autrui.</span></li>
+          <li><strong>Que signifie le mot "fraternité" dans la devise française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La solidarité entre tous les citoyens.</span></li>
+          <li><strong>Quel animal est un symbole de la France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le coq gaulois.</span></li>
+          <li><strong>Quel est l'un des rôles des associations ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Défendre une cause ou proposer des activités d'intérêt général.</span></li>
+          <li><strong>Quel est le nom de l'hymne national ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Marseillaise.</span></li>
+          <li><strong>Quel symbole de la République française est tricolore ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le drapeau français.</span></li>
+          <li><strong>Quelle est la date de la fête nationale française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le 14 juillet.</span></li>
+          <li><strong>Quelle est la devise de la République française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Liberté, Égalité, Fraternité.</span></li>
+          <li><strong>Quelle est la langue officielle de la République française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le français.</span></li>
+          <li><strong>Quelle est la place de la langue française dans la République ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Elle est la langue officielle de la République, inscrite dans la Constitution (article 2).</span></li>
+          <li><strong>Quelle liberté permet à chacun d'exprimer ses idées ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La liberté d'expression.</span></li>
+          <li><strong>Quelle proposition est correcte ? La liberté d'expression :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Elle est garantie mais limitée par la loi (diffamation, injure, incitation à la haine).</span></li>
+          <li><strong>Quelles sont les couleurs du drapeau français ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Bleu, blanc, rouge.</span></li>
+          <li><strong>Qu'est-ce que la Marseillaise ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> L'hymne national de la France.</span></li>
+          <li><strong>Qu'est ce qui est traditionnellement organisé sur les Champs Élysées le 14 juillet pour célébrer la fête nationale ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le défilé militaire.</span></li>
+          <li><strong>Qui est Marianne ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La figure symbolique de la République française.</span></li>
+          <li><strong>Une personne peut-elle changer librement de religion ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Oui, la liberté de conscience et de culte le garantit.</span></li>
+          <li><strong>"La France est une République indivisible, ..., démocratique et sociale". Complétez cette phrase extraite de l'article 1er de la Constitution :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> « laïque » — République indivisible, laïque, démocratique et sociale.</span></li>
+          <li><strong>En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 1905.</span></li>
+          <li><strong>Que permet le principe de laïcité ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La neutralité de l'État et la liberté de croire ou de ne pas croire.</span></li>
+          <li><strong>Quel droit est garanti par la laïcité ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La liberté de conscience et de culte.</span></li>
           <li><strong>Pourquoi le principe de laïcité doit-il être respecté à l'école ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Pour garantir la neutralité de l'enseignement public et l'égalité entre tous les élèves, quelles que soient leurs convictions.</span></li>
-          <li><strong>Qu'est-ce que la laïcité ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La séparation des Églises et de l'État, et la neutralité religieuse des institutions publiques.</span></li>
-          <li><strong>Un enfant peut-il refuser d'aller à l'école pour une raison religieuse ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, l'instruction est obligatoire quelle que soit la religion.</span></li>
-          <li><strong>Une personne a-t-elle le droit de ne pas croire en une religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, elle peut être athée ou agnostique librement.</span></li>
+          <li><strong>Qu'est-ce que la laïcité ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La séparation des Églises et de l'État, et la neutralité religieuse des institutions publiques.</span></li>
+          <li><strong>Un enfant peut-il refuser d'aller à l'école pour une raison religieuse ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Non, l'instruction est obligatoire quelle que soit la religion.</span></li>
+          <li><strong>Une personne a-t-elle le droit de ne pas croire en une religion ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Oui, elle peut être athée ou agnostique librement.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="csp-p2">
           <div class="ec-panel-hd"><h2>Système institutionnel et politique</h2><span class="ec-panel-count">48 questions</span></div>
           <ul>
-          <li><strong>Qui nomme le Premier ministre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République.</span></li>
-          <li><strong>Le Parlement est composé :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De l'Assemblée nationale et du Sénat.</span></li>
-          <li><strong>Qu'est-ce que le pouvoir exécutif ? Le pouvoir :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir qui applique et fait exécuter les lois (président et gouvernement).</span></li>
-          <li><strong>Les dirigeants sont élus par les citoyens dans :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une démocratie.</span></li>
-          <li><strong>A-t-on le droit de ne pas respecter une loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, la loi s'applique à tous et sa violation est sanctionnée.</span></li>
-          <li><strong>Qui doit respecter la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Toute personne présente sur le territoire français.</span></li>
-          <li><strong>Quel est le rôle de l'autorité judiciaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Rendre la justice et sanctionner les infractions.</span></li>
-          <li><strong>Quel pouvoir détient un juge ? Le pouvoir :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir judiciaire.</span></li>
-          <li><strong>L'autorité judiciaire est exercée par :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les juges et les tribunaux.</span></li>
-          <li><strong>Que se passe-t-il si un ministre ne respecte pas la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Il peut être poursuivi et jugé comme tout citoyen.</span></li>
-          <li><strong>Qui est élu lors des élections législatives ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les députés.</span></li>
-          <li><strong>Combien de députés composent l'Assemblée nationale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 577.</span></li>
-          <li><strong>Quand sont élus les sénateurs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Au suffrage indirect (par les grands électeurs), avec un renouvellement partiel tous les 3 ans.</span></li>
-          <li><strong>Qui est élu lors des élections municipales ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les conseillers municipaux, qui élisent ensuite le maire.</span></li>
-          <li><strong>Qui est élu lors des élections présidentielles ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République.</span></li>
-          <li><strong>À partir de quel âge a-t-on le droit de voter ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 18 ans.</span></li>
-          <li><strong>Pour combien de temps est élu le président de la République française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 5 ans (quinquennat).</span></li>
-          <li><strong>Pour combien de temps sont élus les députés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 5 ans.</span></li>
-          <li><strong>Pour combien de temps sont élus les sénateurs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 6 ans.</span></li>
-          <li><strong>Qui possède le pouvoir exécutif ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République et le gouvernement.</span></li>
-          <li><strong>Quelle condition est nécessaire pour voter aux élections ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être majeur, de nationalité française et inscrit sur les listes électorales.</span></li>
-          <li><strong>Qui peut voter aux élections en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les citoyens français majeurs inscrits sur les listes électorales.</span></li>
-          <li><strong>Que signifie « suffrage universel » ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les citoyens majeurs peuvent voter, sans condition de fortune ou de diplôme.</span></li>
-          <li><strong>Concernant les partis politiques, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Ils sont libres de se former et de se présenter aux élections (pluralisme politique).</span></li>
-          <li><strong>Quel est le rôle des députés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Voter les lois et contrôler l'action du gouvernement.</span></li>
-          <li><strong>La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire.</span></li>
-          <li><strong>Qui possède le pouvoir législatif ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Parlement (Assemblée nationale et Sénat).</span></li>
-          <li><strong>Qui sanctionne l'auteur d'un vol ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le juge / le tribunal (autorité judiciaire).</span></li>
-          <li><strong>Qui élit les députés ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les citoyens français, au suffrage universel direct.</span></li>
-          <li><strong>Qui vote les lois ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le Parlement.</span></li>
-          <li><strong>Qui réside au palais de l'Élysée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le président de la République.</span></li>
-          <li><strong>Combien y a-t-il de départements en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 101 (dont 5 départements et régions d'outre-mer).</span></li>
-          <li><strong>Qui représente l'État dans un département ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le préfet.</span></li>
-          <li><strong>Qui dirige la commune ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le maire.</span></li>
-          <li><strong>Est-ce que le président de la République a tous les pouvoirs ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, ses pouvoirs sont encadrés par la Constitution et partagés avec le gouvernement et le Parlement.</span></li>
-          <li><strong>Qui est le préfet ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le représentant de l'État dans un département ou une région.</span></li>
-          <li><strong>Quel est le rôle du Parlement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Voter les lois et contrôler l'action du gouvernement.</span></li>
-          <li><strong>Quel est le régime politique de la France aujourd'hui ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une République démocratique (Ve République).</span></li>
-          <li><strong>Combien d'États font partie de l'Union européenne au 1er janvier 2025 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 27.</span></li>
+          <li><strong>Qui nomme le Premier ministre ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le président de la République.</span></li>
+          <li><strong>Le Parlement est composé :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> De l'Assemblée nationale et du Sénat.</span></li>
+          <li><strong>Qu'est-ce que le pouvoir exécutif ? Le pouvoir :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le pouvoir qui applique et fait exécuter les lois (président et gouvernement).</span></li>
+          <li><strong>Les dirigeants sont élus par les citoyens dans :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une démocratie.</span></li>
+          <li><strong>A-t-on le droit de ne pas respecter une loi ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Non, la loi s'applique à tous et sa violation est sanctionnée.</span></li>
+          <li><strong>Qui doit respecter la loi ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Toute personne présente sur le territoire français.</span></li>
+          <li><strong>Quel est le rôle de l'autorité judiciaire ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Rendre la justice et sanctionner les infractions.</span></li>
+          <li><strong>Quel pouvoir détient un juge ? Le pouvoir :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le pouvoir judiciaire.</span></li>
+          <li><strong>L'autorité judiciaire est exercée par :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les juges et les tribunaux.</span></li>
+          <li><strong>Que se passe-t-il si un ministre ne respecte pas la loi ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Il peut être poursuivi et jugé comme tout citoyen.</span></li>
+          <li><strong>Qui est élu lors des élections législatives ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les députés.</span></li>
+          <li><strong>Combien de députés composent l'Assemblée nationale ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 577.</span></li>
+          <li><strong>Quand sont élus les sénateurs ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Au suffrage indirect (par les grands électeurs), avec un renouvellement partiel tous les 3 ans.</span></li>
+          <li><strong>Qui est élu lors des élections municipales ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les conseillers municipaux, qui élisent ensuite le maire.</span></li>
+          <li><strong>Qui est élu lors des élections présidentielles ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le président de la République.</span></li>
+          <li><strong>À partir de quel âge a-t-on le droit de voter ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 18 ans.</span></li>
+          <li><strong>Pour combien de temps est élu le président de la République française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 5 ans (quinquennat).</span></li>
+          <li><strong>Pour combien de temps sont élus les députés ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 5 ans.</span></li>
+          <li><strong>Pour combien de temps sont élus les sénateurs ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 6 ans.</span></li>
+          <li><strong>Qui possède le pouvoir exécutif ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le président de la République et le gouvernement.</span></li>
+          <li><strong>Quelle condition est nécessaire pour voter aux élections ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Être majeur, de nationalité française et inscrit sur les listes électorales.</span></li>
+          <li><strong>Qui peut voter aux élections en France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les citoyens français majeurs inscrits sur les listes électorales.</span></li>
+          <li><strong>Que signifie « suffrage universel » ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Tous les citoyens majeurs peuvent voter, sans condition de fortune ou de diplôme.</span></li>
+          <li><strong>Concernant les partis politiques, quelle proposition est correcte ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Ils sont libres de se former et de se présenter aux élections (pluralisme politique).</span></li>
+          <li><strong>Quel est le rôle des députés ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Voter les lois et contrôler l'action du gouvernement.</span></li>
+          <li><strong>La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire.</span></li>
+          <li><strong>Qui possède le pouvoir législatif ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le Parlement (Assemblée nationale et Sénat).</span></li>
+          <li><strong>Qui sanctionne l'auteur d'un vol ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le juge / le tribunal (autorité judiciaire).</span></li>
+          <li><strong>Qui élit les députés ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les citoyens français, au suffrage universel direct.</span></li>
+          <li><strong>Qui vote les lois ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le Parlement.</span></li>
+          <li><strong>Qui réside au palais de l'Élysée ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le président de la République.</span></li>
+          <li><strong>Combien y a-t-il de départements en France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 101 (dont 5 départements et régions d'outre-mer).</span></li>
+          <li><strong>Qui représente l'État dans un département ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le préfet.</span></li>
+          <li><strong>Qui dirige la commune ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le maire.</span></li>
+          <li><strong>Est-ce que le président de la République a tous les pouvoirs ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Non, ses pouvoirs sont encadrés par la Constitution et partagés avec le gouvernement et le Parlement.</span></li>
+          <li><strong>Qui est le préfet ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le représentant de l'État dans un département ou une région.</span></li>
+          <li><strong>Quel est le rôle du Parlement ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Voter les lois et contrôler l'action du gouvernement.</span></li>
+          <li><strong>Quel est le régime politique de la France aujourd'hui ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une République démocratique (Ve République).</span></li>
+          <li><strong>Combien d'États font partie de l'Union européenne au 1er janvier 2025 ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 27.</span></li>
           <li><strong>Quel État n'est pas membre de l'Union européenne ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions : par exemple le Royaume-Uni (sorti en 2020), la Suisse ou la Norvège.</span></li>
-          <li><strong>Quelle condition est nécessaire pour voter aux élections européennes ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Être citoyen d'un État membre de l'Union européenne et majeur.</span></li>
-          <li><strong>À quelle fréquence les élections européennes sont-elles organisées ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les 5 ans.</span></li>
-          <li><strong>Quel pays est un pays fondateur de l'Union européenne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La France (avec l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg).</span></li>
-          <li><strong>Quelle est la monnaie utilisée en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'euro.</span></li>
-          <li><strong>Qui élit les députés européens ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les citoyens des États membres de l'Union européenne, au suffrage universel direct.</span></li>
-          <li><strong>Quand célèbre-t-on la journée de l'Europe ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 9 mai.</span></li>
+          <li><strong>Quelle condition est nécessaire pour voter aux élections européennes ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Être citoyen d'un État membre de l'Union européenne et majeur.</span></li>
+          <li><strong>À quelle fréquence les élections européennes sont-elles organisées ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Tous les 5 ans.</span></li>
+          <li><strong>Quel pays est un pays fondateur de l'Union européenne ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La France (avec l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg).</span></li>
+          <li><strong>Quelle est la monnaie utilisée en France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> L'euro.</span></li>
+          <li><strong>Qui élit les députés européens ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les citoyens des États membres de l'Union européenne, au suffrage universel direct.</span></li>
+          <li><strong>Quand célèbre-t-on la journée de l'Europe ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le 9 mai.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="csp-p3">
           <div class="ec-panel-hd"><h2>Droits et devoirs</h2><span class="ec-panel-count">28 questions</span></div>
           <ul>
-          <li><strong>Comment s'appelle la Constitution actuelle de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Constitution de la Ve République (4 octobre 1958).</span></li>
-          <li><strong>Comment s'appelle le texte qui énonce les droits et devoirs des personnes résidant en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Constitution, et la Déclaration des droits de l'homme et du citoyen de 1789.</span></li>
-          <li><strong>Concernant les droits individuels, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Ils sont garantis à tous, dans le respect des droits d'autrui et de la loi.</span></li>
-          <li><strong>De quelle année date la Déclaration des droits de l'homme et du citoyen ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1789.</span></li>
+          <li><strong>Comment s'appelle la Constitution actuelle de la France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Constitution de la Ve République (4 octobre 1958).</span></li>
+          <li><strong>Comment s'appelle le texte qui énonce les droits et devoirs des personnes résidant en France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Constitution, et la Déclaration des droits de l'homme et du citoyen de 1789.</span></li>
+          <li><strong>Concernant les droits individuels, quelle proposition est correcte ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Ils sont garantis à tous, dans le respect des droits d'autrui et de la loi.</span></li>
+          <li><strong>De quelle année date la Déclaration des droits de l'homme et du citoyen ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 1789.</span></li>
           <li><strong>Lequel de ces droits est un droit fondamental ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions : la liberté d'expression, l'égalité devant la loi ou le droit à la sûreté sont des droits fondamentaux.</span></li>
-          <li><strong>Parmi ces textes, lequel garantit les droits et libertés en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen de 1789.</span></li>
-          <li><strong>Qu'est-ce que la liberté d'expression ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit de dire, écrire et publier ses opinions, dans le respect de la loi.</span></li>
-          <li><strong>Quel droit permet à une personne de se défendre devant la justice ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le droit à un procès équitable et à la défense.</span></li>
-          <li><strong>Quel est le texte fondateur établissant en France les droits et les devoirs de chaque citoyen ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen (1789).</span></li>
-          <li><strong>Quel texte a été adopté pendant la Révolution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen (1789).</span></li>
-          <li><strong>Quelle liberté permet à une personne de ne pas avoir de religion ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La liberté de conscience (elle peut être athée).</span></li>
-          <li><strong>Une femme peut avorter :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Librement, dans les conditions et délais prévus par la loi (IVG).</span></li>
-          <li><strong>Est-il toujours possible de divorcer ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, le divorce est un droit reconnu par la loi française.</span></li>
-          <li><strong>La peine de mort est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Abolie en France depuis 1981.</span></li>
-          <li><strong>Concernant les limites aux libertés individuelles, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Elles peuvent être limitées par la loi pour protéger l'ordre public ou les droits d'autrui.</span></li>
-          <li><strong>En France, est-ce légal d'être marié à plusieurs personnes en même temps ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Non, la polygamie est interdite.</span></li>
+          <li><strong>Parmi ces textes, lequel garantit les droits et libertés en France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen de 1789.</span></li>
+          <li><strong>Qu'est-ce que la liberté d'expression ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le droit de dire, écrire et publier ses opinions, dans le respect de la loi.</span></li>
+          <li><strong>Quel droit permet à une personne de se défendre devant la justice ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le droit à un procès équitable et à la défense.</span></li>
+          <li><strong>Quel est le texte fondateur établissant en France les droits et les devoirs de chaque citoyen ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen (1789).</span></li>
+          <li><strong>Quel texte a été adopté pendant la Révolution française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Déclaration des droits de l'homme et du citoyen (1789).</span></li>
+          <li><strong>Quelle liberté permet à une personne de ne pas avoir de religion ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La liberté de conscience (elle peut être athée).</span></li>
+          <li><strong>Une femme peut avorter :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Librement, dans les conditions et délais prévus par la loi (IVG).</span></li>
+          <li><strong>Est-il toujours possible de divorcer ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Oui, le divorce est un droit reconnu par la loi française.</span></li>
+          <li><strong>La peine de mort est :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Abolie en France depuis 1981.</span></li>
+          <li><strong>Concernant les limites aux libertés individuelles, quelle proposition est correcte ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Elles peuvent être limitées par la loi pour protéger l'ordre public ou les droits d'autrui.</span></li>
+          <li><strong>En France, est-ce légal d'être marié à plusieurs personnes en même temps ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Non, la polygamie est interdite.</span></li>
           <li><strong>Faut-il réduire ses déchets ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Oui, c'est un geste citoyen utile pour protéger l'environnement.</span></li>
-          <li><strong>Jeter une bouteille dans la rue est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une infraction (incivilité sanctionnée par une amende).</span></li>
+          <li><strong>Jeter une bouteille dans la rue est :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une infraction (incivilité sanctionnée par une amende).</span></li>
           <li><strong>Pourquoi les libertés individuelles peuvent-elles être limitées ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Pour protéger l'ordre public, la sécurité et les droits des autres personnes.</span></li>
           <li><strong>Que doit faire une personne en cas d'accident ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Porter secours si possible et alerter les secours (15, 17, 18 ou 112).</span></li>
-          <li><strong>Que permet la citoyenneté française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De voter, d'être élu, d'accéder à certains emplois publics et de bénéficier de la protection de l'État.</span></li>
-          <li><strong>Que risque une personne qui ne respecte pas la loi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Des sanctions pénales (amende ou prison selon la gravité de l'infraction).</span></li>
-          <li><strong>Quel est le rôle de la gendarmerie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Assurer la sécurité, notamment en zone rurale et périurbaine.</span></li>
-          <li><strong>Quel est le rôle de la police ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Assurer la sécurité et l'ordre public, et faire respecter la loi.</span></li>
-          <li><strong>Qu'est-ce qu'une infraction ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un acte interdit par la loi et sanctionné (contravention, délit ou crime).</span></li>
+          <li><strong>Que permet la citoyenneté française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> De voter, d'être élu, d'accéder à certains emplois publics et de bénéficier de la protection de l'État.</span></li>
+          <li><strong>Que risque une personne qui ne respecte pas la loi ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Des sanctions pénales (amende ou prison selon la gravité de l'infraction).</span></li>
+          <li><strong>Quel est le rôle de la gendarmerie ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Assurer la sécurité, notamment en zone rurale et périurbaine.</span></li>
+          <li><strong>Quel est le rôle de la police ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Assurer la sécurité et l'ordre public, et faire respecter la loi.</span></li>
+          <li><strong>Qu'est-ce qu'une infraction ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un acte interdit par la loi et sanctionné (contravention, délit ou crime).</span></li>
           <li><strong>Comment peut-on réduire ses déchets ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> En triant, en recyclant et en limitant les emballages et le gaspillage.</span></li>
-          <li><strong>Déposer une machine à laver cassée sur le trottoir est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une infraction (dépôt sauvage sanctionné par une amende).</span></li>
-          <li><strong>En quoi consiste la traite des êtres humains ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'exploitation d'une personne (travail forcé, prostitution…) contre son gré ; c'est un crime.</span></li>
+          <li><strong>Déposer une machine à laver cassée sur le trottoir est :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une infraction (dépôt sauvage sanctionné par une amende).</span></li>
+          <li><strong>En quoi consiste la traite des êtres humains ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> L'exploitation d'une personne (travail forcé, prostitution…) contre son gré ; c'est un crime.</span></li>
           <li><strong>Que doit faire une victime de violences ?</strong><span class="ec-a avis">💬 <strong>Exemple de réponse :</strong> Porter plainte auprès de la police ou de la gendarmerie et se faire soigner ou aider.</span></li>
-          <li><strong>Quelle est l'infraction la plus grave ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le crime.</span></li>
+          <li><strong>Quelle est l'infraction la plus grave ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le crime.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="csp-p4">
           <div class="ec-panel-hd"><h2>Histoire, géographie et culture</h2><span class="ec-panel-count">46 questions</span></div>
           <ul>
-          <li><strong>En quelle année a débuté la Révolution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1789.</span></li>
-          <li><strong>Qui était Napoléon Ier ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un général devenu empereur des Français (1804-1815).</span></li>
+          <li><strong>En quelle année a débuté la Révolution française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 1789.</span></li>
+          <li><strong>Qui était Napoléon Ier ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un général devenu empereur des Français (1804-1815).</span></li>
           <li><strong>Lequel de ces personnages historiques est français ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Napoléon, Charles de Gaulle).</span></li>
-          <li><strong>Dans quelle République est-on aujourd'hui ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Ve République.</span></li>
-          <li><strong>Qu'est-ce que la Shoah ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'extermination des Juifs d'Europe par les nazis pendant la Seconde Guerre mondiale.</span></li>
+          <li><strong>Dans quelle République est-on aujourd'hui ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Ve République.</span></li>
+          <li><strong>Qu'est-ce que la Shoah ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> L'extermination des Juifs d'Europe par les nazis pendant la Seconde Guerre mondiale.</span></li>
           <li><strong>Quel pays ou région du monde a été colonisé par la France ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : l'Algérie, le Vietnam, une partie de l'Afrique).</span></li>
-          <li><strong>Qui a rendu l'école gratuite, laïque et obligatoire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Jules Ferry.</span></li>
-          <li><strong>Quand a eu lieu la Seconde Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De 1939 à 1945.</span></li>
-          <li><strong>Quand a eu lieu la Première Guerre mondiale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> De 1914 à 1918.</span></li>
-          <li><strong>En quelle année a été créée la Communauté Économique Européenne (CEE) ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1957 (traité de Rome).</span></li>
-          <li><strong>Le 11 novembre est un jour férié. À quoi correspond cette date ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'armistice de 1918, marquant la fin de la Première Guerre mondiale.</span></li>
-          <li><strong>Qui a été le premier Président élu sous la Ve République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Charles de Gaulle.</span></li>
-          <li><strong>En quelle année l'esclavage a-t-il été aboli définitivement en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1848.</span></li>
-          <li><strong>Depuis quelle année l'école publique est-elle gratuite ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 1881 (lois de Jules Ferry).</span></li>
-          <li><strong>Combien y a-t-il eu de républiques en France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 5.</span></li>
-          <li><strong>Qui était le roi de France au moment de la Révolution française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Louis XVI.</span></li>
-          <li><strong>Qui a fondé la Ve République ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Charles de Gaulle.</span></li>
-          <li><strong>Que célèbre-t-on le 14 juillet ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La prise de la Bastille (1789) et la Fête de la Fédération.</span></li>
-          <li><strong>Quelle guerre a eu lieu entre 1914 et 1918 ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Première Guerre mondiale.</span></li>
-          <li><strong>Pourquoi l'année 1958 est importante pour la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> C'est l'année de la Constitution qui a fondé la Ve République.</span></li>
+          <li><strong>Qui a rendu l'école gratuite, laïque et obligatoire ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Jules Ferry.</span></li>
+          <li><strong>Quand a eu lieu la Seconde Guerre mondiale ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> De 1939 à 1945.</span></li>
+          <li><strong>Quand a eu lieu la Première Guerre mondiale ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> De 1914 à 1918.</span></li>
+          <li><strong>En quelle année a été créée la Communauté Économique Européenne (CEE) ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 1957 (traité de Rome).</span></li>
+          <li><strong>Le 11 novembre est un jour férié. À quoi correspond cette date ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> L'armistice de 1918, marquant la fin de la Première Guerre mondiale.</span></li>
+          <li><strong>Qui a été le premier Président élu sous la Ve République ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Charles de Gaulle.</span></li>
+          <li><strong>En quelle année l'esclavage a-t-il été aboli définitivement en France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 1848.</span></li>
+          <li><strong>Depuis quelle année l'école publique est-elle gratuite ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 1881 (lois de Jules Ferry).</span></li>
+          <li><strong>Combien y a-t-il eu de républiques en France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 5.</span></li>
+          <li><strong>Qui était le roi de France au moment de la Révolution française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Louis XVI.</span></li>
+          <li><strong>Qui a fondé la Ve République ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Charles de Gaulle.</span></li>
+          <li><strong>Que célèbre-t-on le 14 juillet ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La prise de la Bastille (1789) et la Fête de la Fédération.</span></li>
+          <li><strong>Quelle guerre a eu lieu entre 1914 et 1918 ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Première Guerre mondiale.</span></li>
+          <li><strong>Pourquoi l'année 1958 est importante pour la France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> C'est l'année de la Constitution qui a fondé la Ve République.</span></li>
           <li><strong>Quel fleuve coule en France ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : la Seine, la Loire, le Rhône).</span></li>
           <li><strong>Quelle ville est française ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Lyon, Marseille, Toulouse).</span></li>
-          <li><strong>Quel océan borde la côte ouest française ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'océan Atlantique.</span></li>
-          <li><strong>Qu'est-ce que Paris ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La capitale de la France.</span></li>
-          <li><strong>Quelle est la capitale de la France ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Paris.</span></li>
-          <li><strong>Sur quel continent se situe la France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> L'Europe.</span></li>
+          <li><strong>Quel océan borde la côte ouest française ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> L'océan Atlantique.</span></li>
+          <li><strong>Qu'est-ce que Paris ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La capitale de la France.</span></li>
+          <li><strong>Quelle est la capitale de la France ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Paris.</span></li>
+          <li><strong>Sur quel continent se situe la France métropolitaine ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> L'Europe.</span></li>
           <li><strong>Quelle île est un département d'outre-mer français ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : la Réunion, la Martinique, la Guadeloupe).</span></li>
-          <li><strong>Combien y a-t-il de régions en France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 13.</span></li>
+          <li><strong>Combien y a-t-il de régions en France métropolitaine ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 13.</span></li>
           <li><strong>Quelle ville est un grand port maritime ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Marseille, Le Havre).</span></li>
-          <li><strong>Quelle est la mer au sud de la France métropolitaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La mer Méditerranée.</span></li>
+          <li><strong>Quelle est la mer au sud de la France métropolitaine ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La mer Méditerranée.</span></li>
           <li><strong>Quelle ville est située au bord de la mer Méditerranée ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Marseille, Nice, Montpellier).</span></li>
-          <li><strong>Où se situe la Corse ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En mer Méditerranée, au sud-est de la France continentale.</span></li>
-          <li><strong>Quelle chaîne de montagnes est située entre la France et l'Italie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les Alpes.</span></li>
-          <li><strong>Qui était Molière ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un auteur et acteur de théâtre français du XVIIe siècle.</span></li>
-          <li><strong>Qui était Charles Baudelaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un poète français du XIXe siècle, auteur des Fleurs du mal.</span></li>
-          <li><strong>Qui était George Sand ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une écrivaine française du XIXe siècle.</span></li>
-          <li><strong>Qui était Simone de Beauvoir ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une écrivaine et philosophe féministe française.</span></li>
-          <li><strong>Qui était Albert Camus ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un écrivain et philosophe français, prix Nobel de littérature.</span></li>
-          <li><strong>Qui était Paul Cézanne ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un peintre français, précurseur du cubisme.</span></li>
-          <li><strong>Qui était Marc Chagall ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un peintre franco-russe.</span></li>
-          <li><strong>Qui était Joséphine Baker ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Une artiste franco-américaine, résistante, entrée au Panthéon.</span></li>
+          <li><strong>Où se situe la Corse ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> En mer Méditerranée, au sud-est de la France continentale.</span></li>
+          <li><strong>Quelle chaîne de montagnes est située entre la France et l'Italie ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les Alpes.</span></li>
+          <li><strong>Qui était Molière ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un auteur et acteur de théâtre français du XVIIe siècle.</span></li>
+          <li><strong>Qui était Charles Baudelaire ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un poète français du XIXe siècle, auteur des Fleurs du mal.</span></li>
+          <li><strong>Qui était George Sand ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une écrivaine française du XIXe siècle.</span></li>
+          <li><strong>Qui était Simone de Beauvoir ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une écrivaine et philosophe féministe française.</span></li>
+          <li><strong>Qui était Albert Camus ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un écrivain et philosophe français, prix Nobel de littérature.</span></li>
+          <li><strong>Qui était Paul Cézanne ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un peintre français, précurseur du cubisme.</span></li>
+          <li><strong>Qui était Marc Chagall ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un peintre franco-russe.</span></li>
+          <li><strong>Qui était Joséphine Baker ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Une artiste franco-américaine, résistante, entrée au Panthéon.</span></li>
           <li><strong>Qui était une chanteuse française célèbre ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Édith Piaf).</span></li>
-          <li><strong>Qu'est-ce que le Louvre ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un grand musée d'art situé à Paris.</span></li>
-          <li><strong>Qui était Jean de la Fontaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un poète français, auteur des Fables.</span></li>
+          <li><strong>Qu'est-ce que le Louvre ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un grand musée d'art situé à Paris.</span></li>
+          <li><strong>Qui était Jean de la Fontaine ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un poète français, auteur des Fables.</span></li>
           <li><strong>Quel écrivain est français ?</strong><span class="ec-a hint">ℹ️ <strong>Repère :</strong> Réponse selon les propositions (ex. : Victor Hugo, Molière).</span></li>
-          <li><strong>Dans quelle ville se trouve la tour Eiffel ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Paris.</span></li>
-          <li><strong>Quand célèbre-t-on Noël ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 25 décembre.</span></li>
+          <li><strong>Dans quelle ville se trouve la tour Eiffel ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Paris.</span></li>
+          <li><strong>Quand célèbre-t-on Noël ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le 25 décembre.</span></li>
         </ul>
         </div>
         <div class="ec-panel" id="csp-p5">
           <div class="ec-panel-hd"><h2>Vivre dans la société française</h2><span class="ec-panel-count">31 questions</span></div>
           <ul>
-          <li><strong>Quel numéro d'urgence permet d'appeler le SAMU ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 15.</span></li>
-          <li><strong>Quel numéro d'urgence permet d'appeler les pompiers ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le 18.</span></li>
-          <li><strong>Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Assurer le véhicule (assurance obligatoire) et l'immatriculer.</span></li>
-          <li><strong>À quelles conditions un mariage est-il reconnu juridiquement ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> S'il est célébré civilement à la mairie, devant un officier d'état civil.</span></li>
-          <li><strong>Quand faut-il déclarer son enfant au service d'état civil de la mairie ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Dans les 5 jours suivant la naissance.</span></li>
-          <li><strong>Le travail non déclaré est :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Interdit et sanctionné (travail dissimulé).</span></li>
-          <li><strong>Que doit faire un employeur pour fixer un salaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Respecter au minimum le SMIC et la convention collective applicable.</span></li>
-          <li><strong>Qu'est-ce que le SMIC ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le salaire minimum interprofessionnel de croissance, salaire minimum légal en France.</span></li>
-          <li><strong>Quelle est la première démarche à réaliser pour chercher un emploi ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> S'inscrire à France Travail (ex-Pôle emploi).</span></li>
-          <li><strong>Quelle est la durée légale du temps de travail par semaine ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 35 heures.</span></li>
-          <li><strong>Qui est aidé par France Travail ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Les personnes qui recherchent un emploi.</span></li>
-          <li><strong>Une personne étrangère en situation régulière peut créer son entreprise :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, si son titre de séjour l'y autorise.</span></li>
-          <li><strong>Une femme peut-elle créer son entreprise ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Oui, librement, comme un homme.</span></li>
-          <li><strong>À partir de quel âge un mineur peut-il travailler ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 16 ans en principe (14 ans sous conditions, pendant les vacances scolaires).</span></li>
-          <li><strong>Auprès de quel organisme faut-il demander le remboursement des frais de santé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> La Caisse primaire d'assurance maladie (Sécurité sociale).</span></li>
-          <li><strong>Qu'est-ce qu'un numéro d'urgence ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Un numéro gratuit permettant d'alerter les services de secours.</span></li>
-          <li><strong>Concernant l'accès aux soins, quelle proposition est correcte ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Toute personne peut être soignée, y compris en urgence, quelle que soit sa situation.</span></li>
-          <li><strong>En cas de problème de santé non urgent, à qui faut-il s'adresser en premier ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Au médecin traitant (médecin généraliste).</span></li>
-          <li><strong>Quel est le rôle du médecin traitant ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Suivre la santé du patient et l'orienter vers des spécialistes si besoin.</span></li>
-          <li><strong>Dans quelles situations doit-on se rendre aux urgences de l'hôpital ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> En cas d'urgence vitale ou de situation grave nécessitant des soins immédiats.</span></li>
-          <li><strong>Quel est l'objectif des vaccinations obligatoires ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Protéger la santé individuelle et collective contre certaines maladies.</span></li>
-          <li><strong>À quoi sert la carte Vitale ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À justifier des droits à l'assurance maladie et faciliter le remboursement des soins.</span></li>
-          <li><strong>À quoi sert une mutuelle santé ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> À compléter le remboursement de la Sécurité sociale sur la part non prise en charge.</span></li>
-          <li><strong>Jusqu'à quel âge l'école est-elle obligatoire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> 16 ans.</span></li>
-          <li><strong>L'autorité parentale prévoit l'obligation :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> D'assurer la santé, la sécurité, l'éducation et l'entretien de l'enfant.</span></li>
-          <li><strong>Pour qui l'école est-elle obligatoire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Tous les enfants de 3 à 16 ans résidant en France.</span></li>
-          <li><strong>Quel diplôme obtient-on à la fin du lycée ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le baccalauréat.</span></li>
-          <li><strong>Dans quels établissements scolaires vont les élèves après l'école élémentaire ?</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Le collège.</span></li>
-          <li><strong>Un enfant inscrit à l'école :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> A le droit d'y être scolarisé, quelle que soit la situation administrative de ses parents.</span></li>
-          <li><strong>Les enfants qui ne parlent pas français :</strong><span class="ec-a">🔹 <strong>Réponse :</strong> Bénéficient d'un accompagnement spécifique pour apprendre le français à l'école.</span></li>
+          <li><strong>Quel numéro d'urgence permet d'appeler le SAMU ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le 15.</span></li>
+          <li><strong>Quel numéro d'urgence permet d'appeler les pompiers ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le 18.</span></li>
+          <li><strong>Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Assurer le véhicule (assurance obligatoire) et l'immatriculer.</span></li>
+          <li><strong>À quelles conditions un mariage est-il reconnu juridiquement ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> S'il est célébré civilement à la mairie, devant un officier d'état civil.</span></li>
+          <li><strong>Quand faut-il déclarer son enfant au service d'état civil de la mairie ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Dans les 5 jours suivant la naissance.</span></li>
+          <li><strong>Le travail non déclaré est :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Interdit et sanctionné (travail dissimulé).</span></li>
+          <li><strong>Que doit faire un employeur pour fixer un salaire ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Respecter au minimum le SMIC et la convention collective applicable.</span></li>
+          <li><strong>Qu'est-ce que le SMIC ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le salaire minimum interprofessionnel de croissance, salaire minimum légal en France.</span></li>
+          <li><strong>Quelle est la première démarche à réaliser pour chercher un emploi ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> S'inscrire à France Travail (ex-Pôle emploi).</span></li>
+          <li><strong>Quelle est la durée légale du temps de travail par semaine ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 35 heures.</span></li>
+          <li><strong>Qui est aidé par France Travail ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Les personnes qui recherchent un emploi.</span></li>
+          <li><strong>Une personne étrangère en situation régulière peut créer son entreprise :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Oui, si son titre de séjour l'y autorise.</span></li>
+          <li><strong>Une femme peut-elle créer son entreprise ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Oui, librement, comme un homme.</span></li>
+          <li><strong>À partir de quel âge un mineur peut-il travailler ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 16 ans en principe (14 ans sous conditions, pendant les vacances scolaires).</span></li>
+          <li><strong>Auprès de quel organisme faut-il demander le remboursement des frais de santé ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> La Caisse primaire d'assurance maladie (Sécurité sociale).</span></li>
+          <li><strong>Qu'est-ce qu'un numéro d'urgence ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Un numéro gratuit permettant d'alerter les services de secours.</span></li>
+          <li><strong>Concernant l'accès aux soins, quelle proposition est correcte ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Toute personne peut être soignée, y compris en urgence, quelle que soit sa situation.</span></li>
+          <li><strong>En cas de problème de santé non urgent, à qui faut-il s'adresser en premier ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Au médecin traitant (médecin généraliste).</span></li>
+          <li><strong>Quel est le rôle du médecin traitant ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Suivre la santé du patient et l'orienter vers des spécialistes si besoin.</span></li>
+          <li><strong>Dans quelles situations doit-on se rendre aux urgences de l'hôpital ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> En cas d'urgence vitale ou de situation grave nécessitant des soins immédiats.</span></li>
+          <li><strong>Quel est l'objectif des vaccinations obligatoires ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Protéger la santé individuelle et collective contre certaines maladies.</span></li>
+          <li><strong>À quoi sert la carte Vitale ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> À justifier des droits à l'assurance maladie et faciliter le remboursement des soins.</span></li>
+          <li><strong>À quoi sert une mutuelle santé ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> À compléter le remboursement de la Sécurité sociale sur la part non prise en charge.</span></li>
+          <li><strong>Jusqu'à quel âge l'école est-elle obligatoire ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> 16 ans.</span></li>
+          <li><strong>L'autorité parentale prévoit l'obligation :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> D'assurer la santé, la sécurité, l'éducation et l'entretien de l'enfant.</span></li>
+          <li><strong>Pour qui l'école est-elle obligatoire ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Tous les enfants de 3 à 16 ans résidant en France.</span></li>
+          <li><strong>Quel diplôme obtient-on à la fin du lycée ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le baccalauréat.</span></li>
+          <li><strong>Dans quels établissements scolaires vont les élèves après l'école élémentaire ?</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Le collège.</span></li>
+          <li><strong>Un enfant inscrit à l'école :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> A le droit d'y être scolarisé, quelle que soit la situation administrative de ses parents.</span></li>
+          <li><strong>Les enfants qui ne parlent pas français :</strong><span class="ec-a"><i class="dot" aria-hidden="true"></i><strong>Réponse :</strong> Bénéficient d'un accompagnement spécifique pour apprendre le français à l'école.</span></li>
         </ul>
         </div>
         <p class="ec-noresult" style="display:none">Aucune question ne correspond à votre recherche.</p>
@@ -385,22 +395,20 @@
 </div>
 </div>
 
+<aside class="sources-band" aria-label="Sources"><div class="wrap"><svg class="ic-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><div><strong>Des contenus fondés sur des sources officielles</strong><p>Livret du citoyen (édition mai 2026), Légifrance et service-public.fr. Cap Naturalisation est un outil d'entraînement indépendant, non officiel.</p></div></div></aside>
 <footer class="site-footer">
   <div class="wrap">
-    <span class="sf-flag" aria-hidden="true"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></span>
-    <p class="sf-copy">© <span id="cp-year"></span> Cap Naturalisation — Citoyenneté Française · Tous droits réservés</p>
-    <p class="sf-updated">Dernière mise à jour du site : <time datetime="2026-11-02">2 novembre 2026</time></p>
-    <p>Site gratuit d'entraînement à l'examen civique et à l'entretien de naturalisation. Usage personnel uniquement.</p>
-    <p>💛 Ce site restera toujours gratuit et sans publicité. Un don ponctuel aide à couvrir l'hébergement et le temps passé à maintenir les questions à jour — <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_text'})">faire un don</a>.</p>
-    <p class="sf-links">
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="mailto:devby.fou@gmail.com">devby.fou@gmail.com</a>
-      <a href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer">Groupe Facebook</a>
-      <a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_link'})">Soutenir le projet</a>
-      <a href="https://wa.me/?text=Je%20pr%C3%A9pare%20ma%20naturalisation%20avec%20Cap%20Naturalisation%20%3A%20quiz%20et%20examen%20civique%20gratuits%2C%20sans%20inscription.%20https%3A%2F%2Fcap-naturalisation.fr%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dpartage" target="_blank" rel="noopener noreferrer" onclick="trackEvent('whatsapp_share',{location:'footer'})">📲 Partager sur WhatsApp</a>
-      <a href="https://www.instagram.com/cap_naturalisation/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('instagram_click',{location:'footer'})">📸 Instagram</a>
-      <a href="#" onclick="showConsentBanner();return false;">Gérer les cookies</a>
-    </p>
+    <div class="sf-grid">
+      <div class="sf-brand"><span class="sf-name"><img class="sf-logo" src="icons/logo.png" width="30" height="30" alt="" />Cap Naturalisation</span>
+        <p>Préparer la naturalisation et l'examen civique, gratuitement et sans inscription. Usage personnel uniquement.</p>
+        <div class="sf-share"><span>Partager le site</span>
+          <a class="sf-ico" href="https://wa.me/?text=Je%20pr%C3%A9pare%20ma%20naturalisation%20avec%20Cap%20Naturalisation%20%3A%20quiz%20et%20examen%20civique%20gratuits%2C%20sans%20inscription.%20https%3A%2F%2Fcap-naturalisation.fr%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dpartage" target="_blank" rel="noopener noreferrer" aria-label="Partager sur WhatsApp" title="Partager sur WhatsApp" onclick="trackEvent('whatsapp_share',{location:'footer'})"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M3.5 20.5l1.2-4.2A8.5 8.5 0 1 1 8 19.4z"/><path fill="currentColor" d="M9 8.5c.2-.4.5-.4.8-.4l.5.9c.1.3-.1.6-.4.9.4.9 1.3 1.8 2.3 2.3.3-.3.5-.5.8-.4l.9.5c0 .3 0 .6-.4.9-.7.6-1.6.3-2.7-.3-1.3-.7-2.3-1.8-2.9-3 0-.5.2-1 .5-1.3z"/></svg></a><a class="sf-ico" href="https://www.facebook.com/groups/1663580948311419/" target="_blank" rel="noopener noreferrer" aria-label="Groupe Facebook" title="Groupe Facebook" onclick="trackEvent('facebook_click',{location:'footer'})"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a><a class="sf-ico" href="https://www.instagram.com/cap_naturalisation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" onclick="trackEvent('instagram_click',{location:'footer'})"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a><button type="button" class="sf-ico" onclick="copyShareLink(this)" aria-label="Copier le lien du site" title="Copier le lien"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></svg></button></div></div>
+      <div><div class="sf-h">Apprendre</div><a href="livret-citoyen.html">Parcours découverte</a><a href="livret-citoyen.html">Livret du citoyen</a><a href="revision-naturalisation.html">Révision</a><a href="comment-utiliser.html">Comment utiliser le site</a></div>
+      <div><div class="sf-h">S'entraîner</div><a href="quiz-naturalisation.html">Quiz de naturalisation</a><a href="examen-civique.html">Examen civique CSP / CR</a><a href="entretien-naturalisation.html">Entretien</a><a href="mon-bilan.html">Mon bilan</a></div>
+      <div><div class="sf-h">Le site</div><a href="mailto:devby.fou@gmail.com?subject=Contact%20Cap%20Naturalisation">Nous contacter</a><a href="#" onclick="showWhatsNew();return false;">Nouveautés du site</a><a href="mentions-legales.html">Mentions légales</a><a href="#" onclick="showConsentBanner();return false;">Gérer les cookies</a><a href="https://paypal.me/shankislaitk" target="_blank" rel="noopener noreferrer" onclick="trackEvent('donate_click',{location:'footer_link'})">Soutenir le projet</a></div>
+    </div>
+    <div class="sf-bottom"><p class="sf-copy">© <span id="cp-year"></span> Cap Naturalisation — Citoyenneté Française · Tous droits réservés</p>
+    <p class="sf-updated">Dernière mise à jour du site : <time datetime="2026-11-11">11 novembre 2026</time></p></div>
   </div>
 </footer>
 <div class="toast" id="toast"></div>

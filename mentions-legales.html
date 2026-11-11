@@ -1,264 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DRSJ20QB5"></script>
+<!-- Google Analytics : chargé uniquement après consentement (voir la bannière dans app.js) -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5DRSJ20QB5');
+  window.dataLayer=window.dataLayer||[];
+  var GA_ID='G-5DRSJ20QB5';
+  function gtag(){if(window.__gaOn)dataLayer.push(arguments);}
+  function loadGA(){
+    if(window.__gaOn)return;
+    window['ga-disable-'+GA_ID]=false;
+    window.__gaOn=true;
+    var s=document.createElement('script');s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(s);
+    gtag('js',new Date());gtag('config',GA_ID);
+  }
+  (function(){try{var c=JSON.parse(localStorage.getItem('cap_consent')||'null');if(c&&c.v==='granted'&&Date.now()-c.t<15552000000)loadGA();}catch(e){}})();
 </script>
+<script>try{var l=localStorage;if(l.getItem('cap_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mentions légales — Cap naturalisation</title>
+<title>Mentions légales — Cap Naturalisation</title>
+<meta name="description" content="Mentions légales de Cap Naturalisation : éditeur, hébergement, propriété intellectuelle, données personnelles et cookies."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://cap-naturalisation.fr/mentions-legales.html"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#0d2b5e;--navy-mid:#1a3f7a;--navy-xlight:#f0f4fc;--navy-light:#e8edf7;
-  --red:#c1121f;--bg:#f0f2f7;--white:#fff;--border:#d1d9e8;
-  --text:#0d1b2e;--text-2:#374151;--text-3:#6b7280;
-  --r:8px;--r2:14px;
-  --shadow:0 1px 4px rgba(13,43,94,.08),0 4px 16px rgba(13,43,94,.06);
-}
-body{background:var(--bg);color:var(--text);font-family:'Lora',serif;min-height:100vh;font-size:15px;line-height:1.7}
-
-/* HEADER */
-.topbar{background:var(--navy);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
-.tb-flag{display:flex;height:4px;width:40px;border-radius:2px;overflow:hidden;margin-right:.8rem;flex-shrink:0}
-.f-b{background:#002395}.f-w{background:#fff}.f-r{background:#ED2939}
-.tb-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:#fff;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:.8rem}
-.tb-back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:var(--r);padding:.4rem .9rem;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.7);text-decoration:none;transition:all .2s;letter-spacing:.04em}
-.tb-back:hover{background:rgba(255,255,255,.2);color:#fff}
-
-/* HERO */
-.hero{background:var(--navy);padding:3rem 2rem 2.5rem;text-align:center;border-bottom:3px solid var(--red)}
-.hero-eyebrow{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.7rem}
-.hero-title{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.4rem}
-.hero-title span{color:rgba(255,255,255,.35)}
-.hero-date{font-family:'Syne',sans-serif;font-size:.75rem;color:rgba(255,255,255,.3);margin-top:.5rem}
-
-/* LAYOUT */
-.wrap{max-width:780px;margin:0 auto;padding:3rem 1.5rem 4rem}
-
-/* SECTIONS */
-.section{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.8rem 2rem;margin-bottom:1.2rem;box-shadow:var(--shadow)}
-.section-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;flex-shrink:0;margin-right:.7rem}
-.section-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--navy);display:flex;align-items:center;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
-.section p{font-size:.88rem;color:var(--text-2);line-height:1.85;margin-bottom:.8rem}
-.section p:last-child{margin-bottom:0}
-.section a{color:var(--navy);font-weight:600}
-.section a:hover{color:var(--red)}
-
-/* INFO BLOC */
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.8rem}
-.info-row{background:var(--navy-xlight);border:1px solid var(--navy-light);border-radius:var(--r);padding:.7rem 1rem}
-.info-label{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
-.info-val{font-family:'Syne',sans-serif;font-size:.83rem;font-weight:600;color:var(--text)}
-.info-val.placeholder{color:var(--text-3);font-style:italic;font-weight:400}
-
-/* HIGHLIGHT */
-.highlight{background:var(--navy-xlight);border-left:3px solid var(--navy);border-radius:0 var(--r) var(--r) 0;padding:.9rem 1.1rem;margin:.8rem 0;font-size:.85rem;color:var(--text-2);font-family:'Syne',sans-serif}
-
-/* COPYRIGHT BOX */
-.copyright-box{background:var(--navy);border-radius:var(--r2);padding:1.5rem 2rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:1.5rem}
-.cp-icon{font-size:2rem;flex-shrink:0}
-.cp-text{font-family:'Syne',sans-serif;font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.7}
-.cp-text strong{color:#fff;display:block;font-size:.95rem;margin-bottom:.25rem}
-
-/* WARNING */
-.warning-box{background:#fef2f2;border:1.5px solid rgba(220,38,38,.25);border-radius:var(--r2);padding:1.2rem 1.5rem;margin-bottom:1.2rem;display:flex;gap:1rem;align-items:flex-start}
-.warn-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
-.warn-text{font-family:'Syne',sans-serif;font-size:.82rem;color:#7f1d1d;line-height:1.65}
-.warn-text strong{display:block;margin-bottom:.2rem;font-size:.88rem}
-
-/* FOOTER */
-.footer{text-align:center;padding:2rem 1rem;font-family:'Syne',sans-serif;font-size:.72rem;color:var(--text-3);border-top:1px solid var(--border)}
-.footer-flag{display:flex;height:3px;width:30px;border-radius:2px;overflow:hidden;margin:0 auto .8rem}
-
-@media(max-width:600px){
-  .info-grid{grid-template-columns:1fr}
-  .hero-title{font-size:1.6rem}
-  .copyright-box{flex-direction:column;gap:.8rem}
-  .topbar{padding:.8rem 1rem}
-}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="stylesheet" href="standalone.css"/>
 </head>
 <body>
-
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="tb-brand">
-    <div class="tb-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
-    Cap naturalisation
-  </div>
-  <a class="tb-back" href="index.html">← Retour au site</a>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">Informations légales</div>
-  <div class="hero-title">Mentions <span>légales</span></div>
-  <div class="hero-date">Dernière mise à jour : <span id="update-date"></span></div>
-</div>
-
-<div class="wrap">
-
-  <!-- COPYRIGHT -->
-  <div class="copyright-box">
-    <div class="cp-icon">©</div>
-    <div class="cp-text">
-      <strong>© <span id="cp-year"></span> Cap naturalisation — Tous droits réservés</strong>
-      Ce site, son contenu, son design et ses fonctionnalités sont protégés par le droit d'auteur français et les conventions internationales sur la propriété intellectuelle. Toute reproduction sans autorisation est interdite.
-    </div>
-  </div>
-
-  <!-- AVERTISSEMENT COPIE -->
-  <div class="warning-box">
-    <div class="warn-icon">⚠️</div>
-    <div class="warn-text">
-      <strong>Reproduction et copie interdites</strong>
-      Toute reproduction, copie, distribution, modification ou exploitation commerciale du code source, des questions, des contenus pédagogiques ou du design de ce site est strictement interdite sans autorisation écrite préalable du propriétaire.
-    </div>
-  </div>
-
-  <!-- 1. ÉDITEUR -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-num">1</span>Éditeur du site
-    </div>
-    <p>Le site <strong>Cap naturalisation </strong> est un outil de préparation à l'entretien de naturalisation, accessible à l'adresse :</p>
-    <div class="highlight" id="site-url">https://shankis-c.github.io/naturalisation</div>
-    <div class="info-grid">
-      <div class="info-row">
-        <div class="info-label">Propriétaire</div>
-        <div class="info-val placeholder" id="owner-name">devby.fou</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Contact</div>
-        <div class="info-val placeholder" id="contact-email">devby.fou@gmail.com</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Pays</div>
-        <div class="info-val">France</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Statut</div>
-        <div class="info-val">Particulier / Usage non commercial</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. HÉBERGEMENT -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-num">2</span>Hébergement
-    </div>
-    <p>Ce site est hébergé par :</p>
-    <div class="info-grid">
-      <div class="info-row">
-        <div class="info-label">Hébergeur</div>
-        <div class="info-val">GitHub, Inc.</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Service</div>
-        <div class="info-val">GitHub Pages</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Adresse</div>
-        <div class="info-val">88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Site</div>
-        <div class="info-val"><a href="https://pages.github.com" target="_blank">pages.github.com</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. PROPRIÉTÉ INTELLECTUELLE -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-num">3</span>Propriété intellectuelle
-    </div>
-    <p>L'ensemble des éléments constituant ce site (structure, design, code source, questions, explications pédagogiques, textes, organisation des données) est la propriété exclusive de l'éditeur et est protégé par les dispositions du <strong>Code de la propriété intellectuelle français</strong>.</p>
-    <p>Sont notamment protégés :</p>
-    <div class="highlight">
-      Le code JavaScript · Le design de l'interface · La base de questions et réponses · Les explications pédagogiques · La structure de l'application · Les données d'entraînement à l'entretien oral
-    </div>
-    <p>Toute représentation ou reproduction intégrale ou partielle, par quelque procédé que ce soit, sans l'autorisation expresse et préalable de l'éditeur, est illicite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
-  </div>
-
-  <!-- 4. UTILISATION AUTORISÉE -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-num">4</span>Utilisation autorisée
-    </div>
-    <p>Ce site est mis à disposition du public à titre <strong>strictement personnel et non commercial</strong>. Sont autorisés :</p>
-    <div class="highlight">
-      ✔ Utilisation personnelle pour préparer son entretien de naturalisation<br>
-      ✔ Partage du lien vers le site<br>
-      ✔ Impression des contenus pour un usage personnel
-    </div>
-    <p>Sont en revanche <strong>strictement interdits</strong> sans autorisation écrite :</p>
-    <div class="highlight" style="border-color:var(--red);background:#fef2f2">
-      ✕ Reproduction ou copie du code source<br>
-      ✕ Création d'un site dérivé ou concurrent<br>
-      ✕ Utilisation commerciale quelconque<br>
-      ✕ Extraction automatisée des données (scraping)<br>
-      ✕ Redistribution des questions ou contenus pédagogiques
-    </div>
-  </div>
-
-  <!-- 5. DONNÉES PERSONNELLES -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-num">5</span>Données personnelles (RGPD)
-    </div>
-    <p>Ce site <strong>ne collecte aucune donnée personnelle</strong>. Aucun formulaire d'inscription, aucun cookie de tracking, aucune analytics ne sont utilisés.</p>
-    <p>La progression de l'utilisateur (scores, favoris, historique) est stockée <strong>exclusivement en local</strong> dans le navigateur via <code>localStorage</code>. Ces données ne quittent jamais votre appareil et ne sont jamais transmises à un serveur.</p>
-    <div class="highlight">
-      Conformément au Règlement (UE) 2016/679 (RGPD), vous pouvez supprimer à tout moment vos données locales depuis le Tableau de bord → Réinitialiser.
-    </div>
-  </div>
-
-  <!-- 6. RESPONSABILITÉ -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-num">6</span>Limitation de responsabilité
-    </div>
-    <p>Les contenus de ce site sont fournis à titre <strong>pédagogique et informatif</strong>. Ils ne constituent pas un avis juridique officiel sur la procédure de naturalisation.</p>
-    <p>L'éditeur s'efforce de maintenir les informations à jour mais ne garantit pas leur exhaustivité ou leur exactitude à tout moment. Les procédures administratives peuvent évoluer ; il est recommandé de consulter les sources officielles (service-public.fr, préfecture compétente).</p>
-    <p>L'éditeur ne saurait être tenu responsable des décisions prises sur la base des contenus de ce site.</p>
-  </div>
-
-  <!-- 7. CONTACT -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-num">7</span>Contact & signalement
-    </div>
-    <p>Pour toute question relative aux mentions légales, demande d'autorisation, ou signalement d'une violation de droits, vous pouvez contacter l'éditeur à l'adresse suivante :</p>
-    <div class="highlight">
-      📧 <span id="contact-email-2" style="font-weight:600">devby.fou@gmail.com</span>
-    </div>
-    <p>Toute demande de reproduction ou d'utilisation commerciale doit être formulée par écrit et fera l'objet d'une réponse dans un délai de 30 jours.</p>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  <div class="footer-flag"><div class="f-b"></div><div class="f-w"></div><div class="f-r"></div></div>
-  © <span id="footer-year"></span> Cap naturalisation · Tous droits réservés · <a href="index.html" style="color:var(--navy)">Retour au site</a>
-</div>
-
+<header class="top"><div class="top-in"><a class="brand" href="index.html"><img src="icons/logo.png" width="34" height="34" alt="" />Cap Naturalisation</a><a class="back" href="index.html"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Retour au site</a></div></header>
+<section class="hero narrow"><div class="eyebrow">Informations légales</div><h1>Mentions légales</h1><p class="sub">Dernière mise à jour : <span id="update-date"></span></p></section>
+<main class="wrap narrow">
+<div class="notice"><span class="ic"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2a3.5 3.5 0 1 0 0 5.6"/></svg></span><div><strong>© <span id="cp-year2"></span> Cap Naturalisation — Tous droits réservés</strong>Ce site, son contenu, son design et ses fonctionnalités sont protégés par le droit d'auteur français et les conventions internationales sur la propriété intellectuelle. Toute reproduction sans autorisation est interdite.</div></div>
+<div class="notice warn"><span class="ic"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></svg></span><div><strong>Reproduction et copie interdites</strong>Toute reproduction, copie, distribution, modification ou exploitation commerciale du code source, des questions, des contenus pédagogiques ou du design de ce site est strictement interdite sans autorisation écrite préalable du propriétaire.</div></div>
+<section class="card"><h2><span class="num">1</span>Éditeur du site</h2><p>Le site <strong>Cap Naturalisation</strong> est un outil de préparation à l'entretien de naturalisation et à l'examen civique, accessible à l'adresse :</p><div class="hl"><a href="https://cap-naturalisation.fr/">https://cap-naturalisation.fr/</a></div><div class="info-grid"><div class="info-row"><div class="info-label">Propriétaire</div><div class="info-val">devby.fou</div></div><div class="info-row"><div class="info-label">Contact</div><div class="info-val">devby.fou@gmail.com</div></div><div class="info-row"><div class="info-label">Pays</div><div class="info-val">France</div></div><div class="info-row"><div class="info-label">Statut</div><div class="info-val">Particulier / Usage non commercial</div></div></div></section>
+<section class="card"><h2><span class="num">2</span>Hébergement</h2><p>Ce site est hébergé par :</p><div class="info-grid"><div class="info-row"><div class="info-label">Hébergeur</div><div class="info-val">GitHub, Inc.</div></div><div class="info-row"><div class="info-label">Service</div><div class="info-val">GitHub Pages</div></div><div class="info-row"><div class="info-label">Adresse</div><div class="info-val">88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</div></div><div class="info-row"><div class="info-label">Site</div><div class="info-val"><a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">pages.github.com</a></div></div></div></section>
+<section class="card"><h2><span class="num">3</span>Propriété intellectuelle</h2><p>L'ensemble des éléments constituant ce site (structure, design, code source, questions, explications pédagogiques, textes, organisation des données) est la propriété exclusive de l'éditeur et est protégé par les dispositions du <strong>Code de la propriété intellectuelle français</strong>.</p><p>Sont notamment protégés :</p><div class="hl">Le code JavaScript · Le design de l'interface · La base de questions et réponses · Les explications pédagogiques · La structure de l'application · Les données d'entraînement à l'entretien oral</div><p>Toute représentation ou reproduction intégrale ou partielle, par quelque procédé que ce soit, sans l'autorisation expresse et préalable de l'éditeur, est illicite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p></section>
+<section class="card"><h2><span class="num">4</span>Utilisation autorisée</h2><p>Ce site est mis à disposition du public à titre <strong>strictement personnel et non commercial</strong>. Sont autorisés :</p><div class="hl"><svg class="ei ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Utilisation personnelle pour préparer son entretien de naturalisation ou l'examen civique<br><svg class="ei ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Partage du lien vers le site<br><svg class="ei ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Impression des contenus pour un usage personnel</div><p>Sont en revanche <strong>strictement interdits</strong> sans autorisation écrite :</p><div class="hl no"><svg class="ei ko" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Reproduction ou copie du code source<br><svg class="ei ko" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Création d'un site dérivé ou concurrent<br><svg class="ei ko" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Utilisation commerciale quelconque<br><svg class="ei ko" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Extraction automatisée des données (scraping)<br><svg class="ei ko" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Redistribution des questions ou contenus pédagogiques</div></section>
+<section class="card"><h2><span class="num">5</span>Données personnelles et cookies (RGPD)</h2><p>Ce site ne demande <strong>aucune inscription</strong> et ne comporte aucun formulaire collectant de données personnelles.</p><p>La progression de l'utilisateur (scores, favoris, historique, parcours découverte) est stockée <strong>exclusivement en local</strong> dans le navigateur via <code>localStorage</code>. Ces données ne sont pas transmises à un serveur. Le choix du thème (clair ou sombre) et de votre réponse à la bannière de cookies y est aussi conservé.</p><p><strong>Mesure d'audience.</strong> Avec votre accord, donné via la bannière affichée à la première visite, le site utilise <strong>Google Analytics</strong> (Google Ireland Limited) pour connaître la fréquentation des pages et améliorer le contenu. Aucun cookie de mesure n'est déposé avant votre acceptation ; si vous refusez, le site fonctionne de la même façon. Votre choix est conservé six mois et peut être modifié à tout moment via le lien « Gérer les cookies » en bas de chaque page.</p><div class="hl">Conformément au Règlement (UE) 2016/679 (RGPD), vous pouvez supprimer à tout moment vos données locales depuis Mon bilan → Réinitialiser, ou en vidant les données du site dans votre navigateur.</div></section>
+<section class="card"><h2><span class="num">6</span>Limitation de responsabilité</h2><p>Les contenus de ce site sont fournis à titre <strong>pédagogique et informatif</strong>. Ils ne constituent pas un avis juridique officiel sur la procédure de naturalisation ni sur l'examen civique.</p><p>L'éditeur s'efforce de maintenir les informations à jour mais ne garantit pas leur exhaustivité ou leur exactitude à tout moment. Les procédures administratives peuvent évoluer ; il est recommandé de consulter les sources officielles (service-public.fr, préfecture compétente).</p><p>L'éditeur ne saurait être tenu responsable des décisions prises sur la base des contenus de ce site.</p></section>
+<section class="card"><h2><span class="num">7</span>Contact et signalement</h2><p>Pour toute question relative aux mentions légales, demande d'autorisation, ou signalement d'une violation de droits, vous pouvez contacter l'éditeur à l'adresse suivante :</p><div class="hl"><svg class="ei" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><a href="mailto:devby.fou@gmail.com"><strong>devby.fou@gmail.com</strong></a></div><p>Toute demande de reproduction ou d'utilisation commerciale doit être formulée par écrit et fera l'objet d'une réponse dans un délai de 30 jours.</p></section>
+</main>
+<footer class="foot"><div class="foot-in"><div class="foot-brand"><img src="icons/logo.png" width="30" height="30" alt="" />Cap Naturalisation</div>
+<div class="foot-links"><a href="index.html">Accueil</a><a href="quiz-naturalisation.html">Quiz</a><a href="examen-civique.html">Examen civique</a><a href="mentions-legales.html">Mentions légales</a><a href="mailto:devby.fou@gmail.com">Contact</a></div>
+<small>© <span id="cp-year"></span> Cap Naturalisation · Tous droits réservés</small></div></footer>
+<script>var y=document.getElementById('cp-year');if(y)y.textContent=new Date().getFullYear();</script>
 <script>
-  var yr = new Date().getFullYear();
-  document.getElementById('cp-year').textContent = yr;
-  document.getElementById('footer-year').textContent = yr;
-  document.getElementById('update-date').textContent = new Date().toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
+  var yr=new Date().getFullYear();
+  var c2=document.getElementById('cp-year2');if(c2)c2.textContent=yr;
+  document.getElementById('update-date').textContent=new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
 </script>
 </body>
 </html>
