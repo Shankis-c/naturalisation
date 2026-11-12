@@ -1772,7 +1772,7 @@ function copyShareLink(btn){
     ['<path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/>','Parcours découverte : le Livret du citoyen','5 niveaux courts pour partir de zéro, d\'après le Livret du citoyen (mai 2026), avec la page du livret pour chaque point. Une fois les niveaux validés, place aux quiz de naturalisation.'],
     ['<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>','Un suivi plus clair','Cadran de score après chaque quiz, score moyen dans le bilan, progression du parcours sur l\'accueil.'],
     ['<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>','Pensé pour le téléphone','Barre de navigation en bas de l\'écran et possibilité d\'installer le site comme une application.'],
-    ['<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.5 3-5.5 6.5-5.5s6 2 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c2 .6 3.3 2.4 3.5 5.2"/>','Une communauté','Rejoignez le groupe Facebook ou suivez le compte Instagram pour poser vos questions et partager votre retour d\'expérience.']
+    ['<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.5 3-5.5 6.5-5.5s6 2 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c2 .6 3.3 2.4 3.5 5.2"/>','Suivez la page Instagram','Les nouveautés sont annoncées en premier sur @cap_naturalisation, avec des quiz en vidéos courtes. Vous pouvez aussi y poser vos questions, ou rejoindre le groupe Facebook.']
   ];
   var last=null;
   window.showWhatsNew=function(){

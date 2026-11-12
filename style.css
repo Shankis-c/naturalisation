@@ -1187,3 +1187,20 @@ body.wn-open{overflow:hidden}
 /* Logo Cap Naturalisation */
 .brand-logo{width:34px;height:34px;border-radius:9px;display:block;flex:none}
 .sf-logo{width:30px;height:30px;border-radius:8px;display:block;flex:none}
+
+/* ============ CORRECTIFS CONTRASTE (clair / sombre) ============ */
+/* Oral, Préfecture : l'en-tête de carte est clair, le texte ne doit plus être blanc */
+.oral-card-head .oral-num{color:var(--text-3)}
+.oral-card-head .oral-q{color:var(--text)}
+.oral-score-btn.knew{color:#0f6b36}
+:root[data-theme=dark] .oral-score-btn.knew{color:var(--success)}
+/* Mode sombre : encadrés or, bandeau entretien, encadré préfecture */
+:root[data-theme=dark] .gd-note,:root[data-theme=dark] .fav-hint,:root[data-theme=dark] .mc-support .mc-title{color:#f0c75a}
+:root[data-theme=dark] .fav-hint.done{color:var(--success)}
+:root[data-theme=dark] .interview-hero{background:var(--white);color:var(--text);border-color:var(--border)}
+:root[data-theme=dark] .ih-title{color:var(--text)}
+:root[data-theme=dark] .ih-sub{color:var(--text-2)}
+:root[data-theme=dark] #pref-landing>div:first-child{background:#14305c!important}
+/* Boutons Instagram : texte blanc lisible */
+.cc-ig,.ss-soc-ig{background:linear-gradient(135deg,#d4561a,#dd2a7b 55%,#8134af)}
+.cc-ig:hover{background:linear-gradient(135deg,#d4561a,#dd2a7b 55%,#8134af)}
